@@ -1,0 +1,71 @@
+cluster,keyword_es,intent,current_position,status,target_url,priority
+1-cruceros-nombre,crucero ms amwaj,transactional,24.0,no-es-page,/es/tour/ms-amwaj-crucero-por-el-nilo,P1
+1-cruceros-nombre,crucero de lujo ms amwaj,transactional,20.8,no-es-page,/es/tour/ms-amwaj-crucero-por-el-nilo,P1
+1-cruceros-nombre,crucero por el nilo le fayan ii,transactional,37.3,no-es-page,/es/tour/le-fayan-ii-crucero-por-el-nilo,P1
+1-cruceros-nombre,crucero minerva,transactional,32.8,no-es-page,/es/tour/minerva-crucero-por-el-nilo,P1
+1-cruceros-nombre,crucero sonesta st george,transactional,37.0,no-es-page,/es/tour/sonesta-st-george-crucero-por-el-nilo,P1
+1-cruceros-nombre,sonesta st george crucero nilo,transactional,39.3,no-es-page,/es/tour/sonesta-st-george-crucero-por-el-nilo,P1
+1-cruceros-nombre,crucero ms dwa,transactional,51.3,no-es-page,/es/tour/ms-dwa-crucero-por-el-nilo,P1
+1-cruceros-nombre,royal ruby crucero nilo,transactional,30.5,no-es-page,/es/tour/royal-ruby-crucero-por-el-nilo,P1
+1-cruceros-nombre,crucero royal ruby nilo 5 dias 4 noches desde luxor a asuan,transactional,19.6,no-es-page,/es/tour/royal-ruby-crucero-por-el-nilo,P1
+1-cruceros-nombre,blue shadow crucero nilo,transactional,40.3,no-es-page,/es/tour/blue-shadow-crucero-por-el-nilo,P1
+1-cruceros-nombre,ms nile premium crucero de lujo,transactional,60.8,no-es-page,/es/tour/nile-premium-crucero-por-el-nilo,P1
+1-cruceros-nombre,cadena sarah crucero nilo,transactional,49.3,no-es-page,/es/tour/sarah-crucero-por-el-nilo,P1
+1-cruceros-nombre,crucero ms radamis ii,transactional,49.0,no-es-page,/es/tour/radamis-ii-crucero-por-el-nilo,P1
+1-cruceros-nombre,ms salacia,transactional,34.5,no-es-page,/es/tour/salacia-crucero-por-el-nilo,P1
+1-cruceros-nombre,ms nubian sea,transactional,8.0,no-es-page,/es/tour/nubian-sea-crucero-por-el-nilo,P1
+1-cruceros-nombre,ms nile style,transactional,46.5,no-es-page,/es/tour/nile-style-crucero-por-el-nilo,P1
+1-cruceros-nombre,movenpick ms sunray,transactional,46.0,no-es-page,/es/tour/movenpick-sunray-crucero-por-el-nilo,P1
+1-cruceros-nombre,ms movenpick lotus,transactional,40.0,no-es-page,/es/tour/movenpick-lotus-crucero-por-el-nilo,P1
+1-cruceros-nombre,ms movenpick royal lily,transactional,46.0,no-es-page,/es/tour/movenpick-royal-lily-crucero-por-el-nilo,P1
+1-cruceros-nombre,sonesta nile goddess,transactional,67.0,no-es-page,/es/tour/sonesta-nile-goddess-crucero-por-el-nilo,P1
+1-cruceros-nombre,iberotel crown emperor,transactional,44.5,no-es-page,/es/tour/iberotel-crown-emperor-crucero-por-el-nilo,P1
+1-cruceros-nombre,amoura dahabiya,transactional,42.0,no-es-page,/es/tour/amoura-dahabiya-crucero-por-el-nilo,P1
+1-cruceros-nombre,assouan dahabiya,transactional,26.0,no-es-page,/es/tour/assouan-dahabiya-crucero-por-el-nilo,P1
+1-cruceros-nombre,ms zeina,transactional,9.0,es-page-live,/es/tour/ms-zeina-crucero-por-el-nilo,maintain
+1-cruceros-nombre,royal viking,transactional,9.0,es-page-live,/es/tour/royal-viking-crucero-por-el-nilo,maintain
+2-categorias,cruceros por el nilo,commercial,,missing,/es/cruceros-por-el-nilo,P2
+2-categorias,crucero por el nilo precio,commercial,,missing,/es/cruceros-por-el-nilo,P2
+2-categorias,crucero por el nilo 5 dias,commercial,,missing,/es/cruceros-por-el-nilo/5-dias,P2
+2-categorias,excursiones en luxor,commercial,,missing,/es/excursiones-en-luxor,P2
+2-categorias,excursiones desde luxor,commercial,,missing,/es/excursiones-en-luxor,P2
+2-categorias,excursiones en asuan,commercial,,missing,/es/excursiones-en-asuan,P2
+2-categorias,paquetes de viaje a egipto,commercial,,missing,/es/paquetes-de-viaje-a-egipto,P2
+2-categorias,crucero dahabiya nilo,commercial,72.0,missing,/es/cruceros-por-el-nilo/dahabiya,P2
+2-categorias,faluca luxor asuan,commercial,,missing,/es/cruceros-por-el-nilo/faluca,P3
+3-desde-pais,viajes a egipto desde mexico,transactional,,missing,/es/viajes-a-egipto-desde-mexico,P2
+3-desde-pais,paquetes a egipto desde mexico,transactional,,missing,/es/viajes-a-egipto-desde-mexico,P2
+3-desde-pais,egipto todo incluido desde mexico,transactional,,missing,/es/viajes-a-egipto-desde-mexico,P2
+3-desde-pais,viajes a egipto desde espana,transactional,,missing,/es/viajes-a-egipto-desde-espana,P2
+3-desde-pais,circuitos organizados egipto,transactional,,missing,/es/viajes-a-egipto-desde-espana,P2
+3-desde-pais,viajes a egipto desde argentina,transactional,,missing,/es/viajes-a-egipto-desde-argentina,P3
+3-desde-pais,viajes a egipto desde colombia,transactional,,missing,/es/viajes-a-egipto-desde-colombia,P3
+3-desde-pais,viajes a egipto desde chile,transactional,,missing,/es/viajes-a-egipto-desde-chile,P3
+4-duracion,egipto 11 dias,commercial,62.5,missing,/es/paquetes-de-viaje-a-egipto/11-dias,P3
+4-duracion,egipto 8 dias,commercial,,missing,/es/paquetes-de-viaje-a-egipto/8-dias,P3
+4-duracion,egipto 10 dias,commercial,,missing,/es/paquetes-de-viaje-a-egipto/10-dias,P3
+4-duracion,egipto 12 dias,commercial,,missing,/es/paquetes-de-viaje-a-egipto/12-dias,P3
+4-duracion,una semana en egipto,commercial,,missing,/es/paquetes-de-viaje-a-egipto/7-dias,P3
+5-planificacion,cuantos dias en egipto,informational,5.6,ranking-well,/es/blog/cuantos-dias-necesitas-en-egipto-una-guia-realista,maintain
+5-planificacion,cuantos dias ir a egipto,informational,19.5,ranking-well,/es/blog/cuantos-dias-necesitas-en-egipto-una-guia-realista,maintain
+5-planificacion,cuantos dias en el cairo,informational,58.0,weak,/es/blog/cuantos-dias-en-el-cairo,P3
+5-planificacion,cuantos dias para visitar egipto,informational,68.0,weak,/es/blog/cuantos-dias-necesitas-en-egipto-una-guia-realista,P2
+5-planificacion,cuantas horas de vuelo son a egipto,informational,63.0,weak,/es/blog/cuanto-se-tarda-en-volar-a-egipto,P3
+5-planificacion,cuanto cuesta un viaje a egipto,commercial,,missing,/es/blog/cuanto-cuesta-viajar-a-egipto,P2
+5-planificacion,mejor epoca para viajar a egipto,informational,,missing,/es/blog/mejor-epoca-para-viajar-a-egipto,P2
+5-planificacion,es seguro viajar a egipto,informational,,missing,/es/blog/es-seguro-viajar-a-egipto,P3
+5-planificacion,visado egipto para mexicanos,informational,,missing,/es/blog/visado-egipto-mexicanos,P3
+6-comparativas,valle de los reyes vs valle de las reinas,informational,15.3,live-improve,/es/blog/valle-de-los-reyes-vs-valle-de-las-reinas,P2
+6-comparativas,templos de luxor y karnak,informational,12.0,live-improve,/es/blog/templo-de-karnak-vs-templo-de-luxor,P2
+6-comparativas,asuan o luxor primero,informational,,missing,/es/blog/asuan-o-luxor-primero,P3
+6-comparativas,crucero vs dahabiya vs faluca,informational,,missing,/es/blog/crucero-dahabiya-o-faluca,P3
+7-logistica,distancia aswan abu simbel,informational,35.0,spelling-gap,/es/blog/abu-simbel-desde-asuan-por-carretera-o-en-avion,P1
+7-logistica,distancia de aswan a abu simbel,informational,34.0,spelling-gap,/es/blog/abu-simbel-desde-asuan-por-carretera-o-en-avion,P1
+7-logistica,bus aswan abu simbel,informational,63.0,spelling-gap,/es/blog/abu-simbel-desde-asuan-por-carretera-o-en-avion,P1
+7-logistica,visitar abu simbel,commercial,56.0,weak,/es/tour/abu-simbel-desde-asuan,P2
+8-destinos,ciudad de luxor,informational,28.0,missing,/es/destinos/luxor,P3
+8-destinos,que ver en luxor,informational,,missing,/es/destinos/luxor,P3
+8-destinos,asuan,informational,9.0,missing,/es/destinos/asuan,P3
+8-destinos,el valle de las reinas,informational,69.0,weak,/es/tour/valle-de-los-reyes-y-las-reinas,P3
+8-destinos,esfinge egipcia,informational,30.3,weak,/es/blog/la-esfinge-de-giza,P4
+8-destinos,gran piramide de giza,informational,33.5,weak,/es/blog/gran-piramide-de-giza,P4
