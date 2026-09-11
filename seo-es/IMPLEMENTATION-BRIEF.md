@@ -197,6 +197,45 @@ Spanish-speaking guide's name) that competitors cannot copy.
 
 ---
 
+---
+
+## ⛔ STOP — read before renaming any slug
+
+**Image paths on this site are derived from the page slug.** Observed filenames:
+
+```
+philae-temple-high-dam-unfinished-obelisk-01-14c6d052-360.webp
+14-day-egypt-tour-package-01-6414673c.webp
+the-ultimate-luxor-hot-air-balloon-adventure-01-5db89589.webp
+```
+
+The pattern is `{page-slug}-{NN}-{hash}[-{width}].webp`. Renaming a page slug
+therefore breaks **every image on that page** — the markup asks for a path
+derived from the new slug while the file on disk still carries the old name,
+and every request 404s. A 301 on the page URL does **not** fix this; the images
+are separate assets.
+
+This has already happened once on this site: a slug-standardisation pass left
+all 92 cruise pages with broken images.
+
+**Before renaming any slug:**
+
+1. Find how image paths are resolved — a stored column, a derived path, or a
+   CDN transform. Grep for `uploads/images/media` and follow it back.
+2. If the path is derived from the slug, a rename requires **all three** in one
+   change: rename the page, rename/copy the asset files, update any stored
+   references.
+3. Verify on one page first. Load it and confirm every image returns 200 before
+   applying the rename to the rest.
+4. If you cannot verify, **do not rename**. Slug standardisation is cosmetic;
+   broken product images are lost revenue. Change titles instead (Task 3) and
+   leave the slugs alone.
+
+**Applies to Task 6 items 3, 4 and 5. Treat those as blocked until the image
+path resolution is understood.**
+
+---
+
 ## Task 6 — Structural fixes
 
 | # | Issue | Fix |
@@ -226,3 +265,7 @@ spellings are covered. URLs stay unaccented.
   than introducing new ones.
 - Ship Tasks 1 and 2 as their own change so their effect can be measured before
   Task 5 lands.
+- **Never rename a slug without first confirming what it breaks** — on this site
+  image paths are slug-derived. See the STOP section above.
+- After any change touching tour pages, load one page and confirm every image
+  returns 200 before shipping the rest.
