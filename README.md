@@ -14,6 +14,7 @@
 | [`seo-es/05-technical.md`](seo-es/05-technical.md) | hreflang, schema, البنية، السرعة |
 | [`seo-es/06-backlinks.md`](seo-es/06-backlinks.md) | قائمة المواقع المستهدفة + رسائل التواصل الجاهزة |
 | [`seo-es/keywords.csv`](seo-es/keywords.csv) | الكلمات المفتاحية كـ CSV للاستيراد في أي أداة |
+| [`seo-es/tools/es-gap.py`](seo-es/tools/es-gap.py) | سكربت: يقرأ `sitemap.xml` ويطلع فجوة EN↔ES ومشاكل التسمية والتنافس الداخلي |
 
 ## الخلاصة في ٦ أسطر
 
