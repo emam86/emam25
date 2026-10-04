@@ -1,0 +1,42 @@
+# BEGIN 5-star merge 2026-10 (paste ABOVE '# BEGIN WordPress' and above the GTranslate block)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# 16 merged posts -> 3 kept pages
+RewriteRule ^/*5-star-super-deluxe-nile-cruise-upgrade-to-the-highest-luxury-experience-on-the-nile/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-stars-nile-cruise-what-5-star-really-means-for-comfort-service-value/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-luxury-nile-cruises-the-most-luxurious-ways-to-sail-egypt/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-luxury-nile-cruise-premium-service-best-views-top-tier-comfort/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*compare-5-star-deluxe-nile-cruises-choose-the-perfect-ship-dates/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-deluxe-nile-cruise-elevate-your-egypt-holiday-in-style/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-standard-nile-cruise-best-value-luxury-for-first-time-egypt-travelers/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-nile-river-cruise-relax-on-the-water-while-egypts-icons-come-to-life/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-the-classic-egypt-experience-with-hotel-quality-comfort/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-ships-modern-fleets-premium-facilities-the-best-views/?$ /5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/ [R=301,L]
+RewriteRule ^/*5-star-deluxe-nile-cruise-ships-facilities-dining-onboard-comfort/?$ /5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-boats-choose-your-ship-cabin-and-cruise-style/?$ /5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/ [R=301,L]
+RewriteRule ^/*your-ultimate-5-star-nile-cruise-in-egypt-luxury-itinerary-included-extras-booking-tips/?$ /book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-book-a-seamless-egypt-getaway-with-unmatched-value/?$ /book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/ [R=301,L]
+RewriteRule ^/*five-star-nile-cruise-aswan-luxor/?$ /book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/ [R=301,L]
+RewriteRule ^/*5-star-aswan-to-luxor-nile-cruise-unforgettable-temples-sunsets-seamless-travel/?$ /book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/ [R=301,L]
+# old short URLs that used to redirect to the merged posts (avoids 2-hop chains)
+RewriteRule ^/*5-star-deluxe-nile-cruise/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-deluxe-nile-cruise-ships/?$ /5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/ [R=301,L]
+RewriteRule ^/*5-star-deluxe-nile-cruises/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-luxury-nile-cruise/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-luxury-nile-cruises/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-boats/?$ /5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-egypt-luxury-itinerary/?$ /book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-from-aswan-to-luxor/?$ /book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-rooms/?$ /5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-ships/?$ /5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/ [R=301,L]
+RewriteRule ^/*5-star-nile-cruise-value/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-nile-river-cruise/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-standard-nile-cruise/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-star-super-deluxe-nile-cruise/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*5-stars-nile-cruise-value-guide/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*best-luxury-nile-cruise-for-families/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+RewriteRule ^/*book-5-star-aswan-luxor-nile-cruise/?$ /book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/ [R=301,L]
+RewriteRule ^/*top-5-star-nile-cruises-egypt/?$ /top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/ [R=301,L]
+</IfModule>
+# END 5-star merge 2026-10
