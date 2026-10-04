@@ -1,0 +1,2908 @@
+[
+ {
+  "id": 113,
+  "url": "/5-star-super-deluxe-nile-cruise/",
+  "match_url": "/5-star-super-deluxe-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 28,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 112,
+  "url": "/5-star-standard-nile-cruise/",
+  "match_url": "/5-star-standard-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 27,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 111,
+  "url": "/5-star-nile-river-cruise/",
+  "match_url": "/5-star-nile-river-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 26,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 110,
+  "url": "/5-star-nile-cruise-ships/",
+  "match_url": "/5-star-nile-cruise-ships",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 25,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 109,
+  "url": "/5-star-nile-cruise-rooms/",
+  "match_url": "/5-star-nile-cruise-rooms",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 24,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 108,
+  "url": "/5-star-nile-cruise-boats/",
+  "match_url": "/5-star-nile-cruise-boats",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 23,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 107,
+  "url": "/5-star-nile-cruise/",
+  "match_url": "/5-star-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 22,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 106,
+  "url": "/5-star-luxury-nile-cruises/",
+  "match_url": "/5-star-luxury-nile-cruises",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 21,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 105,
+  "url": "/5-star-luxury-nile-cruise/",
+  "match_url": "/5-star-luxury-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 20,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 104,
+  "url": "/5-star-deluxe-nile-cruise-ships/",
+  "match_url": "/5-star-deluxe-nile-cruise-ships",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 19,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 103,
+  "url": "/5-star-deluxe-nile-cruise/",
+  "match_url": "/5-star-deluxe-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 2,
+  "regex": false,
+  "group_id": 1,
+  "position": 18,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 102,
+  "url": "/5-star-aswan-to-luxor-nile-cruise-unforgettable-temples-sunsets-seamless-travel/",
+  "match_url": "/5-star-aswan-to-luxor-nile-cruise-unforgettable-temples-sunsets-seamless-travel",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 17,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 101,
+  "url": "/five-star-nile-cruise-aswan-luxor/",
+  "match_url": "/five-star-nile-cruise-aswan-luxor",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 6,
+  "regex": false,
+  "group_id": 1,
+  "position": 16,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 100,
+  "url": "/5-star-nile-cruise-book-a-seamless-egypt-getaway-with-unmatched-value/",
+  "match_url": "/5-star-nile-cruise-book-a-seamless-egypt-getaway-with-unmatched-value",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 6,
+  "regex": false,
+  "group_id": 1,
+  "position": 15,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 99,
+  "url": "/your-ultimate-5-star-nile-cruise-in-egypt-luxury-itinerary-included-extras-booking-tips/",
+  "match_url": "/your-ultimate-5-star-nile-cruise-in-egypt-luxury-itinerary-included-extras-booking-tips",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 14,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 98,
+  "url": "/5-star-nile-cruise-boats-choose-your-ship-cabin-and-cruise-style/",
+  "match_url": "/5-star-nile-cruise-boats-choose-your-ship-cabin-and-cruise-style",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 13,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 97,
+  "url": "/5-star-deluxe-nile-cruise-ships-facilities-dining-onboard-comfort/",
+  "match_url": "/5-star-deluxe-nile-cruise-ships-facilities-dining-onboard-comfort",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 12,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 96,
+  "url": "/5-star-nile-cruise-ships-modern-fleets-premium-facilities-the-best-views/",
+  "match_url": "/5-star-nile-cruise-ships-modern-fleets-premium-facilities-the-best-views",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-star-nile-cruise-rooms-choose-the-perfect-cabin-for-comfort-views-relaxation/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 11,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 95,
+  "url": "/5-star-nile-cruise-the-classic-egypt-experience-with-hotel-quality-comfort/",
+  "match_url": "/5-star-nile-cruise-the-classic-egypt-experience-with-hotel-quality-comfort",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 10,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 94,
+  "url": "/5-star-nile-river-cruise-relax-on-the-water-while-egypts-icons-come-to-life/",
+  "match_url": "/5-star-nile-river-cruise-relax-on-the-water-while-egypts-icons-come-to-life",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 9,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 93,
+  "url": "/5-star-standard-nile-cruise-best-value-luxury-for-first-time-egypt-travelers/",
+  "match_url": "/5-star-standard-nile-cruise-best-value-luxury-for-first-time-egypt-travelers",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 8,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 92,
+  "url": "/5-star-deluxe-nile-cruise-elevate-your-egypt-holiday-in-style/",
+  "match_url": "/5-star-deluxe-nile-cruise-elevate-your-egypt-holiday-in-style",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 7,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 91,
+  "url": "/compare-5-star-deluxe-nile-cruises-choose-the-perfect-ship-dates/",
+  "match_url": "/compare-5-star-deluxe-nile-cruises-choose-the-perfect-ship-dates",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 6,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 90,
+  "url": "/5-star-luxury-nile-cruise-premium-service-best-views-top-tier-comfort/",
+  "match_url": "/5-star-luxury-nile-cruise-premium-service-best-views-top-tier-comfort",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 6,
+  "regex": false,
+  "group_id": 1,
+  "position": 5,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 89,
+  "url": "/5-star-luxury-nile-cruises-the-most-luxurious-ways-to-sail-egypt/",
+  "match_url": "/5-star-luxury-nile-cruises-the-most-luxurious-ways-to-sail-egypt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 1,
+  "position": 4,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 88,
+  "url": "/5-stars-nile-cruise-what-5-star-really-means-for-comfort-service-value/",
+  "match_url": "/5-stars-nile-cruise-what-5-star-really-means-for-comfort-service-value",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 6,
+  "regex": false,
+  "group_id": 1,
+  "position": 3,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 87,
+  "url": "/5-star-super-deluxe-nile-cruise-upgrade-to-the-highest-luxury-experience-on-the-nile/",
+  "match_url": "/5-star-super-deluxe-nile-cruise-upgrade-to-the-highest-luxury-experience-on-the-nile",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 6,
+  "regex": false,
+  "group_id": 1,
+  "position": 2,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 86,
+  "url": "/portfolio/tortor-vehicula-inceptos/",
+  "match_url": "/portfolio/tortor-vehicula-inceptos",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 410,
+  "action_type": "error",
+  "action_data": null,
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 83,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 85,
+  "url": "/portfolio/porta-justo/",
+  "match_url": "/portfolio/porta-justo",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 410,
+  "action_type": "error",
+  "action_data": null,
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 82,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 84,
+  "url": "/portfolio/inceptos-bibendum-sem/",
+  "match_url": "/portfolio/inceptos-bibendum-sem",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 410,
+  "action_type": "error",
+  "action_data": null,
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 81,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 83,
+  "url": "/private-aegypten-touren-eigener-guide-fahrer-luxor-kairo-assuan-2/",
+  "match_url": "/private-aegypten-touren-eigener-guide-fahrer-luxor-kairo-assuan-2",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-aegypten-touren-eigener-guide-fahrer-luxor-kairo-assuan/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 80,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 82,
+  "url": "/private-aegypten-touren-eigener-guide-fahrer-luxor-kairo-assuan-2",
+  "match_url": "/private-aegypten-touren-eigener-guide-fahrer-luxor-kairo-assuan-2",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-aegypten-touren-eigener-guide-fahrer-luxor-kairo-assuan/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 5,
+  "regex": false,
+  "group_id": 2,
+  "position": 79,
+  "last_access": "September 27, 2026",
+  "enabled": true
+ },
+ {
+  "id": 81,
+  "url": "/de/kontakt/",
+  "match_url": "/de/kontakt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/de/contact/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 78,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 80,
+  "url": "/de/kontakt",
+  "match_url": "/de/kontakt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/de/contact/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 77,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 79,
+  "url": "/valley-of-the-kings-tours/",
+  "match_url": "/valley-of-the-kings-tours",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 76,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 78,
+  "url": "/valley-of-the-kings-tours",
+  "match_url": "/valley-of-the-kings-tours",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 18,
+  "regex": false,
+  "group_id": 2,
+  "position": 75,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 77,
+  "url": "/reisefuehrer-luxor/",
+  "match_url": "/reisefuehrer-luxor",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/nilkreuzfahrt-von-kairo-nach-luxor-praktischer-reisefuehrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 74,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 76,
+  "url": "/reisefuehrer-luxor",
+  "match_url": "/reisefuehrer-luxor",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/nilkreuzfahrt-von-kairo-nach-luxor-praktischer-reisefuehrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 17,
+  "regex": false,
+  "group_id": 2,
+  "position": 73,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 75,
+  "url": "/reisefuehrer-aegypten/",
+  "match_url": "/reisefuehrer-aegypten",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/transport-aegypten-praktischer-reisefuehrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 72,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 74,
+  "url": "/reisefuehrer-aegypten",
+  "match_url": "/reisefuehrer-aegypten",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/transport-aegypten-praktischer-reisefuehrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 16,
+  "regex": false,
+  "group_id": 2,
+  "position": 71,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 73,
+  "url": "/luxor-tours/",
+  "match_url": "/luxor-tours",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 70,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 72,
+  "url": "/luxor-tours",
+  "match_url": "/luxor-tours",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 15,
+  "regex": false,
+  "group_id": 2,
+  "position": 69,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 71,
+  "url": "/luxor-temple-tours/",
+  "match_url": "/luxor-temple-tours",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 68,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 70,
+  "url": "/luxor-temple-tours",
+  "match_url": "/luxor-temple-tours",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 24,
+  "regex": false,
+  "group_id": 2,
+  "position": 67,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 69,
+  "url": "/aegyptologie-guide/",
+  "match_url": "/aegyptologie-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-luxor-tour-aegyptologe-eigener-fahrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 66,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 68,
+  "url": "/aegyptologie-guide",
+  "match_url": "/aegyptologie-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-luxor-tour-aegyptologe-eigener-fahrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 17,
+  "regex": false,
+  "group_id": 2,
+  "position": 65,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 67,
+  "url": "/aegyptologe-guide/",
+  "match_url": "/aegyptologe-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-luxor-tour-aegyptologe-eigener-fahrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 64,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 66,
+  "url": "/aegyptologe-guide",
+  "match_url": "/aegyptologe-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-luxor-tour-aegyptologe-eigener-fahrer/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 19,
+  "regex": false,
+  "group_id": 2,
+  "position": 63,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 65,
+  "url": "/4-day-nile-cruises/",
+  "match_url": "/4-day-nile-cruises",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-river-cruises-choose-your-luxury-route-with-expert-tour-hosts/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 62,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 64,
+  "url": "/4-day-nile-cruises",
+  "match_url": "/4-day-nile-cruises",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-river-cruises-choose-your-luxury-route-with-expert-tour-hosts/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 14,
+  "regex": false,
+  "group_id": 2,
+  "position": 61,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 63,
+  "url": "/4-day-nile-cruise-from-cairo-2/",
+  "match_url": "/4-day-nile-cruise-from-cairo-2",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-cairo-to-the-nile-cruise-your-way-through-egypts-best-highlights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 60,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 62,
+  "url": "/4-day-nile-cruise-from-cairo-2",
+  "match_url": "/4-day-nile-cruise-from-cairo-2",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-cairo-to-the-nile-cruise-your-way-through-egypts-best-highlights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 15,
+  "regex": false,
+  "group_id": 2,
+  "position": 59,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 61,
+  "url": "/4-day-nile-cruise-egypt/",
+  "match_url": "/4-day-nile-cruise-egypt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-cruise-luxor-to-aswan-seamless-transfers/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 58,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 60,
+  "url": "/4-day-nile-cruise-egypt",
+  "match_url": "/4-day-nile-cruise-egypt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-cruise-luxor-to-aswan-seamless-transfers/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 24,
+  "regex": false,
+  "group_id": 2,
+  "position": 57,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 59,
+  "url": "/private-egypt-day-tours-from-cairo/",
+  "match_url": "/private-egypt-day-tours-from-cairo",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-egypt-tours-egyptologist-luxor-cairo-aswan/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 56,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 58,
+  "url": "/private-egypt-day-tours-from-cairo",
+  "match_url": "/private-egypt-day-tours-from-cairo",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/private-egypt-tours-egyptologist-luxor-cairo-aswan/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 15,
+  "regex": false,
+  "group_id": 2,
+  "position": 55,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 57,
+  "url": "/best-luxury-nile-cruise-for-families/",
+  "match_url": "/best-luxury-nile-cruise-for-families",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 56,
+  "url": "/best-luxury-nile-cruise-for-families",
+  "match_url": "/best-luxury-nile-cruise-for-families",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 18,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 55,
+  "url": "/4-nights-egypt-package/",
+  "match_url": "/4-nights-egypt-package",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/tours/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 52,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 54,
+  "url": "/4-nights-egypt-package",
+  "match_url": "/4-nights-egypt-package",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/tours/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 26,
+  "regex": false,
+  "group_id": 2,
+  "position": 51,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 53,
+  "url": "/3-days-private-tour-luxor-and-aswan/",
+  "match_url": "/3-days-private-tour-luxor-and-aswan",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/3-days-private-tour-luxor-aswan-in-ultimate-comfort/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 50,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 52,
+  "url": "/3-days-private-tour-luxor-and-aswan",
+  "match_url": "/3-days-private-tour-luxor-and-aswan",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/3-days-private-tour-luxor-aswan-in-ultimate-comfort/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 14,
+  "regex": false,
+  "group_id": 2,
+  "position": 49,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 51,
+  "url": "/3-day-nile-cruises-from-luxor-to-aswan/",
+  "match_url": "/3-day-nile-cruises-from-luxor-to-aswan",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/3-day-luxor-to-aswan-nile-cruise-iconic-stops-in-a-premium-journey/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 48,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 50,
+  "url": "/3-day-nile-cruises-from-luxor-to-aswan",
+  "match_url": "/3-day-nile-cruises-from-luxor-to-aswan",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/3-day-luxor-to-aswan-nile-cruise-iconic-stops-in-a-premium-journey/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 22,
+  "regex": false,
+  "group_id": 2,
+  "position": 47,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 49,
+  "url": "/luxor-private-tours-with-guide/",
+  "match_url": "/luxor-private-tours-with-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 46,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 48,
+  "url": "/luxor-private-tours-with-guide",
+  "match_url": "/luxor-private-tours-with-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/luxor-private-tours-with-a-dedicated-guide-valley-of-the-kings-temples-vip-access/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 16,
+  "regex": false,
+  "group_id": 2,
+  "position": 45,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 47,
+  "url": "/aswan-sightseeing-luxury-tour/",
+  "match_url": "/aswan-sightseeing-luxury-tour",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/10-day-egypt-escape-cairo-to-aswan-luxury-tour-package/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 44,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 46,
+  "url": "/aswan-sightseeing-luxury-tour",
+  "match_url": "/aswan-sightseeing-luxury-tour",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/10-day-egypt-escape-cairo-to-aswan-luxury-tour-package/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 15,
+  "regex": false,
+  "group_id": 2,
+  "position": 43,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 45,
+  "url": "/5-day-nile-cruise-from-cairo/",
+  "match_url": "/5-day-nile-cruise-from-cairo",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-day-nile-cruise-luxor-to-aswan-temples-views-unforgettable-nights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 42,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 44,
+  "url": "/5-day-nile-cruise-from-cairo",
+  "match_url": "/5-day-nile-cruise-from-cairo",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-day-nile-cruise-luxor-to-aswan-temples-views-unforgettable-nights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 14,
+  "regex": false,
+  "group_id": 2,
+  "position": 41,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 43,
+  "url": "/4-days-egypt-short-holidays-packages/",
+  "match_url": "/4-days-egypt-short-holidays-packages",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-days-egypt-short-holiday-packages-best-of-cairo-the-nile-in-just-one-escape/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 40,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 42,
+  "url": "/4-days-egypt-short-holidays-packages",
+  "match_url": "/4-days-egypt-short-holidays-packages",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-days-egypt-short-holiday-packages-best-of-cairo-the-nile-in-just-one-escape/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 25,
+  "regex": false,
+  "group_id": 2,
+  "position": 39,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 41,
+  "url": "/best-time-to-book-5-day-luxury-egypt-tour/",
+  "match_url": "/best-time-to-book-5-day-luxury-egypt-tour",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/best-time-to-book-a-5-day-luxury-egypt-tour-save-more-get-better-departures/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 38,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 40,
+  "url": "/best-time-to-book-5-day-luxury-egypt-tour",
+  "match_url": "/best-time-to-book-5-day-luxury-egypt-tour",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/best-time-to-book-a-5-day-luxury-egypt-tour-save-more-get-better-departures/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 14,
+  "regex": false,
+  "group_id": 2,
+  "position": 37,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 39,
+  "url": "/4-day-nile-river-cruise-premium/",
+  "match_url": "/4-day-nile-river-cruise-premium",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-cruise-aswan-to-luxor-downstream-with-premium-service/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 36,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 38,
+  "url": "/4-day-nile-river-cruise-premium",
+  "match_url": "/4-day-nile-river-cruise-premium",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-cruise-aswan-to-luxor-downstream-with-premium-service/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 26,
+  "regex": false,
+  "group_id": 2,
+  "position": 35,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 37,
+  "url": "/4-day-nile-cruises-luxury/",
+  "match_url": "/4-day-nile-cruises-luxury",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-river-cruises-choose-your-luxury-route-with-expert-tour-hosts/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 34,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 36,
+  "url": "/4-day-nile-cruises-luxury",
+  "match_url": "/4-day-nile-cruises-luxury",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/4-day-nile-river-cruises-choose-your-luxury-route-with-expert-tour-hosts/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 28,
+  "regex": false,
+  "group_id": 2,
+  "position": 33,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 35,
+  "url": "/egypt-luxury-hotel-near-nile-cruise/",
+  "match_url": "/egypt-luxury-hotel-near-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/egypt-luxury-hotels-near-the-nile-stay-close-travel-smarter-enjoy-more-egypt-nights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 32,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 34,
+  "url": "/egypt-luxury-hotel-near-nile-cruise",
+  "match_url": "/egypt-luxury-hotel-near-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/egypt-luxury-hotels-near-the-nile-stay-close-travel-smarter-enjoy-more-egypt-nights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 20,
+  "regex": false,
+  "group_id": 2,
+  "position": 31,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 33,
+  "url": "/5-star-nile-cruise-value/",
+  "match_url": "/5-star-nile-cruise-value",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 32,
+  "url": "/5-star-nile-cruise-value",
+  "match_url": "/5-star-nile-cruise-value",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 25,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 31,
+  "url": "/5-day-nile-cruise-aswan-to-luxor/",
+  "match_url": "/5-day-nile-cruise-aswan-to-luxor",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-day-nile-cruise-luxor-to-aswan-temples-views-unforgettable-nights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 28,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 30,
+  "url": "/5-day-nile-cruise-aswan-to-luxor",
+  "match_url": "/5-day-nile-cruise-aswan-to-luxor",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-day-nile-cruise-luxor-to-aswan-temples-views-unforgettable-nights/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 17,
+  "regex": false,
+  "group_id": 2,
+  "position": 27,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 29,
+  "url": "/5-day-luxury-tour-egypt-price/",
+  "match_url": "/5-day-luxury-tour-egypt-price",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/best-time-to-book-a-5-day-luxury-egypt-tour-save-more-get-better-departures/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 26,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 28,
+  "url": "/5-day-luxury-tour-egypt-price",
+  "match_url": "/5-day-luxury-tour-egypt-price",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/best-time-to-book-a-5-day-luxury-egypt-tour-save-more-get-better-departures/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 15,
+  "regex": false,
+  "group_id": 2,
+  "position": 25,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 27,
+  "url": "/10-day-tours-of-egypt/",
+  "match_url": "/10-day-tours-of-egypt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/10-day-egypt-escape-cairo-to-aswan-luxury-tour-package/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 24,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 26,
+  "url": "/10-day-tours-of-egypt",
+  "match_url": "/10-day-tours-of-egypt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/10-day-egypt-escape-cairo-to-aswan-luxury-tour-package/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 30,
+  "regex": false,
+  "group_id": 2,
+  "position": 23,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 25,
+  "url": "/egypt-tour-packages/",
+  "match_url": "/egypt-tour-packages",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/tours/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 22,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 24,
+  "url": "/egypt-tour-packages",
+  "match_url": "/egypt-tour-packages",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/tours/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 23,
+  "regex": false,
+  "group_id": 2,
+  "position": 21,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 23,
+  "url": "/contact-us/",
+  "match_url": "/contact-us",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/contact/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 20,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 22,
+  "url": "/contact-us",
+  "match_url": "/contact-us",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/contact/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 23,
+  "regex": false,
+  "group_id": 2,
+  "position": 19,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 21,
+  "url": "/5-star-nile-cruise-egypt-luxury-itinerary/",
+  "match_url": "/5-star-nile-cruise-egypt-luxury-itinerary",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 20,
+  "url": "/5-star-nile-cruise-egypt-luxury-itinerary",
+  "match_url": "/5-star-nile-cruise-egypt-luxury-itinerary",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 20,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 19,
+  "url": "/5-day-nile-cruise-from-uk/",
+  "match_url": "/5-day-nile-cruise-from-uk",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-day-nile-cruise-from-the-uk-luxury-egypt-escape-book-your-dates/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 16,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 18,
+  "url": "/5-day-nile-cruise-from-uk",
+  "match_url": "/5-day-nile-cruise-from-uk",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/5-day-nile-cruise-from-the-uk-luxury-egypt-escape-book-your-dates/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 26,
+  "regex": false,
+  "group_id": 2,
+  "position": 15,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 17,
+  "url": "/kontakt/",
+  "match_url": "/kontakt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/de/contact/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 14,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 16,
+  "url": "/kontakt",
+  "match_url": "/kontakt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/de/contact/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 29,
+  "regex": false,
+  "group_id": 2,
+  "position": 13,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 15,
+  "url": "/5-star-nile-cruise-from-aswan-to-luxor/",
+  "match_url": "/5-star-nile-cruise-from-aswan-to-luxor",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 12,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 14,
+  "url": "/5-star-nile-cruise-from-aswan-to-luxor",
+  "match_url": "/5-star-nile-cruise-from-aswan-to-luxor",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 23,
+  "regex": false,
+  "group_id": 2,
+  "position": 11,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 13,
+  "url": "/5-star-deluxe-nile-cruises/",
+  "match_url": "/5-star-deluxe-nile-cruises",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 12,
+  "url": "/5-star-deluxe-nile-cruises",
+  "match_url": "/5-star-deluxe-nile-cruises",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 28,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 11,
+  "url": "/top-5-star-nile-cruises-egypt/",
+  "match_url": "/top-5-star-nile-cruises-egypt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 8,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 10,
+  "url": "/top-5-star-nile-cruises-egypt",
+  "match_url": "/top-5-star-nile-cruises-egypt",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 21,
+  "regex": false,
+  "group_id": 2,
+  "position": 7,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 9,
+  "url": "/book-5-star-aswan-luxor-nile-cruise/",
+  "match_url": "/book-5-star-aswan-luxor-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 6,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 8,
+  "url": "/book-5-star-aswan-luxor-nile-cruise",
+  "match_url": "/book-5-star-aswan-luxor-nile-cruise",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/book-a-5-star-aswan-luxor-nile-cruise-what-youll-see-whats-included-why-its-worth-it/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 24,
+  "regex": false,
+  "group_id": 2,
+  "position": 5,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 7,
+  "url": "/5-stars-nile-cruise-value-guide/",
+  "match_url": "/5-stars-nile-cruise-value-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 0,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "-",
+  "enabled": true
+ },
+ {
+  "id": 6,
+  "url": "/5-stars-nile-cruise-value-guide",
+  "match_url": "/5-stars-nile-cruise-value-guide",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/top-5-star-nile-cruises-in-egypt-compare-ships-routes-luxury-inclusions-fast/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 22,
+  "regex": false,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 5,
+  "url": "^/www\\.smartsky\\.com\\.eg/?$",
+  "match_url": "regex",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": true
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 6,
+  "regex": true,
+  "group_id": 2,
+  "position": 2,
+  "last_access": "September 15, 2026",
+  "enabled": true
+ },
+ {
+  "id": 4,
+  "url": "^/(.+)/www\\.smartsky\\.com\\.eg/?$",
+  "match_url": "regex",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": true
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/$1/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 317,
+  "regex": true,
+  "group_id": 2,
+  "position": 1,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 3,
+  "url": "^/20\\d{2}/\\d{2}/\\d{2}/([^/]+)/[^/]+/?$",
+  "match_url": "regex",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": true
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "/$1/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 244,
+  "regex": true,
+  "group_id": 2,
+  "position": 0,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ },
+ {
+  "id": 1,
+  "url": "/tour/day-tour-luxor-east-and-west-bank-2/",
+  "match_url": "/tour/day-tour-luxor-east-and-west-bank-2",
+  "match_data": {
+   "source": {
+    "flag_query": "exact",
+    "flag_case": true,
+    "flag_trailing": true,
+    "flag_regex": false
+   }
+  },
+  "action_code": 301,
+  "action_type": "url",
+  "action_data": {
+   "url": "https://egypttours-meritamun.com/tour/day-tour-luxor-east-and-west-bank/"
+  },
+  "match_type": "url",
+  "title": "",
+  "hits": 116,
+  "regex": false,
+  "group_id": 1,
+  "position": 0,
+  "last_access": "October 4, 2026",
+  "enabled": true
+ }
+]
