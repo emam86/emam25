@@ -1,0 +1,399 @@
+{
+ "id": 6707,
+ "date": "2025-06-22T12:49:52",
+ "date_gmt": "2025-06-22T12:49:52",
+ "guid": {
+  "rendered": "https://egypttours-meritamun.com/?post_type=tour&#038;p=6707",
+  "raw": "https://egypttours-meritamun.com/?post_type=tour&#038;p=6707"
+ },
+ "modified": "2026-10-04T14:02:39",
+ "modified_gmt": "2026-10-04T11:02:39",
+ "password": "",
+ "slug": "day-tour-luxor-east-and-west-bank-2",
+ "status": "draft",
+ "type": "tour",
+ "link": "https://egypttours-meritamun.com/?post_type=tour&p=6707",
+ "title": {
+  "raw": "Day Tour Luxor East and West Bank",
+  "rendered": "Day Tour Luxor East and West Bank"
+ },
+ "content": {
+  "raw": "<h2>Review</h2>\r\n[site_reviews_form assigned_posts=\"post_id\"]\r\n\r\n<hr />\r\n\r\n[site_reviews assigned_posts=\"post_id\"]",
+  "rendered": "<h2>Review</h2>\n<div class=\"shortcode-site-reviews-form\"><div class=\"glsr glsr-default\" id=\"glsr_okoqsdjj\" data-from=\"shortcode\" data-shortcode=\"site_reviews_form\" data-assigned_posts=\"6707\"><div class=\"glsr-form-wrap\">\n    <form class=\"glsr-form glsr-review-form\" method=\"post\" enctype=\"multipart/form-data\">\n        <input type=\"hidden\" name=\"site-reviews[_action]\" value=\"submit-review\" />\n<input type=\"hidden\" name=\"site-reviews[_nonce]\" value=\"e3fbbd9dbe\" />\n<input type=\"hidden\" name=\"site-reviews[_post_id]\" value=\"6707\" />\n<input type=\"hidden\" name=\"site-reviews[_referer]\" value=\"\" />\n<input type=\"hidden\" name=\"site-reviews[assigned_posts]\" value=\"6707\" />\n<input type=\"hidden\" name=\"site-reviews[assigned_terms]\" value=\"\" />\n<input type=\"hidden\" name=\"site-reviews[assigned_users]\" value=\"\" />\n<input type=\"hidden\" name=\"site-reviews[excluded]\" value=\"\" />\n<input type=\"hidden\" name=\"site-reviews[form_id]\" value=\"glsr_okoqsdjj\" />\n<input type=\"hidden\" name=\"site-reviews[form_signature]\" value=\"d5T1HYrMtQ74dzk6hoQSypEZM-vkocfn1trACocwDnEgUh-_purHpF5mxOGudKF7GlV4xDqEIY9I40vVojJi3zPMyNRNILkuh1Mpxc9dyBmN3RDW3Mc16Vl30AAwUZ8aK-NcgN3anSh9gX3P6jCZPtDz0IpURhYP9FcN8I-9TcZSb7i3VyBn2zWfJuu7obo0RaYPTatVwD9c35-FO7pyQR21EHUwo29XDlx75l60txlFqiI8It_758-Vm6XR9HUozYIg0ghRtJVMWvy_33fShraxYoKlFVQ9g_fCNSio2BzNEPTJET9EIO2sgx5JukKbiZoJh3pQgPFZDaAtRY9n_tGInGjNjO4HLd_98sscqmxZMb4gG5quBSNrS4Bat45ELaAkn-iLt_vQLcGJF54w4j8rtu05cD5avmh73VoLeY6cjhQn1pncgoNlbDRwZA4x\" />\n<input type=\"hidden\" name=\"site-reviews[terms_exist]\" value=\"1\" />\n<div class=\"glsr-field\" style=\"display:none;\"><label for=\"site-reviews-613c70a4-glsr_okoqsdjj\">Your review</label><input type=\"text\" class=\"glsr-input glsr-input-text\" id=\"site-reviews-613c70a4-glsr_okoqsdjj\" name=\"site-reviews[613c70a4]\" value=\"\" /></div>\n<div class=\"glsr-field glsr-field-rating glsr-required\" data-field=\"rating\" data-type=\"rating\">\n    <label class=\"glsr-label\" for=\"glsr_okoqsdjj-rating\">\n    <span>Your overall rating</span>\n</label>\n    <select class=\"browser-default disable-select glsr-select no-wrap no_wrap\" id=\"glsr_okoqsdjj-rating\" name=\"site-reviews[rating]\" required><option value=\"\">Select a Rating</option><option value=\"5\">5 Stars</option><option value=\"4\">4 Stars</option><option value=\"3\">3 Stars</option><option value=\"2\">2 Stars</option><option value=\"1\">1 Star</option></select>\n    <div class=\"glsr-field-error\"></div>\n</div>\n<div class=\"glsr-field glsr-field-text glsr-required\" data-field=\"title\" data-type=\"text\">\n    <label class=\"glsr-label\" for=\"glsr_okoqsdjj-title\">\n    <span>Title of your review</span>\n</label>\n    <input type=\"text\" class=\"glsr-input glsr-input-text\" id=\"glsr_okoqsdjj-title\" name=\"site-reviews[title]\" required placeholder=\"Summarize your review or highlight an interesting detail\" value=\"\" />\n    <div class=\"glsr-field-error\"></div>\n</div>\n<div class=\"glsr-field glsr-field-textarea glsr-required\" data-field=\"content\" data-type=\"textarea\">\n    <label class=\"glsr-label\" for=\"glsr_okoqsdjj-content\">\n    <span>Your review</span>\n</label>\n    <textarea class=\"glsr-textarea\" id=\"glsr_okoqsdjj-content\" name=\"site-reviews[content]\" required placeholder=\"Tell people your review\" rows=\"5\"></textarea>\n    <div class=\"glsr-field-error\"></div>\n</div>\n<div class=\"glsr-field glsr-field-text glsr-required\" data-field=\"name\" data-type=\"text\">\n    <label class=\"glsr-label\" for=\"glsr_okoqsdjj-name\">\n    <span>Your name</span>\n</label>\n    <input type=\"text\" class=\"glsr-input glsr-input-text\" id=\"glsr_okoqsdjj-name\" name=\"site-reviews[name]\" required value=\"Egyptianemam25\" placeholder=\"Tell us your name\" />\n    <div class=\"glsr-field-error\"></div>\n</div>\n<div class=\"glsr-field glsr-field-email glsr-required\" data-field=\"email\" data-type=\"email\">\n    <label class=\"glsr-label\" for=\"glsr_okoqsdjj-email\">\n    <span>Your email</span>\n</label>\n    <input type=\"email\" class=\"glsr-input glsr-input-email\" id=\"glsr_okoqsdjj-email\" name=\"site-reviews[email]\" required value=\"Egyptianemam25@gmail.con\" placeholder=\"Tell us your email\" />\n    <div class=\"glsr-field-error\"></div>\n</div>\n<div class=\"glsr-field glsr-field-choice glsr-required\" data-field=\"terms\" data-type=\"toggle\">\n    \n    <div class=\"glsr-field-subgroup\">\n        <span class=\"glsr-field-toggle\">\n    <span>\n        <span class=\"glsr-toggle\"><input type=\"checkbox\" class=\"glsr-input-toggle\" id=\"glsr_okoqsdjj-terms-1\" name=\"site-reviews[terms]\" required value=\"1\" /><span class=\"glsr-toggle-track\"></span></span>\n    </span>\n    <label for=\"glsr_okoqsdjj-terms-1\">This review is based on my own experience and is my genuine opinion.</label>\n</span>\n    </div>\n    <div class=\"glsr-field-error\"></div>\n</div>\n        <div class=\"glsr-form-message\">\n    \n</div>\n        <div data-field=\"submit-button\">\n    <div class=\"wp-block-buttons is-layout-flex\">\n        <div class=\"wp-block-button\">\n            <button type=\"submit\" class=\"glsr-button wp-block-button__link wp-element-button\" aria-busy=\"false\" data-loading=\"Submitting, please wait...\">Submit Review</button>\n        </div>\n    </div>\n</div>\n    </form>\n</div></div></div>\n<hr />\n<div class=\"shortcode-site-reviews\"><div class=\"glsr glsr-default\" id=\"glsr_mknt6c6v\" data-from=\"shortcode\" data-shortcode=\"site_reviews\" data-assigned_posts=\"6707\"><div class=\"glsr-reviews-wrap\">\n    <div class=\"glsr-reviews\">\n        <p class=\"glsr-no-margins\">There are no reviews yet. Be the first one to write one.</p>\n    </div>\n    \n</div></div></div>\n",
+  "protected": false,
+  "block_version": 0
+ },
+ "excerpt": {
+  "raw": "",
+  "rendered": "<p>Review</p>\n",
+  "protected": false
+ },
+ "author": 3,
+ "featured_media": 5936,
+ "template": "",
+ "meta": {
+  "footnotes": ""
+ },
+ "tour_category": [
+  101,
+  109
+ ],
+ "tour_tag": [],
+ "tour-age": [],
+ "tour-activity": [
+  99
+ ],
+ "tour-destination": [
+  88
+ ],
+ "permalink_template": "https://egypttours-meritamun.com/tour/%pagename%/",
+ "generated_slug": "day-tour-luxor-east-and-west-bank-2",
+ "class_list": [
+  "post-6707",
+  "tour",
+  "type-tour",
+  "status-draft",
+  "has-post-thumbnail",
+  "hentry",
+  "tour_category-day-tour",
+  "tour_category-luxor-day-tours",
+  "tour-activity-day-tour",
+  "tour-destination-luxor"
+ ],
+ "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.6 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Luxor East &amp; West Bank Day Tour | Karnak &amp; Valley of the Kings</title>\n<meta name=\"description\" content=\"Full-day private Luxor tour: Karnak Temple, Valley of the Kings, Hatshepsut Temple and Colossi of Memnon. Egyptologist guide, A/C transport and hotel pickup included.\" />\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://egypttours-meritamun.com/?post_type=tour&p=6707\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Luxor East &amp; West Bank Day Tour | Karnak &amp; Valley of the Kings\" />\n<meta property=\"og:description\" content=\"Full-day private Luxor tour: Karnak Temple, Valley of the Kings, Hatshepsut Temple and Colossi of Memnon. Egyptologist guide, A/C transport and hotel pickup included.\" />\n<meta property=\"og:url\" content=\"https://egypttours-meritamun.com/?post_type=tour&amp;p=6707\" />\n<meta property=\"og:site_name\" content=\"Egypt Tours Merit Amun\" />\n<meta property=\"article:publisher\" content=\"https://www.facebook.com/profile.php?id=61572698573420\" />\n<meta property=\"article:modified_time\" content=\"2026-10-04T11:02:39+00:00\" />\n<meta property=\"og:image\" content=\"https://egypttours-meritamun.com/wp-content/uploads/2024/08/IMG-20240418-WA0035.jpg\" />\n\t<meta property=\"og:image:width\" content=\"1600\" />\n\t<meta property=\"og:image:height\" content=\"1200\" />\n\t<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" />\n\t<meta name=\"twitter:data1\" content=\"10 minutes\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707\",\"url\":\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707\",\"name\":\"Luxor East & West Bank Day Tour | Karnak & Valley of the Kings\",\"isPartOf\":{\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/egypttours-meritamun.com\\/wp-content\\/uploads\\/2024\\/08\\/IMG-20240418-WA0035.jpg\",\"datePublished\":\"2025-06-22T12:49:52+00:00\",\"dateModified\":\"2026-10-04T11:02:39+00:00\",\"description\":\"Full-day private Luxor tour: Karnak Temple, Valley of the Kings, Hatshepsut Temple and Colossi of Memnon. Egyptologist guide, A\\/C transport and hotel pickup included.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707#primaryimage\",\"url\":\"https:\\/\\/egypttours-meritamun.com\\/wp-content\\/uploads\\/2024\\/08\\/IMG-20240418-WA0035.jpg\",\"contentUrl\":\"https:\\/\\/egypttours-meritamun.com\\/wp-content\\/uploads\\/2024\\/08\\/IMG-20240418-WA0035.jpg\",\"width\":1600,\"height\":1200},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/?post_type=tour&p=6707#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/egypttours-meritamun.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Day Tour Luxor East and West Bank\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/#website\",\"url\":\"https:\\/\\/egypttours-meritamun.com\\/\",\"name\":\"Egypt Tours Merit Amun\",\"description\":\"Private Egypt Tours and Nile Cruises\",\"publisher\":{\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/egypttours-meritamun.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":[\"Organization\",\"TravelAgency\"],\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/#organization\",\"name\":\"Egypt Tours Meritamun\",\"alternateName\":\"Egypt Tours Meritamun\",\"url\":\"https:\\/\\/egypttours-meritamun.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/egypttours-meritamun.com\\/wp-content\\/uploads\\/2024\\/11\\/Meritamun-Logo.png\",\"contentUrl\":\"https:\\/\\/egypttours-meritamun.com\\/wp-content\\/uploads\\/2024\\/11\\/Meritamun-Logo.png\",\"width\":1330,\"height\":434,\"caption\":\"Egypt Tours Meritamun\"},\"image\":{\"@id\":\"https:\\/\\/egypttours-meritamun.com\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/profile.php?id=61572698573420\"],\"telephone\":\"+201200134196\",\"email\":\"info@egypttours-meritamun.com\",\"areaServed\":[{\"@type\":\"Country\",\"name\":\"Egypt\"},{\"@type\":\"Country\",\"name\":\"Germany\"}],\"knowsAbout\":[\"Private Egypt tours\",\"Egypt travel packages\",\"Nile cruises\",\"Dahabiya trips\",\"Cairo day tours\",\"Luxor day tours\",\"Aswan day tours\",\"Desert oasis tours\",\"Egypt transportation\"],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"telephone\":\"+201200134196\",\"email\":\"info@egypttours-meritamun.com\",\"contactType\":\"customer support\",\"availableLanguage\":[\"English\",\"German\",\"Arabic\"]}]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+ "yoast_head_json": {
+  "title": "Luxor East & West Bank Day Tour | Karnak & Valley of the Kings",
+  "description": "Full-day private Luxor tour: Karnak Temple, Valley of the Kings, Hatshepsut Temple and Colossi of Memnon. Egyptologist guide, A/C transport and hotel pickup included.",
+  "robots": {
+   "index": "index",
+   "follow": "follow",
+   "max-snippet": "max-snippet:-1",
+   "max-image-preview": "max-image-preview:large",
+   "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://egypttours-meritamun.com/?post_type=tour&p=6707",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "Luxor East & West Bank Day Tour | Karnak & Valley of the Kings",
+  "og_description": "Full-day private Luxor tour: Karnak Temple, Valley of the Kings, Hatshepsut Temple and Colossi of Memnon. Egyptologist guide, A/C transport and hotel pickup included.",
+  "og_url": "https://egypttours-meritamun.com/?post_type=tour&p=6707",
+  "og_site_name": "Egypt Tours Merit Amun",
+  "article_publisher": "https://www.facebook.com/profile.php?id=61572698573420",
+  "article_modified_time": "2026-10-04T11:02:39+00:00",
+  "og_image": [
+   {
+    "width": 1600,
+    "height": 1200,
+    "url": "https://egypttours-meritamun.com/wp-content/uploads/2024/08/IMG-20240418-WA0035.jpg",
+    "type": "image/jpeg"
+   }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+   "Est. reading time": "10 minutes"
+  },
+  "schema": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "WebPage",
+     "@id": "https://egypttours-meritamun.com/?post_type=tour&p=6707",
+     "url": "https://egypttours-meritamun.com/?post_type=tour&p=6707",
+     "name": "Luxor East & West Bank Day Tour | Karnak & Valley of the Kings",
+     "isPartOf": {
+      "@id": "https://egypttours-meritamun.com/#website"
+     },
+     "primaryImageOfPage": {
+      "@id": "https://egypttours-meritamun.com/?post_type=tour&p=6707#primaryimage"
+     },
+     "image": {
+      "@id": "https://egypttours-meritamun.com/?post_type=tour&p=6707#primaryimage"
+     },
+     "thumbnailUrl": "https://egypttours-meritamun.com/wp-content/uploads/2024/08/IMG-20240418-WA0035.jpg",
+     "datePublished": "2025-06-22T12:49:52+00:00",
+     "dateModified": "2026-10-04T11:02:39+00:00",
+     "description": "Full-day private Luxor tour: Karnak Temple, Valley of the Kings, Hatshepsut Temple and Colossi of Memnon. Egyptologist guide, A/C transport and hotel pickup included.",
+     "breadcrumb": {
+      "@id": "https://egypttours-meritamun.com/?post_type=tour&p=6707#breadcrumb"
+     },
+     "inLanguage": "en-US",
+     "potentialAction": [
+      {
+       "@type": "ReadAction",
+       "target": [
+        "https://egypttours-meritamun.com/?post_type=tour&p=6707"
+       ]
+      }
+     ]
+    },
+    {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://egypttours-meritamun.com/?post_type=tour&p=6707#primaryimage",
+     "url": "https://egypttours-meritamun.com/wp-content/uploads/2024/08/IMG-20240418-WA0035.jpg",
+     "contentUrl": "https://egypttours-meritamun.com/wp-content/uploads/2024/08/IMG-20240418-WA0035.jpg",
+     "width": 1600,
+     "height": 1200
+    },
+    {
+     "@type": "BreadcrumbList",
+     "@id": "https://egypttours-meritamun.com/?post_type=tour&p=6707#breadcrumb",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Home",
+       "item": "https://egypttours-meritamun.com/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Day Tour Luxor East and West Bank"
+      }
+     ]
+    },
+    {
+     "@type": "WebSite",
+     "@id": "https://egypttours-meritamun.com/#website",
+     "url": "https://egypttours-meritamun.com/",
+     "name": "Egypt Tours Merit Amun",
+     "description": "Private Egypt Tours and Nile Cruises",
+     "publisher": {
+      "@id": "https://egypttours-meritamun.com/#organization"
+     },
+     "potentialAction": [
+      {
+       "@type": "SearchAction",
+       "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://egypttours-meritamun.com/?s={search_term_string}"
+       },
+       "query-input": {
+        "@type": "PropertyValueSpecification",
+        "valueRequired": true,
+        "valueName": "search_term_string"
+       }
+      }
+     ],
+     "inLanguage": "en-US"
+    },
+    {
+     "@type": [
+      "Organization",
+      "TravelAgency"
+     ],
+     "@id": "https://egypttours-meritamun.com/#organization",
+     "name": "Egypt Tours Meritamun",
+     "alternateName": "Egypt Tours Meritamun",
+     "url": "https://egypttours-meritamun.com/",
+     "logo": {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://egypttours-meritamun.com/#/schema/logo/image/",
+      "url": "https://egypttours-meritamun.com/wp-content/uploads/2024/11/Meritamun-Logo.png",
+      "contentUrl": "https://egypttours-meritamun.com/wp-content/uploads/2024/11/Meritamun-Logo.png",
+      "width": 1330,
+      "height": 434,
+      "caption": "Egypt Tours Meritamun"
+     },
+     "image": {
+      "@id": "https://egypttours-meritamun.com/#/schema/logo/image/"
+     },
+     "sameAs": [
+      "https://www.facebook.com/profile.php?id=61572698573420"
+     ],
+     "telephone": "+201200134196",
+     "email": "info@egypttours-meritamun.com",
+     "areaServed": [
+      {
+       "@type": "Country",
+       "name": "Egypt"
+      },
+      {
+       "@type": "Country",
+       "name": "Germany"
+      }
+     ],
+     "knowsAbout": [
+      "Private Egypt tours",
+      "Egypt travel packages",
+      "Nile cruises",
+      "Dahabiya trips",
+      "Cairo day tours",
+      "Luxor day tours",
+      "Aswan day tours",
+      "Desert oasis tours",
+      "Egypt transportation"
+     ],
+     "contactPoint": [
+      {
+       "@type": "ContactPoint",
+       "telephone": "+201200134196",
+       "email": "info@egypttours-meritamun.com",
+       "contactType": "customer support",
+       "availableLanguage": [
+        "English",
+        "German",
+        "Arabic"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "_links": {
+  "self": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707",
+    "targetHints": {
+     "allow": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/types/tour"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/users/3"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 4,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 7599,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707/revisions/7599"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/media/5936"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/media?parent=6707"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "tour_category",
+    "embeddable": true,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour_category?post=6707"
+   },
+   {
+    "taxonomy": "tour_tag",
+    "embeddable": true,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour_tag?post=6707"
+   },
+   {
+    "taxonomy": "tour-age",
+    "embeddable": true,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour-age?post=6707"
+   },
+   {
+    "taxonomy": "tour-activity",
+    "embeddable": true,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour-activity?post=6707"
+   },
+   {
+    "taxonomy": "tour-destination",
+    "embeddable": true,
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour-destination?post=6707"
+   }
+  ],
+  "wp:action-publish": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-unfiltered-html": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-assign-author": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-create-tour_category": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-assign-tour_category": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-create-tour_tag": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-assign-tour_tag": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-create-tour-age": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-assign-tour-age": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-create-tour-activity": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-assign-tour-activity": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-create-tour-destination": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "wp:action-assign-tour-destination": [
+   {
+    "href": "https://egypttours-meritamun.com/wp-json/wp/v2/tour/6707"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}
