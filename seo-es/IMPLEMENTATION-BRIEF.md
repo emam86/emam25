@@ -1,5 +1,37 @@
 # Implementation Brief — Spanish (`/es/`) parity for luxorandaswantours.net
 
+## Status — verified on the live site, 2026-10-03
+
+**Most of this brief has shipped.** It was implemented in the site repository
+(`emam86/luxorandaswantours`) after the 2026-09-11 crawl it is based on. Do not
+paste it into a coding agent again as-is: the "Context" numbers below describe
+the site *before* the work.
+
+| Task | Status | Evidence (live, 2026-10-03) |
+|---|---|---|
+| 1 — Orphaned Spanish cruise pages | ✅ Done | `/es/cruceros-nilo/luxor-asuan`, `/dahabiya` and `/lago-nasser` link ~78 `/es/tour/*` cruise pages in server-rendered HTML |
+| 2 — `hreflang` site-wide | ✅ Done | Sitemaps: 534 URLs, every one declares `en` + `es`, all pairs reciprocal; all 534 targets return 200; `<html lang="es">` on `/es/` |
+| 3 — Spanish cruise titles | ⚠️ Partial | `<title>` uses the "common name first" form, but the site appends `\| Tour Privado Egipto` instead of `\| Luxor–Asuán`. **`<h1>` is unchanged** (still `Steigenberger Minerva: crucero por el Nilo`) |
+| 4 — Cannibalization | ✅ Done | "How many days in Egypt" posts merged with 301s in both languages; Luxor east/west 1-day vs 2-day retitled with the duration; the two "Egyptian Odyssey" pages are different trips (13 days from Alexandria vs 14 days with Lake Nasser) and stay separate |
+| 5 — 71 missing Spanish cruise pages | ✅ Done | Sitemaps list 267 `/en/` and 267 `/es/` URLs; every English page has a Spanish counterpart |
+| 6.1 — Spanish slug under `/en/blog/` | ✅ Done | `/en/blog/que-es-una-esfinge-egipcia` → 301 `/en/blog/sphinx-egypt` |
+| 6.2 — Search pages in sitemap | ✅ Done | Not in the sitemaps; `/en/search` carries `noindex, follow` |
+| 6.3 / 6.4 — `aswan`, `cairo` | ✅ Done | `/es/destinos/aswan` → 301 `asuan`; `/es/destinos/cairo` → 301 `el-cairo` |
+| 6.5 — `m-s-` → `ms-` | ⏸ Not done, on purpose | 3 slugs remain (`m-s-nile-dolphin`, `m-s-nile-style`, `m-s-semramis-ii`). Gated on measuring Task 3 and on the image-path risk in the STOP section |
+| 6.6 — non-`www` | ✅ Done | `https://luxorandaswantours.net/…` → 301 `https://www.…` |
+| 6.7 — Spanish package durations | ✅ Done | `/es/paquetes-egipto/2-dias` … `15-dias` all present, matching English |
+
+**Still open:** the `<h1>` half of Task 3, and Task 6.5 once Task 3 has been
+measured in Search Console. Task 5's quality requirements (real Spanish, guide
+name, departure quay, `FAQPage` schema) were not audited here: only that the
+pages exist and return 200.
+
+> **بالعربي:** معظم الخطة دي اتنفّذ فعلًا على الموقع المباشر (اتحقّقت منه في 2026-10-03).
+> الباقي: تعديل الـ `<h1>` في صفحات البواخر الإسبانية، وتوحيد `m-s-` → `ms-`
+> بعد قياس أثر تعديل العناوين. متلصقش الملف ده في Codex تاني زي ما هو.
+
+---
+
 > **How to use this file:** paste everything below the line into Codex (or any
 > coding agent) **inside the repository that contains the website source**.
 > It is written to stand alone — it assumes no prior conversation.
