@@ -31,10 +31,10 @@ node --test "tests/built/*.test.mjs"                         # تطابق الر
 
 ## النسخة الاحتياطية
 
-على السيرفر (من جهازك، لأن SSH مقفول في بيئة Claude السحابية):
+أمر واحد من جهازك (يشتغل في PowerShell و cmd و Mac و Linux)، السكربت بيتنزّل على السيرفر مباشرة من GitHub:
 
-```bash
-ssh -p 65002 USER@SERVER_IP 'bash -s' < scripts/backup-on-server.sh
+```
+ssh -p 65002 USER@SERVER_IP "curl -fsSL https://raw.githubusercontent.com/emam86/emam25/claude/bold-wozniak-afuxs1/booknilecruises/scripts/backup-on-server.sh | bash"
 ```
 
 تُحفَظ قاعدة البيانات والملفات في `~/backups/booknilecruises-<التاريخ>/` خارج `public_html`.
