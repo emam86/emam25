@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design B · River Journal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: editorial, story-led. Split hero, a drawn river route as the signature element, generous white space. Single brand look. */
+:root{
+  --navy:#1a3251; --ink:#1b2a3d; --muted:#5f6f82;
+  --gold:#a8874f; --gold-lt:#e0c98c; --water:#2f5b7f; --mist:#eef3f8; --bg:#fbfcfd; --line:#dfe6ee;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:17px/1.7 var(--body);color:var(--ink);background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;margin:0;text-wrap:balance;color:var(--navy)}
+h2{font-size:clamp(32px,4.4vw,52px);letter-spacing:-.01em}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.lede{font-size:19px;color:var(--muted);max-width:56ch;margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--navy)}
+.btn-solid{background:var(--navy);color:#fff}
+.btn-line{color:var(--navy)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+header{padding-block:18px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:10}
+header .wrap{display:flex;align-items:center;gap:28px}
+header .logo img{height:50px;width:auto}
+header nav{display:flex;gap:24px;font-size:15px;font-weight:500;margin-left:auto}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--gold)}
+header .btn{padding:10px 18px}
+
+.hero{padding-block:72px 90px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(42px,6vw,78px);letter-spacing:-.02em}
+.hero h1 i{color:var(--water)}
+.hero .txt{display:grid;gap:26px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:26px;flex-wrap:wrap;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px}
+.trust b{display:block;font:500 22px var(--display);color:var(--navy)}
+.collage{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:540px}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.collage img:first-child{grid-row:span 2;border-radius:200px 200px 4px 4px}
+
+section{padding-block:96px}
+.sec-head{display:grid;gap:14px;margin-bottom:44px;max-width:720px}
+
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.path{text-decoration:none;display:grid;gap:16px}
+.path .im{aspect-ratio:4/5;overflow:hidden;border-radius:4px}
+.path img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.path:hover img{transform:scale(1.04)}
+.path h3{font-size:28px}
+.path p{margin:0;color:var(--muted);font-size:16px}
+.path .count{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+
+.river{background:var(--navy);color:#dfe7f1}
+.river h2{color:#fff}
+.river .lede{color:#b9c7d8}
+.route{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+.route::before{content:"";position:absolute;left:4%;right:4%;top:15px;height:2px;background:repeating-linear-gradient(90deg,var(--gold-lt) 0 10px,transparent 10px 18px)}
+.stop{position:relative;display:grid;gap:8px;padding-top:44px}
+.stop::before{content:"";position:absolute;top:6px;left:0;width:20px;height:20px;border-radius:50%;background:var(--navy);border:2px solid var(--gold-lt)}
+.stop .day{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);font-weight:600}
+.stop h3{color:#fff;font-size:26px}
+.stop p{margin:0;font-size:15px;color:#b9c7d8}
+
+.tours{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tour{display:grid;gap:12px;text-decoration:none}
+.tour img{aspect-ratio:1/1;object-fit:cover;border-radius:4px;width:100%}
+.tour h3{font-size:21px}
+.tour .row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.tour .row b{color:var(--navy)}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;counter-reset:s}
+.step{border-top:2px solid var(--navy);padding-top:18px;display:grid;gap:8px}
+.step::before{counter-increment:s;content:counter(s);font:400 46px/1 var(--display);color:var(--gold)}
+.step h3{font-size:24px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+
+.quote{background:var(--mist)}
+.quote .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.quote img{border-radius:4px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.quote blockquote{margin:0;display:grid;gap:18px}
+.quote blockquote p{font:400 clamp(22px,2.4vw,30px)/1.35 var(--display);color:var(--navy);margin:0}
+.quote cite{font-style:normal;font-size:15px;color:var(--muted)}
+
+.form{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.form form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--navy)}
+.form input,.form textarea,.form select{font:16px var(--body);padding:12px 14px;border:1.5px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+.form .full{grid-column:span 2}
+.form button{justify-self:start;cursor:pointer}
+
+footer{border-top:1px solid var(--line);padding-block:56px 32px;font-size:15px;color:var(--muted)}
+footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+footer h4{font:600 13px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:0 0 12px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer .bottom{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px}
+
+@media (max-width:980px){
+  header nav{display:none}header .btn{margin-left:auto}
+  .hero .wrap,.quote .wrap,.form{grid-template-columns:1fr}
+  .collage{height:420px}
+  .tours{grid-template-columns:1fr 1fr}
+  .route{grid-template-columns:1fr;gap:0}
+  .route::before{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--gold-lt) 0 10px,transparent 10px 18px)}
+  .stop{padding:0 0 28px 40px}
+  .stop::before{top:4px}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .paths,.steps,.tours{grid-template-columns:1fr}
+  .form form{grid-template-columns:1fr}.form .full{grid-column:auto}
+  .collage{height:340px}
+  section{padding-block:64px}
+  .hero{padding-block:44px 64px}
+  header .logo img{height:40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#"><img src="img/logo.webp" alt="Book Nile Cruises"></a>
+  <nav aria-label="Main"><a href="#">Nile cruises</a><a href="#">Dahabiyas</a><a href="#">Day tours</a><a href="#">Packages</a><a href="#">About</a><a href="#">Journal</a></nav>
+  <a class="btn btn-solid" href="#">Plan my trip</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="txt">
+    <span class="kicker">Nile cruises from Luxor</span>
+    <h1>The Nile, booked by people who <i>live on it</i>.</h1>
+    <p class="lede">We are a Luxor team that matches you with the right ship, cabin and guide, then stays on WhatsApp from airport pickup to the last temple.</p>
+    <div class="ctas"><a class="btn btn-solid" href="#">See Nile cruises</a><a class="btn btn-line" href="#">Message us on WhatsApp</a></div>
+    <div class="trust"><span><b>33</b>ships &amp; dahabiyas</span><span><b>159</b>Tripadvisor reviews</span><span><b>24 h</b>reply time</span></div>
+  </div>
+  <div class="collage">
+    <img src="img/dahabiya.jpg" alt="Sun deck of a dahabiya on the Nile">
+    <img src="img/balloon.jpg" alt="Hot air balloons over Luxor at sunrise">
+    <img src="img/philae.jpg" alt="Philae temple lit at night">
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><span class="kicker">Start here</span><h2>Pick the shape of your trip. We do the rest.</h2></div>
+  <div class="paths">
+    <a class="path" href="#"><div class="im"><img src="img/sonesta.jpg" alt=""></div><span class="count">33 ships · from $400</span><h3>Nile cruises</h3><p>Standard, deluxe and luxury ships, private dahabiyas and Lake Nasser, between Luxor and Aswan.</p></a>
+    <a class="path" href="#"><div class="im"><img src="img/karnak.jpg" alt=""></div><span class="count">53 tours · from $50</span><h3>Day tours</h3><p>Luxor, Aswan, Cairo and Hurghada, one day at a time, with a private guide.</p></a>
+    <a class="path" href="#"><div class="im"><img src="img/giza.jpg" alt=""></div><span class="count">20 packages · from $380</span><h3>Egypt tour packages</h3><p>Three to twelve days that join Cairo, the Nile and the coast into one plan.</p></a>
+  </div>
+</div></section>
+
+<section class="river"><div class="wrap">
+  <div class="sec-head"><span class="kicker" style="color:var(--gold-lt)">The classic route</span><h2>Five days, five stops, one river</h2><p class="lede">The standard Luxor to Aswan cruise. Every ship we sell follows this route, in one direction or the other.</p></div>
+  <div class="route">
+    <div class="stop"><span class="day">Day 1–2</span><h3>Luxor</h3><p>Karnak, Luxor Temple, Valley of the Kings, Hatshepsut.</p></div>
+    <div class="stop"><span class="day">Day 2</span><h3>Esna</h3><p>Through the lock, past palm groves and farms.</p></div>
+    <div class="stop"><span class="day">Day 3</span><h3>Edfu</h3><p>Temple of Horus by horse carriage.</p></div>
+    <div class="stop"><span class="day">Day 3</span><h3>Kom Ombo</h3><p>Double temple and the crocodile museum at sunset.</p></div>
+    <div class="stop"><span class="day">Day 4–5</span><h3>Aswan</h3><p>Philae, the High Dam, a felucca and the Nubian village.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><span class="kicker">Most booked</span><h2>Tours our travellers keep choosing</h2></div>
+  <div class="tours">
+    <a class="tour" href="#"><img src="img/pkg.jpg" alt=""><h3>12 Days Cairo, Alexandria, Nile Cruise &amp; Bahariya Oasis</h3><div class="row"><span>12 days</span><b>$2,160</b></div></a>
+    <a class="tour" href="#"><img src="img/sonesta.jpg" alt=""><h3>Sonesta Amirat Dahabiya Nile Cruise</h3><div class="row"><span>Dahabiya</span><b>$2,600</b></div></a>
+    <a class="tour" href="#"><img src="img/lake.jpg" alt=""><h3>Prince Abbas Lake Nasser Cruise</h3><div class="row"><span>Lake Nasser</span><b>$700</b></div></a>
+    <a class="tour" href="#"><img src="img/abusimbel.jpg" alt=""><h3>Abu Simbel Day Tour from Aswan</h3><div class="row"><span>1 day</span><b>$160</b></div></a>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><span class="kicker">How booking works</span><h2>Three messages and you are booked</h2></div>
+  <div class="steps">
+    <div class="step"><h3>Tell us your dates</h3><p>Travel month, number of guests and the kind of trip you have in mind.</p></div>
+    <div class="step"><h3>Get two or three options</h3><p>Ships and cabins that fit your budget, with the exact itinerary and price.</p></div>
+    <div class="step"><h3>Confirm and travel</h3><p>We arrange transfers and guides, and stay on WhatsApp for the whole trip.</p></div>
+  </div>
+</div></section>
+
+<section class="quote"><div class="wrap">
+  <img src="img/felucca.jpg" alt="Feluccas sailing at Aswan">
+  <blockquote>
+    <span class="kicker">From Tripadvisor</span>
+    <p>“I can say, hand on heart, that I’ve never experienced wonderful staff like we had the pleasure of being with for 7 days. They were attentive and friendly.”</p>
+    <cite>Nora D · Nile cruise, 7 days</cite>
+  </blockquote>
+</div></section>
+
+<section><div class="wrap form">
+  <div class="sec-head"><span class="kicker">Enquiry</span><h2>Tell us your dates. We reply within a day.</h2><p class="lede">Or write to us directly: +20 109 661 1124 on WhatsApp, or info@booknilecruise.com.</p></div>
+  <form onsubmit="event.preventDefault()">
+    <label for="b-name">Name<input id="b-name" placeholder="Your full name"></label>
+    <label for="b-email">Email<input id="b-email" type="email" placeholder="you@example.com"></label>
+    <label for="b-when">Travel month<select id="b-when"><option>November 2026</option><option>December 2026</option><option>January 2027</option></select></label>
+    <label for="b-who">Travellers<select id="b-who"><option>2 adults</option><option>Family</option><option>Group (6+)</option></select></label>
+    <label class="full" for="b-msg">What would you like to see?<textarea id="b-msg" rows="4" placeholder="Luxor to Aswan cruise, then 2 days in Cairo"></textarea></label>
+    <button class="btn btn-solid" type="submit">Send enquiry</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><img src="img/logo.webp" alt="Book Nile Cruises" style="height:46px;width:auto"><p>Khaled Ibn El Waleed St., Luxor, Egypt</p></div>
+    <div><h4>Nile cruises</h4><ul><li><a href="#">Standard 5-Star</a></li><li><a href="#">Deluxe</a></li><li><a href="#">Luxury</a></li><li><a href="#">Dahabiya</a></li><li><a href="#">Lake Nasser</a></li></ul></div>
+    <div><h4>Day tours</h4><ul><li><a href="#">Luxor</a></li><li><a href="#">Aswan</a></li><li><a href="#">Cairo</a></li><li><a href="#">Hurghada</a></li><li><a href="#">Transfers</a></li></ul></div>
+    <div><h4>The agency</h4><ul><li><a href="#">About us</a></li><li><a href="#">Contact</a></li><li><a href="#">FAQ</a></li><li><a href="#">Terms</a></li></ul></div>
+  </div>
+  <div class="bottom"><span>© 2026 Book Nile Cruises</span><span>+20 109 661 1124 · info@booknilecruise.com</span></div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<title>Book Nile Cruises Redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: one review page. Three option cards on top, a live preview frame with a desktop/phone toggle, then the open questions. */
+:root{
+  --bg:#f6f8fb; --surface:#ffffff; --fg:#17273c; --muted:#5a6a7d; --line:#dfe5ec;
+  --navy:#1a3251; --gold:#a8874f; --gold-soft:#f4ead3; --sel:#1a3251; --sel-fg:#ffffff;
+  --display:"Noto Kufi Arabic", "IBM Plex Sans Arabic", Tahoma, sans-serif;
+  --body:"IBM Plex Sans Arabic", Tahoma, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1826; --surface:#162235; --fg:#e7edf5; --muted:#9fb0c4; --line:#2a3a52;
+  --navy:#cfdcee; --gold:#e0c98c; --gold-soft:#2c2618; --sel:#e0c98c; --sel-fg:#14213a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1826; --surface:#162235; --fg:#e7edf5; --muted:#9fb0c4; --line:#2a3a52;
+  --navy:#cfdcee; --gold:#e0c98c; --gold-soft:#2c2618; --sel:#e0c98c; --sel-fg:#14213a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.75 var(--body);margin:0}
+.page{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:28px 60px;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.35;text-wrap:balance;color:var(--navy)}
+h1{font-size:clamp(24px,3.4vw,34px)}
+h2{font-size:21px}
+.intro{display:grid;gap:8px;max-width:72ch}
+.intro p{margin:0;color:var(--muted)}
+.swatches{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.sw{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.sw i{width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:inline-block}
+
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.opt{all:unset;cursor:pointer;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:8px;align-content:start}
+.opt:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.opt[aria-selected="true"]{border-color:var(--sel);box-shadow:0 0 0 1px var(--sel)}
+.opt .letter{font:700 13px var(--display);color:var(--gold)}
+.opt h3{font-size:18px}
+.opt p{margin:0;font-size:15px;color:var(--muted)}
+.opt ul{margin:4px 0 0;padding-inline-start:18px;font-size:14px;color:var(--fg)}
+
+.viewer{display:grid;gap:12px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{all:unset;cursor:pointer;padding:8px 14px;font-size:14px;font-weight:600;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--sel);color:var(--sel-fg)}
+.seg button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.open{font-size:14px;font-weight:600;color:var(--navy)}
+.frame{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;justify-content:center;overflow:hidden}
+.frame iframe{border:0;width:100%;height:78vh;min-height:560px;border-radius:8px;background:#fff;transition:width .25s}
+.frame.phone iframe{width:390px;max-width:100%}
+
+.qs{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px}
+.qs ol{margin:0;padding-inline-start:22px;display:grid;gap:8px}
+.qs li{padding-inline-start:4px}
+.qs b{color:var(--navy)}
+.note{background:var(--gold-soft);border-radius:10px;padding:12px 14px;font-size:15px}
+code{font-size:13px;direction:ltr;unicode-bidi:embed}
+
+@media (max-width:860px){.opts{grid-template-columns:1fr}.frame iframe{height:70vh}}
+@media (prefers-reduced-motion:reduce){.frame iframe{transition:none}}
+</style>
+
+<div class="page" dir="rtl" lang="ar">
+  <header class="intro">
+    <h1>3 أشكال مقترحة لموقع Book Nile Cruises</h1>
+    <p>الثلاثة بنفس أقسام الموقع الحالي، وبصور وأسعار ورحلات حقيقية من الموقع. اضغط على أي شكل لمعاينته، وبدّل بين الكمبيوتر والموبايل.</p>
+    <div class="swatches" aria-label="ألوان اللوجو">
+      <span class="sw"><i style="background:#1a3251"></i>كحلي</span>
+      <span class="sw"><i style="background:#af9868"></i>ذهبي</span>
+      <span class="sw"><i style="background:#e0c98c"></i>ذهبي فاتح</span>
+      <span class="sw"><i style="background:#2f5b7f"></i>أزرق النيل</span>
+    </div>
+  </header>
+
+  <div class="opts" role="tablist" aria-label="التصميمات">
+    <button class="opt" role="tab" aria-selected="true" data-src="design-a.html" id="opt-a">
+      <span class="letter">الشكل A</span><h3>Royal Gold · فخامة كلاسيكية</h3>
+      <p>هيرو كحلي بعرض الشاشة، عناوين ذهبية بخط serif قريب من خط اللوجو، وصندوق بحث بارز.</p>
+      <ul><li>الأقرب لترتيب الموقع الحالي</li><li>يناسب الدهبيات والفئة الفاخرة</li></ul>
+    </button>
+    <button class="opt" role="tab" aria-selected="false" data-src="design-b.html" id="opt-b">
+      <span class="letter">الشكل B</span><h3>River Journal · تحريري هادئ</h3>
+      <p>نفس روح lesamisdegypte.com: خلفية فاتحة، كلام إنساني، خط سير الرحلة النيلية مرسوم، ونموذج استفسار في الصفحة.</p>
+      <ul><li>الأقرب للموقع المرجعي</li><li>يعتمد على الثقة والتواصل بدل البيع المباشر</li></ul>
+    </button>
+    <button class="opt" role="tab" aria-selected="false" data-src="design-c.html" id="opt-c">
+      <span class="letter">الشكل C</span><h3>Nile Explorer · حجز ومقارنة</h3>
+      <p>مثل مواقع الحجز: بحث بتبويبات، فلترة البواخر حسب الفئة، جدول مقارنة بين الفئات، وجولات يومية حسب المدينة.</p>
+      <ul><li>الأسرع للوصول لسعر ورحلة</li><li>زر واتساب ثابت أسفل شاشة الموبايل</li></ul>
+    </button>
+  </div>
+
+  <section class="viewer" aria-label="المعاينة">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="حجم الشاشة">
+        <button type="button" aria-pressed="true" data-size="desk" id="size-desk">كمبيوتر</button>
+        <button type="button" aria-pressed="false" data-size="phone" id="size-phone">موبايل</button>
+      </div>
+      <a class="open" id="open-full" href="design-a.html" target="_blank" rel="noopener">فتح الشكل في صفحة كاملة ↗</a>
+    </div>
+    <div class="frame" id="frame"><iframe id="preview" src="design-a.html" title="معاينة التصميم"></iframe></div>
+  </section>
+
+  <section class="qs">
+    <h2>قبل ما نبدأ التنفيذ محتاج منك</h2>
+    <ol>
+      <li><b>اختيار الشكل:</b> A أو B أو C، أو خليط (مثلًا هيرو A مع فلترة C).</li>
+      <li><b>الحجز والدفع:</b> الموقع الحالي عليه سلة ودفع. اقتراحي: نموذج استفسار + واتساب مثل lesamisdegypte.com، ومعه رابط دفع جاهز لكل رحلة لو حابب.</li>
+      <li><b>المحتوى الوهمي:</b> صفحات FAQ وAbout والرئيسية فيها نصوص قالب (أسئلة عقارات، مرشدين وهميين، "Tourm"). نكتب بدلها محتوى حقيقي؟</li>
+      <li><b>آراء Tripadvisor:</b> الويدجت الحالي يعرض آراء عن شركات أخرى. نربطه بصفحتكم؟</li>
+      <li><b>الإيميل الصحيح:</b> <code>info@booknilecruise.com</code> أم <code>@booknilecruises.net</code>؟</li>
+      <li><b>النسخة الاحتياطية:</b> قبل أي تعديل نأخذ Backup كامل من Hostinger (ملفات + قاعدة بيانات)، لأن الحجوزات وبيانات العملاء لا تخرج إلا منها.</li>
+    </ol>
+    <p class="note">النصوص الجديدة في التصميمات (مثل "We reply within a day") مقترحة للعرض فقط ولن تُنشر إلا بموافقتك. الأسعار والمدد والأعداد مأخوذة من بيانات الموقع الحالية.</p>
+  </section>
+</div>
+
+<script>
+const tabs = document.querySelectorAll('.opt');
+const frame = document.getElementById('frame');
+const preview = document.getElementById('preview');
+const openFull = document.getElementById('open-full');
+function show(src){ preview.src = src; openFull.href = src; }
+tabs.forEach(t => t.addEventListener('click', () => {
+  tabs.forEach(o => o.setAttribute('aria-selected', o === t));
+  show(t.dataset.src);
+  try { localStorage.setItem('bnc-design', t.id); } catch (e) {}
+}));
+const sizes = document.querySelectorAll('[data-size]');
+sizes.forEach(b => b.addEventListener('click', () => {
+  sizes.forEach(o => o.setAttribute('aria-pressed', o === b));
+  frame.classList.toggle('phone', b.dataset.size === 'phone');
+}));
+try {
+  const saved = localStorage.getItem('bnc-design');
+  const el = saved && document.getElementById(saved);
+  if (el) el.click();
+} catch (e) {}
+</script>

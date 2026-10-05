@@ -1,0 +1,3147 @@
+[
+  {
+    "id": 104,
+    "count": 10,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/day-tour/aswan-day-tour/",
+    "name": "Aswan day tour",
+    "slug": "aswan-day-tour",
+    "taxonomy": "activities",
+    "parent": 90,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Aswan day tour - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/day-tour/aswan-day-tour/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                "position": 2,
+                "name": "Day Tour",
+                "item": "https://booknilecruises.net/activities/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/aswan-day-tour/#listItem",
+                  "name": "Aswan day tour"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/aswan-day-tour/#listItem",
+                "position": 3,
+                "name": "Aswan day tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Aswan day tour - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/day-tour/\" title=\"Day Tour\">Day Tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tAswan day tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Day Tour",
+        "link": "https://booknilecruises.net/activities/day-tour/"
+      },
+      {
+        "label": "Aswan day tour",
+        "link": "https://booknilecruises.net/activities/day-tour/aswan-day-tour/"
+      }
+    ],
+    "thumbnail": {
+      "width": 424,
+      "height": 225,
+      "file": "2025/11/1-8.jpg",
+      "filesize": 135750,
+      "sizes": {
+        "medium": {
+          "file": "1-8-300x159.jpg",
+          "width": 300,
+          "height": 159,
+          "filesize": 17702,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-300x159.jpg"
+        },
+        "thumbnail": {
+          "file": "1-8-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 11125,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-150x150.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "1-8-374x225.jpg",
+          "width": 374,
+          "height": 225,
+          "filesize": 29524,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-374x225.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "1-8-410x225.jpg",
+          "width": 410,
+          "height": 225,
+          "filesize": 31622,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-410x225.jpg"
+        },
+        "tourm_85X85": {
+          "file": "1-8-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 6726,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-85x85.jpg"
+        },
+        "tourm_420X347": {
+          "file": "1-8-420x225.jpg",
+          "width": 420,
+          "height": 225,
+          "filesize": 32066,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-420x225.jpg"
+        },
+        "tourm_248X220": {
+          "file": "1-8-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 19647,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-248x220.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "1-8-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 7829,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "1-8-294x225.jpg",
+          "width": 294,
+          "height": 225,
+          "filesize": 24981,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-294x225.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "1-8-300x225.jpg",
+          "width": 300,
+          "height": 225,
+          "filesize": 25501,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-300x225.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "1-8-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 7561,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8-100x100.jpg"
+        },
+        "full": {
+          "file": "1-8.jpg",
+          "width": 424,
+          "height": 225,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-8.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 102,
+    "count": 20,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/day-tour/cairo-day-tours/",
+    "name": "Cairo Day tours",
+    "slug": "cairo-day-tours",
+    "taxonomy": "activities",
+    "parent": 90,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Cairo Day tours - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/day-tour/cairo-day-tours/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                "position": 2,
+                "name": "Day Tour",
+                "item": "https://booknilecruises.net/activities/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/cairo-day-tours/#listItem",
+                  "name": "Cairo Day tours"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/cairo-day-tours/#listItem",
+                "position": 3,
+                "name": "Cairo Day tours",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Cairo Day tours - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/day-tour/\" title=\"Day Tour\">Day Tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tCairo Day tours\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Day Tour",
+        "link": "https://booknilecruises.net/activities/day-tour/"
+      },
+      {
+        "label": "Cairo Day tours",
+        "link": "https://booknilecruises.net/activities/day-tour/cairo-day-tours/"
+      }
+    ],
+    "thumbnail": {
+      "width": 1600,
+      "height": 1067,
+      "file": "2025/12/3-3.jpg",
+      "filesize": 191016,
+      "sizes": {
+        "medium": {
+          "file": "3-3-300x200.jpg",
+          "width": 300,
+          "height": 200,
+          "filesize": 14654,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-300x200.jpg"
+        },
+        "large": {
+          "file": "3-3-1024x683.jpg",
+          "width": 1024,
+          "height": 683,
+          "filesize": 127339,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-1024x683.jpg"
+        },
+        "thumbnail": {
+          "file": "3-3-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 8630,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-150x150.jpg"
+        },
+        "medium_large": {
+          "file": "3-3-768x512.jpg",
+          "width": 768,
+          "height": 512,
+          "filesize": 71840,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-768x512.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "3-3-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 18755,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "3-3-600x810.jpg",
+          "width": 600,
+          "height": 810,
+          "filesize": 99076,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-600x810.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "3-3-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 21758,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "3-3-600x810.jpg",
+          "width": 600,
+          "height": 810,
+          "filesize": 99076,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-600x810.jpg"
+        },
+        "trip-single-size": {
+          "file": "3-3-990x490.jpg",
+          "width": 990,
+          "height": 490,
+          "filesize": 81069,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-990x490.jpg"
+        },
+        "tourm_85X85": {
+          "file": "3-3-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 5808,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "3-3-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 44241,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "3-3-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 30776,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "3-3-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 14328,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-248x220.jpg"
+        },
+        "1536x1536": {
+          "file": "3-3-1536x1024.jpg",
+          "width": 1536,
+          "height": 1024,
+          "filesize": 270616,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-1536x1024.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "3-3-580x580.jpg",
+          "width": 580,
+          "height": 580,
+          "filesize": 67404,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-580x580.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "3-3-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 6440,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "3-3-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 21114,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "3-3-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 20988,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "3-3-600x400.jpg",
+          "width": 600,
+          "height": 400,
+          "filesize": 45202,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-600x400.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "3-3-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 6367,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-100x100.jpg"
+        },
+        "woosq": {
+          "file": "3-3-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 43551,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3-460x460.jpg"
+        },
+        "full": {
+          "file": "3-3.jpg",
+          "width": 1600,
+          "height": 1067,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/3-3.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 98,
+    "count": 9,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/nile-cruise/dahabiya-nile-cruise/",
+    "name": "Dahabiya Nile Cruise",
+    "slug": "dahabiya-nile-cruise",
+    "taxonomy": "activities",
+    "parent": 89,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Dahabiya Nile Cruise - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/nile-cruise/dahabiya-nile-cruise/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                "position": 2,
+                "name": "Nile cruise",
+                "item": "https://booknilecruises.net/activities/nile-cruise/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/dahabiya-nile-cruise/#listItem",
+                  "name": "Dahabiya Nile Cruise"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/dahabiya-nile-cruise/#listItem",
+                "position": 3,
+                "name": "Dahabiya Nile Cruise",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Dahabiya Nile Cruise - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/nile-cruise/\" title=\"Nile cruise\">Nile cruise</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tDahabiya Nile Cruise\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Nile cruise",
+        "link": "https://booknilecruises.net/activities/nile-cruise/"
+      },
+      {
+        "label": "Dahabiya Nile Cruise",
+        "link": "https://booknilecruises.net/activities/nile-cruise/dahabiya-nile-cruise/"
+      }
+    ],
+    "thumbnail": {
+      "width": 700,
+      "height": 500,
+      "file": "2025/12/Abundance-Dahabiya-Cruise.jpg",
+      "filesize": 50799,
+      "sizes": {
+        "medium": {
+          "file": "Abundance-Dahabiya-Cruise-300x214.jpg",
+          "width": 300,
+          "height": 214,
+          "filesize": 11271,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-300x214.jpg"
+        },
+        "thumbnail": {
+          "file": "Abundance-Dahabiya-Cruise-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 5166,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-150x150.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "Abundance-Dahabiya-Cruise-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 14785,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "Abundance-Dahabiya-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 51230,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-600x500.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "Abundance-Dahabiya-Cruise-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 17274,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "Abundance-Dahabiya-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 51230,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-600x500.jpg"
+        },
+        "trip-single-size": {
+          "file": "Abundance-Dahabiya-Cruise-700x490.jpg",
+          "width": 700,
+          "height": 490,
+          "filesize": 55711,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-700x490.jpg"
+        },
+        "tourm_85X85": {
+          "file": "Abundance-Dahabiya-Cruise-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 2242,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "Abundance-Dahabiya-Cruise-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 35026,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "Abundance-Dahabiya-Cruise-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 24854,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "Abundance-Dahabiya-Cruise-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 10674,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-248x220.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "Abundance-Dahabiya-Cruise-580x500.jpg",
+          "width": 580,
+          "height": 500,
+          "filesize": 51471,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-580x500.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "Abundance-Dahabiya-Cruise-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 2918,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "Abundance-Dahabiya-Cruise-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 17027,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "Abundance-Dahabiya-Cruise-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 17088,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "Abundance-Dahabiya-Cruise-600x429.jpg",
+          "width": 600,
+          "height": 429,
+          "filesize": 38626,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-600x429.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "Abundance-Dahabiya-Cruise-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 2799,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-100x100.jpg"
+        },
+        "woosq": {
+          "file": "Abundance-Dahabiya-Cruise-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 35600,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise-460x460.jpg"
+        },
+        "full": {
+          "file": "Abundance-Dahabiya-Cruise.jpg",
+          "width": 700,
+          "height": 500,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Abundance-Dahabiya-Cruise.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 90,
+    "count": 1,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/day-tour/",
+    "name": "Day Tour",
+    "slug": "day-tour",
+    "taxonomy": "activities",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Day Tour - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/day-tour/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                "position": 2,
+                "name": "Day Tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Day Tour - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tDay Tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Day Tour",
+        "link": "https://booknilecruises.net/activities/day-tour/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 100,
+    "count": 12,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/nile-cruise/deluxe-nile-cruises/",
+    "name": "Deluxe Nile Cruises",
+    "slug": "deluxe-nile-cruises",
+    "taxonomy": "activities",
+    "parent": 89,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Deluxe Nile Cruises - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/nile-cruise/deluxe-nile-cruises/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                "position": 2,
+                "name": "Nile cruise",
+                "item": "https://booknilecruises.net/activities/nile-cruise/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/deluxe-nile-cruises/#listItem",
+                  "name": "Deluxe Nile Cruises"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/deluxe-nile-cruises/#listItem",
+                "position": 3,
+                "name": "Deluxe Nile Cruises",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Deluxe Nile Cruises - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/nile-cruise/\" title=\"Nile cruise\">Nile cruise</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tDeluxe Nile Cruises\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Nile cruise",
+        "link": "https://booknilecruises.net/activities/nile-cruise/"
+      },
+      {
+        "label": "Deluxe Nile Cruises",
+        "link": "https://booknilecruises.net/activities/nile-cruise/deluxe-nile-cruises/"
+      }
+    ],
+    "thumbnail": {
+      "width": 700,
+      "height": 500,
+      "file": "2025/12/Al-Kahila-Cruise-1.jpg",
+      "filesize": 64046,
+      "sizes": {
+        "medium": {
+          "file": "Al-Kahila-Cruise-1-300x214.jpg",
+          "width": 300,
+          "height": 214,
+          "filesize": 15998,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-300x214.jpg"
+        },
+        "thumbnail": {
+          "file": "Al-Kahila-Cruise-1-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 6560,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-150x150.jpg"
+        },
+        "tourm_85X85": {
+          "file": "Al-Kahila-Cruise-1-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 2723,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "Al-Kahila-Cruise-1-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 38901,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "Al-Kahila-Cruise-1-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 31078,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "Al-Kahila-Cruise-1-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 13892,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-248x220.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "Al-Kahila-Cruise-1-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 20664,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "Al-Kahila-Cruise-1-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 58257,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-600x500.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "Al-Kahila-Cruise-1-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 24099,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "Al-Kahila-Cruise-1-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 58257,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-600x500.jpg"
+        },
+        "trip-single-size": {
+          "file": "Al-Kahila-Cruise-1-700x490.jpg",
+          "width": 700,
+          "height": 490,
+          "filesize": 66650,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-700x490.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "Al-Kahila-Cruise-1-580x500.jpg",
+          "width": 580,
+          "height": 500,
+          "filesize": 56662,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-580x500.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "Al-Kahila-Cruise-1-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 3677,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "Al-Kahila-Cruise-1-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 20587,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "Al-Kahila-Cruise-1-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 20491,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "Al-Kahila-Cruise-1-600x429.jpg",
+          "width": 600,
+          "height": 429,
+          "filesize": 48900,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-600x429.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "Al-Kahila-Cruise-1-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 3475,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-100x100.jpg"
+        },
+        "woosq": {
+          "file": "Al-Kahila-Cruise-1-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 39853,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1-460x460.jpg"
+        },
+        "full": {
+          "file": "Al-Kahila-Cruise-1.jpg",
+          "width": 700,
+          "height": 500,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Al-Kahila-Cruise-1.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 105,
+    "count": 9,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/day-tour/hurghada-day-tour/",
+    "name": "Hurghada day tour",
+    "slug": "hurghada-day-tour",
+    "taxonomy": "activities",
+    "parent": 90,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Hurghada day tour - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/day-tour/hurghada-day-tour/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                "position": 2,
+                "name": "Day Tour",
+                "item": "https://booknilecruises.net/activities/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/hurghada-day-tour/#listItem",
+                  "name": "Hurghada day tour"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/hurghada-day-tour/#listItem",
+                "position": 3,
+                "name": "Hurghada day tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Hurghada day tour - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/day-tour/\" title=\"Day Tour\">Day Tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tHurghada day tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Day Tour",
+        "link": "https://booknilecruises.net/activities/day-tour/"
+      },
+      {
+        "label": "Hurghada day tour",
+        "link": "https://booknilecruises.net/activities/day-tour/hurghada-day-tour/"
+      }
+    ],
+    "thumbnail": {
+      "width": 312,
+      "height": 300,
+      "file": "2025/11/Emam-7.jpg",
+      "filesize": 30871,
+      "sizes": {
+        "medium": {
+          "file": "Emam-7-300x288.jpg",
+          "width": 300,
+          "height": 288,
+          "filesize": 26420,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-300x288.jpg"
+        },
+        "thumbnail": {
+          "file": "Emam-7-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 10902,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-150x150.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "Emam-7-312x226.jpg",
+          "width": 312,
+          "height": 226,
+          "filesize": 23981,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-312x226.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "Emam-7-312x250.jpg",
+          "width": 312,
+          "height": 250,
+          "filesize": 26078,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-312x250.jpg"
+        },
+        "tourm_85X85": {
+          "file": "Emam-7-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 6653,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-85x85.jpg"
+        },
+        "tourm_248X220": {
+          "file": "Emam-7-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 18774,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-248x220.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "Emam-7-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 7761,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "Emam-7-294x300.jpg",
+          "width": 294,
+          "height": 300,
+          "filesize": 30250,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-294x300.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "Emam-7-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 30804,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-300x300.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "Emam-7-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 7482,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7-100x100.jpg"
+        },
+        "full": {
+          "file": "Emam-7.jpg",
+          "width": 312,
+          "height": 300,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/Emam-7.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 97,
+    "count": 3,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/nile-cruise/lake-naser-nile-cruises/",
+    "name": "Lake naser Nile Cruises",
+    "slug": "lake-naser-nile-cruises",
+    "taxonomy": "activities",
+    "parent": 89,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Lake naser Nile Cruises - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/nile-cruise/lake-naser-nile-cruises/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                "position": 2,
+                "name": "Nile cruise",
+                "item": "https://booknilecruises.net/activities/nile-cruise/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/lake-naser-nile-cruises/#listItem",
+                  "name": "Lake naser Nile Cruises"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/lake-naser-nile-cruises/#listItem",
+                "position": 3,
+                "name": "Lake naser Nile Cruises",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Lake naser Nile Cruises - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/nile-cruise/\" title=\"Nile cruise\">Nile cruise</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tLake naser Nile Cruises\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Nile cruise",
+        "link": "https://booknilecruises.net/activities/nile-cruise/"
+      },
+      {
+        "label": "Lake naser Nile Cruises",
+        "link": "https://booknilecruises.net/activities/nile-cruise/lake-naser-nile-cruises/"
+      }
+    ],
+    "thumbnail": {
+      "width": 700,
+      "height": 500,
+      "file": "2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise.jpg",
+      "filesize": 54245,
+      "sizes": {
+        "medium": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-300x214.jpg",
+          "width": 300,
+          "height": 214,
+          "filesize": 12012,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-300x214.jpg"
+        },
+        "thumbnail": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 4854,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-150x150.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 15833,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 52672,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 18722,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 52672,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg"
+        },
+        "trip-single-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-700x490.jpg",
+          "width": 700,
+          "height": 490,
+          "filesize": 59034,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-700x490.jpg"
+        },
+        "tourm_85X85": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 2087,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 34793,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 25659,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 10577,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-248x220.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-580x500.jpg",
+          "width": 580,
+          "height": 500,
+          "filesize": 51770,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-580x500.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 2744,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 16891,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 16863,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-600x429.jpg",
+          "width": 600,
+          "height": 429,
+          "filesize": 41250,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-600x429.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 2635,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-100x100.jpg"
+        },
+        "woosq": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 35588,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-460x460.jpg"
+        },
+        "full": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise.jpg",
+          "width": 700,
+          "height": 500,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 103,
+    "count": 13,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/day-tour/luxor-day-tours/",
+    "name": "Luxor Day Tours",
+    "slug": "luxor-day-tours",
+    "taxonomy": "activities",
+    "parent": 90,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Luxor Day Tours - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/day-tour/luxor-day-tours/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                "position": 2,
+                "name": "Day Tour",
+                "item": "https://booknilecruises.net/activities/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/luxor-day-tours/#listItem",
+                  "name": "Luxor Day Tours"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/day-tour/luxor-day-tours/#listItem",
+                "position": 3,
+                "name": "Luxor Day Tours",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/day-tour/#listItem",
+                  "name": "Day Tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Luxor Day Tours - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/day-tour/\" title=\"Day Tour\">Day Tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tLuxor Day Tours\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Day Tour",
+        "link": "https://booknilecruises.net/activities/day-tour/"
+      },
+      {
+        "label": "Luxor Day Tours",
+        "link": "https://booknilecruises.net/activities/day-tour/luxor-day-tours/"
+      }
+    ],
+    "thumbnail": {
+      "width": 1067,
+      "height": 1600,
+      "file": "2025/11/1-7.jpg",
+      "filesize": 125348,
+      "sizes": {
+        "medium": {
+          "file": "1-7-200x300.jpg",
+          "width": 200,
+          "height": 300,
+          "filesize": 14339,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-200x300.jpg"
+        },
+        "large": {
+          "file": "1-7-683x1024.jpg",
+          "width": 683,
+          "height": 1024,
+          "filesize": 90684,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-683x1024.jpg"
+        },
+        "thumbnail": {
+          "file": "1-7-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 9091,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-150x150.jpg"
+        },
+        "medium_large": {
+          "file": "1-7-768x1152.jpg",
+          "width": 768,
+          "height": 1152,
+          "filesize": 109858,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-768x1152.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "1-7-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 20050,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "1-7-600x810.jpg",
+          "width": 600,
+          "height": 810,
+          "filesize": 68998,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-600x810.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "1-7-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 22715,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "1-7-600x810.jpg",
+          "width": 600,
+          "height": 810,
+          "filesize": 68998,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-600x810.jpg"
+        },
+        "trip-single-size": {
+          "file": "1-7-990x490.jpg",
+          "width": 990,
+          "height": 490,
+          "filesize": 73027,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-990x490.jpg"
+        },
+        "tourm_85X85": {
+          "file": "1-7-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 6050,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "1-7-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 36795,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "1-7-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 29572,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "1-7-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 14770,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-248x220.jpg"
+        },
+        "1536x1536": {
+          "file": "1-7-1024x1536.jpg",
+          "width": 1024,
+          "height": 1536,
+          "filesize": 174949,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-1024x1536.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "1-7-580x580.jpg",
+          "width": 580,
+          "height": 580,
+          "filesize": 55469,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-580x580.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "1-7-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 6751,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "1-7-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 20164,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "1-7-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 20434,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "1-7-600x900.jpg",
+          "width": 600,
+          "height": 900,
+          "filesize": 73553,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-600x900.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "1-7-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 6728,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-100x100.jpg"
+        },
+        "woosq": {
+          "file": "1-7-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 38335,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7-460x460.jpg"
+        },
+        "full": {
+          "file": "1-7.jpg",
+          "width": 1067,
+          "height": 1600,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/11/1-7.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 101,
+    "count": 0,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/nile-cruise/luxury-nile-cruises/",
+    "name": "Luxury Nile Cruises",
+    "slug": "luxury-nile-cruises",
+    "taxonomy": "activities",
+    "parent": 89,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Luxury Nile Cruises - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/nile-cruise/luxury-nile-cruises/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                "position": 2,
+                "name": "Nile cruise",
+                "item": "https://booknilecruises.net/activities/nile-cruise/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/luxury-nile-cruises/#listItem",
+                  "name": "Luxury Nile Cruises"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/luxury-nile-cruises/#listItem",
+                "position": 3,
+                "name": "Luxury Nile Cruises",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Luxury Nile Cruises - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/nile-cruise/\" title=\"Nile cruise\">Nile cruise</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tLuxury Nile Cruises\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Nile cruise",
+        "link": "https://booknilecruises.net/activities/nile-cruise/"
+      },
+      {
+        "label": "Luxury Nile Cruises",
+        "link": "https://booknilecruises.net/activities/nile-cruise/luxury-nile-cruises/"
+      }
+    ],
+    "thumbnail": {
+      "width": 700,
+      "height": 500,
+      "file": "2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise.jpg",
+      "filesize": 66388,
+      "sizes": {
+        "medium": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-300x214.jpg",
+          "width": 300,
+          "height": 214,
+          "filesize": 13418,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-300x214.jpg"
+        },
+        "thumbnail": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 5544,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-150x150.jpg"
+        },
+        "tourm_85X85": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 2371,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 41806,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 29263,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 11936,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-248x220.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 18163,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 63726,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-600x500.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 21571,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 63726,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-600x500.jpg"
+        },
+        "trip-single-size": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-700x490.jpg",
+          "width": 700,
+          "height": 490,
+          "filesize": 70622,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-700x490.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-580x500.jpg",
+          "width": 580,
+          "height": 500,
+          "filesize": 62740,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-580x500.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 3135,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 19287,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 19178,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-600x429.jpg",
+          "width": 600,
+          "height": 429,
+          "filesize": 47846,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-600x429.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 2971,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-100x100.jpg"
+        },
+        "woosq": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 41375,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise-460x460.jpg"
+        },
+        "full": {
+          "file": "Sanctuary-Sun-Boat-IV-Luxury-Cruise.jpg",
+          "width": 700,
+          "height": 500,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Sanctuary-Sun-Boat-IV-Luxury-Cruise.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 89,
+    "count": 0,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/nile-cruise/",
+    "name": "Nile cruise",
+    "slug": "nile-cruise",
+    "taxonomy": "activities",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Nile cruise - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/nile-cruise/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                "position": 2,
+                "name": "Nile cruise",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Nile cruise - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tNile cruise\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Nile cruise",
+        "link": "https://booknilecruises.net/activities/nile-cruise/"
+      }
+    ],
+    "thumbnail": {
+      "width": 700,
+      "height": 500,
+      "file": "2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise.jpg",
+      "filesize": 54245,
+      "sizes": {
+        "medium": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-300x214.jpg",
+          "width": 300,
+          "height": 214,
+          "filesize": 12012,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-300x214.jpg"
+        },
+        "thumbnail": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 4854,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-150x150.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 15833,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 52672,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 18722,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 52672,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-600x500.jpg"
+        },
+        "trip-single-size": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-700x490.jpg",
+          "width": 700,
+          "height": 490,
+          "filesize": 59034,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-700x490.jpg"
+        },
+        "tourm_85X85": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 2087,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 34793,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 25659,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 10577,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-248x220.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-580x500.jpg",
+          "width": 580,
+          "height": 500,
+          "filesize": 51770,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-580x500.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 2744,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 16891,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 16863,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-600x429.jpg",
+          "width": 600,
+          "height": 429,
+          "filesize": 41250,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-600x429.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 2635,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-100x100.jpg"
+        },
+        "woosq": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 35588,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise-460x460.jpg"
+        },
+        "full": {
+          "file": "Steigenberger-Omar-El-Khayam-Lake-Cruise.jpg",
+          "width": 700,
+          "height": 500,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Steigenberger-Omar-El-Khayam-Lake-Cruise.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 99,
+    "count": 9,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/nile-cruise/standard-5-star-nile-cruises/",
+    "name": "Standard 5 Star Nile Cruises",
+    "slug": "standard-5-star-nile-cruises",
+    "taxonomy": "activities",
+    "parent": 89,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Standard 5 Star Nile Cruises - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/nile-cruise/standard-5-star-nile-cruises/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                "position": 2,
+                "name": "Nile cruise",
+                "item": "https://booknilecruises.net/activities/nile-cruise/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/standard-5-star-nile-cruises/#listItem",
+                  "name": "Standard 5 Star Nile Cruises"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/nile-cruise/standard-5-star-nile-cruises/#listItem",
+                "position": 3,
+                "name": "Standard 5 Star Nile Cruises",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/nile-cruise/#listItem",
+                  "name": "Nile cruise"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Standard 5 Star Nile Cruises - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/activities/nile-cruise/\" title=\"Nile cruise\">Nile cruise</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tStandard 5 Star Nile Cruises\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Nile cruise",
+        "link": "https://booknilecruises.net/activities/nile-cruise/"
+      },
+      {
+        "label": "Standard 5 Star Nile Cruises",
+        "link": "https://booknilecruises.net/activities/nile-cruise/standard-5-star-nile-cruises/"
+      }
+    ],
+    "thumbnail": {
+      "width": 700,
+      "height": 500,
+      "file": "2025/12/Tower-Prestige-Nile-Cruise.jpg",
+      "filesize": 52288,
+      "sizes": {
+        "medium": {
+          "file": "Tower-Prestige-Nile-Cruise-300x214.jpg",
+          "width": 300,
+          "height": 214,
+          "filesize": 11278,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-300x214.jpg"
+        },
+        "thumbnail": {
+          "file": "Tower-Prestige-Nile-Cruise-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 4920,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-150x150.jpg"
+        },
+        "tourm_85X85": {
+          "file": "Tower-Prestige-Nile-Cruise-85x85.jpg",
+          "width": 85,
+          "height": 85,
+          "filesize": 2093,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-85x85.jpg"
+        },
+        "tourm_424X498": {
+          "file": "Tower-Prestige-Nile-Cruise-424x498.jpg",
+          "width": 424,
+          "height": 498,
+          "filesize": 36135,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-424x498.jpg"
+        },
+        "tourm_420X347": {
+          "file": "Tower-Prestige-Nile-Cruise-420x347.jpg",
+          "width": 420,
+          "height": 347,
+          "filesize": 25098,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-420x347.jpg"
+        },
+        "tourm_248X220": {
+          "file": "Tower-Prestige-Nile-Cruise-248x220.jpg",
+          "width": 248,
+          "height": 220,
+          "filesize": 10448,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-248x220.jpg"
+        },
+        "trip-thumb-size": {
+          "file": "Tower-Prestige-Nile-Cruise-374x226.jpg",
+          "width": 374,
+          "height": 226,
+          "filesize": 15917,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-374x226.jpg"
+        },
+        "destination-thumb-size": {
+          "file": "Tower-Prestige-Nile-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 53381,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-600x500.jpg"
+        },
+        "destination-thumb-trip-size": {
+          "file": "Tower-Prestige-Nile-Cruise-410x250.jpg",
+          "width": 410,
+          "height": 250,
+          "filesize": 18822,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-410x250.jpg"
+        },
+        "activities-thumb-size": {
+          "file": "Tower-Prestige-Nile-Cruise-600x500.jpg",
+          "width": 600,
+          "height": 500,
+          "filesize": 53381,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-600x500.jpg"
+        },
+        "trip-single-size": {
+          "file": "Tower-Prestige-Nile-Cruise-700x490.jpg",
+          "width": 700,
+          "height": 490,
+          "filesize": 58018,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-700x490.jpg"
+        },
+        "tourm-shop-single": {
+          "file": "Tower-Prestige-Nile-Cruise-580x500.jpg",
+          "width": 580,
+          "height": 500,
+          "filesize": 53041,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-580x500.jpg"
+        },
+        "tourm-shop-thumb": {
+          "file": "Tower-Prestige-Nile-Cruise-100x106.jpg",
+          "width": 100,
+          "height": 106,
+          "filesize": 2753,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-100x106.jpg"
+        },
+        "tourm-shop-small-image": {
+          "file": "Tower-Prestige-Nile-Cruise-294x312.jpg",
+          "width": 294,
+          "height": 312,
+          "filesize": 17398,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-294x312.jpg"
+        },
+        "woocommerce_thumbnail": {
+          "file": "Tower-Prestige-Nile-Cruise-300x300.jpg",
+          "width": 300,
+          "height": 300,
+          "filesize": 17053,
+          "uncropped": false,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-300x300.jpg"
+        },
+        "woocommerce_single": {
+          "file": "Tower-Prestige-Nile-Cruise-600x429.jpg",
+          "width": 600,
+          "height": 429,
+          "filesize": 39476,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-600x429.jpg"
+        },
+        "woocommerce_gallery_thumbnail": {
+          "file": "Tower-Prestige-Nile-Cruise-100x100.jpg",
+          "width": 100,
+          "height": 100,
+          "filesize": 2627,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-100x100.jpg"
+        },
+        "woosq": {
+          "file": "Tower-Prestige-Nile-Cruise-460x460.jpg",
+          "width": 460,
+          "height": 460,
+          "filesize": 36883,
+          "mime_type": "image/jpeg",
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise-460x460.jpg"
+        },
+        "full": {
+          "file": "Tower-Prestige-Nile-Cruise.jpg",
+          "width": 700,
+          "height": 500,
+          "source_url": "https://booknilecruises.net/wp-content/uploads/2025/12/Tower-Prestige-Nile-Cruise.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "1",
+        "keywords": []
+      }
+    }
+  },
+  {
+    "id": 88,
+    "count": 20,
+    "description": "",
+    "link": "https://booknilecruises.net/activities/tour-packages/",
+    "name": "Tour packages",
+    "slug": "tour-packages",
+    "taxonomy": "activities",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Tour packages - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/activities/tour-packages/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/activities/tour-packages/#listItem",
+                  "name": "Tour packages"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/activities/tour-packages/#listItem",
+                "position": 2,
+                "name": "Tour packages",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/activities/",
+            "name": "Tour packages - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/activities/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tTour packages\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tour packages",
+        "link": "https://booknilecruises.net/activities/tour-packages/"
+      }
+    ],
+    "thumbnail": {}
+  }
+]

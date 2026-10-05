@@ -1,0 +1,326 @@
+[
+  {
+    "id": 20,
+    "count": 73,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-difficulty/easy/",
+    "name": "Easy",
+    "slug": "easy",
+    "taxonomy": "difficulty",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Easy - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-difficulty/easy/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-difficulty/easy/#listItem",
+                  "name": "Easy"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-difficulty/easy/#listItem",
+                "position": 2,
+                "name": "Easy",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/difficulty/",
+            "name": "Easy - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tEasy\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Easy",
+        "link": "https://booknilecruises.net/trip-difficulty/easy/"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "count": 0,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-difficulty/hard/",
+    "name": "Hard",
+    "slug": "hard",
+    "taxonomy": "difficulty",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Hard - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-difficulty/hard/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-difficulty/hard/#listItem",
+                  "name": "Hard"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-difficulty/hard/#listItem",
+                "position": 2,
+                "name": "Hard",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/difficulty/",
+            "name": "Hard - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tHard\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Hard",
+        "link": "https://booknilecruises.net/trip-difficulty/hard/"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "count": 1,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-difficulty/medium/",
+    "name": "Medium",
+    "slug": "medium",
+    "taxonomy": "difficulty",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Medium - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-difficulty/medium/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-difficulty/medium/#listItem",
+                  "name": "Medium"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-difficulty/medium/#listItem",
+                "position": 2,
+                "name": "Medium",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/difficulty/",
+            "name": "Medium - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/difficulty/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tMedium\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Medium",
+        "link": "https://booknilecruises.net/trip-difficulty/medium/"
+      }
+    ]
+  }
+]

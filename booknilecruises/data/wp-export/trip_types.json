@@ -1,0 +1,958 @@
+[
+  {
+    "id": 109,
+    "count": 9,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/day-tour/aswan-day-tours/",
+    "name": "Aswan day tours",
+    "slug": "aswan-day-tours",
+    "taxonomy": "trip_types",
+    "parent": 106,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Aswan day tours - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/day-tour/aswan-day-tours/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                "position": 2,
+                "name": "day tour",
+                "item": "https://booknilecruises.net/trip-types/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/aswan-day-tours/#listItem",
+                  "name": "Aswan day tours"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/aswan-day-tours/#listItem",
+                "position": 3,
+                "name": "Aswan day tours",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "Aswan day tours - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/trip-types/day-tour/\" title=\"day tour\">day tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tAswan day tours\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "day tour",
+        "link": "https://booknilecruises.net/trip-types/day-tour/"
+      },
+      {
+        "label": "Aswan day tours",
+        "link": "https://booknilecruises.net/trip-types/day-tour/aswan-day-tours/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 91,
+    "count": 0,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/beach/",
+    "name": "beach",
+    "slug": "beach",
+    "taxonomy": "trip_types",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "beach - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/beach/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/beach/#listItem",
+                  "name": "beach"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/beach/#listItem",
+                "position": 2,
+                "name": "beach",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "beach - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tbeach\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "beach",
+        "link": "https://booknilecruises.net/trip-types/beach/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 108,
+    "count": 3,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/day-tour/cairo-day-tours/",
+    "name": "Cairo day tours",
+    "slug": "cairo-day-tours",
+    "taxonomy": "trip_types",
+    "parent": 106,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Cairo day tours - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/day-tour/cairo-day-tours/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                "position": 2,
+                "name": "day tour",
+                "item": "https://booknilecruises.net/trip-types/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/cairo-day-tours/#listItem",
+                  "name": "Cairo day tours"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/cairo-day-tours/#listItem",
+                "position": 3,
+                "name": "Cairo day tours",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "Cairo day tours - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/trip-types/day-tour/\" title=\"day tour\">day tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tCairo day tours\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "day tour",
+        "link": "https://booknilecruises.net/trip-types/day-tour/"
+      },
+      {
+        "label": "Cairo day tours",
+        "link": "https://booknilecruises.net/trip-types/day-tour/cairo-day-tours/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 106,
+    "count": 23,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/day-tour/",
+    "name": "day tour",
+    "slug": "day-tour",
+    "taxonomy": "trip_types",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "day tour - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/day-tour/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                "position": 2,
+                "name": "day tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "day tour - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tday tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "day tour",
+        "link": "https://booknilecruises.net/trip-types/day-tour/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 110,
+    "count": 9,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/day-tour/hurgahda-day-tours/",
+    "name": "Hurgahda day tours",
+    "slug": "hurgahda-day-tours",
+    "taxonomy": "trip_types",
+    "parent": 106,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Hurgahda day tours - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/day-tour/hurgahda-day-tours/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                "position": 2,
+                "name": "day tour",
+                "item": "https://booknilecruises.net/trip-types/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/hurgahda-day-tours/#listItem",
+                  "name": "Hurgahda day tours"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/hurgahda-day-tours/#listItem",
+                "position": 3,
+                "name": "Hurgahda day tours",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "Hurgahda day tours - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/trip-types/day-tour/\" title=\"day tour\">day tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tHurgahda day tours\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "day tour",
+        "link": "https://booknilecruises.net/trip-types/day-tour/"
+      },
+      {
+        "label": "Hurgahda day tours",
+        "link": "https://booknilecruises.net/trip-types/day-tour/hurgahda-day-tours/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 107,
+    "count": 11,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/day-tour/luxor-day-tour/",
+    "name": "Luxor day tour",
+    "slug": "luxor-day-tour",
+    "taxonomy": "trip_types",
+    "parent": 106,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Luxor day tour - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/day-tour/luxor-day-tour/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                "position": 2,
+                "name": "day tour",
+                "item": "https://booknilecruises.net/trip-types/day-tour/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/luxor-day-tour/#listItem",
+                  "name": "Luxor day tour"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/day-tour/luxor-day-tour/#listItem",
+                "position": 3,
+                "name": "Luxor day tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/day-tour/#listItem",
+                  "name": "day tour"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "Luxor day tour - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/trip-types/day-tour/\" title=\"day tour\">day tour</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tLuxor day tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "day tour",
+        "link": "https://booknilecruises.net/trip-types/day-tour/"
+      },
+      {
+        "label": "Luxor day tour",
+        "link": "https://booknilecruises.net/trip-types/day-tour/luxor-day-tour/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 92,
+    "count": 29,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/nile-cruise/",
+    "name": "Nile Cruise",
+    "slug": "nile-cruise",
+    "taxonomy": "trip_types",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Nile Cruise - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/nile-cruise/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/nile-cruise/#listItem",
+                  "name": "Nile Cruise"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/nile-cruise/#listItem",
+                "position": 2,
+                "name": "Nile Cruise",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "Nile Cruise - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tNile Cruise\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Nile Cruise",
+        "link": "https://booknilecruises.net/trip-types/nile-cruise/"
+      }
+    ],
+    "thumbnail": {}
+  },
+  {
+    "id": 93,
+    "count": 0,
+    "description": "",
+    "link": "https://booknilecruises.net/trip-types/temples/",
+    "name": "temples",
+    "slug": "temples",
+    "taxonomy": "trip_types",
+    "parent": 0,
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "temples - Book Nile cruises",
+      "description": "",
+      "canonical_url": "https://booknilecruises.net/trip-types/temples/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-types/temples/#listItem",
+                  "name": "temples"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-types/temples/#listItem",
+                "position": 2,
+                "name": "temples",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_types/",
+            "name": "temples - Book Nile cruises",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_types/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\ttemples\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "temples",
+        "link": "https://booknilecruises.net/trip-types/temples/"
+      }
+    ],
+    "thumbnail": {}
+  }
+]

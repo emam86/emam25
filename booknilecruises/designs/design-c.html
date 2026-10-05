@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design C · Nile Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: booking-first. Search card over the hero, filterable cruise grid, class comparison table, city tabs for day tours. Single brand look. */
+:root{
+  --navy:#1a3251; --navy-2:#24446b; --ink:#16263b; --muted:#5b6b7e;
+  --blue:#2f6fa3; --sky:#e9f1f8; --gold:#b8914a; --gold-lt:#f3e6c4; --bg:#ffffff; --soft:#f5f7fa; --line:#e2e8ef;
+  --display:"Sora", "Segoe UI", system-ui, sans-serif;
+  --body:"Nunito Sans", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:16px/1.6 var(--body);color:var(--ink);background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance;color:var(--navy)}
+h2{font-size:clamp(26px,3.2vw,36px);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-soft{background:var(--sky);color:var(--navy)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header .wrap{display:flex;align-items:center;gap:22px;padding-block:10px}
+header .logo img{height:48px;width:auto}
+header nav{display:flex;gap:4px;margin-left:auto}
+header nav a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 12px;border-radius:8px;color:var(--navy)}
+header nav a:hover{background:var(--soft)}
+.cur{font-weight:700;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+
+.hero{position:relative;background:linear-gradient(180deg,rgba(26,50,81,.55),rgba(26,50,81,.75)),url(img/lake.jpg) center 60%/cover;color:#fff}
+.hero .wrap{padding-block:80px 120px;display:grid;gap:14px}
+.hero h1{color:#fff;font-size:clamp(34px,5vw,58px);font-weight:700;max-width:18ch}
+.hero p{margin:0;font-size:18px;color:#e2e9f2;max-width:52ch}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.pills span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:999px;font-size:14px;font-weight:600}
+
+.finder{margin-top:-74px;position:relative;z-index:2}
+.finder .box{background:#fff;border-radius:16px;box-shadow:0 20px 50px rgba(26,50,81,.16);padding:18px}
+.tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tab{border:0;background:none;font:700 15px var(--body);padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--sky);color:var(--navy)}
+.fields{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr auto;gap:10px}
+.fields label{display:grid;gap:2px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.fields select{border:0;font:700 16px var(--body);color:var(--navy);background:none;padding:0}
+
+section{padding-block:72px}
+.row-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.row-head p{margin:6px 0 0;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:700 14px var(--body);color:var(--navy);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:#fff;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 14px 34px rgba(26,50,81,.12);transform:translateY(-2px)}
+.card .ph{position:relative;aspect-ratio:4/3}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:#fff;color:var(--navy);font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px}
+.card .bd{padding:14px 16px 16px;display:grid;gap:8px;flex:1}
+.card h3{font-size:17px;font-weight:600}
+.facts{display:flex;gap:12px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+.from{font-size:12px;color:var(--muted)}
+.from b{display:block;font:700 20px var(--display);color:var(--navy)}
+.card .btn{padding:9px 14px;font-size:14px}
+
+.compare{background:var(--soft)}
+.tbl{overflow-x:auto;background:#fff;border-radius:14px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+thead th{font:600 14px var(--display);color:var(--navy);background:var(--sky)}
+tbody th{font-weight:700;color:var(--navy)}
+td.num{font-variant-numeric:tabular-nums;font-weight:700}
+tr:last-child td,tr:last-child th{border-bottom:0}
+.lvl{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold-lt);color:#6b5223}
+
+.cities{display:grid;grid-template-columns:280px 1fr;gap:28px}
+.city-list{display:grid;gap:8px;align-content:start}
+.city{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:700 16px var(--body);background:#fff;color:var(--navy);cursor:pointer;text-align:left}
+.city[aria-selected="true"]{border-color:var(--navy);box-shadow:inset 4px 0 0 var(--gold)}
+.city small{color:var(--muted);font-weight:600}
+.dt{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.dt a{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:10px}
+.dt img{width:110px;height:84px;object-fit:cover;border-radius:8px}
+.dt h3{font-size:15px;font-weight:600}
+.dt span{font-size:14px;color:var(--muted)}
+.dt b{color:var(--navy)}
+
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why div{border-radius:14px;background:var(--sky);padding:20px;display:grid;gap:6px}
+.why h3{font-size:17px}
+.why p{margin:0;font-size:15px;color:var(--muted)}
+
+.faq{display:grid;gap:10px;max-width:860px}
+.faq details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;background:#fff}
+.faq summary{font:600 16px var(--display);color:var(--navy);cursor:pointer}
+.faq p{margin:10px 0 0;color:var(--muted)}
+
+footer{background:var(--navy);color:#c3cfdd;padding-block:54px 28px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+footer h4{font:600 15px var(--display);color:#fff;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer .lg{background:#fff;border-radius:10px;padding:8px;display:inline-block}
+footer .bottom{border-top:1px solid #2c4a70;margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px}
+.sticky-cta{display:none}
+
+@media (max-width:1060px){.grid{grid-template-columns:repeat(3,1fr)}.why{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){
+  header nav,.cur{display:none}
+  .fields{grid-template-columns:1fr 1fr}
+  .fields .btn{grid-column:span 2}
+  .grid{grid-template-columns:1fr 1fr}
+  .cities{grid-template-columns:1fr}
+  .city-list{grid-template-columns:repeat(2,1fr)}
+  footer .cols{grid-template-columns:1fr 1fr}
+  .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);z-index:20}
+  .sticky-cta .btn{flex:1}
+  body{padding-bottom:70px}
+}
+@media (max-width:600px){
+  .grid,.dt,.why{grid-template-columns:1fr}
+  .fields{grid-template-columns:1fr}.fields .btn{grid-column:auto}
+  section{padding-block:52px}
+  .hero .wrap{padding-block:52px 104px}
+  header .logo img{height:40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#"><img src="img/logo.webp" alt="Book Nile Cruises"></a>
+  <nav aria-label="Main"><a href="#">Nile Cruises</a><a href="#">Dahabiya</a><a href="#">Day Tours</a><a href="#">Packages</a><a href="#">Transfers</a><a href="#">Contact</a></nav>
+  <span class="cur">USD $</span>
+  <a class="btn btn-gold" href="#">WhatsApp</a>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="wrap">
+  <h1>Book the best Nile cruises in Egypt</h1>
+  <p>Compare 33 cruise ships and dahabiyas, check what each one includes, and book directly with our Luxor team.</p>
+  <div class="pills"><span>Luxor ⇄ Aswan</span><span>Lake Nasser</span><span>Dahabiya</span><span>Day tours</span></div>
+</div></section>
+
+<div class="finder"><div class="wrap"><div class="box">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true">Nile cruise</button>
+    <button class="tab" role="tab" aria-selected="false">Day tour</button>
+    <button class="tab" role="tab" aria-selected="false">Tour package</button>
+    <button class="tab" role="tab" aria-selected="false">Transfer</button>
+  </div>
+  <form class="fields" onsubmit="event.preventDefault()">
+    <label for="c-route">Route<select id="c-route"><option>Luxor → Aswan</option><option>Aswan → Luxor</option><option>Lake Nasser</option></select></label>
+    <label for="c-class">Class<select id="c-class"><option>Any class</option><option>Standard 5-Star</option><option>Deluxe</option><option>Dahabiya</option></select></label>
+    <label for="c-month">Month<select id="c-month"><option>Nov 2026</option><option>Dec 2026</option><option>Jan 2027</option></select></label>
+    <label for="c-guests">Guests<select id="c-guests"><option>2 adults</option><option>1 adult</option><option>Family</option></select></label>
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</div></div></div>
+
+<section><div class="wrap">
+  <div class="row-head"><div><h2>Nile cruises</h2><p>Prices are per person, from, in USD.</p></div>
+    <div class="chips" id="chips">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="std">Standard 5★</button>
+      <button class="chip" aria-pressed="false" data-f="dlx">Deluxe</button>
+      <button class="chip" aria-pressed="false" data-f="dhb">Dahabiya</button>
+      <button class="chip" aria-pressed="false" data-f="lake">Lake Nasser</button>
+    </div>
+  </div>
+  <div class="grid" id="grid">
+    <article class="card" data-c="dlx"><div class="ph"><img src="img/hero.jpg" alt=""><span class="tag">Deluxe</span></div><div class="bd"><h3>Steigenberger Royale Nile Cruise</h3><div class="facts"><span>4 days / 3 nights</span><span>Aswan → Luxor</span></div><div class="foot"><span class="from">from<b>$500</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+    <article class="card" data-c="dhb"><div class="ph"><img src="img/dahabiya.jpg" alt=""><span class="tag">Dahabiya</span></div><div class="bd"><h3>Merit Dahabiya Nile Cruise</h3><div class="facts"><span>4 days / 3 nights</span><span>Luxor → Aswan</span></div><div class="foot"><span class="from">from<b>$2,500</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+    <article class="card" data-c="dhb"><div class="ph"><img src="img/sonesta.jpg" alt=""><span class="tag">Dahabiya</span></div><div class="bd"><h3>Sonesta Amirat Dahabiya</h3><div class="facts"><span>7 days</span><span>Luxor → Aswan</span></div><div class="foot"><span class="from">from<b>$2,500</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+    <article class="card" data-c="lake"><div class="ph"><img src="img/lake.jpg" alt=""><span class="tag">Lake Nasser</span></div><div class="bd"><h3>Movenpick Prince Abbas Lake Cruise</h3><div class="facts"><span>5 days</span><span>Aswan → Abu Simbel</span></div><div class="foot"><span class="from">from<b>$700</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+    <article class="card" data-c="std"><div class="ph"><img src="img/felucca.jpg" alt=""><span class="tag">Standard 5★</span></div><div class="bd"><h3>MS Radamis I Nile Cruise</h3><div class="facts"><span>4 days / 3 nights</span><span>Aswan → Luxor</span></div><div class="foot"><span class="from">from<b>$400</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+    <article class="card" data-c="std"><div class="ph"><img src="img/philae.jpg" alt=""><span class="tag">Standard 5★</span></div><div class="bd"><h3>Tower Prestige Nile Cruise</h3><div class="facts"><span>4 days / 3 nights</span><span>Aswan → Luxor</span></div><div class="foot"><span class="from">from<b>$400</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+    <article class="card" data-c="dlx"><div class="ph"><img src="img/karnak.jpg" alt=""><span class="tag">Deluxe</span></div><div class="bd"><h3>Crown Jewel Nile Cruise</h3><div class="facts"><span>4 days / 3 nights</span><span>Aswan → Luxor</span></div><div class="foot"><span class="from">from<b>$427</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+    <article class="card" data-c="lake"><div class="ph"><img src="img/abusimbel.jpg" alt=""><span class="tag">Lake Nasser</span></div><div class="bd"><h3>MS Nubian Sea Lake Nasser Cruise</h3><div class="facts"><span>5 days</span><span>Aswan → Abu Simbel</span></div><div class="foot"><span class="from">from<b>$800</b></span><a class="btn btn-soft" href="#">Details</a></div></div></article>
+  </div>
+</div></section>
+
+<section class="compare"><div class="wrap">
+  <div class="row-head"><div><h2>Which cruise class suits you?</h2><p>Counts and starting prices come from the cruises listed on the site today.</p></div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Class</th><th>Boats</th><th>From (pp)</th><th>Typical length</th><th>Good for</th></tr></thead>
+    <tbody>
+      <tr><th>Standard 5-Star</th><td class="num">9</td><td class="num">$400</td><td>4–5 days</td><td>First-time visitors on a budget</td></tr>
+      <tr><th>Deluxe</th><td class="num">12</td><td class="num">$427</td><td>4–5 days</td><td>Larger cabins and better dining</td></tr>
+      <tr><th>Dahabiya <span class="lvl">Small boat</span></th><td class="num">9</td><td class="num">$2,000</td><td>4–8 days</td><td>Couples, private groups, quiet moorings</td></tr>
+      <tr><th>Lake Nasser</th><td class="num">3</td><td class="num">$650</td><td>4–5 days</td><td>Abu Simbel and remote Nubian temples</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="row-head"><div><h2>Day tours by city</h2><p>Pick a city to see its tours.</p></div></div>
+  <div class="cities">
+    <div class="city-list" role="tablist">
+      <button class="city" role="tab" aria-selected="true">Luxor <small>13 tours</small></button>
+      <button class="city" role="tab" aria-selected="false">Aswan <small>10 tours</small></button>
+      <button class="city" role="tab" aria-selected="false">Cairo <small>20 tours</small></button>
+      <button class="city" role="tab" aria-selected="false">Hurghada <small>9 tours</small></button>
+    </div>
+    <div class="dt">
+      <a href="#"><img src="img/balloon.jpg" alt=""><div><h3>Hot Air Balloon Ride over Luxor</h3><span>1 day · <b>$150</b></span></div></a>
+      <a href="#"><img src="img/karnak.jpg" alt=""><div><h3>Private Tour to the East Bank of Luxor</h3><span>1 day · <b>$100</b></span></div></a>
+      <a href="#"><img src="img/felucca.jpg" alt=""><div><h3>Felucca Ride on the Nile at Luxor</h3><span>1 day · <b>$80</b></span></div></a>
+      <a href="#"><img src="img/philae.jpg" alt=""><div><h3>Sound and Light Show at Karnak Temples</h3><span>1 day · <b>$150</b></span></div></a>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="why">
+    <div><h3>Local team in Luxor</h3><p>Our office is in Luxor, on Khaled Ibn El Waleed St.</p></div>
+    <div><h3>All-inclusive cruises</h3><p>Full board, guided visits and transfers in the cruise price.</p></div>
+    <div><h3>159 Tripadvisor reviews</h3><p>Read what travellers say before you book.</p></div>
+    <div><h3>Clear USD prices</h3><p>Per-person prices, with what is included listed on every trip.</p></div>
+  </div>
+</div></section>
+
+<section class="compare"><div class="wrap">
+  <div class="row-head"><div><h2>Questions before you book</h2></div></div>
+  <div class="faq">
+    <details open><summary>How long is a Nile cruise between Luxor and Aswan?</summary><p>Most ships sail 4 days / 3 nights from Aswan to Luxor, or 5 days / 4 nights from Luxor to Aswan. Dahabiyas take longer because they stop at smaller sites.</p></details>
+    <details><summary>What is the difference between a cruise ship and a dahabiya?</summary><p>A dahabiya is a small sailing boat with a handful of cabins. It moors at quieter places and feels like a private yacht. Cruise ships are larger, with pools and more facilities.</p></details>
+    <details><summary>Where does a Lake Nasser cruise go?</summary><p>Between Aswan and Abu Simbel, visiting Nubian temples that the Nile cruises cannot reach.</p></details>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><span class="lg"><img src="img/logo.webp" alt="Book Nile Cruises" style="height:40px;width:auto"></span><p>Khaled Ibn El Waleed St., Luxor, Egypt<br>+20 109 661 1124<br>info@booknilecruise.com</p></div>
+    <div><h4>Nile cruises</h4><ul><li><a href="#">Standard 5-Star</a></li><li><a href="#">Deluxe</a></li><li><a href="#">Luxury</a></li><li><a href="#">Dahabiya</a></li><li><a href="#">Lake Nasser</a></li></ul></div>
+    <div><h4>Day tours</h4><ul><li><a href="#">Luxor</a></li><li><a href="#">Aswan</a></li><li><a href="#">Cairo</a></li><li><a href="#">Hurghada</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="#">About us</a></li><li><a href="#">Transfers</a></li><li><a href="#">FAQ</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul></div>
+  </div>
+  <div class="bottom"><span>© 2026 Book Nile Cruises</span><span>Prices in USD per person</span></div>
+</div></footer>
+
+<div class="sticky-cta"><a class="btn btn-soft" href="#">Call</a><a class="btn btn-gold" href="#">WhatsApp</a></div>
+
+<script>
+// Filter chips: show only cards of the chosen class.
+const chips = document.querySelectorAll('#chips .chip');
+chips.forEach(chip => chip.addEventListener('click', () => {
+  chips.forEach(c => c.setAttribute('aria-pressed', c === chip));
+  const f = chip.dataset.f;
+  document.querySelectorAll('#grid .card').forEach(card => { card.hidden = f !== 'all' && card.dataset.c !== f; });
+}));
+// Simple tab toggles for the finder and city list (visual only in this mockup).
+for (const group of document.querySelectorAll('[role=tablist]')) {
+  const tabs = group.querySelectorAll('[role=tab]');
+  tabs.forEach(t => t.addEventListener('click', () => tabs.forEach(o => o.setAttribute('aria-selected', o === t))));
+}
+</script>
+</body>
+</html>

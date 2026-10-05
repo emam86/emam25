@@ -1,0 +1,326 @@
+[
+  {
+    "id": 17,
+    "count": 0,
+    "description": "This is a group tour. Other travellers with a common interest will join this tour and travel together on a schedule.",
+    "link": "https://booknilecruises.net/trip-tag/group/",
+    "name": "Group Tour",
+    "slug": "group",
+    "taxonomy": "trip_tag",
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Group Tour - Book Nile cruises",
+      "description": "This is a group tour. Other travellers with a common interest will join this tour and travel together on a schedule.",
+      "canonical_url": "https://booknilecruises.net/trip-tag/group/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-tag/group/#listItem",
+                  "name": "Group Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-tag/group/#listItem",
+                "position": 2,
+                "name": "Group Tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/",
+            "name": "Group Tour - Book Nile cruises",
+            "description": "This is a group tour. Other travellers with a common interest will join this tour and travel together on a schedule.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tGroup Tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Group Tour",
+        "link": "https://booknilecruises.net/trip-tag/group/"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "count": 0,
+    "description": "This is a guided tour. You will be accompanied by an expert guide.",
+    "link": "https://booknilecruises.net/trip-tag/guided/",
+    "name": "Guided Tour",
+    "slug": "guided",
+    "taxonomy": "trip_tag",
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Guided Tour - Book Nile cruises",
+      "description": "This is a guided tour. You will be accompanied by an expert guide.",
+      "canonical_url": "https://booknilecruises.net/trip-tag/guided/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-tag/guided/#listItem",
+                  "name": "Guided Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-tag/guided/#listItem",
+                "position": 2,
+                "name": "Guided Tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/",
+            "name": "Guided Tour - Book Nile cruises",
+            "description": "This is a guided tour. You will be accompanied by an expert guide.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tGuided Tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Guided Tour",
+        "link": "https://booknilecruises.net/trip-tag/guided/"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "count": 0,
+    "description": "This is a private tour where you can travel at your own pace.",
+    "link": "https://booknilecruises.net/trip-tag/private/",
+    "name": "Private Tour",
+    "slug": "private",
+    "taxonomy": "trip_tag",
+    "meta": [],
+    "aioseo_head_json": {
+      "title": "Private Tour - Book Nile cruises",
+      "description": "This is a private tour where you can travel at your own pace.",
+      "canonical_url": "https://booknilecruises.net/trip-tag/private/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/trip-tag/private/#listItem",
+                  "name": "Private Tour"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/trip-tag/private/#listItem",
+                "position": 2,
+                "name": "Private Tour",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#collectionpage",
+            "url": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/",
+            "name": "Private Tour - Book Nile cruises",
+            "description": "This is a private tour where you can travel at your own pace.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#breadcrumblist"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/wp-json/wp/v2/trip_tag/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      }
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tPrivate Tour\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Private Tour",
+        "link": "https://booknilecruises.net/trip-tag/private/"
+      }
+    ]
+  }
+]

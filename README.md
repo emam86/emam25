@@ -45,3 +45,9 @@
 ## لوحة المتابعة التفاعلية
 
 https://claude.ai/code/artifact/8b91de39-8903-4426-b89c-ee3b2bc0fcbd
+
+---
+
+## مشروع ثانٍ: booknilecruises.net
+
+تحويل الموقع من WordPress إلى موقع مبرمج: انظر [`booknilecruises/`](booknilecruises/README.md).

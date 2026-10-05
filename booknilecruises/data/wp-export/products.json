@@ -1,0 +1,2352 @@
+[
+  {
+    "id": 1818,
+    "date": "2024-06-06T07:29:51",
+    "date_gmt": "2024-06-06T07:29:51",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1818"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "beach-casual-shoe",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/beach-casual-shoe/",
+    "title": {
+      "rendered": "beach casual-shoe"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      15
+    ],
+    "product_tag": [
+      51,
+      60
+    ],
+    "class_list": [
+      "post-1818",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-uncategorized",
+      "product_tag-living",
+      "product_tag-sofa",
+      "first",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "beach casual-shoe - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/beach-casual-shoe/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/beach-casual-shoe/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/uncategorized/#listItem",
+                  "name": "Uncategorized"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/uncategorized/#listItem",
+                "position": 3,
+                "name": "Uncategorized",
+                "item": "https://booknilecruises.net/product-category/uncategorized/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/beach-casual-shoe/#listItem",
+                  "name": "beach casual-shoe"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/beach-casual-shoe/#listItem",
+                "position": 4,
+                "name": "beach casual-shoe",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/uncategorized/#listItem",
+                  "name": "Uncategorized"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/beach-casual-shoe/#itempage",
+            "url": "https://booknilecruises.net/product/beach-casual-shoe/",
+            "name": "beach casual-shoe - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/beach-casual-shoe/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:29:51+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/beach-casual-shoe/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/beach-casual-shoe/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "beach casual-shoe - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/beach-casual-shoe/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:29:51+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "beach casual-shoe - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1818",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/uncategorized/\" title=\"Uncategorized\">Uncategorized</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tbeach casual-shoe\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Uncategorized",
+        "link": "https://booknilecruises.net/product-category/uncategorized/"
+      },
+      {
+        "label": "beach casual-shoe",
+        "link": "https://booknilecruises.net/product/beach-casual-shoe/"
+      }
+    ]
+  },
+  {
+    "id": 1821,
+    "date": "2024-06-06T07:25:28",
+    "date_gmt": "2024-06-06T07:25:28",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1821"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "beach-football",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/beach-football/",
+    "title": {
+      "rendered": "Beach football"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      41,
+      56
+    ],
+    "product_tag": [
+      40,
+      61
+    ],
+    "class_list": [
+      "post-1821",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-beach",
+      "product_cat-play",
+      "product_tag-beach",
+      "product_tag-sports",
+      "",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "Beach football - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/beach-football/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/beach-football/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                "position": 3,
+                "name": "Beach",
+                "item": "https://booknilecruises.net/product-category/beach/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/beach-football/#listItem",
+                  "name": "Beach football"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/beach-football/#listItem",
+                "position": 4,
+                "name": "Beach football",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/beach-football/#itempage",
+            "url": "https://booknilecruises.net/product/beach-football/",
+            "name": "Beach football - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/beach-football/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:25:28+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/beach-football/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/beach-football/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "Beach football - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/beach-football/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:25:28+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Beach football - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1821",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/beach/\" title=\"Beach\">Beach</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tBeach football\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Beach",
+        "link": "https://booknilecruises.net/product-category/beach/"
+      },
+      {
+        "label": "Beach football",
+        "link": "https://booknilecruises.net/product/beach-football/"
+      }
+    ]
+  },
+  {
+    "id": 1822,
+    "date": "2024-06-06T07:24:00",
+    "date_gmt": "2024-06-06T07:24:00",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1822"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "hamok",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/hamok/",
+    "title": {
+      "rendered": "Hamok"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      41,
+      56
+    ],
+    "product_tag": [
+      51,
+      60
+    ],
+    "class_list": [
+      "post-1822",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-beach",
+      "product_cat-play",
+      "product_tag-living",
+      "product_tag-sofa",
+      "",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "Hamok - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/hamok/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/hamok/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                "position": 3,
+                "name": "Beach",
+                "item": "https://booknilecruises.net/product-category/beach/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/hamok/#listItem",
+                  "name": "Hamok"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/hamok/#listItem",
+                "position": 4,
+                "name": "Hamok",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/hamok/#itempage",
+            "url": "https://booknilecruises.net/product/hamok/",
+            "name": "Hamok - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/hamok/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:24:00+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/hamok/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/hamok/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "Hamok - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/hamok/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:24:00+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Hamok - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1822",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/beach/\" title=\"Beach\">Beach</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tHamok\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Beach",
+        "link": "https://booknilecruises.net/product-category/beach/"
+      },
+      {
+        "label": "Hamok",
+        "link": "https://booknilecruises.net/product/hamok/"
+      }
+    ]
+  },
+  {
+    "id": 1823,
+    "date": "2024-06-06T07:22:47",
+    "date_gmt": "2024-06-06T07:22:47",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1823"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "beach-hat",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/beach-hat/",
+    "title": {
+      "rendered": "Beach Hat"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      41,
+      56
+    ],
+    "product_tag": [
+      51,
+      60
+    ],
+    "class_list": [
+      "post-1823",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-beach",
+      "product_cat-play",
+      "product_tag-living",
+      "product_tag-sofa",
+      "last",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "Beach Hat - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/beach-hat/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/beach-hat/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                "position": 3,
+                "name": "Beach",
+                "item": "https://booknilecruises.net/product-category/beach/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/beach-hat/#listItem",
+                  "name": "Beach Hat"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/beach-hat/#listItem",
+                "position": 4,
+                "name": "Beach Hat",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/beach-hat/#itempage",
+            "url": "https://booknilecruises.net/product/beach-hat/",
+            "name": "Beach Hat - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/beach-hat/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:22:47+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/beach-hat/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/beach-hat/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "Beach Hat - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/beach-hat/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:22:47+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Beach Hat - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1823",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/beach/\" title=\"Beach\">Beach</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tBeach Hat\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Beach",
+        "link": "https://booknilecruises.net/product-category/beach/"
+      },
+      {
+        "label": "Beach Hat",
+        "link": "https://booknilecruises.net/product/beach-hat/"
+      }
+    ]
+  },
+  {
+    "id": 1824,
+    "date": "2024-06-06T07:20:24",
+    "date_gmt": "2024-06-06T07:20:24",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1824"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "sony-black-headphone",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/sony-black-headphone/",
+    "title": {
+      "rendered": "Sony Black Headphone"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      41,
+      56
+    ],
+    "product_tag": [
+      51,
+      60
+    ],
+    "class_list": [
+      "post-1824",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-beach",
+      "product_cat-play",
+      "product_tag-living",
+      "product_tag-sofa",
+      "first",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "Sony Black Headphone - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/sony-black-headphone/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/sony-black-headphone/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                "position": 3,
+                "name": "Beach",
+                "item": "https://booknilecruises.net/product-category/beach/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/sony-black-headphone/#listItem",
+                  "name": "Sony Black Headphone"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/sony-black-headphone/#listItem",
+                "position": 4,
+                "name": "Sony Black Headphone",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/sony-black-headphone/#itempage",
+            "url": "https://booknilecruises.net/product/sony-black-headphone/",
+            "name": "Sony Black Headphone - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/sony-black-headphone/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:20:24+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/sony-black-headphone/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/sony-black-headphone/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "Sony Black Headphone - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/sony-black-headphone/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:20:24+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Sony Black Headphone - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1824",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/beach/\" title=\"Beach\">Beach</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tSony Black Headphone\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Beach",
+        "link": "https://booknilecruises.net/product-category/beach/"
+      },
+      {
+        "label": "Sony Black Headphone",
+        "link": "https://booknilecruises.net/product/sony-black-headphone/"
+      }
+    ]
+  },
+  {
+    "id": 1825,
+    "date": "2024-06-06T07:19:15",
+    "date_gmt": "2024-06-06T07:19:15",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1825"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "hoodie-with-zipper",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/hoodie-with-zipper/",
+    "title": {
+      "rendered": "Hoodie With Zipper"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      41,
+      56
+    ],
+    "product_tag": [
+      51,
+      60
+    ],
+    "class_list": [
+      "post-1825",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-beach",
+      "product_cat-play",
+      "product_tag-living",
+      "product_tag-sofa",
+      "",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "Hoodie With Zipper - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/hoodie-with-zipper/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/hoodie-with-zipper/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                "position": 3,
+                "name": "Beach",
+                "item": "https://booknilecruises.net/product-category/beach/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/hoodie-with-zipper/#listItem",
+                  "name": "Hoodie With Zipper"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/hoodie-with-zipper/#listItem",
+                "position": 4,
+                "name": "Hoodie With Zipper",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/hoodie-with-zipper/#itempage",
+            "url": "https://booknilecruises.net/product/hoodie-with-zipper/",
+            "name": "Hoodie With Zipper - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/hoodie-with-zipper/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:19:15+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/hoodie-with-zipper/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/hoodie-with-zipper/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "Hoodie With Zipper - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/hoodie-with-zipper/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:19:15+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Hoodie With Zipper - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1825",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/beach/\" title=\"Beach\">Beach</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tHoodie With Zipper\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Beach",
+        "link": "https://booknilecruises.net/product-category/beach/"
+      },
+      {
+        "label": "Hoodie With Zipper",
+        "link": "https://booknilecruises.net/product/hoodie-with-zipper/"
+      }
+    ]
+  },
+  {
+    "id": 1826,
+    "date": "2024-06-06T07:11:56",
+    "date_gmt": "2024-06-06T07:11:56",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1826"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "trendy-sunglass",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/trendy-sunglass/",
+    "title": {
+      "rendered": "Trendy Sunglass"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      41,
+      56
+    ],
+    "product_tag": [
+      51,
+      60
+    ],
+    "class_list": [
+      "post-1826",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-beach",
+      "product_cat-play",
+      "product_tag-living",
+      "product_tag-sofa",
+      "",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "Trendy Sunglass - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/trendy-sunglass/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/trendy-sunglass/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                "position": 3,
+                "name": "Beach",
+                "item": "https://booknilecruises.net/product-category/beach/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/trendy-sunglass/#listItem",
+                  "name": "Trendy Sunglass"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/trendy-sunglass/#listItem",
+                "position": 4,
+                "name": "Trendy Sunglass",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/trendy-sunglass/#itempage",
+            "url": "https://booknilecruises.net/product/trendy-sunglass/",
+            "name": "Trendy Sunglass - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/trendy-sunglass/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:11:56+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/trendy-sunglass/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/trendy-sunglass/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "Trendy Sunglass - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/trendy-sunglass/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:11:56+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Trendy Sunglass - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1826",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/beach/\" title=\"Beach\">Beach</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tTrendy Sunglass\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Beach",
+        "link": "https://booknilecruises.net/product-category/beach/"
+      },
+      {
+        "label": "Trendy Sunglass",
+        "link": "https://booknilecruises.net/product/trendy-sunglass/"
+      }
+    ]
+  },
+  {
+    "id": 1820,
+    "date": "2024-06-06T07:10:37",
+    "date_gmt": "2024-06-06T07:10:37",
+    "guid": {
+      "rendered": "https://wordpress.themeholy.com/realar/?post_type=product&amp;p=1820"
+    },
+    "modified": "2025-11-28T20:21:19",
+    "modified_gmt": "2025-11-28T20:21:19",
+    "slug": "v-neck-t-shirt",
+    "status": "publish",
+    "type": "product",
+    "link": "https://booknilecruises.net/product/v-neck-t-shirt/",
+    "title": {
+      "rendered": "V-Neck T-Shirt"
+    },
+    "content": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure. Bosco Apples are a revelation for your taste buds. Their impeccable balance of sweetness and tartness creates a complex, layered taste profile that keeps you coming back for more. Each bite is a symphony of sweet and tangy notes, making these apples a gastronomic delight whether enjoyed fresh or as a key ingredient in your favorite culinary creations.</p>\n<p>The Bosco Apple is not just a fruit; it’s a work of art. Its striking, deep red skin is adorned with intricate speckles, making it a showstopper in the world of fruit aesthetics. Display these apples with pride in your kitchen, and you’ll undoubtedly draw admiration from all who see them. We take our commitment to the environment seriously. Bosco Apples are cultivated on eco-friendly orchards that prioritize sustainable farming practices. You can savor these apples knowing they are grown with respect for the planet, aligning with your values of environmental responsibility. Whether you’re a culinary aficionado or a casual home chef, Bosco Apples offer limitless possibilities in the kitchen. Slice them into a vibrant salad, transform them into mouthwatering pies, or blend them into wholesome applesauce. The culinary canvas is yours to paint with these versatile apples.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.</p>\n",
+      "protected": false
+    },
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_monsterinsights_skip_tracking": false
+    },
+    "product_brand": [],
+    "product_cat": [
+      41,
+      56
+    ],
+    "product_tag": [
+      51,
+      60
+    ],
+    "class_list": [
+      "post-1820",
+      "product",
+      "type-product",
+      "status-publish",
+      "product_cat-beach",
+      "product_cat-play",
+      "product_tag-living",
+      "product_tag-sofa",
+      "last",
+      "instock",
+      "sale",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple"
+    ],
+    "aioseo_notices": [],
+    "aioseo_head_json": {
+      "title": "V-Neck T-Shirt - Book Nile cruises",
+      "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "canonical_url": "https://booknilecruises.net/product/v-neck-t-shirt/",
+      "robots": "max-image-preview:large",
+      "keywords": "",
+      "webmasterTools": {
+        "google-site-verification": "SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs",
+        "miscellaneous": ""
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://booknilecruises.net/product/v-neck-t-shirt/#breadcrumblist",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/#listItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://booknilecruises.net/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                "position": 2,
+                "name": "Tourm Shop",
+                "item": "https://booknilecruises.net/tourm-shop/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/#listItem",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                "position": 3,
+                "name": "Beach",
+                "item": "https://booknilecruises.net/product-category/beach/",
+                "nextItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product/v-neck-t-shirt/#listItem",
+                  "name": "V-Neck T-Shirt"
+                },
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/tourm-shop/#listItem",
+                  "name": "Tourm Shop"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "@id": "https://booknilecruises.net/product/v-neck-t-shirt/#listItem",
+                "position": 4,
+                "name": "V-Neck T-Shirt",
+                "previousItem": {
+                  "@type": "ListItem",
+                  "@id": "https://booknilecruises.net/product-category/beach/#listItem",
+                  "name": "Beach"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemPage",
+            "@id": "https://booknilecruises.net/product/v-neck-t-shirt/#itempage",
+            "url": "https://booknilecruises.net/product/v-neck-t-shirt/",
+            "name": "V-Neck T-Shirt - Book Nile cruises",
+            "description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://booknilecruises.net/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://booknilecruises.net/product/v-neck-t-shirt/#breadcrumblist"
+            },
+            "datePublished": "2024-06-06T07:10:37+00:00",
+            "dateModified": "2025-11-28T20:21:19+00:00"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://booknilecruises.net/#organization",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "url": "https://booknilecruises.net/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+              "@id": "https://booknilecruises.net/product/v-neck-t-shirt/#organizationLogo",
+              "width": 150,
+              "height": 150
+            },
+            "image": {
+              "@id": "https://booknilecruises.net/product/v-neck-t-shirt/#organizationLogo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://booknilecruises.net/#website",
+            "url": "https://booknilecruises.net/",
+            "name": "Book Nile cruises",
+            "description": "Book the Best Nile Cruises in Egypt",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://booknilecruises.net/#organization"
+            }
+          }
+        ]
+      },
+      "og:locale": "en_US",
+      "og:site_name": "Book Nile cruises - Book the Best Nile Cruises in Egypt",
+      "og:type": "article",
+      "og:title": "V-Neck T-Shirt - Book Nile cruises",
+      "og:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "og:url": "https://booknilecruises.net/product/v-neck-t-shirt/",
+      "og:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "og:image:secure_url": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png",
+      "article:published_time": "2024-06-06T07:10:37+00:00",
+      "article:modified_time": "2025-11-28T20:21:19+00:00",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "V-Neck T-Shirt - Book Nile cruises",
+      "twitter:description": "Prepare to embark on a sensory journey with the Bosco Apple, a fruit that transcends the ordinary and promises an unparalleled taste experience. These apples are nothing short of nature’s masterpiece, celebrated for their distinctive blend of flavors and their captivating visual allure.",
+      "twitter:image": "https://booknilecruises.net/wp-content/uploads/2025/12/cropped-Luxor-Egypt-Tours-3.png"
+    },
+    "aioseo_meta_data": {
+      "post_id": "1820",
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "keyphrases": null,
+      "primary_term": null,
+      "canonical_url": null,
+      "og_title": null,
+      "og_description": null,
+      "og_object_type": "default",
+      "og_image_type": "default",
+      "og_image_url": null,
+      "og_image_width": null,
+      "og_image_height": null,
+      "og_image_custom_url": null,
+      "og_image_custom_fields": null,
+      "og_video": null,
+      "og_custom_url": null,
+      "og_article_section": null,
+      "og_article_tags": null,
+      "twitter_use_og": false,
+      "twitter_card": "default",
+      "twitter_image_type": "default",
+      "twitter_image_url": null,
+      "twitter_image_custom_url": null,
+      "twitter_image_custom_fields": null,
+      "twitter_title": null,
+      "twitter_description": null,
+      "schema": {
+        "blockGraphs": [],
+        "customGraphs": [],
+        "default": {
+          "data": {
+            "Article": [],
+            "Course": [],
+            "Dataset": [],
+            "FAQPage": [],
+            "Movie": [],
+            "Person": [],
+            "Product": [],
+            "ProductReview": [],
+            "Car": [],
+            "Recipe": [],
+            "Service": [],
+            "SoftwareApplication": [],
+            "WebPage": []
+          },
+          "graphName": "",
+          "isEnabled": true
+        },
+        "graphs": []
+      },
+      "schema_type": "default",
+      "schema_type_options": null,
+      "pillar_content": false,
+      "robots_default": true,
+      "robots_noindex": false,
+      "robots_noarchive": false,
+      "robots_nosnippet": false,
+      "robots_nofollow": false,
+      "robots_noimageindex": false,
+      "robots_noodp": false,
+      "robots_notranslate": false,
+      "robots_max_snippet": null,
+      "robots_max_videopreview": null,
+      "robots_max_imagepreview": "large",
+      "priority": null,
+      "frequency": null,
+      "local_seo": null,
+      "breadcrumb_settings": null,
+      "limit_modified_date": false,
+      "ai": null,
+      "created": "2025-11-28 21:57:19",
+      "updated": "2025-11-28 21:57:19",
+      "seo_analyzer_scan_date": null,
+      "focus_keyword": null,
+      "additional_keywords": null,
+      "truseo_locale": null
+    },
+    "aioseo_breadcrumb": "<div class=\"aioseo-breadcrumbs\"><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/\" title=\"Home\">Home</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/tourm-shop/\" title=\"Tourm Shop\">Tourm Shop</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\t<a href=\"https://booknilecruises.net/product-category/beach/\" title=\"Beach\">Beach</a>\n\t\t</span><span class=\"aioseo-breadcrumb-separator\">»</span><span class=\"aioseo-breadcrumb\">\n\t\t\tV-Neck T-Shirt\n\t\t</span></div>",
+    "aioseo_breadcrumb_json": [
+      {
+        "label": "Home",
+        "link": "https://booknilecruises.net/"
+      },
+      {
+        "label": "Tourm Shop",
+        "link": "https://booknilecruises.net/tourm-shop/"
+      },
+      {
+        "label": "Beach",
+        "link": "https://booknilecruises.net/product-category/beach/"
+      },
+      {
+        "label": "V-Neck T-Shirt",
+        "link": "https://booknilecruises.net/product/v-neck-t-shirt/"
+      }
+    ]
+  }
+]
