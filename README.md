@@ -42,6 +42,11 @@
 
 التفاصيل والدليل لكل مهمة في أول ملف الـ brief.
 
+## تدقيق أكتوبر 2026
+
+- [`seo-audit/01-audit-2026-10.md`](seo-audit/01-audit-2026-10.md) — تقرير التدقيق الأصلي (6 مشاكل).
+- [`seo-audit/02-review-and-fixes.md`](seo-audit/02-review-and-fixes.md) — مراجعة كل بند مقابل الموقع والكود، وما تم إصلاحه، وما يحتاج بيانات منك.
+
 ## لوحة المتابعة التفاعلية
 
 https://claude.ai/code/artifact/8b91de39-8903-4426-b89c-ee3b2bc0fcbd
