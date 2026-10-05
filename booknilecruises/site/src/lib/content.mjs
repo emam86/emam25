@@ -208,9 +208,14 @@ function normalizePage(raw, assetOrigin) {
   };
 }
 
+// Astro fills import.meta.env from .env files; plain Node (tests) only has process.env.
+function envAssetOrigin() {
+  return import.meta.env?.PUBLIC_ASSET_ORIGIN ?? process.env.PUBLIC_ASSET_ORIGIN ?? '';
+}
+
 let cache;
 
-export function loadSite({ assetOrigin = process.env.PUBLIC_ASSET_ORIGIN ?? '' } = {}) {
+export function loadSite({ assetOrigin = envAssetOrigin() } = {}) {
   if (cache && cache.assetOrigin === assetOrigin) return cache;
   const mediaList = readJson('media.json');
   const media = new Map(mediaList.map((m) => [m.id, m]));
@@ -245,7 +250,7 @@ export function loadSite({ assetOrigin = process.env.PUBLIC_ASSET_ORIGIN ?? '' }
   return cache;
 }
 
-export function asset(src, origin = process.env.PUBLIC_ASSET_ORIGIN ?? '') {
+export function asset(src, origin = envAssetOrigin()) {
   if (!src) return src;
   return src.startsWith('/wp-content/') ? `${origin}${src}` : src;
 }

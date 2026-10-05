@@ -7,7 +7,7 @@ interface Props { trips: any[]; filters?: boolean; emptyText?: string }
 const { trips, filters = true, emptyText = 'No trips are listed here yet.' } = Astro.props;
 const destinations = [...new Map(trips.flatMap((t) => t.destinations).map((d) => [d.slug, d])).values()]
   .sort((a, b) => a.name.localeCompare(b.name));
-const showFilters = filters && trips.length > 6;
+const showFilters = filters && destinations.length > 1;
 ---
 <div class="listing" data-listing>
   {showFilters && (
@@ -72,8 +72,11 @@ const showFilters = filters && trips.length > 6;
       sorted.forEach((c) => grid?.appendChild(c));
     });
 
+    // A destination from the home page finder that this list has no trips for
+    // shows everything, with a note instead of a silent no-op.
     const initial = params.get('destination') ?? '';
     if (initial && chips.some((c) => c.dataset.dest === initial)) apply(initial);
+    else if (initial && count) count.textContent = 'None of these trips visit that destination, so all trips are shown.';
   }
 </script>
 
@@ -87,6 +90,7 @@ const showFilters = filters && trips.length > 6;
   .sort { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
   .sort select { font: 600 15px var(--body); padding: 8px 10px; border: 1px solid var(--line); background: #fff; color: var(--navy); }
   .cell { display: flex; min-width: 0; }
+  .cell[hidden] { display: none; }
   .cell > :global(.card) { flex: 1; }
   .empty { font-size: 18px; color: var(--muted); }
   .count { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
