@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import TermGrid from '../../components/TermGrid.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { loadSite } from '@lib/content.mjs';
+const site = loadSite();
+const page = site.pages.find((p) => p.url === '/trip-types/');
+const terms = site.terms.trip_types.filter((t) => t.trips.length > 0);
+---
+<Base title={page?.seo.title || 'Trip types - Book Nile cruises'} description="Browse Egypt trips by type: Nile cruises and day tours in Luxor, Aswan, Cairo and Hurghada." canonical="/trip-types/">
+  <PageHero title="Trip types" intro="Our trips grouped by type." crumbs={[{ label: 'Trip types' }]} image="/img/karnak.jpg" />
+  <section class="block"><div class="wrap"><TermGrid terms={terms} /></div></section>
+  <CtaBand />
+</Base>

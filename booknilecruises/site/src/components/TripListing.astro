@@ -1,0 +1,93 @@
+---
+// Grid of trip cards with optional filters by destination and sort by price.
+// Filtering runs in the browser on the cards already in the page.
+import TripCard from './TripCard.astro';
+
+interface Props { trips: any[]; filters?: boolean; emptyText?: string }
+const { trips, filters = true, emptyText = 'No trips are listed here yet.' } = Astro.props;
+const destinations = [...new Map(trips.flatMap((t) => t.destinations).map((d) => [d.slug, d])).values()]
+  .sort((a, b) => a.name.localeCompare(b.name));
+const showFilters = filters && trips.length > 6;
+---
+<div class="listing" data-listing>
+  {showFilters && (
+    <div class="tools">
+      <div class="chips" role="group" aria-label="Filter by destination">
+        <button type="button" class="chip" aria-pressed="true" data-dest="">All <span>{trips.length}</span></button>
+        {destinations.map((d) => (
+          <button type="button" class="chip" aria-pressed="false" data-dest={d.slug}>{d.name}</button>
+        ))}
+      </div>
+      <label class="sort" for="sort-select">Sort
+        <select id="sort-select" data-sort>
+          <option value="">Recommended</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="days-asc">Shortest first</option>
+        </select>
+      </label>
+    </div>
+  )}
+  {trips.length > 0 ? (
+    <div class="grid3" data-grid>
+      {trips.map((t, i) => <div class="cell" data-price={t.price ?? ''} data-days={t.duration.days ?? ''} data-order={i}><TripCard trip={t} eager={i < 3} /></div>)}
+    </div>
+  ) : (
+    <p class="empty">{emptyText}</p>
+  )}
+  <p class="count" aria-live="polite" data-count></p>
+</div>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-listing]')) {
+    const grid = root.querySelector<HTMLElement>('[data-grid]');
+    const cells = grid ? [...grid.querySelectorAll<HTMLElement>('.cell')] : [];
+    const chips = [...root.querySelectorAll<HTMLButtonElement>('.chip')];
+    const sort = root.querySelector<HTMLSelectElement>('[data-sort]');
+    const count = root.querySelector<HTMLElement>('[data-count]');
+    const params = new URLSearchParams(location.search);
+
+    function apply(dest: string) {
+      let shown = 0;
+      for (const c of cells) {
+        const card = c.querySelector<HTMLElement>('.card');
+        const ok = !dest || (card?.dataset.destinations ?? '').split(' ').includes(dest);
+        c.hidden = !ok;
+        if (ok) shown++;
+      }
+      chips.forEach((ch) => ch.setAttribute('aria-pressed', String(ch.dataset.dest === dest)));
+      if (count) count.textContent = dest ? `${shown} trips` : '';
+    }
+    chips.forEach((ch) => ch.addEventListener('click', () => apply(ch.dataset.dest ?? '')));
+
+    sort?.addEventListener('change', () => {
+      const num = (v?: string) => (v ? Number(v) : Infinity);
+      const [key, dir] = sort.value.split('-');
+      const sorted = [...cells].sort((a, b) => {
+        if (!key) return Number(a.dataset.order) - Number(b.dataset.order);
+        const va = num(key === 'price' ? a.dataset.price : a.dataset.days);
+        const vb = num(key === 'price' ? b.dataset.price : b.dataset.days);
+        return dir === 'desc' ? (vb === Infinity ? -1 : va === Infinity ? 1 : vb - va) : va - vb;
+      });
+      sorted.forEach((c) => grid?.appendChild(c));
+    });
+
+    const initial = params.get('destination') ?? '';
+    if (initial && chips.some((c) => c.dataset.dest === initial)) apply(initial);
+  }
+</script>
+
+<style>
+  .tools { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { border: 1px solid var(--line); background: #fff; color: var(--navy); padding: 8px 14px; font: 600 14px var(--body); cursor: pointer; }
+  .chip span { color: var(--muted); font-weight: 400; }
+  .chip[aria-pressed='true'] { background: var(--navy); color: var(--gold-lt); border-color: var(--navy); }
+  .chip[aria-pressed='true'] span { color: var(--gold-lt); }
+  .sort { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+  .sort select { font: 600 15px var(--body); padding: 8px 10px; border: 1px solid var(--line); background: #fff; color: var(--navy); }
+  .cell { display: flex; min-width: 0; }
+  .cell > :global(.card) { flex: 1; }
+  .empty { font-size: 18px; color: var(--muted); }
+  .count { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
+</style>

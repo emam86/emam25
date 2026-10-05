@@ -1,0 +1,25 @@
+---
+import { asset } from '@lib/content.mjs';
+import { money, durationLabel, placesLabel, categoryLabel } from '@lib/format.mjs';
+const { trip, eager = false } = Astro.props;
+const img = trip.image?.card ?? trip.image;
+const price = money(trip.price, trip.currency);
+const badge = durationLabel(trip.duration)?.split(' / ')[0];
+---
+<article class="card" data-destinations={trip.destinations.map((d) => d.slug).join(' ')}
+  data-activities={trip.activities.map((a) => a.slug).join(' ')} data-days={trip.duration.days ?? ''}>
+  <div class="ph">
+    {img && <img src={asset(img.src)} alt={trip.image.alt || trip.title} width={img.width} height={img.height}
+      loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+    {badge && <span class="badge">{badge}</span>}
+  </div>
+  <div class="bd">
+    <span class="eyebrow">{categoryLabel(trip)}</span>
+    <h3><a href={trip.url}>{trip.title}</a></h3>
+    {trip.destinations.length > 0 && <div class="meta">{placesLabel(trip)}</div>}
+    <div class="price-row">
+      {price ? <span class="price"><small>From</small>{price}</span> : <span class="price"><small>Price</small>On request</span>}
+      <span class="go" aria-hidden="true">View trip →</span>
+    </div>
+  </div>
+</article>

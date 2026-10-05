@@ -1,0 +1,38 @@
+---
+// Blog posts keep their WordPress date permalinks.
+import Base from '../../../../layouts/Base.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import CtaBand from '../../../../components/CtaBand.astro';
+import { loadSite, asset } from '@lib/content.mjs';
+import { SITE } from '@lib/site.mjs';
+
+export function getStaticPaths() {
+  return loadSite().posts.map((post) => {
+    const [, year, month, day, slug] = post.url.split('/');
+    return { params: { year, month, day, slug }, props: { post } };
+  });
+}
+const { post } = Astro.props;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  datePublished: post.date,
+  dateModified: post.modified,
+  image: post.image ? new URL(post.image.src, SITE.origin).href : undefined,
+  author: { '@type': 'Organization', name: SITE.name, url: SITE.origin },
+  publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `${SITE.origin}/img/logo.webp` } },
+  mainEntityOfPage: new URL(post.url, SITE.origin).href,
+};
+---
+<Base title={post.seo.title || post.title} description={post.seo.description} canonical={post.url} ogImage={post.image?.src} jsonLd={jsonLd}>
+  <PageHero title={post.title} crumbs={[{ label: 'Blog', href: '/blog/' }, { label: post.title }]} image={post.image ? asset(post.image.src) : undefined}>
+    <p class="date">{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+  </PageHero>
+  <section class="block"><div class="wrap"><article class="prose post" set:html={post.html} /></div></section>
+  <CtaBand />
+</Base>
+<style>
+  .post { margin-inline: auto; font-size: 17px; }
+  .date { font-size: 14px; color: var(--gold-lt) !important; }
+</style>

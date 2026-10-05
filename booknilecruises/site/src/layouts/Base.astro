@@ -1,0 +1,193 @@
+---
+import '../styles/global.css';
+import { SITE, NAV, whatsappUrl } from '@lib/site.mjs';
+import { asset } from '@lib/content.mjs';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string | null;
+  jsonLd?: object | object[];
+  noindex?: boolean;
+}
+const { title, description = '', canonical, ogImage, jsonLd, noindex = false } = Astro.props;
+const path = canonical ?? Astro.url.pathname;
+const canonicalUrl = new URL(path, SITE.origin).href;
+const ogUrl = ogImage ? new URL(ogImage, SITE.origin).href : new URL('/img/felucca.jpg', SITE.origin).href;
+const robots = noindex || import.meta.env.PUBLIC_NOINDEX === '1' ? 'noindex, nofollow' : 'max-image-preview:large';
+const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const current = Astro.url.pathname;
+const isActive = (href: string, children?: { href: string }[]) =>
+  current === href || (children ?? []).some((c) => current === c.href);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <meta name="robots" content={robots} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Book Nile cruises" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogUrl} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="google-site-verification" content="SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs" />
+  <link rel="icon" href={asset('/wp-content/uploads/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-32x32.png')} sizes="32x32" />
+  <link rel="icon" href={asset('/wp-content/uploads/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-192x192.png')} sizes="192x192" />
+  <link rel="apple-touch-icon" href={asset('/wp-content/uploads/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-180x180.png')} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" />
+  {ld.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="topbar">
+    <div class="wrap">
+      <span><a href={whatsappUrl()}>{SITE.phoneDisplay}</a> · <a href={`mailto:${SITE.email}`}>{SITE.email}</a></span>
+      <span class="addr">{SITE.address}</span>
+    </div>
+  </div>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Book Nile Cruises home">
+        <img src="/img/logo.webp" alt="Book Nile Cruises" width="640" height="189" />
+      </a>
+      <nav class="main" aria-label="Main">
+        <ul>
+          {NAV.map((item) => (
+            <li class={item.children ? 'has-sub' : ''}>
+              <a href={item.href} aria-current={isActive(item.href, item.children) ? 'page' : undefined}>{item.label}</a>
+              {item.children && (
+                <ul class="sub">
+                  {item.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <details class="mnav">
+        <summary aria-label="Open menu">Menu</summary>
+        <nav aria-label="Mobile">
+          <ul>
+            {NAV.map((item) => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+                {item.children && (
+                  <ul>{item.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}</ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main"><slot /></main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <span class="logo-f"><img src="/img/logo.webp" alt="Book Nile Cruises" width="640" height="189" loading="lazy" /></span>
+          <p>Nile cruises, dahabiyas, day tours and Egypt tour packages, arranged by our team in Luxor.</p>
+        </div>
+        <div>
+          <h2>Nile cruises</h2>
+          <ul>{NAV[0].children!.map((c) => <li><a href={c.href}>{c.label}</a></li>)}</ul>
+        </div>
+        <div>
+          <h2>Tours</h2>
+          <ul>
+            {NAV[1].children!.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+            <li><a href="/egypt-tour-packages/">Egypt Tour Packages</a></li>
+            <li><a href="/transfers/">Transfers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href={whatsappUrl()}>WhatsApp {SITE.phoneDisplay}</a></li>
+            <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+            <li>{SITE.address}</li>
+            <li><a href="/about-us/">About us</a> · <a href="/faq/">FAQ</a> · <a href="/blog/">Blog</a></li>
+            <li><a href="/terms-and-conditions/">Terms and Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy"><span>© {new Date().getFullYear()} Book Nile Cruises</span><span>Prices in USD per person unless stated</span></div>
+    </div>
+  </footer>
+  <a class="wa-float" href={whatsappUrl('Hello, I would like to ask about a trip.')} aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</body>
+</html>
+
+<style is:global>
+  .topbar { background: var(--navy); color: #c8d3e0; font-size: 13px; }
+  .topbar .wrap { display: flex; justify-content: space-between; gap: 12px; padding-block: 8px; flex-wrap: wrap; }
+  .topbar a { color: #e3e9f1; text-decoration: none; }
+  .topbar a:hover { color: var(--gold-lt); }
+  header.site { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 10px; }
+  header.site .logo img { height: 54px; width: auto; }
+  nav.main > ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+  nav.main a { display: block; text-decoration: none; color: var(--navy); font-weight: 600; font-size: 14px; padding-block: 10px; border-bottom: 2px solid transparent; }
+  nav.main a:hover, nav.main a[aria-current='page'] { border-color: var(--gold-bright); }
+  nav.main .has-sub { position: relative; }
+  nav.main .has-sub > a::after { content: ' ▾'; font-size: 11px; color: var(--gold); }
+  nav.main .sub { list-style: none; margin: 0; padding: 8px 0; position: absolute; top: 100%; left: -14px; min-width: 260px; background: #fff;
+    border: 1px solid var(--line); border-top: 2px solid var(--gold-bright); box-shadow: 0 16px 40px rgba(22, 45, 75, .14); display: none; }
+  nav.main .has-sub:hover .sub, nav.main .has-sub:focus-within .sub { display: block; }
+  nav.main .sub a { padding: 9px 16px; border: 0; font-weight: 600; }
+  nav.main .sub a:hover { background: var(--sand); }
+  .mnav { display: none; }
+  .mnav summary { list-style: none; cursor: pointer; border: 1px solid var(--line); padding: 8px 14px; font-weight: 700; color: var(--navy); }
+  .mnav summary::-webkit-details-marker { display: none; }
+  .mnav nav { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 20px 40px rgba(22, 45, 75, .14);
+    max-height: calc(100vh - 140px); overflow-y: auto; }
+  .mnav ul { list-style: none; margin: 0; padding: 8px 20px 16px; }
+  .mnav ul ul { padding: 0 0 6px 14px; }
+  .mnav a { display: block; padding: 9px 0; color: var(--navy); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--sand); }
+  .mnav ul ul a { font-weight: 400; }
+
+  footer.site { background: #0f2036; color: #aebccd; font-size: 14px; padding-block: 60px 30px; }
+  footer.site .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.3fr; gap: 30px; }
+  footer.site h2 { font: 400 18px var(--display); color: var(--gold-lt); margin: 0 0 14px; }
+  footer.site ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  footer.site a { color: #d5deea; text-decoration: none; }
+  footer.site a:hover { color: var(--gold-lt); }
+  footer.site .logo-f { background: #fff; padding: 10px 12px; display: inline-block; margin-bottom: 14px; }
+  footer.site .logo-f img { height: 44px; width: auto; }
+  footer.site .copy { border-top: 1px solid #23395a; margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .wa-float { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); background: var(--wa); color: #fff; border-radius: 999px;
+    padding: 12px 18px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 24px rgba(0, 0, 0, .2); z-index: 40; display: inline-flex; align-items: center; gap: 8px; }
+  .wa-float:hover { background: #188547; }
+
+  @media (max-width: 1100px) {
+    nav.main { display: none; }
+    .mnav { display: block; }
+    header.site .wrap { position: relative; }
+  }
+  @media (max-width: 760px) {
+    footer.site .cols { grid-template-columns: 1fr 1fr; }
+    .topbar .addr { display: none; }
+    header.site .logo img { height: 42px; }
+    .wa-float span { display: none; }
+    .wa-float { padding: 14px; }
+  }
+  @media (max-width: 460px) {
+    footer.site .cols { grid-template-columns: 1fr; }
+  }
+</style>

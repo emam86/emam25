@@ -1,0 +1,14 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { loadSite } from '@lib/content.mjs';
+const site = loadSite();
+---
+<Listing
+  title="Trips - Book Nile cruises"
+  heading="All trips"
+  intro={`All ${site.trips.length} Nile cruises, day tours and Egypt tour packages. Filter by destination or sort by price.`}
+  description="All Nile cruises, dahabiyas, day tours and Egypt tour packages from Book Nile Cruises, with itineraries and per-person prices."
+  canonical="/trip/"
+  trips={site.trips}
+  crumbs={[{ label: 'Trips' }]}
+/>

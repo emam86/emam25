@@ -1,0 +1,23 @@
+---
+import { whatsappUrl, mailtoUrl, SITE } from '@lib/site.mjs';
+const { title = 'Tell us your dates. We will send you the options.', text = 'Message us on WhatsApp or send an email with your travel dates and number of travellers.' } = Astro.props;
+---
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow">Plan with our Luxor team</span>
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <div class="acts">
+      <a class="btn btn-wa" href={whatsappUrl('Hello, I would like to plan a trip.')}>WhatsApp {SITE.phoneDisplay}</a>
+      <a class="btn btn-ghost" href={mailtoUrl('Trip enquiry')}>Email {SITE.email}</a>
+    </div>
+  </div>
+</section>
+<style>
+  .cta-band { background: linear-gradient(rgba(22, 45, 75, .86), rgba(22, 45, 75, .86)), url(/img/felucca.jpg) center / cover; color: #dfe6f0; text-align: center; }
+  .cta-band .wrap { padding-block: 72px; display: grid; gap: 14px; justify-items: center; }
+  .cta-band .eyebrow { color: var(--gold-lt); }
+  .cta-band h2 { color: #fff; font-size: clamp(28px, 4vw, 44px); max-width: 24ch; }
+  .cta-band p { margin: 0; max-width: 56ch; }
+  .acts { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+</style>

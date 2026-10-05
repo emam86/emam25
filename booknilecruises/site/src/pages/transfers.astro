@@ -1,0 +1,40 @@
+---
+import Page from '../layouts/Page.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { TRANSFERS, whatsappUrl } from '@lib/site.mjs';
+import { money } from '@lib/format.mjs';
+---
+<Page title="Transfers - Book Nile cruises" heading="Transfers"
+  intro="Private airport and city transfers in Luxor, Aswan, Abu Simbel and Hurghada. Prices are per car, in US dollars."
+  description="Private transfers in Egypt: Luxor and Aswan airports, Luxor to Aswan, Aswan to Abu Simbel and Luxor to Hurghada. Sedan and minivan prices in USD."
+  canonical="/transfers/" image="/img/felucca.jpg">
+  <section class="block">
+    <div class="wrap">
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col">Route</th><th scope="col">Distance</th><th scope="col">Duration</th><th scope="col">Sedan</th><th scope="col">Minivan</th><th scope="col"><span class="sr-only">Book</span></th></tr></thead>
+          <tbody>
+            {TRANSFERS.map(([from, to, km, time, sedan, van]) => (
+              <tr>
+                <th scope="row">{from} → {to}</th><td>{km}</td><td>{time}</td>
+                <td class="num">{money(sedan)}</td><td class="num">{money(van)}</td>
+                <td><a class="btn btn-wa" href={whatsappUrl(`Hello, I'd like to book a transfer from ${from} to ${to}.`)}>WhatsApp</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <CtaBand title="Need a route that is not listed?" text="Send us your pick-up point, destination and date on WhatsApp and we will quote you." />
+</Page>
+<style>
+  .tbl { position: relative; overflow-x: auto; border: 1px solid var(--line); background: #fff; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; }
+  th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  thead th { background: var(--navy); color: var(--gold-lt); font: 700 12px var(--body); letter-spacing: .12em; text-transform: uppercase; }
+  tbody th { font-weight: 600; color: var(--navy); }
+  .num { font-variant-numeric: tabular-nums; font-weight: 700; }
+  td .btn { padding: 8px 14px; font-size: 12px; }
+  tbody tr:last-child > * { border-bottom: 0; }
+</style>

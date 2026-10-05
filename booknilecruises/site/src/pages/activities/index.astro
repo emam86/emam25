@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import TermGrid from '../../components/TermGrid.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { loadSite } from '@lib/content.mjs';
+const site = loadSite();
+const page = site.pages.find((p) => p.url === '/activities/');
+const terms = site.terms.activities.filter((t) => t.trips.length > 0);
+---
+<Base title={page?.seo.title || 'Activities - Book Nile cruises'} description="Browse Egypt trips by activity: Nile cruises by class, day tours by city and multi-day tour packages." canonical="/activities/">
+  <PageHero title="Activities" intro="Nile cruises, day tours and tour packages, grouped by type." crumbs={[{ label: 'Activities' }]} image="/img/karnak.jpg" />
+  <section class="block"><div class="wrap"><TermGrid terms={terms} /></div></section>
+  <CtaBand />
+</Base>

@@ -1,0 +1,37 @@
+---
+// The WordPress landing pages (/nile-cruise/, /deluxe-nile-cruises/, …),
+// rebuilt at the same URLs and filled from their activity term.
+import Listing from '../layouts/Listing.astro';
+import { loadSite } from '@lib/content.mjs';
+import { CATEGORY_PAGES, whatsappUrl } from '@lib/site.mjs';
+
+export function getStaticPaths() {
+  const site = loadSite();
+  return Object.entries(CATEGORY_PAGES).map(([slug, cfg]) => {
+    const term = site.terms.activities.find((t) => t.slug === cfg.term);
+    const page = site.pages.find((p) => p.slug === slug);
+    return { params: { category: slug }, props: { cfg, term, page } };
+  });
+}
+const { cfg, term, page } = Astro.props;
+const parent = term?.parent ? loadSite().terms.activities.find((t) => t.id === term.parent) : null;
+const parentPage = parent && Object.entries(CATEGORY_PAGES).find(([, c]) => c.term === parent.slug)?.[0];
+const crumbs = [
+  ...(parentPage ? [{ label: CATEGORY_PAGES[parentPage].heading, href: `/${parentPage}/` }] : []),
+  { label: cfg.heading },
+];
+---
+<Listing
+  title={page?.seo.title || `${cfg.heading} - Book Nile cruises`}
+  heading={cfg.heading}
+  intro={cfg.intro}
+  description={cfg.description}
+  canonical={`/${Astro.params.category}/`}
+  trips={term?.trips ?? []}
+  crumbs={crumbs}
+  emptyText="These cruises are booked on request. Send us your dates on WhatsApp and we will reply with the ships and cabins available."
+>
+  {(term?.trips ?? []).length === 0 && (
+    <p><a class="btn btn-wa" href={whatsappUrl(`Hello, I would like options for ${cfg.heading}.`)}>Ask on WhatsApp</a></p>
+  )}
+</Listing>

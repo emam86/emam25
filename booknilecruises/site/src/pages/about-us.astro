@@ -1,0 +1,53 @@
+---
+import Page from '../layouts/Page.astro';
+import CtaBand from '../components/CtaBand.astro';
+import TermGrid from '../components/TermGrid.astro';
+import { loadSite } from '@lib/content.mjs';
+import { SITE, whatsappUrl } from '@lib/site.mjs';
+const site = loadSite();
+const nile = site.terms.activities.find((t) => t.slug === 'nile-cruise');
+const day = site.terms.activities.find((t) => t.slug === 'day-tour');
+const pkg = site.terms.activities.find((t) => t.slug === 'tour-packages');
+const cats = [
+  { ...nile, name: 'Nile cruises', href: '/nile-cruise/' },
+  { ...day, name: 'Day tours', href: '/day-tours/' },
+  { ...pkg, name: 'Tour packages', href: '/egypt-tour-packages/' },
+];
+---
+<Page title="About Us - Book Nile cruises" heading="About Book Nile Cruises"
+  intro="A travel team based in Luxor, on the Nile, arranging cruises and tours across Egypt."
+  description="Book Nile Cruises is a Luxor-based team arranging Nile cruises, dahabiyas, day tours and Egypt tour packages, booked directly on WhatsApp or by email."
+  canonical="/about-us/" image="/img/felucca.jpg">
+  <section class="block">
+    <div class="wrap about">
+      <div class="prose">
+        <h2>Who we are</h2>
+        <p>Book Nile Cruises is run from our office on Khaled Ibn El Waleed Street in Luxor. We arrange Nile cruises between Luxor and Aswan, dahabiya sailings, Lake Nasser cruises, day tours and multi-day tour packages around Egypt.</p>
+        <p>Every trip on this site lists its full itinerary, what is included and what is not, and a per-person price in US dollars, so you can compare before you write to us.</p>
+        <h2>How booking works</h2>
+        <p>Choose a trip, then send us your travel dates and the number of travellers on WhatsApp or by email. We confirm availability for your dates and reply with the details. There is no online checkout: you talk to a person from the first message.</p>
+        <p><a class="btn btn-wa" href={whatsappUrl('Hello, I would like to plan a trip.')}>WhatsApp {SITE.phoneDisplay}</a></p>
+      </div>
+      <aside class="facts">
+        <dl>
+          <div><dt>Nile cruises</dt><dd>{nile?.trips.length}</dd></div>
+          <div><dt>Day tours</dt><dd>{day?.trips.length}</dd></div>
+          <div><dt>Tour packages</dt><dd>{pkg?.trips.length}</dd></div>
+          <div><dt>Office</dt><dd class="small">{SITE.address}</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+  <section class="block band"><div class="wrap"><TermGrid terms={cats} /></div></section>
+  <CtaBand />
+</Page>
+<style>
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 56px; align-items: start; }
+  .about .prose h2:first-child { margin-top: 0; }
+  .facts dl { margin: 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .facts div { background: #fff; padding: 18px 20px; }
+  .facts dt { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .facts dd { margin: 4px 0 0; font: 400 34px var(--display); color: var(--navy); }
+  .facts dd.small { font: 600 15px var(--body); }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+</style>

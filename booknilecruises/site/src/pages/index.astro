@@ -1,0 +1,261 @@
+---
+import Base from '../layouts/Base.astro';
+import TripCard from '../components/TripCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { loadSite, asset } from '@lib/content.mjs';
+import { SITE, CATEGORY_PAGES, whatsappUrl } from '@lib/site.mjs';
+import { money } from '@lib/format.mjs';
+
+const site = loadSite();
+const bySlug = (s) => site.trips.find((t) => t.slug === s);
+const termOf = (slug) => site.terms.activities.find((t) => t.slug === slug);
+const minPrice = (trips) => {
+  const p = trips.map((t) => t.price).filter((x) => x != null);
+  return p.length ? Math.min(...p) : null;
+};
+
+// Cruise classes, with counts and "from" prices computed from the trips.
+const classes = [
+  ['standard-5-star-nile-cruises', 'Standard 5-Star', '/img/felucca.jpg'],
+  ['deluxe-nile-cruises', 'Deluxe', null],
+  ['luxury-dahabiya-nile-cruise-packages', 'Dahabiya', '/img/dahabiya.jpg'],
+  ['lake-nasser-nile-cruises', 'Lake Nasser', '/img/lake.jpg'],
+].map(([page, label, img]) => {
+  const term = termOf(CATEGORY_PAGES[page].term);
+  const trips = term?.trips ?? [];
+  const pic = img ?? asset(trips.find((t) => t.image)?.image.card?.src ?? trips[0]?.image?.src);
+  return { href: `/${page}/`, label, count: trips.length, from: minPrice(trips), img: pic, noun: page.includes('dahabiya') ? 'boats' : 'ships' };
+});
+
+// The same trips the current homepage features, in the same order.
+const popular = [
+  '12-days-cairo-alexandria-nile-cruise-el-bahariya-oasis',
+  '8-days-cairo-alexandria-nile-cruise-by-flight',
+  'sonesta-amirat-dahabiya-nile-cruise',
+  'movenpick-prince-abbas-lake-cruise',
+  '4-days-cairo-tour-package',
+  'abu-simbel-from-aswan-by-flight-the-majestic-day-trip',
+].map(bySlug).filter(Boolean);
+
+const destinations = ['luxor', 'cairo', 'aswan', 'hurghada', 'alexandria']
+  .map((s) => site.terms.destination.find((d) => d.slug === s))
+  .filter(Boolean);
+const destImg = (d) => {
+  const t = d.trips.find((x) => x.image);
+  return asset(t?.image.card?.src ?? t?.image.src);
+};
+const post = site.posts[0];
+const totalCruises = termOf('nile-cruise')?.trips.length ?? 0;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TravelAgency',
+  name: SITE.name,
+  url: SITE.origin,
+  logo: `${SITE.origin}/img/logo.webp`,
+  email: SITE.email,
+  telephone: SITE.phoneDisplay,
+  address: { '@type': 'PostalAddress', streetAddress: 'Khaled Ibn El Waleed St.', addressLocality: 'Luxor', addressCountry: 'EG' },
+};
+---
+<Base
+  title="Book Nile cruises - Book the Best Nile Cruises in Egypt"
+  description={`Book Nile cruises between Luxor and Aswan, dahabiyas, Lake Nasser cruises, day tours and Egypt tour packages directly with our team in Luxor. ${totalCruises} cruises with itineraries and prices.`}
+  canonical="/"
+  ogImage="/img/dahabiya.jpg"
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <img class="bg" src="/img/dahabiya.jpg" alt="" fetchpriority="high" />
+    <div class="wrap">
+      <span class="rule eyebrow">Luxor · Aswan · Lake Nasser</span>
+      <h1>Explore Luxor &amp; Aswan <em>by cruise</em></h1>
+      <p>Nile cruises, dahabiyas, day tours and Egypt tour packages, booked directly with our team in Luxor.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="/nile-cruise/">Find your cruise</a>
+        <a class="btn btn-ghost" href={whatsappUrl('Hello, I would like help choosing a Nile cruise.')}>WhatsApp an expert</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="search">
+    <div class="wrap">
+      <form action="/trip/" method="get" id="finder">
+        <label for="f-dest">Destination
+          <select id="f-dest" name="destination">
+            <option value="">Anywhere in Egypt</option>
+            {site.terms.destination.filter((d) => d.trips.length).map((d) => <option value={d.slug}>{d.name}</option>)}
+          </select>
+        </label>
+        <label for="f-type">Trip type
+          <select id="f-type" name="type">
+            <option value="/trip/">All trips</option>
+            <option value="/nile-cruise/">Nile cruise</option>
+            <option value="/luxury-dahabiya-nile-cruise-packages/">Dahabiya</option>
+            <option value="/lake-nasser-nile-cruises/">Lake Nasser cruise</option>
+            <option value="/day-tours/">Day tour</option>
+            <option value="/egypt-tour-packages/">Tour package</option>
+          </select>
+        </label>
+        <button type="submit">Search trips</button>
+      </form>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Choose your ship</span>
+        <h2>Nile cruises by class</h2>
+        <p>Every class sails the same river and visits the same temples. The difference is space, service and how many guests share the deck.</p>
+      </div>
+      <div class="classes">
+        {classes.map((c) => (
+          <a class="cls" href={c.href}>
+            {c.img && <img src={c.img} alt="" loading="lazy" decoding="async" />}
+            <div><small>{c.count} {c.noun}{c.from != null && ` · from ${money(c.from)}`}</small><h3>{c.label}</h3></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block band">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Most popular</span><h2>Tour packages our guests book most</h2></div>
+      <div class="grid3">{popular.map((t) => <TripCard trip={t} />)}</div>
+      <p class="more"><a class="btn btn-outline" href="/trip/">See all {site.trips.length} trips</a></p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap exp">
+      <div class="pic"><img src="/img/felucca.jpg" alt="Feluccas sailing on the Nile at Aswan" loading="lazy" width="1024" height="683" /></div>
+      <div>
+        <span class="eyebrow">Signature experiences</span>
+        <h2>Why travel Egypt on a Nile cruise</h2>
+        <div class="feats">
+          <div><h3>Convenience</h3><p>Sail between Luxor and Aswan without airports, long transfers or packing again during your trip.</p></div>
+          <div><h3>Value for money</h3><p>Full-board stays, guided tours and travel between the sites in one price.</p></div>
+          <div><h3>Perfect for all ages</h3><p>Families, seniors, couples and solo travellers all find the pace comfortable.</p></div>
+          <div><h3>Scenic views</h3><p>Wake up to green banks, golden hills and temples passing by your window.</p></div>
+          <div><h3>Authentic dining</h3><p>Fresh Egyptian dishes alongside international food, prepared on board every day.</p></div>
+          <div><h3>Multiple destinations</h3><p>Luxor, Edfu, Kom Ombo and Aswan in one itinerary.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block band">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Top destinations</span><h2>Popular Egypt destinations</h2></div>
+      <div class="dests">
+        {destinations.map((d) => (
+          <a href={d.url}>
+            <img src={destImg(d)} alt="" loading="lazy" decoding="async" />
+            <span>{d.name}<small>{d.trips.length} trips</small></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {post && (
+    <section class="block">
+      <div class="wrap article">
+        {post.image && <a href={post.url}><img src={asset(post.image.src)} alt="" loading="lazy" width={post.image.width} height={post.image.height} /></a>}
+        <div>
+          <span class="eyebrow">From the blog</span>
+          <h2><a href={post.url}>{post.title}</a></h2>
+          <p>{post.text.slice(0, 220).replace(/\s+\S*$/, '')}…</p>
+          <a class="btn btn-outline" href={post.url}>Read the article</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CtaBand />
+</Base>
+
+<script>
+  // Send the finder to the chosen trip-type page, keeping the destination filter.
+  const form = document.getElementById('finder') as HTMLFormElement | null;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const dest = (form.elements.namedItem('destination') as HTMLSelectElement).value;
+    const type = (form.elements.namedItem('type') as HTMLSelectElement).value || '/trip/';
+    location.href = type + (dest ? `?destination=${encodeURIComponent(dest)}` : '');
+  });
+</script>
+
+<style>
+  .hero { position: relative; color: #fff; background: var(--navy); overflow: hidden; }
+  .hero .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(22, 45, 75, .95) 0%, rgba(22, 45, 75, .6) 55%, rgba(22, 45, 75, .15) 100%); }
+  .hero .wrap { position: relative; z-index: 1; padding-block: 104px 136px; display: grid; gap: 22px; }
+  .hero h1 { color: #fff; font-size: clamp(38px, 6vw, 72px); max-width: 13ch; }
+  .hero h1 em { font-style: normal; color: var(--gold-lt); }
+  .hero p { max-width: 52ch; font-size: 18px; color: #dbe3ee; margin: 0; }
+  .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .rule { display: flex; align-items: center; gap: 14px; color: var(--gold-lt); }
+  .rule::before, .rule::after { content: ''; height: 1px; width: 48px; background: currentColor; }
+
+  .search { position: relative; z-index: 2; margin-top: -62px; }
+  .search form { background: #fff; box-shadow: 0 18px 50px rgba(22, 45, 75, .18); border-top: 3px solid var(--gold-bright); display: grid; grid-template-columns: 1fr 1fr auto; }
+  .search label { display: grid; gap: 4px; padding: 18px 22px; border-right: 1px solid var(--line); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .search select { border: 0; font: 600 16px var(--body); color: var(--navy); background: none; padding: 0; }
+  .search button { border: 0; background: var(--navy); color: var(--gold-lt); font: 700 14px var(--body); letter-spacing: .12em; text-transform: uppercase; cursor: pointer; padding: 0 40px; }
+  .search button:hover { background: var(--navy-2); }
+
+  .classes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .cls { position: relative; aspect-ratio: 3 / 4; overflow: hidden; color: #fff; text-decoration: none; display: flex; align-items: flex-end; background: var(--navy); }
+  .cls img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .cls:hover img { transform: scale(1.06); }
+  .cls::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(22, 45, 75, .92)); }
+  .cls div { position: relative; z-index: 1; padding: 18px; }
+  .cls h3 { color: #fff; font-size: 24px; }
+  .cls small { color: var(--gold-lt); font-weight: 700; letter-spacing: .06em; }
+  .more { text-align: center; margin: 36px 0 0; }
+
+  .exp { display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: center; }
+  .exp .pic { position: relative; isolation: isolate; }
+  .exp .pic img { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+  .exp .pic::before { content: ''; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--gold-bright); z-index: -1; }
+  .exp h2 { font-size: clamp(30px, 4vw, 44px); margin-top: 12px; }
+  .feats { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 34px; margin-top: 30px; }
+  .feats div { border-left: 2px solid var(--gold-bright); padding-left: 16px; }
+  .feats h3 { font-size: 20px; margin-bottom: 4px; }
+  .feats p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  .dests { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 16px; }
+  .dests a { position: relative; overflow: hidden; color: #fff; text-decoration: none; background: var(--navy); }
+  .dests a:first-child { grid-row: span 2; }
+  .dests img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .dests a:hover img { transform: scale(1.05); }
+  .dests a::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(22, 45, 75, .85)); }
+  .dests span { position: absolute; left: 18px; bottom: 16px; z-index: 1; font: 400 26px var(--display); display: grid; }
+  .dests small { font: 700 12px var(--body); letter-spacing: .08em; color: var(--gold-lt); }
+
+  .article { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .article img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
+  .article h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 10px 0 14px; }
+  .article h2 a { color: inherit; text-decoration: none; }
+  .article p { color: var(--muted); }
+
+  @media (max-width: 980px) {
+    .classes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .exp, .article { grid-template-columns: 1fr; }
+    .search form { grid-template-columns: 1fr 1fr; }
+    .search button { grid-column: span 2; padding: 16px; }
+  }
+  @media (max-width: 620px) {
+    .feats { grid-template-columns: 1fr; }
+    .dests { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 160px 160px; }
+    .dests a:first-child { grid-column: span 2; grid-row: auto; }
+    .search form { grid-template-columns: 1fr; }
+    .search label { border-right: 0; border-bottom: 1px solid var(--line); }
+    .search button { grid-column: auto; }
+    .hero .wrap { padding-block: 68px 110px; }
+    .cls { aspect-ratio: 4 / 5; }
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { loadSite } from '@lib/content.mjs';
+
+export function getStaticPaths() {
+  return loadSite().terms.trip_types
+    .filter((term) => term.trips.length > 0)
+    .map((term) => ({ params: { path: term.url.replace(/^\/trip-types\/|\/$/g, '') }, props: { term } }));
+}
+const { term } = Astro.props;
+const n = term.trips.length;
+---
+<Listing
+  title={term.seo.title || `${term.name} - Book Nile cruises`}
+  heading={term.name}
+  intro={`${n} ${n === 1 ? 'trip' : 'trips'} in this category.`}
+  description={term.seo.description || `${term.name} in Egypt with Book Nile Cruises: ${n} trips with itineraries and per-person prices.`}
+  canonical={term.url}
+  trips={term.trips}
+  crumbs={[{ label: 'Trip types', href: '/trip-types/' }, { label: term.name }]}
+/>

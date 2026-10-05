@@ -1,0 +1,66 @@
+---
+// Booking is by WhatsApp or email: the form only builds the message, nothing
+// is sent to or stored on our server.
+import { SITE, whatsappUrl, mailtoUrl } from '@lib/site.mjs';
+const { trip = null, id = 'enq' } = Astro.props;
+const subject = trip ? `Enquiry: ${trip.title}` : 'Trip enquiry';
+---
+<form class="enquiry" id={id} data-trip={trip?.title ?? ''} data-email={SITE.email} data-wa={SITE.whatsapp}>
+  <h2>{trip ? 'Book or ask about this trip' : 'Send us an enquiry'}</h2>
+  <p class="hint">Fill in what you know. We reply on WhatsApp or by email.</p>
+  <div class="row">
+    <label for={`${id}-name`}>Name<input id={`${id}-name`} name="name" autocomplete="name" required /></label>
+    <label for={`${id}-date`}>Travel date<input id={`${id}-date`} name="date" type="date" /></label>
+  </div>
+  <div class="row">
+    <label for={`${id}-adults`}>Adults<input id={`${id}-adults`} name="adults" type="number" min="1" value="2" inputmode="numeric" /></label>
+    <label for={`${id}-children`}>Children<input id={`${id}-children`} name="children" type="number" min="0" value="0" inputmode="numeric" /></label>
+  </div>
+  <label for={`${id}-msg`}>Message<textarea id={`${id}-msg`} name="message" rows="3" placeholder={trip ? 'Cabin type, questions, pick-up hotel…' : 'Where would you like to go, and for how long?'}></textarea></label>
+  <div class="actions">
+    <button class="btn btn-wa" type="submit" name="via" value="whatsapp">Send on WhatsApp</button>
+    <button class="btn btn-navy" type="submit" name="via" value="email">Send by email</button>
+  </div>
+  <p class="alt">Or contact us directly: <a href={whatsappUrl(subject)}>WhatsApp {SITE.phoneDisplay}</a> · <a href={mailtoUrl(subject)}>{SITE.email}</a></p>
+</form>
+
+<script>
+  function compose(form: HTMLFormElement) {
+    const f = new FormData(form);
+    const trip = form.dataset.trip;
+    const lines = [
+      trip ? `Trip: ${trip}` : null,
+      `Name: ${f.get('name') || ''}`,
+      f.get('date') ? `Travel date: ${f.get('date')}` : null,
+      `Travellers: ${f.get('adults') || 0} adults, ${f.get('children') || 0} children`,
+      f.get('message') ? `Message: ${f.get('message')}` : null,
+      trip ? `Page: ${location.href}` : null,
+    ].filter(Boolean);
+    return { subject: trip ? `Enquiry: ${trip}` : 'Trip enquiry', body: lines.join('\n') };
+  }
+  for (const form of document.querySelectorAll<HTMLFormElement>('form.enquiry')) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const via = (e.submitter as HTMLButtonElement | null)?.value ?? 'whatsapp';
+      const { subject, body } = compose(form);
+      const url =
+        via === 'email'
+          ? `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+          : `https://wa.me/${form.dataset.wa}?text=${encodeURIComponent(body)}`;
+      if (via === 'email') location.href = url;
+      else window.open(url, '_blank', 'noopener');
+    });
+  }
+</script>
+
+<style>
+  .enquiry { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold-bright); padding: 24px; display: grid; gap: 14px; }
+  .enquiry h2 { font-size: 26px; }
+  .hint, .alt { margin: 0; font-size: 14px; color: var(--muted); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  label { display: grid; gap: 6px; font-size: 13px; font-weight: 700; letter-spacing: .04em; color: var(--navy); }
+  input, textarea { font: 16px var(--body); padding: 11px 12px; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .actions .btn { flex: 1 1 180px; }
+  @media (max-width: 420px) { .row { grid-template-columns: 1fr; } }
+</style>

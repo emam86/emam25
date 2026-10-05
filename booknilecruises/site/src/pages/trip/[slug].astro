@@ -1,0 +1,230 @@
+---
+import Base from '../../layouts/Base.astro';
+import TripCard from '../../components/TripCard.astro';
+import Enquiry from '../../components/Enquiry.astro';
+import { loadSite, asset } from '@lib/content.mjs';
+import { SITE, whatsappUrl } from '@lib/site.mjs';
+import { money, durationLabel, placesLabel } from '@lib/format.mjs';
+
+export function getStaticPaths() {
+  return loadSite().trips.map((trip) => ({ params: { slug: trip.url.split('/')[2] }, props: { trip } }));
+}
+
+const { trip } = Astro.props;
+const site = loadSite();
+const primary = trip.activities[0] ?? trip.tripTypes[0];
+const related = (primary?.trips ?? []).filter((t) => t !== trip).slice(0, 3);
+const price = money(trip.price, trip.currency);
+const duration = durationLabel(trip.duration);
+const gallery = trip.gallery.slice(0, 12);
+// Day numbers restart after each heading row (e.g. "3 Nights From Aswan to Luxor").
+let dayCounter = 0;
+const days = trip.itinerary.map((d) => (d.html ? { ...d, n: ++dayCounter } : ((dayCounter = 0), { ...d, n: null })));
+const crumbs = [
+  { label: 'Trips', href: '/trip/' },
+  ...(primary ? [{ label: primary.name, href: primary.url }] : []),
+  { label: trip.title },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: trip.title,
+    description: trip.seo.description || trip.excerpt,
+    url: new URL(trip.url, SITE.origin).href,
+    image: trip.image ? new URL(trip.image.src, SITE.origin).href : undefined,
+    touristType: primary?.name,
+    itinerary: trip.destinations.length
+      ? { '@type': 'ItemList', itemListElement: trip.destinations.map((d, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Place', name: d.name } })) }
+      : undefined,
+    offers: trip.price != null
+      ? { '@type': 'Offer', price: trip.price, priceCurrency: trip.currency, availability: 'https://schema.org/InStock', url: new URL(trip.url, SITE.origin).href }
+      : undefined,
+    provider: { '@type': 'TravelAgency', name: SITE.name, url: SITE.origin, telephone: SITE.phoneDisplay, email: SITE.email },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ label: 'Home', href: '/' }, ...crumbs].map((c, i) => ({
+      '@type': 'ListItem', position: i + 1, name: c.label, ...(c.href ? { item: new URL(c.href, SITE.origin).href } : {}),
+    })),
+  },
+];
+---
+<Base title={trip.seo.title || `${trip.title} - Book Nile cruises`} description={trip.seo.description || trip.excerpt}
+  canonical={trip.seo.canonical ?? trip.url} ogImage={trip.seo.ogImage ?? trip.image?.src} jsonLd={jsonLd}>
+  <section class="trip-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        {crumbs.map((c) => (<><span aria-hidden="true">/</span>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</>))}
+      </nav>
+      <h1>{trip.title}</h1>
+      <ul class="facts">
+        {duration && <li><span>Duration</span>{duration}</li>}
+        {trip.destinations.length > 0 && <li><span>Places</span>{placesLabel(trip)}</li>}
+        {primary && <li><span>Type</span><a href={primary.url}>{primary.name}</a></li>}
+        <li><span>From</span>{price ? <strong>{price}</strong> : 'On request'}{price && <small> per person</small>}</li>
+      </ul>
+    </div>
+  </section>
+
+  {gallery.length > 0 && (
+    <section class="gallery" aria-label="Photos">
+      <div class="track" id="gal" tabindex="0">
+        {gallery.map((img, i) => (
+          <figure>
+            <img src={asset(img.src)} alt={i === 0 ? trip.title : `${trip.title} photo ${i + 1}`} width={img.width} height={img.height}
+              loading={i < 2 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} decoding="async" />
+          </figure>
+        ))}
+      </div>
+      {gallery.length > 1 && (
+        <div class="gal-nav">
+          <button type="button" data-dir="-1" aria-controls="gal" aria-label="Previous photo">‹</button>
+          <button type="button" data-dir="1" aria-controls="gal" aria-label="Next photo">›</button>
+        </div>
+      )}
+    </section>
+  )}
+
+  <div class="wrap trip-body">
+    <article class="trip-main">
+      {trip.highlights.length > 0 && (
+        <section class="sec" id="highlights">
+          <h2>Trip highlights</h2>
+          <ul class="ticks">{trip.highlights.map((h) => <li>{h}</li>)}</ul>
+        </section>
+      )}
+
+      {trip.overviewHtml && (
+        <section class="sec prose" id="overview">
+          <h2>Overview</h2>
+          <Fragment set:html={trip.overviewHtml} />
+        </section>
+      )}
+
+      {trip.itinerary.length > 0 && (
+        <section class="sec" id="itinerary">
+          <h2>Itinerary</h2>
+          <div class="days">
+            {days.map((day, i) =>
+              day.n ? (
+                <details open={i < 2}>
+                  <summary><span class="day-n">Day {String(day.n).padStart(2, '0')}</span>{day.title}</summary>
+                  <div class="prose" set:html={day.html} />
+                </details>
+              ) : (
+                <h3 class="day-group">{day.title}</h3>
+              ),
+            )}
+          </div>
+        </section>
+      )}
+
+      {(trip.includes.length > 0 || trip.excludes.length > 0) && (
+        <section class="sec cost" id="cost">
+          <h2>What is included</h2>
+          <div class="cols">
+            {trip.includes.length > 0 && <div><h3>Included</h3><ul class="ticks">{trip.includes.map((x) => <li>{x}</li>)}</ul></div>}
+            {trip.excludes.length > 0 && <div><h3>Not included</h3><ul class="crosses">{trip.excludes.map((x) => <li>{x}</li>)}</ul></div>}
+          </div>
+        </section>
+      )}
+
+      {trip.faqs.length > 0 && (
+        <section class="sec" id="faq">
+          <h2>Questions about this trip</h2>
+          <div class="faqs">
+            {trip.faqs.map((f) => (
+              <details><summary>{f.q}</summary><div class="prose" set:html={f.a} /></details>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+
+    <aside class="trip-side">
+      <div class="price-box">
+        <span class="eyebrow">From</span>
+        <div class="big">{price ?? 'On request'}</div>
+        {price && <p>per person{trip.minPax > 1 ? `, minimum ${trip.minPax} travellers` : ''}</p>}
+        <a class="btn btn-wa" href={whatsappUrl(`Hello, I would like to book: ${trip.title}`)}>Book on WhatsApp</a>
+      </div>
+      <Enquiry trip={trip} id="trip-enq" />
+    </aside>
+  </div>
+
+  {related.length > 0 && (
+    <section class="block band">
+      <div class="wrap">
+        <div class="head"><span class="eyebrow">{primary.name}</span><h2>You may also like</h2></div>
+        <div class="grid3">{related.map((t) => <TripCard trip={t} />)}</div>
+      </div>
+    </section>
+  )}
+</Base>
+
+<script>
+  const track = document.getElementById('gal');
+  for (const b of document.querySelectorAll<HTMLButtonElement>('.gal-nav button')) {
+    b.addEventListener('click', () => {
+      if (!track) return;
+      track.scrollBy({ left: Number(b.dataset.dir) * track.clientWidth * 0.8, behavior: 'smooth' });
+    });
+  }
+</script>
+
+<style>
+  .trip-head { background: var(--navy); color: #dfe6f0; }
+  .trip-head .wrap { padding-block: 34px 30px; display: grid; gap: 14px; }
+  .trip-head h1 { color: #fff; font-size: clamp(30px, 4.4vw, 50px); }
+  .facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 34px; font-size: 15px; }
+  .facts span { display: block; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-lt); }
+  .facts a { color: #fff; }
+  .facts strong { font: 400 22px var(--display); color: #fff; }
+  .facts small { color: #b6c3d6; }
+
+  .gallery { position: relative; background: var(--navy); padding-bottom: 18px; }
+  .track { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-inline: max(20px, calc((100vw - var(--wrap)) / 2 + 20px)); }
+  .track::-webkit-scrollbar { display: none; }
+  .track figure { margin: 0; flex: 0 0 auto; scroll-snap-align: start; }
+  .track img { height: clamp(220px, 42vw, 440px); width: auto; max-width: none; object-fit: cover; }
+  .gal-nav { position: absolute; right: max(20px, calc((100vw - var(--wrap)) / 2 + 20px)); bottom: 32px; display: flex; gap: 6px; }
+  .gal-nav button { width: 44px; height: 44px; border: 0; background: rgba(255, 255, 255, .92); color: var(--navy); font-size: 26px; line-height: 1; cursor: pointer; }
+
+  .trip-body { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; padding-block: 48px 72px; align-items: start; }
+  .sec { padding-bottom: 34px; margin-bottom: 34px; border-bottom: 1px solid var(--line); }
+  .sec:last-child { border-bottom: 0; }
+  .sec > h2 { font-size: 30px; margin-bottom: 18px; }
+  .ticks, .crosses { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .ticks li, .crosses li { position: relative; padding-left: 28px; }
+  .ticks li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+  .crosses li::before { content: '✕'; position: absolute; left: 0; color: #a24b3c; font-weight: 700; }
+  .cost .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .cost h3 { font-size: 20px; margin-bottom: 12px; }
+  .days { display: grid; gap: 10px; }
+  .days details, .faqs details { border: 1px solid var(--line); background: #fff; }
+  .days summary, .faqs summary { cursor: pointer; padding: 16px 18px; font: 400 19px/1.35 var(--display); color: var(--navy); list-style: none; display: flex; gap: 14px; align-items: baseline; }
+  .days summary::-webkit-details-marker, .faqs summary::-webkit-details-marker { display: none; }
+  .days summary::after, .faqs summary::after { content: '+'; margin-left: auto; color: var(--gold); font-family: var(--body); font-weight: 700; }
+  .days details[open] summary::after, .faqs details[open] summary::after { content: '–'; }
+  .days .prose, .faqs .prose { padding: 0 18px 16px; }
+  .day-n { font: 700 12px var(--body); letter-spacing: .14em; color: var(--gold); text-transform: uppercase; white-space: nowrap; }
+  .day-group { font-size: 22px; margin-top: 8px; }
+  .faqs { display: grid; gap: 10px; }
+
+  .trip-side { position: sticky; top: 96px; display: grid; gap: 18px; }
+  .price-box { background: var(--navy); color: #d3dceb; padding: 24px; display: grid; gap: 8px; }
+  .price-box .big { font: 400 38px var(--display); color: var(--gold-lt); }
+  .price-box p { margin: 0 0 6px; font-size: 14px; }
+
+  @media (max-width: 980px) {
+    .trip-body { grid-template-columns: 1fr; }
+    .trip-side { position: static; }
+  }
+  @media (max-width: 620px) {
+    .cost .cols { grid-template-columns: 1fr; }
+  }
+</style>

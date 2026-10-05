@@ -1,0 +1,27 @@
+---
+import Base from './Base.astro';
+import PageHero from '../components/PageHero.astro';
+import TripListing from '../components/TripListing.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { asset } from '@lib/content.mjs';
+import { SITE } from '@lib/site.mjs';
+
+const { title, heading, intro, description, canonical, trips, crumbs = [], emptyText, heroImage } = Astro.props;
+const hero = heroImage ?? trips.find((t) => t.image)?.image?.src;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: heading,
+  itemListElement: trips.slice(0, 50).map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(t.url, SITE.origin).href, name: t.title })),
+};
+---
+<Base title={title} description={description} canonical={canonical} ogImage={hero} jsonLd={jsonLd}>
+  <PageHero title={heading} intro={intro} crumbs={crumbs} image={hero ? asset(hero) : undefined} />
+  <section class="block">
+    <div class="wrap">
+      <slot />
+      <TripListing trips={trips} emptyText={emptyText} />
+    </div>
+  </section>
+  <CtaBand />
+</Base>

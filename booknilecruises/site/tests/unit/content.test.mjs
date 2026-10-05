@@ -109,3 +109,11 @@ test('page SEO comes from the live page, not the broken REST value', () => {
   const deluxe = site.pages.find((p) => p.slug === 'deluxe-nile-cruises');
   assert.equal(deluxe.seo.title, 'Deluxe Nile Cruises - Book Nile cruises');
 });
+
+test('trip images carry a card-size rendition in the same uploads folder', () => {
+  const site = loadSite();
+  const t = site.trips.find((x) => x.slug === 'semiramis-ii-nile-cruise');
+  assert.match(t.image.src, /^\/wp-content\/uploads\/2025\/12\//);
+  assert.ok(t.image.card.src.startsWith('/wp-content/uploads/2025/12/'));
+  assert.ok(t.image.card.width <= 1024);
+});

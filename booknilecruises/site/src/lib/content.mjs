@@ -6,9 +6,10 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const DATA = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../data');
+// Resolved from the working directory (the site/ folder for both `astro build`
+// and `npm test`), because Astro bundles this module into dist/ at build time.
+const DATA = path.resolve(process.env.BNC_DATA_DIR ?? path.join(process.cwd(), '..', 'data'));
 const SITE_ORIGIN = 'https://booknilecruises.net';
 
 const NAMED = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', hellip: '…', ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', times: '×' };
@@ -106,19 +107,30 @@ function seoOf(item, snapshot = '') {
   };
 }
 
+// A ~768px rendition for cards, falling back to the original file.
+const CARD_SIZES = ['medium_large', 'large', 'tourm_424X498', 'trip-thumb-size'];
+
+function cardFrom(dir, sizes = {}) {
+  const key = CARD_SIZES.find((k) => sizes[k]?.file);
+  return key ? { src: `${dir}/${sizes[key].file}`, width: sizes[key].width, height: sizes[key].height } : null;
+}
+
 function imageFromMedia(media) {
   if (!media) return null;
+  const src = pathOf(media.source_url);
   return {
-    src: pathOf(media.source_url),
+    src,
     width: media.media_details?.width ?? null,
     height: media.media_details?.height ?? null,
     alt: decodeEntities(media.alt_text || ''),
+    card: cardFrom(path.posix.dirname(src), media.media_details?.sizes),
   };
 }
 
 function imageFromTripField(fi) {
   if (!fi?.file) return null;
-  return { src: `/wp-content/uploads/${fi.file}`, width: fi.width ?? null, height: fi.height ?? null, alt: '' };
+  const src = `/wp-content/uploads/${fi.file}`;
+  return { src, width: fi.width ?? null, height: fi.height ?? null, alt: '', card: cardFrom(path.posix.dirname(src), fi.sizes) };
 }
 
 function priceOf(value) {

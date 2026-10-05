@@ -1,0 +1,47 @@
+---
+import Page from '../layouts/Page.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '@lib/site.mjs';
+
+// Answers use facts published on the trip pages; links point to the details.
+const faqs = [
+  ['How do I book a trip?', `Choose a trip, then send us your travel dates and the number of travellers on WhatsApp (${SITE.phoneDisplay}) or by email (${SITE.email}). You can use the form on any trip page to prepare the message. We confirm availability and reply with the details.`],
+  ['Are the prices per person?', 'Yes. Trip prices on this site are per person in US dollars, shown as a starting price. <a href="/transfers/">Transfers</a> are priced per car.'],
+  ['What is included in the price?', 'Every trip page has an "Included" and a "Not included" list. On most Nile cruises the price includes full-board accommodation on the ship, guided visits and transfers, while entrance fees, international flights, drinks and tips are not included.'],
+  ['Are entrance fees included?', 'In most trips they are not. Check the "Not included" list on the trip page, or ask us for the current entrance fees for your itinerary.'],
+  ['How long is a Nile cruise between Luxor and Aswan?', 'Most ships sail 4 days / 3 nights from Aswan to Luxor, or 5 days / 4 nights from Luxor to Aswan. Dahabiyas usually take 4 to 7 days because they stop at smaller sites. See all <a href="/nile-cruise/">Nile cruises</a>.'],
+  ['What is the difference between a cruise ship and a dahabiya?', 'A dahabiya is a small sailing boat with a handful of cabins. It moors at quieter places and feels like a private yacht. Cruise ships are larger, with a pool, more facilities and more guests. See <a href="/luxury-dahabiya-nile-cruise-packages/">dahabiya cruises</a>.'],
+  ['Where does a Lake Nasser cruise go?', 'Between Aswan and Abu Simbel on Lake Nasser, visiting Nubian temples that the Nile ships cannot reach. See <a href="/lake-nasser-nile-cruises/">Lake Nasser cruises</a>.'],
+  ['Can I add optional tours?', 'Yes. Popular additions are the <a href="/trip/hot-air-balloon-ride-over-luxor/">hot air balloon ride in Luxor</a>, the <a href="/trip/nubian-village-tour-by-boat-culture-colors-hospitality/">Nubian village in Aswan</a> and <a href="/trip/abu-simbel-from-aswan-by-flight-the-majestic-day-trip/">Abu Simbel</a>.'],
+  ['Can you arrange airport transfers?', 'Yes. We run private transfers in Luxor, Aswan, Abu Simbel and Hurghada. See the <a href="/transfers/">transfer prices</a>.'],
+  ['What should I pack?', 'Comfortable walking shoes, sunscreen, a hat, light clothing, and a jacket for cooler evenings, especially in winter.'],
+];
+const strip = (h) => h.replace(/<[^>]+>/g, '');
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: strip(a) } })),
+};
+---
+<Page title="Faq - Book Nile cruises" heading="Frequently asked questions"
+  intro="Booking, prices, what is included and how Nile cruises work."
+  description="Answers about booking Nile cruises and Egypt tours with Book Nile Cruises: prices per person, what is included, cruise lengths, dahabiyas and transfers."
+  canonical="/faq/" jsonLd={jsonLd}>
+  <section class="block">
+    <div class="wrap faq">
+      {faqs.map(([q, a], i) => (
+        <details open={i === 0}><summary>{q}</summary><p set:html={a} /></details>
+      ))}
+    </div>
+  </section>
+  <CtaBand title="Still have a question?" />
+</Page>
+<style>
+  .faq { max-width: 860px; display: grid; gap: 10px; }
+  details { border: 1px solid var(--line); background: #fff; }
+  summary { cursor: pointer; padding: 18px 20px; font: 400 20px/1.35 var(--display); color: var(--navy); list-style: none; display: flex; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; margin-left: auto; color: var(--gold); font: 700 18px var(--body); }
+  details[open] summary::after { content: '–'; }
+  details p { margin: 0; padding: 0 20px 18px; color: var(--ink); }
+</style>

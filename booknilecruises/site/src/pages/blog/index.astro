@@ -1,0 +1,22 @@
+---
+import Page from '../../layouts/Page.astro';
+import { loadSite, asset } from '@lib/content.mjs';
+const posts = loadSite().posts;
+---
+<Page title="Blog - Book Nile cruises" heading="Blog" intro="Guides to the temples, cities and cruises of Egypt."
+  description="Travel guides from Book Nile Cruises about Luxor, Aswan, the Nile and Egypt's temples." canonical="/blog/">
+  <section class="block">
+    <div class="wrap grid3">
+      {posts.map((p) => (
+        <article class="card">
+          <div class="ph">{p.image && <img src={asset(p.image.src)} alt="" loading="lazy" width={p.image.width} height={p.image.height} />}</div>
+          <div class="bd">
+            <span class="eyebrow">{new Date(p.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            <h3><a href={p.url}>{p.title}</a></h3>
+            <p class="meta">{p.text.slice(0, 160).replace(/\s+\S*$/, '')}…</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Page>

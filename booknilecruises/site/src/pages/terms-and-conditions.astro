@@ -1,0 +1,17 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE, whatsappUrl, mailtoUrl } from '@lib/site.mjs';
+---
+<Page title="Terms and Conditions - Book Nile cruises" heading="Terms and Conditions"
+  description="Booking terms for Nile cruises and Egypt tours with Book Nile Cruises."
+  canonical="/terms-and-conditions/">
+  <section class="block">
+    <div class="wrap prose">
+      <p>Our full booking terms are being updated. For any question about payment, changes or cancellation for a booking, contact us before you confirm:</p>
+      <ul>
+        <li>WhatsApp: <a href={whatsappUrl('Hello, I have a question about your booking terms.')}>{SITE.phoneDisplay}</a></li>
+        <li>Email: <a href={mailtoUrl('Booking terms')}>{SITE.email}</a></li>
+      </ul>
+    </div>
+  </section>
+</Page>

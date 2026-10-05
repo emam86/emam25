@@ -1,0 +1,17 @@
+---
+const { title, intro, crumbs = [], image } = Astro.props;
+---
+<section class="page-hero">
+  {image && <img class="bg" src={image} alt="" />}
+  <div class="wrap">
+    {crumbs.length > 0 && (
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        {crumbs.map((c) => (<><span aria-hidden="true">/</span>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</>))}
+      </nav>
+    )}
+    <h1>{title}</h1>
+    {intro && <p>{intro}</p>}
+    <slot />
+  </div>
+</section>
