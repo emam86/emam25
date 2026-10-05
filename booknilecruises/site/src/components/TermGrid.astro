@@ -1,5 +1,5 @@
 ---
-import { asset } from '@lib/content.mjs';
+import { asset, srcsetAttr } from '@lib/content.mjs';
 const { terms } = Astro.props;
 ---
 <div class="terms">
@@ -8,7 +8,7 @@ const { terms } = Astro.props;
     const src = img?.card?.src ?? img?.src;
     return (
       <a class="term" href={t.href ?? t.url}>
-        {src && <img src={asset(src)} alt="" loading="lazy" decoding="async" />}
+        {src && <img src={asset(src)} srcset={srcsetAttr(img)} sizes="(max-width: 535px) calc(100vw - 40px), (max-width: 791px) calc((100vw - 56px) / 2), (max-width: 1047px) calc((100vw - 72px) / 3), (max-width: 1180px) calc((100vw - 88px) / 4), 273px" alt="" loading="lazy" decoding="async" />}
         <span class="label"><strong>{t.name}</strong><small>{t.trips.length} {t.trips.length === 1 ? 'trip' : 'trips'}</small></span>
       </a>
     );

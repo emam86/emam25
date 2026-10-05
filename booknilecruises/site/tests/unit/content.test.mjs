@@ -7,6 +7,7 @@ import {
   extractHighlights,
   extractGallery,
   loadSite,
+  normalizeTrip,
 } from '../../src/lib/content.mjs';
 
 test('decodeEntities turns WordPress title entities into text', () => {
@@ -124,4 +125,48 @@ test('content overrides correct a trip FAQ answer without touching the raw expor
   const doctor = t.faqs.find((f) => f.q === 'Is there a doctor available?');
   assert.equal(doctor.a, '<p>Yes, a doctor is available on call 24 hours a day.</p>');
   assert.ok(!JSON.stringify(t.faqs).includes('facilities list mentions'));
+});
+
+
+test('trip srcsets retain the original and only large matching-aspect renditions in width order', () => {
+  const image = loadSite().trips.find((t) => t.slug === 'semiramis-ii-nile-cruise').image;
+  assert.deepEqual(image.srcset, [
+    { src: '/wp-content/uploads/2025/12/MS-Semramis-II-nile-cruice2-600x400.jpg', width: 600 },
+    { src: '/wp-content/uploads/2025/12/MS-Semramis-II-nile-cruice2-768x512.jpg', width: 768 },
+    { src: '/wp-content/uploads/2025/12/MS-Semramis-II-nile-cruice2-1024x682.jpg', width: 1024 },
+    { src: image.src, width: 1280 },
+  ]);
+});
+
+test('srcsetAttr applies the asset origin and comma-separated width descriptors', async () => {
+  const { srcsetAttr } = await import('../../src/lib/content.mjs');
+  assert.equal(typeof srcsetAttr, 'function');
+  const image = { srcset: [{ src: '/wp-content/uploads/a-600.jpg', width: 600 }, { src: '/wp-content/uploads/a.jpg', width: 1200 }] };
+  assert.equal(srcsetAttr(image, 'https://booknilecruises.net'), 'https://booknilecruises.net/wp-content/uploads/a-600.jpg 600w, https://booknilecruises.net/wp-content/uploads/a.jpg 1200w');
+  assert.equal(srcsetAttr(image, ''), '/wp-content/uploads/a-600.jpg 600w, /wp-content/uploads/a.jpg 1200w');
+  assert.equal(srcsetAttr({}), undefined);
+  assert.equal(srcsetAttr({ srcset: [] }), undefined);
+});
+
+
+test('both image sources filter near-aspect sizes and deduplicate widths with the original preferred', () => {
+  const sizes = {
+    cropped: { file: 'crop.jpg', width: 800, height: 800 },
+    small: { file: 'small.jpg', width: 599, height: 300 },
+    matching: { file: 'near.jpg', width: 600, height: 305 },
+    duplicate: { file: 'duplicate.jpg', width: 600, height: 305 },
+    outsideTolerance: { file: 'wide.jpg', width: 900, height: 440 },
+    full: { file: 'full-copy.jpg', width: 1200, height: 600 },
+  };
+  const raw = { id: 1, slug: 'example', link: '/trip/example/', title: { rendered: 'Example' }, featured_media: 1,
+    featured_image: { file: '2025/12/original.jpg', width: 1200, height: 600, sizes } };
+  const media = { source_url: 'https://booknilecruises.net/wp-content/uploads/2025/12/original.jpg',
+    media_details: { width: 1200, height: 600, sizes } };
+  for (const records of [new Map(), new Map([[1, media]])]) {
+    const trip = normalizeTrip(raw, { media: records, terms: { destination: [], activities: [], trip_types: [] } });
+    assert.deepEqual(trip.image.srcset, [
+      { src: '/wp-content/uploads/2025/12/duplicate.jpg', width: 600 },
+      { src: '/wp-content/uploads/2025/12/original.jpg', width: 1200 },
+    ]);
+  }
 });

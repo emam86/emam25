@@ -14,7 +14,7 @@ interface Props {
 const { title, description = '', canonical, ogImage, jsonLd, noindex = false } = Astro.props;
 const path = canonical ?? Astro.url.pathname;
 const canonicalUrl = new URL(path, SITE.origin).href;
-const ogUrl = ogImage ? new URL(ogImage, SITE.origin).href : new URL('/img/felucca.jpg', SITE.origin).href;
+const ogUrl = ogImage ? new URL(ogImage, SITE.origin).href : new URL('/wp-content/uploads/2025/12/Felucca-from-Aswan.jpg', SITE.origin).href;
 const robots = noindex || import.meta.env.PUBLIC_NOINDEX === '1' ? 'noindex, nofollow' : 'max-image-preview:large';
 const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const current = Astro.url.pathname;

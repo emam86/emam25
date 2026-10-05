@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import TripCard from '../components/TripCard.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { loadSite, asset } from '@lib/content.mjs';
+import { loadSite, asset, srcsetAttr } from '@lib/content.mjs';
 import { SITE, CATEGORY_PAGES, whatsappUrl } from '@lib/site.mjs';
 import { money } from '@lib/format.mjs';
 
@@ -16,15 +16,16 @@ const minPrice = (trips) => {
 
 // Cruise classes, with counts and "from" prices computed from the trips.
 const classes = [
-  ['standard-5-star-nile-cruises', 'Standard 5-Star', '/img/felucca.jpg'],
+  ['standard-5-star-nile-cruises', 'Standard 5-Star', '/wp-content/uploads/2025/12/Felucca-from-Aswan.jpg'],
   ['deluxe-nile-cruises', 'Deluxe', null],
-  ['luxury-dahabiya-nile-cruise-packages', 'Dahabiya', '/img/dahabiya.jpg'],
-  ['lake-nasser-nile-cruises', 'Lake Nasser', '/img/lake.jpg'],
+  ['luxury-dahabiya-nile-cruise-packages', 'Dahabiya', '/wp-content/uploads/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg'],
+  ['lake-nasser-nile-cruises', 'Lake Nasser', '/wp-content/uploads/2025/12/Movenpick-Prince-Abbas-Lake-Cruise1.jpg'],
 ].map(([page, label, img]) => {
   const term = termOf(CATEGORY_PAGES[page].term);
   const trips = term?.trips ?? [];
-  const pic = img ?? asset(trips.find((t) => t.image)?.image.card?.src ?? trips[0]?.image?.src);
-  return { href: `/${page}/`, label, count: trips.length, from: minPrice(trips), img: pic, noun: page.includes('dahabiya') ? 'boats' : 'ships' };
+  const image = trips.find((t) => t.image)?.image;
+  const pic = asset(img ?? image?.card?.src ?? image?.src);
+  return { href: `/${page}/`, label, count: trips.length, from: minPrice(trips), img: pic, srcset: img ? undefined : srcsetAttr(image), noun: page.includes('dahabiya') ? 'boats' : 'ships' };
 });
 
 // The same trips the current homepage features, in the same order.
@@ -40,10 +41,7 @@ const popular = [
 const destinations = ['luxor', 'cairo', 'aswan', 'hurghada', 'alexandria']
   .map((s) => site.terms.destination.find((d) => d.slug === s))
   .filter(Boolean);
-const destImg = (d) => {
-  const t = d.trips.find((x) => x.image);
-  return asset(t?.image.card?.src ?? t?.image.src);
-};
+const destImg = (d) => d.trips.find((x) => x.image)?.image;
 const post = site.posts[0];
 const totalCruises = termOf('nile-cruise')?.trips.length ?? 0;
 
@@ -62,11 +60,11 @@ const jsonLd = {
   title="Book Nile cruises - Book the Best Nile Cruises in Egypt"
   description={`Book Nile cruises between Luxor and Aswan, dahabiyas, Lake Nasser cruises, day tours and Egypt tour packages directly with our team in Luxor. ${totalCruises} cruises with itineraries and prices.`}
   canonical="/"
-  ogImage="/img/dahabiya.jpg"
+  ogImage="/wp-content/uploads/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg"
   jsonLd={jsonLd}
 >
   <section class="hero">
-    <img class="bg" src="/img/dahabiya.jpg" alt="" fetchpriority="high" />
+    <img class="bg" src={asset('/wp-content/uploads/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg')} alt="" fetchpriority="high" />
     <div class="wrap">
       <span class="rule eyebrow">Luxor · Aswan · Lake Nasser</span>
       <h1>Explore Luxor &amp; Aswan <em>by cruise</em></h1>
@@ -112,7 +110,7 @@ const jsonLd = {
       <div class="classes">
         {classes.map((c) => (
           <a class="cls" href={c.href}>
-            {c.img && <img src={c.img} alt="" loading="lazy" decoding="async" />}
+            {c.img && <img src={c.img} srcset={c.srcset} sizes="(max-width: 980px) calc((100vw - 56px) / 2), (max-width: 1180px) calc((100vw - 88px) / 4), 273px" alt="" loading="lazy" decoding="async" />}
             <div><small>{c.count} {c.noun}{c.from != null && ` · from ${money(c.from)}`}</small><h3>{c.label}</h3></div>
           </a>
         ))}
@@ -130,7 +128,7 @@ const jsonLd = {
 
   <section class="block">
     <div class="wrap exp">
-      <div class="pic"><img src="/img/felucca.jpg" alt="Feluccas sailing on the Nile at Aswan" loading="lazy" width="1024" height="683" /></div>
+      <div class="pic"><img src={asset('/wp-content/uploads/2025/12/Felucca-from-Aswan.jpg')} alt="Feluccas sailing on the Nile at Aswan" loading="lazy" width="1200" height="800" /></div>
       <div>
         <span class="eyebrow">Signature experiences</span>
         <h2>Why travel Egypt on a Nile cruise</h2>
@@ -150,9 +148,12 @@ const jsonLd = {
     <div class="wrap">
       <div class="head"><span class="eyebrow">Top destinations</span><h2>Popular Egypt destinations</h2></div>
       <div class="dests">
-        {destinations.map((d) => (
+        {destinations.map((d, i) => (
           <a href={d.url}>
-            <img src={destImg(d)} alt="" loading="lazy" decoding="async" />
+            <img src={asset(destImg(d)?.card?.src ?? destImg(d)?.src)} srcset={srcsetAttr(destImg(d))}
+              sizes={i === 0
+                ? '(max-width: 620px) calc(100vw - 40px), (max-width: 1180px) calc((100vw - 72px) / 2), 554px'
+                : '(max-width: 620px) calc((100vw - 56px) / 2), (max-width: 1180px) calc((100vw - 72px) / 4), 277px'} alt="" loading="lazy" decoding="async" />
             <span>{d.name}<small>{d.trips.length} trips</small></span>
           </a>
         ))}

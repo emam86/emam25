@@ -1,5 +1,5 @@
 ---
-import { asset } from '@lib/content.mjs';
+import { asset, srcsetAttr } from '@lib/content.mjs';
 import { money, durationLabel, placesLabel, categoryLabel } from '@lib/format.mjs';
 const { trip, eager = false } = Astro.props;
 const img = trip.image?.card ?? trip.image;
@@ -9,7 +9,7 @@ const badge = durationLabel(trip.duration)?.split(' / ')[0];
 <article class="card" data-destinations={trip.destinations.map((d) => d.slug).join(' ')}
   data-activities={trip.activities.map((a) => a.slug).join(' ')} data-days={trip.duration.days ?? ''}>
   <div class="ph">
-    {img && <img src={asset(img.src)} alt={trip.image.alt || trip.title} width={img.width} height={img.height}
+    {img && <img src={asset(img.src)} srcset={srcsetAttr(trip.image)} sizes="(max-width: 620px) calc(100vw - 40px), (max-width: 980px) calc((100vw - 66px) / 2), (max-width: 1180px) calc((100vw - 92px) / 3), 362.67px" alt={trip.image.alt || trip.title} width={img.width} height={img.height}
       loading={eager ? 'eager' : 'lazy'} decoding="async" />}
     {badge && <span class="badge">{badge}</span>}
   </div>

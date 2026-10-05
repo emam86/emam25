@@ -1,6 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
-import { loadSite, asset } from '@lib/content.mjs';
+import { loadSite, asset, srcsetAttr } from '@lib/content.mjs';
 const posts = loadSite().posts;
 ---
 <Page title="Blog - Book Nile cruises" heading="Blog" intro="Guides to the temples, cities and cruises of Egypt."
@@ -9,7 +9,7 @@ const posts = loadSite().posts;
     <div class="wrap grid3">
       {posts.map((p) => (
         <article class="card">
-          <div class="ph">{p.image && <img src={asset(p.image.src)} alt="" loading="lazy" width={p.image.width} height={p.image.height} />}</div>
+          <div class="ph">{p.image && <img src={asset(p.image.card?.src ?? p.image.src)} srcset={srcsetAttr(p.image)} sizes="(max-width: 620px) calc(100vw - 40px), (max-width: 980px) calc((100vw - 66px) / 2), (max-width: 1180px) calc((100vw - 92px) / 3), 362.67px" alt="" loading="lazy" width={p.image.card?.width ?? p.image.width} height={p.image.card?.height ?? p.image.height} />}</div>
           <div class="bd">
             <span class="eyebrow">{new Date(p.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
             <h3><a href={p.url}>{p.title}</a></h3>

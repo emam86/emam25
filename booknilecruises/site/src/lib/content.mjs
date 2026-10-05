@@ -127,6 +127,19 @@ function cardFrom(dir, sizes = {}) {
   return key ? { src: `${dir}/${sizes[key].file}`, width: sizes[key].width, height: sizes[key].height } : null;
 }
 
+function srcsetFrom(src, width, height, sizes = {}) {
+  const entries = new Map();
+  const ratio = width / height;
+  for (const size of Object.values(sizes)) {
+    if (size.file && size.width >= 600 && size.height > 0 &&
+        Math.abs((size.width / size.height) / ratio - 1) <= 0.02) {
+      entries.set(size.width, { src: `${path.posix.dirname(src)}/${size.file}`, width: size.width });
+    }
+  }
+  if (width > 0) entries.set(width, { src, width });
+  return [...entries.values()].sort((a, b) => a.width - b.width);
+}
+
 function imageFromMedia(media) {
   if (!media) return null;
   const src = pathOf(media.source_url);
@@ -135,6 +148,7 @@ function imageFromMedia(media) {
     width: media.media_details?.width ?? null,
     height: media.media_details?.height ?? null,
     alt: decodeEntities(media.alt_text || ''),
+    srcset: srcsetFrom(src, media.media_details?.width, media.media_details?.height, media.media_details?.sizes),
     card: cardFrom(path.posix.dirname(src), media.media_details?.sizes),
   };
 }
@@ -142,7 +156,7 @@ function imageFromMedia(media) {
 function imageFromTripField(fi) {
   if (!fi?.file) return null;
   const src = `/wp-content/uploads/${fi.file}`;
-  return { src, width: fi.width ?? null, height: fi.height ?? null, alt: '', card: cardFrom(path.posix.dirname(src), fi.sizes) };
+  return { src, width: fi.width ?? null, height: fi.height ?? null, alt: '', srcset: srcsetFrom(src, fi.width, fi.height, fi.sizes), card: cardFrom(path.posix.dirname(src), fi.sizes) };
 }
 
 function priceOf(value) {
@@ -267,4 +281,10 @@ export function loadSite({ assetOrigin = envAssetOrigin() } = {}) {
 export function asset(src, origin = envAssetOrigin()) {
   if (!src) return src;
   return src.startsWith('/wp-content/') ? `${origin}${src}` : src;
+}
+
+export function srcsetAttr(img, origin = envAssetOrigin()) {
+  return img?.srcset?.length
+    ? img.srcset.map(({ src, width }) => `${asset(src, origin)} ${width}w`).join(', ')
+    : undefined;
 }
