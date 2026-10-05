@@ -46,6 +46,7 @@
 
 - [`seo-audit/01-audit-2026-10.md`](seo-audit/01-audit-2026-10.md) — تقرير التدقيق الأصلي (6 مشاكل).
 - [`seo-audit/02-review-and-fixes.md`](seo-audit/02-review-and-fixes.md) — مراجعة كل بند مقابل الموقع والكود، وما تم إصلاحه، وما يحتاج بيانات منك.
+- [`seo-audit/03-owner-instructions.md`](seo-audit/03-owner-instructions.md) — التعليمات الناقصة: المطلوب منك خطوة بخطوة بعد تعديلات الكود.
 
 ## لوحة المتابعة التفاعلية
 
