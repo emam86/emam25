@@ -117,3 +117,11 @@ test('trip images carry a card-size rendition in the same uploads folder', () =>
   assert.ok(t.image.card.src.startsWith('/wp-content/uploads/2025/12/'));
   assert.ok(t.image.card.width <= 1024);
 });
+
+test('content overrides correct a trip FAQ answer without touching the raw export', () => {
+  const site = loadSite();
+  const t = site.trips.find((x) => x.slug === 'esmeralda-nile-cruise');
+  const doctor = t.faqs.find((f) => f.q === 'Is there a doctor available?');
+  assert.equal(doctor.a, '<p>Yes, a doctor is available on call 24 hours a day.</p>');
+  assert.ok(!JSON.stringify(t.faqs).includes('facilities list mentions'));
+});

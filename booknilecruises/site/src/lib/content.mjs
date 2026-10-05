@@ -71,6 +71,18 @@ function readJson(name) {
   return JSON.parse(readFileSync(path.join(DATA, 'wp-export', name), 'utf8'));
 }
 
+function readOverrides() {
+  const file = path.join(DATA, 'overrides.json');
+  return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
+}
+
+// FAQ answers corrected by the business, keyed by trip slug and question text.
+function applyTripOverrides(trip, overrides) {
+  const faqFixes = overrides?.faqs ?? {};
+  for (const faq of trip.faqs) if (faqFixes[faq.q]) faq.a = faqFixes[faq.q];
+  return trip;
+}
+
 function readSnapshot(url) {
   const file = path.join(DATA, 'html-snapshot', new URL(url, SITE_ORIGIN).pathname, 'index.html.gz');
   return existsSync(file) ? gunzipSync(readFileSync(file)).toString('utf8') : '';
@@ -224,8 +236,10 @@ export function loadSite({ assetOrigin = envAssetOrigin() } = {}) {
     activities: buildTerms(readJson('activities.json'), 'activities'),
     trip_types: buildTerms(readJson('trip_types.json'), 'trip_types'),
   };
+  const overrides = readOverrides();
   const trips = readJson('trips.json')
     .map((raw) => normalizeTrip(raw, { media, terms, assetOrigin, snapshot: readSnapshot(raw.link) }))
+    .map((trip) => applyTripOverrides(trip, overrides.trips?.[trip.slug]))
     .sort((a, b) => a.title.localeCompare(b.title));
 
   // Attach trips to their terms, and roll child-term trips up into parents.

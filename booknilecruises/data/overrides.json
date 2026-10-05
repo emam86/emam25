@@ -1,0 +1,10 @@
+{
+  "_comment": "Corrections applied on top of the raw WordPress export at build time. The export itself is never edited.",
+  "trips": {
+    "esmeralda-nile-cruise": {
+      "faqs": {
+        "Is there a doctor available?": "<p>Yes, a doctor is available on call 24 hours a day.</p>"
+      }
+    }
+  }
+}
