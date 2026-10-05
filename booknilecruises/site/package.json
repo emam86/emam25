@@ -1,0 +1,15 @@
+{
+  "name": "booknilecruises-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test \"tests/unit/*.test.mjs\"",
+    "test:built": "node --test \"tests/built/*.test.mjs\""
+  },
+  "dependencies": {
+    "astro": "^5.18.2"
+  }
+}
