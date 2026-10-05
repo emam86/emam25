@@ -9,16 +9,17 @@
 
 ---
 
-## 1. النشر (أول خطوة)
+## 1. النشر: ✅ تم (2026-10-05)
 
-1. اعمل Merge لـ PR #17 وانشر الموقع على Hostinger بنفس طريقتك المعتادة.
-2. افتح `https://www.luxorandaswantours.net/en`، واعمل View Source، ودوّر على `<h1`:
-   لازم يطلع **واحد بس** ونصه `Private Egypt Tours & Tailor-Made Nile Cruises`.
-3. نفس الخطوة على `/es`: النص لازم يكون `Tours privados por Egipto y cruceros por el Nilo a medida`.
-4. في Google Search Console: **URL Inspection** ← الصق رابط `/en` ← **Request Indexing**. وكرر لـ `/es`.
+PR #17 اتعمله Merge، والملفات المتغيرة اترفعت على Hostinger. اتأكدت على الموقع المباشر:
+- `/en` و`/es` و`/ko`: فيهم `<h1>` واحد بس، بالنص الثابت.
+- المقالات: `Dr. M. Emam, PhD in Egyptology` تحت العنوان، و`Person` في بيانات المقال.
 
-بعد النشر **مفيش أي حاجة هتتغير في شكل الموقع غير الـ `<h1>`**. باقي الخانات الجديدة فاضية،
-ومش هتظهر لحد ما تملاها.
+**المطلوب منك:** في Google Search Console ← **URL Inspection** ← الصق رابط `/en` ← **Request Indexing**،
+وكرر لـ `/es`.
+
+> ملاحظة: الموقع **مش مربوط بـ GitHub للنشر التلقائي** على Hostinger. أي Merge جديد محتاج رفع
+> الملفات يدويًا (أو أعمله أنا لما تطلب).
 
 ---
 
@@ -141,7 +142,8 @@ JavaScript صغير بعد تحميل الصفحة، وبعدها الصفحة �
 
 ## قائمة مختصرة
 
-- [ ] Merge لـ PR #17 + نشر + Request Indexing لـ `/en` و`/es`
+- [x] Merge لـ PR #17 + نشر
+- [ ] Request Indexing لـ `/en` و`/es` في Search Console
 - [ ] رابط TripAdvisor (وTrustpilot لو موجود) في `/admin/seo`
 - [x] كاتب المقالات: Dr. M. Emam, PhD in Egyptology
 - [ ] (اختياري) نبذة وصورة للكاتب

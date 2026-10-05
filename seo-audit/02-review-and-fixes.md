@@ -16,7 +16,7 @@
 
 ## الإصلاح المُنفَّذ: `<h1>` الصفحة الرئيسية
 
-الفرع `claude/clever-mayer-uxufvv` في ريبو الموقع (commit `c8cb87b`) — **لم يُنشر على الموقع بعد**.
+commit `c8cb87b` — دخل في PR #17 اللي اتعمله Merge واتنشر على الموقع المباشر في 2026-10-05.
 
 - `/en` ← `<h1>Private Egypt Tours & Tailor-Made Nile Cruises</h1>`
 - `/es` ← `<h1>Tours privados por Egipto y cruceros por el Nilo a medida</h1>`
