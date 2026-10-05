@@ -9,7 +9,7 @@ const apacheRules = {
   name: 'apache-rules',
   hooks: {
     'astro:build:done': async ({ dir }) => {
-      await writeFile(new URL('.htaccess', dir), htaccess());
+      await writeFile(new URL('.htaccess', dir), htaccess(undefined, { noindex: process.env.PUBLIC_NOINDEX === '1' }));
     },
   },
 };
