@@ -253,3 +253,13 @@ test('every old WordPress sitemap name redirects, the new sitemap does not', asy
   }
   assert.ok(!re.test('/sitemap.xml'));
 });
+
+test('the Apache rules block PHP, WordPress leftovers and archives', async () => {
+  const { htaccess } = await import('../../src/lib/redirects.mjs');
+  const ht = htaccess();
+  assert.match(ht, /<FilesMatch "\\\.\(php\[0-9\]\?\|phtml\|phar\)\$">\s*Require all denied/);
+  const rule = new RegExp(ht.match(/RedirectMatch 404 (\S+)/)[1]);
+  for (const p of ['/old/', '/old/wp-login.php', '/wordpress-old-20261006/x', '/wp-includes/version.php', '/wp-content/plugins/x.php']) assert.ok(rule.test(p), p);
+  for (const p of ['/', '/images/2025/12/a.jpg', '/wp-content/uploads/2025/12/a.jpg', '/trip/old-cairo/', '/older/']) assert.ok(!rule.test(p), p);
+  assert.match(ht, /readme\\\.html\|license\\\.txt\|wp-config/);
+});
