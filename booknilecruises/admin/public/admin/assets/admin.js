@@ -82,7 +82,7 @@ function renumberRepeat(fieldset) {
     });
   });
 }
-document.querySelectorAll('[data-trip-form], [data-term-form]').forEach((form) => {
+document.querySelectorAll('[data-trip-form], [data-term-form], [data-post-form], [data-seo-form]').forEach((form) => {
   showControls(form); enhanceRich(form);
   const source = form.querySelector('[data-slug-source]');
   const slug = form.querySelector('[data-slug-target]');
@@ -125,11 +125,13 @@ document.querySelectorAll('[data-trip-form], [data-term-form]').forEach((form) =
     taxonomy.addEventListener('change', update); update();
     return;
   }
-  form.elements.image_id.type = 'hidden';
-  form.elements.image_id.closest('label').hidden = true;
-  form.querySelectorAll('[data-gallery] input').forEach((input) => { input.type = 'hidden'; input.closest('label').hidden = true; });
+  if (form.elements.image_id) {
+    form.elements.image_id.type = 'hidden';
+    form.elements.image_id.closest('label').hidden = true;
+    form.querySelectorAll('[data-gallery] input').forEach((input) => { input.type = 'hidden'; input.closest('label').hidden = true; });
+  }
   const order = form.querySelector('[data-term-order]');
-  order.querySelectorAll('input').forEach((input) => { input.name = 'term_ids[]'; });
+  order?.querySelectorAll('input').forEach((input) => { input.name = 'term_ids[]'; });
   form.querySelectorAll('[data-term-checkbox]').forEach((checkbox) => {
     checkbox.removeAttribute('name');
     checkbox.addEventListener('change', () => {
@@ -143,9 +145,12 @@ document.querySelectorAll('[data-trip-form], [data-term-form]').forEach((form) =
     });
   });
   const preview = () => {
-    const val = (name) => form.elements[name].value.trim();
+    const val = (name) => form.elements[name]?.value.trim() || '';
     form.querySelector('[data-seo-title]').textContent = val('seo_title') || `${val('title')} - Book Nile cruises`;
-    form.querySelector('[data-seo-url]').textContent = `${form.dataset.siteUrl.replace(/\/$/, '')}/trip/${val('slug')}/`;
+    let path = `/trip/${val('slug')}/`;
+    if (form.hasAttribute('data-post-form')) path = `/${val('published_at').slice(0, 10).replaceAll('-', '/')}/${val('slug')}/`;
+    if (form.hasAttribute('data-seo-form')) path = val('path');
+    form.querySelector('[data-seo-url]').textContent = `${form.dataset.siteUrl.replace(/\/$/, '')}${path}`;
     form.querySelector('[data-seo-description]').textContent = val('seo_description') || val('excerpt');
     form.querySelectorAll('[data-counter]').forEach((el) => {
       const length = Array.from(el.value).length; const count = el.parentElement.querySelector('[data-count]');
@@ -153,6 +158,7 @@ document.querySelectorAll('[data-trip-form], [data-term-form]').forEach((form) =
     });
   };
   form.addEventListener('input', preview); form.addEventListener('change', preview); preview();
+  if (form.hasAttribute('data-seo-form')) return;
   const dialog = document.createElement('dialog'); dialog.className = 'media-picker';
   const heading = document.createElement('h2'); heading.textContent = 'اختيار الصور';
   const search = document.createElement('input'); search.placeholder = 'بحث الصور'; search.setAttribute('aria-label', 'بحث الصور');
@@ -161,12 +167,23 @@ document.querySelectorAll('[data-trip-form], [data-term-form]').forEach((form) =
   const pager = document.createElement('div'); pager.className = 'row';
   const previous = button('السابق'); const next = button('التالي'); const done = button('تم / إغلاق');
   pager.append(previous, next, done); dialog.append(heading, search, status, grid, pager); document.body.append(dialog);
-  let mode = 'cover'; let page = 1; let pages = 1; let request = 0;
+  let mode = 'cover'; let page = 1; let pages = 1; let request = 0; let contentRange = null;
   const thumb = (path) => path.startsWith('/images/') ? `${form.dataset.imagesUrl || '/images'}${path.slice(7)}` : path;
   function choose(photo) {
     const image = document.createElement('img'); image.src = thumb(photo.thumb); image.alt = photo.alt; image.className = 'trip-thumb';
     if (mode === 'cover') {
       form.elements.image_id.value = photo.id; form.querySelector('[data-cover-preview]').replaceChildren(image); dialog.close(); return;
+    }
+    if (mode === 'content') {
+      const area = form.querySelector('.rich-area');
+      const photoNode = document.createElement('img'); photoNode.src = photo.path; photoNode.alt = photo.alt;
+      if (contentRange && area.contains(contentRange.commonAncestorContainer)) {
+        contentRange.deleteContents(); contentRange.insertNode(photoNode);
+        contentRange.setStartAfter(photoNode); contentRange.collapse(true);
+      } else area.append(photoNode);
+      area.dispatchEvent(new Event('input')); dialog.close(); area.focus();
+      if (contentRange) { const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(contentRange); }
+      return;
     }
     const gallery = form.querySelector('[data-gallery]');
     if (Array.from(gallery.querySelectorAll('input')).some((input) => input.value === String(photo.id))) return;
@@ -191,7 +208,17 @@ document.querySelectorAll('[data-trip-form], [data-term-form]').forEach((form) =
       previous.disabled = page <= 1; next.disabled = page >= pages; status.textContent = `صفحة ${page} / ${pages}`;
     } catch { if (current === request) status.textContent = 'تعذر تحميل الصور. حاول مرة أخرى.'; }
   }
-  form.querySelectorAll('[data-pick]').forEach((control) => control.addEventListener('click', () => { mode = control.dataset.pick; page = 1; dialog.showModal(); fetchPhotos(); }));
+  form.querySelectorAll('[data-pick]').forEach((control) => {
+    control.addEventListener('mousedown', (event) => { if (control.dataset.pick === 'content') event.preventDefault(); });
+    control.addEventListener('click', () => {
+      mode = control.dataset.pick;
+      if (mode === 'content') {
+        const selection = window.getSelection(); const area = form.querySelector('.rich-area');
+        contentRange = selection.rangeCount && area.contains(selection.getRangeAt(0).commonAncestorContainer) ? selection.getRangeAt(0).cloneRange() : null;
+      }
+      page = 1; dialog.showModal(); fetchPhotos();
+    });
+  });
   form.querySelector('[data-clear-cover]').addEventListener('click', () => { form.elements.image_id.value = ''; form.querySelector('[data-cover-preview]').replaceChildren(); });
   let searchTimer;
   search.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(() => { page = 1; fetchPhotos(); }, 250); });

@@ -70,11 +70,6 @@ use Bnc\Media\Files;
       <noscript><p>لإضافة صف بدون JavaScript استخدم الصف الفارغ. اترك HTML فارغًا لعنوان مجموعة.</p><?= View::partial('trips/repeat-row', ['field' => $field, 'text' => $text, 'html' => $html, 'i' => count($d[$field]), 'item' => [$text => '', $html => '']]) ?></noscript>
     </fieldset>
   <?php endforeach; ?>
-  <fieldset><legend>SEO</legend>
-    <label>عنوان SEO <input name="seo_title" maxlength="255" data-counter="60" value="<?= e($d['seo_title']) ?>"><span data-count aria-live="polite"></span></label>
-    <label>وصف SEO <textarea name="seo_description" maxlength="500" data-counter="160" rows="3"><?= e($d['seo_description']) ?></textarea><span data-count aria-live="polite"></span></label>
-    <label class="check"><input type="checkbox" name="noindex" value="1"<?= $d['noindex'] ? ' checked' : '' ?>> عدم الفهرسة</label>
-    <div class="seo-preview" dir="ltr" aria-label="معاينة بحث Google"><strong data-seo-title></strong><div data-seo-url></div><p data-seo-description></p></div>
-  </fieldset>
+  <?= View::partial('partials/seo', ['d' => $d]) ?>
   <div class="row"><button class="btn">حفظ</button><a href="<?= e(url('/trips')) ?>">العودة للرحلات</a></div>
 </form>

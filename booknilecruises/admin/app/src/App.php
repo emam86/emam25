@@ -58,6 +58,26 @@ final class App
         $r->post('/terms/{id}/edit', [C\TermsController::class, 'update'], 'trips.edit');
         $r->post('/terms/{id}/delete', [C\TermsController::class, 'delete'], 'trips.edit');
 
+        $r->get('/posts', [C\PostsController::class, 'index'], 'posts.view');
+        $r->get('/posts/new', [C\PostsController::class, 'create'], 'posts.create');
+        $r->post('/posts/new', [C\PostsController::class, 'store'], 'posts.create');
+        $r->get('/posts/{id}/edit', [C\PostsController::class, 'edit'], 'posts.edit');
+        $r->post('/posts/{id}/edit', [C\PostsController::class, 'update'], 'posts.edit');
+        $r->post('/posts/{id}/delete', [C\PostsController::class, 'delete'], 'posts.delete');
+        $r->get('/redirects', [C\RedirectsController::class, 'index'], 'sitemap.edit');
+        $r->get('/redirects/new', [C\RedirectsController::class, 'create'], 'sitemap.edit');
+        $r->post('/redirects/new', [C\RedirectsController::class, 'store'], 'sitemap.edit');
+        $r->get('/redirects/{id}/edit', [C\RedirectsController::class, 'edit'], 'sitemap.edit');
+        $r->post('/redirects/{id}/edit', [C\RedirectsController::class, 'update'], 'sitemap.edit');
+        $r->post('/redirects/{id}/delete', [C\RedirectsController::class, 'delete'], 'sitemap.edit');
+        $r->get('/posts/{id}/delete', [C\PostsController::class, 'confirmDelete'], 'posts.delete');
+        $r->get('/seo', [C\SeoController::class, 'index'], 'seo.edit');
+        $r->get('/seo/edit', [C\SeoController::class, 'edit'], 'seo.edit');
+        $r->post('/seo/edit', [C\SeoController::class, 'save'], 'seo.edit');
+        $r->get('/sitemap', [C\SitemapController::class, 'index']);
+        $r->get('/settings', [C\SettingsController::class, 'form'], 'settings.edit');
+        $r->post('/settings', [C\SettingsController::class, 'save'], 'settings.edit');
+
         $r->get('/audit', [C\AuditController::class, 'index'], 'audit.view');
         return $r;
     }
