@@ -23,6 +23,7 @@ final class DashboardController extends Controller
         return $this->view('dashboard', [
             'title' => 'الرئيسية',
             'stats' => $stats,
+            'lastJob' => Auth::can('publish') ? Db::one('SELECT status, created_at FROM publish_jobs ORDER BY id DESC LIMIT 1') : null,
             'pending' => $this->user()['is_owner'] ? Migrator::pending() : [],
             'recent' => Auth::can('audit.view') ? Db::all('SELECT * FROM audit_log ORDER BY id DESC LIMIT 10') : [],
         ]);

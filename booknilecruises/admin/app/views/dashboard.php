@@ -1,3 +1,5 @@
+<?php declare(strict_types=1); ?>
+<?php if ($lastJob): ?><p class="card">آخر نشر: <a href="<?= e(url('/publish')) ?>"><?= e(['queued' => 'في الانتظار', 'running' => 'قيد التنفيذ', 'succeeded' => 'نجح', 'failed' => 'فشل'][$lastJob['status']]) ?></a> · <?= e($lastJob['created_at']) ?></p><?php endif; ?>
 <?php if ($pending): ?>
   <div class="flash warn">
     في تحديثات لقاعدة البيانات لم تُطبّق بعد: <?= e(implode('، ', $pending)) ?>
@@ -6,7 +8,7 @@
 <?php endif; ?>
 <div class="stats">
   <?php foreach ($stats as $label => $n): ?>
-    <div class="stat"><strong><?= (int) $n ?></strong><span><?= e($label) ?></span></div>
+    <div class="stat"><strong><?= (int) $n ?></strong><span><?php if ($label === 'استفسارات جديدة' && can('enquiries.view')): ?><a href="<?= e(url('/enquiries')) ?>"><?= e($label) ?></a><?php else: ?><?= e($label) ?><?php endif; ?></span></div>
   <?php endforeach; ?>
 </div>
 <?php if ($recent): ?>

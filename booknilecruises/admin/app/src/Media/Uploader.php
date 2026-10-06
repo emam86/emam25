@@ -16,7 +16,18 @@ final class Uploader
 
     public function save(array $file, int $userId): int
     {
-        [$tmp, $type] = $this->validate($file);
+        return $this->process($file, $userId);
+    }
+
+    /** Trusted caller supplies a downloaded temp file; all image checks still apply. */
+    public function saveLocal(string $path, string $name, string $actor): int
+    {
+        return $this->process(['tmp_name' => $path, 'name' => $name, 'error' => UPLOAD_ERR_OK], null, $actor, true);
+    }
+
+    private function process(array $file, ?int $userId, ?string $actor = null, bool $local = false): int
+    {
+        [$tmp, $type] = $this->validate($file, $local);
         // A large photo is decoded into several full-size canvases (about 4 bytes per pixel each).
         self::raiseMemoryLimit(768 * 1024 * 1024);
         $image = $this->decode($tmp, $type);
@@ -48,13 +59,13 @@ final class Uploader
                 }
             }
             $path = '/images/' . date('Y/m') . "/$name.$ext";
-            return Db::tx(function () use ($path, $image, $mime, $mainPath, $sizes, $userId): int {
+            return Db::tx(function () use ($path, $image, $mime, $mainPath, $sizes, $userId, $actor): int {
                 $id = Db::insert('media', [
                     'path' => $path, 'width' => imagesx($image), 'height' => imagesy($image),
                     'mime' => $mime, 'filesize' => filesize($mainPath), 'alt' => '',
                     'sizes' => json_encode((object) $sizes, JSON_THROW_ON_ERROR), 'uploaded_by' => $userId,
                 ]);
-                Audit::log('create', 'media', $id, 'رفع الصورة ' . $path);
+                Audit::log('create', 'media', $id, 'رفع الصورة ' . $path, null, $actor);
                 return $id;
             });
         } catch (\Throwable $e) {
@@ -73,7 +84,7 @@ final class Uploader
         if ($current < $bytes) @ini_set('memory_limit', (string) $bytes);
     }
 
-    private function validate(array $file): array
+    private function validate(array $file, bool $local = false): array
     {
         $error = $file['error'] ?? UPLOAD_ERR_NO_FILE;
         $max = (float) Config::get('max_upload_mb', 15);
@@ -87,7 +98,7 @@ final class Uploader
             default => 'فشل رفع الصورة. حاول مرة أخرى.',
         });
         $tmp = $file['tmp_name'] ?? '';
-        if (!is_string($tmp) || !is_uploaded_file($tmp)) throw new RuntimeException('ملف الرفع غير صالح.');
+        if (!is_string($tmp) || ($local ? (!is_file($tmp) || is_link($tmp)) : !is_uploaded_file($tmp))) throw new RuntimeException('ملف الرفع غير صالح.');
         if (filesize($tmp) > $max * 1024 * 1024) throw new RuntimeException("حجم الصورة يتجاوز $max ميجابايت.");
         $info = @getimagesize($tmp);
         if (!$info || !isset(self::TYPES[$info[2]]) || (new \finfo(FILEINFO_MIME_TYPE))->file($tmp) !== self::TYPES[$info[2]][1]) {

@@ -1,0 +1,25 @@
+# HTTP API. The site root forbids PHP everywhere; only this folder's
+# index.php may run, and every API URL goes through it.
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "\.(php[0-9]?|phtml|phar)$">
+  Require all denied
+</FilesMatch>
+<Files "index.php">
+  Require all granted
+</Files>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Pass the Authorization header (tokens, API keys) through to PHP; Apache/LiteSpeed drop it otherwise.
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  # Rewrite rules here replace the site root's, so https is enforced again.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteRule ^index\.php$ - [L]
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>

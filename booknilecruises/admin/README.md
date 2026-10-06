@@ -50,6 +50,18 @@ php -S 127.0.0.1:8790 -t public tests/server.php
   `Browser`). Cover permissions (a role without the permission gets 403), validation (422), CSRF, and the
   happy path. `php tests/run.php` must stay green.
 
+## Phase 5: API and publishing
+
+Arabic integration guide: [API.md](API.md). Upload `public/api/` to `public_html/api/`
+with the updated app, then apply migration `002_phase5` from the owner dashboard.
+Configure `api_path` (default `/api`), a random `export_token` of at least 32 characters,
+and the `github` and `mail` settings in the external `bnc-config.php` file.
+
+The API starts no sessions; automation keys are scoped and stored hashed. Publishing
+uses the existing workflow and callback contract. API keys and webhook secrets are
+shown once after creation (or webhook regeneration). Keep `webhooks_allow_private`
+false in production; it exists only for the local webhook receiver tests.
+
 ## Installing on Hostinger (once)
 
 1. hPanel → Databases → create a MySQL database and user.

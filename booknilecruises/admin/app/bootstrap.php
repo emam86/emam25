@@ -17,6 +17,10 @@ require BNC_APP . '/src/helpers.php';
     $path = getenv('BNC_CONFIG') ?: dirname(BNC_APP) . '/bnc-config.php';
     if (!is_file($path)) {
         http_response_code(500);
+        if (defined('BNC_API_ENTRY')) {
+            header('Content-Type: application/json; charset=utf-8');
+            exit('{"error":"API configuration is missing"}');
+        }
         exit("Missing configuration file. Copy config.sample.php to bnc-config.php next to the app folder.\n");
     }
     \Bnc\Config::load(require $path);
@@ -24,10 +28,19 @@ require BNC_APP . '/src/helpers.php';
 
 date_default_timezone_set(\Bnc\Config::get('timezone', 'Africa/Cairo'));
 error_reporting(E_ALL);
-ini_set('display_errors', \Bnc\Config::get('debug') ? '1' : '0');
+ini_set('display_errors', !defined('BNC_API_ENTRY') && \Bnc\Config::get('debug') ? '1' : '0');
 ini_set('log_errors', '1');
 
 set_exception_handler(static function (Throwable $e): void {
+    if (defined('BNC_API_ENTRY')) {
+        error_log('[bnc] API request failed: ' . $e);
+        if (!headers_sent()) {
+            http_response_code(500);
+            header('Content-Type: application/json; charset=utf-8');
+        }
+        echo '{"error":"Internal server error"}';
+        return;
+    }
     error_log('[bnc] ' . $e);
     if (PHP_SAPI === 'cli') {
         fwrite(STDERR, $e . "\n");

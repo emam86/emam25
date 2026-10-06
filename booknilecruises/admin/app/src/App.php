@@ -78,6 +78,27 @@ final class App
         $r->get('/settings', [C\SettingsController::class, 'form'], 'settings.edit');
         $r->post('/settings', [C\SettingsController::class, 'save'], 'settings.edit');
 
+        $r->get('/publish', [C\PublishController::class, 'index'], 'publish');
+        $r->post('/publish', [C\PublishController::class, 'publish'], 'publish');
+        $r->get('/enquiries', [C\EnquiriesController::class, 'index'], 'enquiries.view');
+        $r->post('/enquiries/notify', [C\EnquiriesController::class, 'notify'], 'enquiries.manage');
+        $r->get('/enquiries.csv', [C\EnquiriesController::class, 'csv'], 'enquiries.view');
+        $r->get('/enquiries/{id}', [C\EnquiriesController::class, 'show'], 'enquiries.view');
+        $r->post('/enquiries/{id}', [C\EnquiriesController::class, 'update'], 'enquiries.manage');
+        $r->post('/enquiries/{id}/delete', [C\EnquiriesController::class, 'delete'], 'enquiries.manage');
+        $r->get('/api-keys', [C\ApiKeysController::class, 'index'], 'api.manage');
+        $r->post('/api-keys', [C\ApiKeysController::class, 'create'], 'api.manage');
+        $r->post('/api-keys/{id}/revoke', [C\ApiKeysController::class, 'revoke'], 'api.manage');
+        $r->post('/api-keys/{id}/delete', [C\ApiKeysController::class, 'delete'], 'api.manage');
+        $r->get('/webhooks', [C\WebhooksController::class, 'index'], 'api.manage');
+        $r->get('/webhooks/new', [C\WebhooksController::class, 'create'], 'api.manage');
+        $r->post('/webhooks/new', [C\WebhooksController::class, 'store'], 'api.manage');
+        $r->get('/webhooks/{id}/edit', [C\WebhooksController::class, 'edit'], 'api.manage');
+        $r->post('/webhooks/{id}/edit', [C\WebhooksController::class, 'update'], 'api.manage');
+        $r->post('/webhooks/{id}/delete', [C\WebhooksController::class, 'delete'], 'api.manage');
+        $r->post('/webhooks/{id}/regenerate', [C\WebhooksController::class, 'regenerate'], 'api.manage');
+        $r->post('/webhooks/{id}/test', [C\WebhooksController::class, 'test'], 'api.manage');
+
         $r->get('/audit', [C\AuditController::class, 'index'], 'audit.view');
         return $r;
     }
@@ -98,15 +119,22 @@ final class App
             return;
         }
         if ($out instanceof Json) {
+            http_response_code($out->status);
             header('Content-Type: application/json; charset=utf-8');
             echo $out->body();
+            return;
+        }
+        if ($out instanceof \Bnc\Enquiries\Csv) {
+            header('Content-Type: text/csv; charset=utf-8');
+            header('Content-Disposition: attachment; filename="enquiries.csv"');
+            echo $out->body;
             return;
         }
         header('Content-Type: text/html; charset=utf-8');
         echo $out;
     }
 
-    public static function dispatch(string $method, string $path): string|Redirect|Json
+    public static function dispatch(string $method, string $path): string|Redirect|Json|\Bnc\Enquiries\Csv
     {
         if ($path !== '/install' && !self::installed()) return new Redirect('/install');
 

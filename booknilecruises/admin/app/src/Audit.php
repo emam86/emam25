@@ -10,7 +10,7 @@ final class Audit
      */
     public static function log(string $action, string $entity, int|string|null $entityId = null, string $summary = '', ?array $details = null, ?string $actor = null): void
     {
-        $user = Auth::user();
+        $user = $actor === null ? Auth::user() : null;
         Db::insert('audit_log', [
             'user_id' => $user['id'] ?? null,
             'actor' => $actor ?? ($user['email'] ?? 'system'),

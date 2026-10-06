@@ -17,6 +17,10 @@ final class Nav
             ['label' => 'SEO الصفحات', 'path' => '/seo', 'perm' => 'seo.edit'],
             ['label' => 'التحويلات', 'path' => '/redirects', 'perm' => 'sitemap.edit'],
             ['label' => 'السايت ماب', 'path' => '/sitemap', 'perm' => 'sitemap.edit'],
+            ['label' => 'النشر', 'path' => '/publish', 'perm' => 'publish'],
+            ['label' => 'الاستفسارات', 'path' => '/enquiries', 'perm' => 'enquiries.view'],
+            ['label' => 'مفاتيح API', 'path' => '/api-keys', 'perm' => 'api.manage'],
+            ['label' => 'Webhooks', 'path' => '/webhooks', 'perm' => 'api.manage'],
             ['label' => 'الإعدادات', 'path' => '/settings', 'perm' => 'settings.edit'],
             ['label' => 'الصور', 'path' => '/media', 'perm' => 'media.upload'],
             ['label' => 'المستخدمين', 'path' => '/users', 'perm' => 'users.manage'],
@@ -28,6 +32,8 @@ final class Nav
 
     public static function visible(): array
     {
-        return array_values(array_filter(self::items(), fn ($i) => $i['perm'] === null || Auth::can($i['perm'])));
+        $items = array_values(array_filter(self::items(), fn ($i) => $i['perm'] === null || Auth::can($i['perm'])));
+        foreach ($items as &$item) if ($item['path'] === '/enquiries') $item['label'] .= ' (' . (int) Db::value("SELECT COUNT(*) FROM enquiries WHERE status = 'new'") . ')';
+        return $items;
     }
 }

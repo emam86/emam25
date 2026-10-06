@@ -11,6 +11,9 @@ return [
     ],
     'site_url'   => 'https://booknilecruises.net',
     'admin_path' => '/admin',
+    'api_path' => '/api',
+    // Test-only; keep false in production.
+    'webhooks_allow_private' => false,
     // Absolute folder the uploaded photos go to, and its public URL path.
     'images_dir' => '/home/u000000000/domains/booknilecruises.net/public_html/images',
     'images_url' => '/images',
@@ -18,9 +21,9 @@ return [
     // One-time token for the web installer (/admin/install). Make it long and random,
     // and remove it after the first owner account exists.
     'install_token' => '',
-    // Token the publish workflow uses to download the content export (phase 6).
+    // Token the publish workflow uses to download the content export (phase 5).
     'export_token' => '',
-    // Publishing through GitHub Actions (phase 6).
+    // Publishing through GitHub Actions (phase 5).
     'github' => ['token' => '', 'repo' => 'emam86/emam25', 'workflow' => 'publish-site.yml', 'ref' => 'main'],
     'mail' => ['from' => 'info@booknilecruises.net', 'notify' => 'info@booknilecruises.net'],
     'timezone' => 'Africa/Cairo',
