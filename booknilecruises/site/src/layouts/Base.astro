@@ -124,7 +124,11 @@ const isActive = (href: string, children?: { href: string }[]) =>
           </ul>
         </div>
       </div>
-      <div class="copy"><span>© {new Date().getFullYear()} Book Nile Cruises</span><span>Prices in USD per person unless stated</span></div>
+      <div class="copy">
+        <span>© {new Date().getFullYear()} Book Nile Cruises</span>
+        <span>Prices in USD per person unless stated</span>
+        <span>Powered by <a class="credit" href="https://www.luxorandaswantours.net/" target="_blank" rel="noopener">Emam</a></span>
+      </div>
     </div>
   </footer>
   <a class="wa-float" href={whatsappUrl('Hello, I would like to ask about a trip.')} aria-label="Chat with us on WhatsApp">
@@ -162,12 +166,14 @@ const isActive = (href: string, children?: { href: string }[]) =>
   .mnav a { display: block; padding: 9px 0; color: var(--navy); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--sand); }
   .mnav ul ul a { font-weight: 400; }
 
-  footer.site { background: #0f2036; color: #aebccd; font-size: 14px; padding-block: 60px 30px; }
+  footer.site { background: #0f2036; color: #aebccd; font-size: 14px; padding-block: 60px 96px; } /* bottom room for the floating WhatsApp button */
   footer.site .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.3fr; gap: 30px; }
   footer.site h2 { font: 400 18px var(--display); color: var(--gold-lt); margin: 0 0 14px; }
   footer.site ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
   footer.site a { color: #d5deea; text-decoration: none; }
   footer.site a:hover { color: var(--gold-lt); }
+  footer.site .credit { color: var(--gold-lt); font-weight: 700; }
+  footer.site .credit:hover { text-decoration: underline; }
   footer.site .logo-f { background: #fff; padding: 10px 12px; display: inline-block; margin-bottom: 14px; }
   footer.site .logo-f img { height: 44px; width: auto; }
   footer.site .copy { border-top: 1px solid #23395a; margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }

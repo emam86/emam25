@@ -112,3 +112,10 @@ test('built text assets contain no WordPress content paths', () => {
   const offending = files(DIST).filter((file) => ownWordPress.test(readFileSync(file, 'utf8')));
   assert.deepEqual(offending.map((file) => path.relative(DIST, file)), []);
 });
+
+test('every page footer credits Emam with a link to luxorandaswantours.net', () => {
+  const missing = htmlFiles(DIST)
+    .filter((f) => !readFileSync(f, 'utf8').includes('href="https://www.luxorandaswantours.net/"'))
+    .map((f) => path.relative(DIST, f));
+  assert.deepEqual(missing, []);
+});
