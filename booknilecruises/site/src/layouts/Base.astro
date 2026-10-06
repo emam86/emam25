@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
-import { SITE, NAV, whatsappUrl } from '@lib/site.mjs';
-import { asset } from '@lib/content.mjs';
+import { SITE, NAV, VERIFY, whatsappUrl } from '@lib/site.mjs';
+import { asset, loadSite } from '@lib/content.mjs';
 
 interface Props {
   title: string;
@@ -11,11 +11,19 @@ interface Props {
   jsonLd?: object | object[];
   noindex?: boolean;
 }
-const { title, description = '', canonical, ogImage, jsonLd, noindex = false } = Astro.props;
+const props = Astro.props;
+const site = loadSite();
+// Title/description/noindex set for this page in the admin panel win over the template's.
+const override = site.seoOverrides.get(Astro.url.pathname);
+const title = override?.title || props.title;
+const description = override?.description || props.description || '';
+const { canonical, ogImage, jsonLd } = props;
+const noindex = Boolean(props.noindex) || site.noindexPaths.has(Astro.url.pathname);
 const path = canonical ?? Astro.url.pathname;
 const canonicalUrl = new URL(path, SITE.origin).href;
 const ogUrl = ogImage ? new URL(ogImage, SITE.origin).href : new URL('/images/2025/12/Felucca-from-Aswan.jpg', SITE.origin).href;
 const robots = noindex || import.meta.env.PUBLIC_NOINDEX === '1' ? 'noindex, nofollow' : 'max-image-preview:large';
+const gtag = VERIFY.ga4 ? `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',${JSON.stringify(VERIFY.ga4)});` : '';
 const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const current = Astro.url.pathname;
 const isActive = (href: string, children?: { href: string }[]) =>
@@ -38,7 +46,10 @@ const isActive = (href: string, children?: { href: string }[]) =>
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:image" content={ogUrl} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="google-site-verification" content="SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs" />
+  {VERIFY.google && <meta name="google-site-verification" content={VERIFY.google} />}
+  {VERIFY.bing && <meta name="msvalidate.01" content={VERIFY.bing} />}
+  {VERIFY.ga4 && <script async src={`https://www.googletagmanager.com/gtag/js?id=${VERIFY.ga4}`}></script>}
+  {gtag && <script is:inline set:html={gtag} />}
   <link rel="icon" href={asset('/images/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-32x32.png')} sizes="32x32" />
   <link rel="icon" href={asset('/images/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-192x192.png')} sizes="192x192" />
   <link rel="apple-touch-icon" href={asset('/images/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-180x180.png')} />

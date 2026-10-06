@@ -1,13 +1,26 @@
 // Business details and navigation shared by every page.
 
+import { exportSettings } from './export-file.mjs';
+
+// Contact details: the admin panel's settings when building from its export, else these defaults.
+const S = exportSettings();
+const pick = (key, fallback) => (S[key] ? S[key] : fallback);
+
 export const SITE = {
   name: 'Book Nile Cruises',
   origin: 'https://booknilecruises.net',
-  email: 'info@booknilecruises.net',
-  whatsapp: '201096611124',
-  phoneDisplay: '+20 109 661 1124',
-  phoneAlt: '+20 101 800 3960',
-  address: 'Khaled Ibn El Waleed St., Luxor, Egypt',
+  email: pick('email', 'info@booknilecruises.net'),
+  whatsapp: pick('whatsapp', '201096611124'),
+  phoneDisplay: pick('phone_display', '+20 109 661 1124'),
+  phoneAlt: pick('phone_alt', '+20 101 800 3960'),
+  address: pick('address', 'Khaled Ibn El Waleed St., Luxor, Egypt'),
+};
+
+// Search engine verification and analytics. Without an export the current Google code stays.
+export const VERIFY = {
+  google: S.google_site_verification ?? 'SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs',
+  bing: S.bing_site_verification ?? '',
+  ga4: S.ga4_id ?? '',
 };
 
 export function whatsappUrl(text = '') {

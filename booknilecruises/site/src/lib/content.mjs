@@ -6,6 +6,8 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import path from 'node:path';
+import { readExport } from './export-file.mjs';
+import { siteFromExport } from './export.mjs';
 
 // Resolved from the working directory (the site/ folder for both `astro build`
 // and `npm test`), because Astro bundles this module into dist/ at build time.
@@ -126,6 +128,7 @@ function seoOf(item, snapshot = '') {
     description: live.description ?? decodeEntities(h.description || ''),
     canonical: live.canonical ?? (h.canonical_url ? pathOf(h.canonical_url) : null),
     ogImage: live.ogImage ?? (h.og?.['og:image'] ? toImagePath(h.og['og:image']) : null),
+    noindex: false,
   };
 }
 
@@ -150,7 +153,7 @@ function srcsetFrom(src, width, height, sizes = {}) {
   return [...entries.values()].sort((a, b) => a.width - b.width);
 }
 
-function imageFromMedia(media) {
+export function imageFromMedia(media) {
   if (!media) return null;
   const src = toImagePath(media.source_url);
   return {
@@ -256,6 +259,13 @@ let cache;
 
 export function loadSite({ imagesBase = envImagesBase() } = {}) {
   if (cache && cache.imagesBase === imagesBase) return cache;
+  const exported = readExport();
+  if (exported) {
+    // Built from the admin panel's data; the static pages' text still comes from the WordPress export.
+    const pages = readJson('pages.json').map((p) => normalizePage(p, imagesBase));
+    cache = { imagesBase, ...siteFromExport(exported, { imagesBase, pages }) };
+    return cache;
+  }
   const mediaList = readJson('media.json');
   const media = new Map(mediaList.map((m) => [m.id, m]));
   const terms = {
@@ -269,7 +279,25 @@ export function loadSite({ imagesBase = envImagesBase() } = {}) {
     .map((trip) => applyTripOverrides(trip, overrides.trips?.[trip.slug]))
     .sort((a, b) => a.title.localeCompare(b.title));
 
-  // Attach trips to their terms, and roll child-term trips up into parents.
+  attachTripsToTerms(trips, terms);
+
+  cache = {
+    imagesBase,
+    trips,
+    terms,
+    media,
+    pages: readJson('pages.json').map((p) => normalizePage(p, imagesBase)),
+    posts: readJson('posts.json').map((p) => ({ ...normalizePage(p, imagesBase), image: imageFromMedia(media.get(p.featured_media)) })),
+    settings: {},
+    seoOverrides: new Map(),
+    redirects: {},
+    noindexPaths: new Set(),
+  };
+  return cache;
+}
+
+// Attach trips to their terms, and roll child-term trips up into parents.
+export function attachTripsToTerms(trips, terms) {
   for (const list of Object.values(terms)) {
     const byId = new Map(list.map((t) => [t.id, t]));
     for (const trip of trips) {
@@ -279,16 +307,6 @@ export function loadSite({ imagesBase = envImagesBase() } = {}) {
       }
     }
   }
-
-  cache = {
-    imagesBase,
-    trips,
-    terms,
-    media,
-    pages: readJson('pages.json').map((p) => normalizePage(p, imagesBase)),
-    posts: readJson('posts.json').map((p) => ({ ...normalizePage(p, imagesBase), image: imageFromMedia(media.get(p.featured_media)) })),
-  };
-  return cache;
 }
 
 export function asset(src, base = envImagesBase()) {

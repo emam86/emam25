@@ -14,6 +14,7 @@ export function GET() {
   ];
   const lastmod = new Map(site.trips.map((t) => [t.url, t.modified]));
   const body = [...new Set(urls)]
+    .filter((u) => !site.noindexPaths.has(u))
     .map((u) => `  <url><loc>${SITE.origin}${u}</loc>${lastmod.has(u) ? `<lastmod>${lastmod.get(u).slice(0, 10)}</lastmod>` : ''}</url>`)
     .join('\n');
   return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`, {
