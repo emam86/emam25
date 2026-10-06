@@ -1,11 +1,12 @@
 ---
-// Booking is by WhatsApp or email: the form only builds the message, nothing
-// is sent to or stored on our server.
+// Booking is by WhatsApp or email: the form builds the message and opens
+// WhatsApp or the mail app. A copy is also logged to the admin panel
+// (/api/enquiries) so the team is notified; if that fails, nothing changes for the visitor.
 import { SITE, whatsappUrl, mailtoUrl } from '@lib/site.mjs';
 const { trip = null, id = 'enq' } = Astro.props;
 const subject = trip ? `Enquiry: ${trip.title}` : 'Trip enquiry';
 ---
-<form class="enquiry" id={id} data-trip={trip?.title ?? ''} data-email={SITE.email} data-wa={SITE.whatsapp}>
+<form class="enquiry" id={id} data-trip={trip?.title ?? ''} data-slug={trip?.slug ?? ''} data-email={SITE.email} data-wa={SITE.whatsapp}>
   <h2>{trip ? 'Book or ask about this trip' : 'Send us an enquiry'}</h2>
   <p class="hint">Fill in what you know. We reply on WhatsApp or by email.</p>
   <div class="row">
@@ -16,6 +17,8 @@ const subject = trip ? `Enquiry: ${trip.title}` : 'Trip enquiry';
     <label for={`${id}-adults`}>Adults<input id={`${id}-adults`} name="adults" type="number" min="1" value="2" inputmode="numeric" /></label>
     <label for={`${id}-children`}>Children<input id={`${id}-children`} name="children" type="number" min="0" value="0" inputmode="numeric" /></label>
   </div>
+  <label for={`${id}-contact`}><span>Email or phone <span class="opt">(optional)</span></span><input id={`${id}-contact`} name="contact" autocomplete="email" maxlength="190" /></label>
+  <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
   <label for={`${id}-msg`}>Message<textarea id={`${id}-msg`} name="message" rows="3" placeholder={trip ? 'Cabin type, questions, pick-up hotel…' : 'Where would you like to go, and for how long?'}></textarea></label>
   <div class="actions">
     <button class="btn btn-wa" type="submit" name="via" value="whatsapp">Send on WhatsApp</button>
@@ -33,16 +36,41 @@ const subject = trip ? `Enquiry: ${trip.title}` : 'Trip enquiry';
       `Name: ${f.get('name') || ''}`,
       f.get('date') ? `Travel date: ${f.get('date')}` : null,
       `Travellers: ${f.get('adults') || 0} adults, ${f.get('children') || 0} children`,
+      f.get('contact') ? `Contact: ${f.get('contact')}` : null,
       f.get('message') ? `Message: ${f.get('message')}` : null,
       trip ? `Page: ${location.href}` : null,
     ].filter(Boolean);
     return { subject: trip ? `Enquiry: ${trip}` : 'Trip enquiry', body: lines.join('\n') };
+  }
+  // Copy for the team's inbox. sendBeacon survives the jump to WhatsApp or the mail app.
+  function log(form: HTMLFormElement, via: string) {
+    const f = new FormData(form);
+    const contact = String(f.get('contact') || '').trim();
+    const data = {
+      name: String(f.get('name') || '').trim(),
+      email: contact.includes('@') ? contact : '',
+      phone: contact && !contact.includes('@') ? contact : '',
+      trip: form.dataset.slug || '',
+      travel_date: String(f.get('date') || ''),
+      adults: Number(f.get('adults') || 0),
+      children: Number(f.get('children') || 0),
+      message: String(f.get('message') || ''),
+      page_url: location.pathname,
+      channel: via,
+      website: String(f.get('website') || ''),
+    };
+    try {
+      navigator.sendBeacon?.('/api/enquiries', new Blob([JSON.stringify(data)], { type: 'application/json' }));
+    } catch {
+      /* logging is best effort */
+    }
   }
   for (const form of document.querySelectorAll<HTMLFormElement>('form.enquiry')) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const via = (e.submitter as HTMLButtonElement | null)?.value ?? 'whatsapp';
       const { subject, body } = compose(form);
+      log(form, via);
       const url =
         via === 'email'
           ? `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
@@ -60,6 +88,8 @@ const subject = trip ? `Enquiry: ${trip.title}` : 'Trip enquiry';
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   label { display: grid; gap: 6px; font-size: 13px; font-weight: 700; letter-spacing: .04em; color: var(--navy); }
   input, textarea { font: 16px var(--body); padding: 11px 12px; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; }
+  .opt { font-weight: 400; color: var(--muted); letter-spacing: 0; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .actions .btn { flex: 1 1 180px; }
   @media (max-width: 420px) { .row { grid-template-columns: 1fr; } }
