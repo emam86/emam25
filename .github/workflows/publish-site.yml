@@ -1,6 +1,7 @@
 # Publishes booknilecruises.net from the admin panel's content.
 # Started by the panel's "Publish" button (workflow_dispatch with the job id),
-# or by hand from the Actions tab.
+# by hand from the Actions tab, or every hour, when it deploys only if the
+# content changed since the last deploy (this is what makes scheduled posts go live).
 #
 # Repository secrets: BNC_EXPORT_TOKEN (same as export_token in bnc-config.php),
 #   FTP_HOST, FTP_USER, FTP_PASS
@@ -9,6 +10,8 @@
 name: Publish site
 
 on:
+  schedule:
+    - cron: '23 * * * *'
   workflow_dispatch:
     inputs:
       job_id:
@@ -55,18 +58,50 @@ jobs:
         env:
           TOKEN: ${{ secrets.BNC_EXPORT_TOKEN }}
         run: |
+          if [ -z "$TOKEN" ]; then
+            # Not set up yet: hourly runs stay quiet, a manual run says what is missing.
+            [ "${{ github.event_name }}" = schedule ] && { echo '{"version":0}' > "$RUNNER_TEMP/export.json"; exit 0; }
+            echo "::error::Add the BNC_EXPORT_TOKEN, FTP_HOST, FTP_USER and FTP_PASS repository secrets first."; exit 1
+          fi
           curl -fsS --retry 3 -H "Authorization: Bearer $TOKEN" "$SITE_URL/api/export" -o "$RUNNER_TEMP/export.json"
           node -e "const e=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')); console.log('export:', e.trips.length, 'trips,', e.posts.length, 'posts,', e.media.length, 'photos')" "$RUNNER_TEMP/export.json"
 
+      - name: Fingerprint the content
+        id: content
+        run: echo "hash=$(node -e "const e=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')); delete e.generated_at; console.log(require('crypto').createHash('sha256').update(JSON.stringify(e)).digest('hex'))" "$RUNNER_TEMP/export.json")" >> "$GITHUB_OUTPUT"
+
+      # Hourly runs stop here when this exact content was already deployed.
+      - name: Was this content already published?
+        id: seen
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/published
+          key: published-${{ steps.content.outputs.hash }}
+          lookup-only: true
+
+      - name: Decide
+        id: go
+        run: |
+          if [ "$(node -p "require('$RUNNER_TEMP/export.json').version")" = 0 ]; then
+            echo "deploy=false" >> "$GITHUB_OUTPUT"; echo "Publishing is not set up yet."
+          elif [ "${{ github.event_name }}" = schedule ] && [ "${{ steps.seen.outputs.cache-hit }}" = true ]; then
+            echo "deploy=false" >> "$GITHUB_OUTPUT"; echo "No content changes since the last deploy."
+          else
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Unit tests
+        if: steps.go.outputs.deploy == 'true'
         run: npm test
 
       - name: Build
+        if: steps.go.outputs.deploy == 'true'
         env:
           BNC_EXPORT: ${{ runner.temp }}/export.json
         run: npm run build
 
       - name: Upload over FTP
+        if: steps.go.outputs.deploy == 'true'
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
@@ -77,11 +112,22 @@ jobs:
           ../scripts/deploy-ftp.sh dist
 
       - name: Check the live site
+        if: steps.go.outputs.deploy == 'true'
         run: |
           for path in / /trip/ /sitemap.xml; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "$SITE_URL$path")
             echo "$path $code"; [ "$code" = 200 ]
           done
+
+      - name: Remember this content as published
+        if: steps.go.outputs.deploy == 'true'
+        run: echo "${{ steps.content.outputs.hash }}" > "$RUNNER_TEMP/published"
+
+      - uses: actions/cache/save@v4
+        if: steps.go.outputs.deploy == 'true'
+        with:
+          path: ${{ runner.temp }}/published
+          key: published-${{ steps.content.outputs.hash }}
 
       - name: Report the result to the panel
         if: always() && env.JOB_ID != ''
