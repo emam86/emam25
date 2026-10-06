@@ -92,7 +92,7 @@ ErrorDocument 404 /404.html
   Require all denied
 </FilesMatch>
 RedirectMatch 404 ^/(?:(?:old|wordpress-old[^/]*|wp-includes|wp-admin/.+)(?:/.*)?|wp-content/(?!uploads/).*)$
-<FilesMatch "^(readme\\.html|license\\.txt|wp-config.*|\\.user\\.ini|error_log|.*\\.(sql|sql\\.gz|tar\\.gz|zip|bak|log))$">
+<FilesMatch "^(readme\\.html|license\\.txt|wp-config.*|\\.user\\.ini|\\.bnc-manifest|error_log|.*\\.(sql|sql\\.gz|tar\\.gz|zip|bak|log))$">
   Require all denied
 </FilesMatch>
 

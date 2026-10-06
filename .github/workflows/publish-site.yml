@@ -1,0 +1,92 @@
+# Publishes booknilecruises.net from the admin panel's content.
+# Started by the panel's "Publish" button (workflow_dispatch with the job id),
+# or by hand from the Actions tab.
+#
+# Repository secrets: BNC_EXPORT_TOKEN (same as export_token in bnc-config.php),
+#   FTP_HOST, FTP_USER, FTP_PASS
+# Repository variables (optional): BNC_SITE_URL (default https://booknilecruises.net),
+#   FTP_DIR (default public_html; use / when the FTP account opens inside public_html)
+name: Publish site
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: Publish job id from the admin panel (optional)
+        required: false
+        default: ''
+
+concurrency:
+  group: publish-site
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SITE_URL: ${{ vars.BNC_SITE_URL || 'https://booknilecruises.net' }}
+      JOB_ID: ${{ inputs.job_id }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    defaults:
+      run:
+        working-directory: booknilecruises/site
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tell the panel the build started
+        if: env.JOB_ID != ''
+        env:
+          TOKEN: ${{ secrets.BNC_EXPORT_TOKEN }}
+        run: ../scripts/publish-status.sh running "Build started"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: booknilecruises/site/package-lock.json
+
+      - run: npm ci
+
+      - name: Download the content export
+        env:
+          TOKEN: ${{ secrets.BNC_EXPORT_TOKEN }}
+        run: |
+          curl -fsS --retry 3 -H "Authorization: Bearer $TOKEN" "$SITE_URL/api/export" -o "$RUNNER_TEMP/export.json"
+          node -e "const e=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')); console.log('export:', e.trips.length, 'trips,', e.posts.length, 'posts,', e.media.length, 'photos')" "$RUNNER_TEMP/export.json"
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build
+        env:
+          BNC_EXPORT: ${{ runner.temp }}/export.json
+        run: npm run build
+
+      - name: Upload over FTP
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+          FTP_DIR: ${{ vars.FTP_DIR || 'public_html' }}
+        run: |
+          sudo apt-get install -y -qq lftp > /dev/null
+          ../scripts/deploy-ftp.sh dist
+
+      - name: Check the live site
+        run: |
+          for path in / /trip/ /sitemap.xml; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$SITE_URL$path")
+            echo "$path $code"; [ "$code" = 200 ]
+          done
+
+      - name: Report the result to the panel
+        if: always() && env.JOB_ID != ''
+        env:
+          TOKEN: ${{ secrets.BNC_EXPORT_TOKEN }}
+          OUTCOME: ${{ job.status }}
+        run: |
+          if [ "$OUTCOME" = success ]; then ../scripts/publish-status.sh succeeded "Published"; else ../scripts/publish-status.sh failed "Build or upload failed, see the run log"; fi
