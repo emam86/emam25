@@ -19,6 +19,8 @@ final class App
 
         $r->get('/', [C\DashboardController::class, 'index']);
         $r->post('/system/migrate', [C\DashboardController::class, 'migrate']);
+        $r->get('/import', [C\ImportController::class, 'form']);
+        $r->post('/import', [C\ImportController::class, 'run']);
         $r->get('/account', [C\AccountController::class, 'form']);
         $r->post('/account', [C\AccountController::class, 'save']);
 

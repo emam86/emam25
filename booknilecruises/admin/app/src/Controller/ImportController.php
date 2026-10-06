@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Bnc\Controller;
 
+use Bnc\Config;
 use Bnc\Content\Importer;
 use Bnc\Db;
 use Bnc\Redirect;
@@ -41,7 +42,7 @@ final class ImportController extends Controller
 
     private static function seed(): ?array
     {
-        $file = BNC_APP . '/seed/export.json';
+        $file = (string) Config::get('seed_file', BNC_APP . '/seed/export.json');
         if (!is_file($file)) return null;
         $data = json_decode((string) file_get_contents($file), true);
         return is_array($data) ? $data : null;

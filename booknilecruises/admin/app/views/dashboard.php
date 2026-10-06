@@ -1,5 +1,8 @@
 <?php declare(strict_types=1); ?>
 <?php if ($lastJob): ?><p class="card">آخر نشر: <a href="<?= e(url('/publish')) ?>"><?= e(['queued' => 'في الانتظار', 'running' => 'قيد التنفيذ', 'succeeded' => 'نجح', 'failed' => 'فشل'][$lastJob['status']]) ?></a> · <?= e($lastJob['created_at']) ?></p><?php endif; ?>
+<?php if (\Bnc\Auth::user()['is_owner'] && (int) \Bnc\Db::value('SELECT COUNT(*) FROM trips') === 0): ?>
+  <div class="flash warn">اللوحة لسه فاضية. <a href="<?= e(url('/import')) ?>">انقل محتوى الموقع الحالي للوحة</a> (مرة واحدة).</div>
+<?php endif; ?>
 <?php if ($pending): ?>
   <div class="flash warn">
     في تحديثات لقاعدة البيانات لم تُطبّق بعد: <?= e(implode('، ', $pending)) ?>

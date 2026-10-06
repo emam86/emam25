@@ -4,7 +4,7 @@ declare(strict_types=1);
 // Real-data check: import today's site, then open and save every trip's edit form
 // unchanged, as a browser would. Nothing the site receives may change.
 
-use Bnc\Content\{Exporter, Importer};
+use Bnc\Content\Exporter;
 use Bnc\Db;
 
 /** The fields a browser would submit for the form (successful controls only). */
@@ -44,11 +44,27 @@ test('every imported trip saves unchanged through its edit form', function () us
     Db::pdo()->exec('SET FOREIGN_KEY_CHECKS = 0');
     foreach (['trip_terms', 'trips', 'terms', 'posts', 'media', 'redirects', 'seo_overrides'] as $t) Db::pdo()->exec("DELETE FROM $t");
     Db::pdo()->exec('SET FOREIGN_KEY_CHECKS = 1');
-    Importer::run(json_decode((string) file_get_contents($seed), true), 'test');
-    $before = Exporter::build();
-
     $owner = new Browser($base);
     $owner->post('/admin/login', ['email' => 'owner@example.com', 'password' => OWNER_PASS]);
+    // Through the owner's import page, as on the server.
+    $old = phase5_config(['seed_file' => $seed]);
+    try {
+        assert_contains('/admin/import', $owner->get('/admin/')['body'], 'dashboard offers the import');
+        assert_same(200, $owner->get('/admin/import')['status']);
+        $r = $owner->post('/admin/import');
+        assert_same(303, $r['status']);
+        assert_same(102, (int) Db::value('SELECT COUNT(*) FROM trips'));
+        $again = $owner->post('/admin/import');
+        assert_contains('/admin/import', (string) $again['location'], 'second import refused');
+        assert_same(102, (int) Db::value('SELECT COUNT(*) FROM trips'));
+        $admin = new Browser($base);
+        $admin->post('/admin/login', ['email' => 'admin@example.com', 'password' => 'password-admin-1']);
+        assert_same(403, $admin->get('/admin/import')['status'], 'admin (not owner) cannot import');
+    } finally {
+        phase5_restore($old);
+    }
+    $before = Exporter::build();
+
     $failures = [];
     foreach (Db::all('SELECT id, slug FROM trips ORDER BY id') as $trip) {
         $page = $owner->get("/admin/trips/{$trip['id']}/edit");
