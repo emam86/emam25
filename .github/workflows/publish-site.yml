@@ -6,7 +6,7 @@
 # Repository secrets: BNC_EXPORT_TOKEN (same as export_token in bnc-config.php),
 #   FTP_HOST, FTP_USER, FTP_PASS
 # Repository variables (optional): BNC_SITE_URL (default https://booknilecruises.net),
-#   FTP_DIR (default public_html; use / when the FTP account opens inside public_html)
+#   FTP_DIR (default /: a dedicated FTP account whose folder is the site's public_html)
 name: Publish site
 
 on:
@@ -106,7 +106,7 @@ jobs:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASS: ${{ secrets.FTP_PASS }}
-          FTP_DIR: ${{ vars.FTP_DIR || 'public_html' }}
+          FTP_DIR: ${{ vars.FTP_DIR || '/' }}
         run: |
           sudo apt-get install -y -qq lftp > /dev/null
           ../scripts/deploy-ftp.sh dist
