@@ -36,6 +36,13 @@ final class App
         $r->post('/roles/{id}/edit', [C\RolesController::class, 'update'], 'users.manage');
         $r->post('/roles/{id}/delete', [C\RolesController::class, 'delete'], 'users.manage');
 
+        $r->get('/media', [C\MediaController::class, 'index']);
+        $r->get('/media/picker.json', [C\MediaController::class, 'picker']);
+        $r->post('/media/upload', [C\MediaController::class, 'upload'], 'media.upload');
+        $r->get('/media/{id}', [C\MediaController::class, 'show']);
+        $r->post('/media/{id}/edit', [C\MediaController::class, 'edit'], 'media.upload');
+        $r->post('/media/{id}/delete', [C\MediaController::class, 'delete'], 'media.delete');
+
         $r->get('/audit', [C\AuditController::class, 'index'], 'audit.view');
         return $r;
     }
@@ -55,11 +62,16 @@ final class App
             header('Location: ' . $out->url(), true, 303);
             return;
         }
+        if ($out instanceof Json) {
+            header('Content-Type: application/json; charset=utf-8');
+            echo $out->body();
+            return;
+        }
         header('Content-Type: text/html; charset=utf-8');
         echo $out;
     }
 
-    public static function dispatch(string $method, string $path): string|Redirect
+    public static function dispatch(string $method, string $path): string|Redirect|Json
     {
         if ($path !== '/install' && !self::installed()) return new Redirect('/install');
 

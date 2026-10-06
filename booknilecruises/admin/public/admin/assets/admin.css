@@ -87,3 +87,14 @@ td pre { white-space: pre-wrap; max-width: 420px; font-size: 12px; }
   nav.side a { white-space: nowrap; border-inline-start: 0; border-bottom: 3px solid transparent; }
   main { padding: 16px; }
 }
+
+.media-upload { margin-bottom: 20px; }
+.media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+.media-tile { display: grid; gap: 8px; padding: 12px; text-decoration: none; overflow-wrap: anywhere; }
+.media-tile img { width: 100%; height: 160px; object-fit: contain; background: var(--sand); }
+.media-preview { display: block; max-width: 100%; max-height: 600px; object-fit: contain; }
+.media-meta { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 16px; margin: 0; }
+.media-meta dt { font-weight: 600; }
+.media-meta dd { margin: 0; overflow-wrap: anywhere; }
+.btn.danger { background: var(--err); color: #fff; }
+.btn.danger:hover { background: #8c1d17; }

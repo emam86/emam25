@@ -76,6 +76,16 @@ final class Browser
         return $this->request('POST', $path, $fields);
     }
 
+    /** Upload several files under the photos[] field using multipart/form-data. */
+    public function upload(string $path, array $files, array $fields = [], bool $csrf = true): array
+    {
+        if ($csrf && !isset($fields['_csrf'])) $fields['_csrf'] = $this->csrf();
+        foreach ($files as $i => $file) {
+            $fields["photos[$i]"] = new CURLFile($file['path'], $file['mime'] ?? 'application/octet-stream', $file['name']);
+        }
+        return $this->request('POST', $path, $fields, true);
+    }
+
     /** CSRF token for this session: from the last page seen, else from the first page that has a form. */
     public function csrf(): string
     {
@@ -86,7 +96,7 @@ final class Browser
         return '';
     }
 
-    private function request(string $method, string $path, array $fields = []): array
+    private function request(string $method, string $path, array $fields = [], bool $multipart = false): array
     {
         $ch = curl_init($this->base . $path);
         curl_setopt_array($ch, [
@@ -100,7 +110,7 @@ final class Browser
         ]);
         if ($method === 'POST') {
             curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $multipart ? $fields : http_build_query($fields));
         }
         $raw = (string) curl_exec($ch);
         $status = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);

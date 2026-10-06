@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 // Copy to bnc-config.php NEXT TO the bnc-app folder (outside public_html) and fill in.
 // Never commit the real file: it holds passwords and tokens.
 return [
@@ -13,6 +14,7 @@ return [
     // Absolute folder the uploaded photos go to, and its public URL path.
     'images_dir' => '/home/u000000000/domains/booknilecruises.net/public_html/images',
     'images_url' => '/images',
+    'max_upload_mb' => 15,
     // One-time token for the web installer (/admin/install). Make it long and random,
     // and remove it after the first owner account exists.
     'install_token' => '',

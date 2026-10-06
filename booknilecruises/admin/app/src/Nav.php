@@ -11,6 +11,7 @@ final class Nav
     {
         return [
             ['label' => 'الرئيسية', 'path' => '/', 'perm' => null],
+            ['label' => 'الصور', 'path' => '/media', 'perm' => 'media.upload'],
             ['label' => 'المستخدمين', 'path' => '/users', 'perm' => 'users.manage'],
             ['label' => 'الأدوار والصلاحيات', 'path' => '/roles', 'perm' => 'users.manage'],
             ['label' => 'سجل العمليات', 'path' => '/audit', 'perm' => 'audit.view'],

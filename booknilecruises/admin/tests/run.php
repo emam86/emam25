@@ -9,6 +9,16 @@ require __DIR__ . '/lib.php';
 $dsn = getenv('BNC_TEST_DSN') ?: 'mysql:host=127.0.0.1;port=3306;dbname=bnc_test;charset=utf8mb4';
 $tmp = __DIR__ . '/tmp';
 @mkdir($tmp, 0700, true);
+$images = $tmp . '/images';
+if (is_link($images)) unlink($images);
+if (is_dir($images)) {
+    $entries = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($images, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
+    foreach ($entries as $entry) {
+        if ($entry->isDir() && !$entry->isLink()) rmdir($entry->getPathname());
+        else unlink($entry->getPathname());
+    }
+}
+@mkdir($images, 0700, true);
 $config = $tmp . '/config.php';
 $installToken = 'test-install-token-0123456789abcdef';
 file_put_contents($config, '<?php return ' . var_export([
@@ -35,7 +45,7 @@ Db::pdo()->exec('SET FOREIGN_KEY_CHECKS = 1');
 // Start the panel on PHP's built-in server.
 $port = 18000 + random_int(0, 999);
 $server = proc_open(
-    [PHP_BINARY, '-S', "127.0.0.1:$port", '-t', dirname(__DIR__) . '/public', __DIR__ . '/server.php'],
+    [PHP_BINARY, '-d', 'opcache.enable=0', '-S', "127.0.0.1:$port", '-t', dirname(__DIR__) . '/public', __DIR__ . '/server.php'],
     [1 => ['file', $tmp . '/server.log', 'a'], 2 => ['file', $tmp . '/server.log', 'a']],
     $pipes,
     null,
