@@ -15,6 +15,7 @@ final class Nav
             ['label' => 'التصنيفات', 'path' => '/terms', 'perm' => 'trips.edit'],
             ['label' => 'المقالات', 'path' => '/posts', 'perm' => 'posts.view'],
             ['label' => 'SEO الصفحات', 'path' => '/seo', 'perm' => 'seo.edit'],
+            ['label' => 'فحص SEO', 'path' => '/seo/report', 'perm' => 'seo.edit'],
             ['label' => 'التحويلات', 'path' => '/redirects', 'perm' => 'sitemap.edit'],
             ['label' => 'السايت ماب', 'path' => '/sitemap', 'perm' => 'sitemap.edit'],
             ['label' => 'النشر', 'path' => '/publish', 'perm' => 'publish'],

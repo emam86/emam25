@@ -16,6 +16,7 @@ final class Settings
         'google_site_verification' => 'SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs',
         'bing_site_verification' => '',
         'ga4_id' => '',
+        'indexnow_key' => '',
     ];
 
     /** SETTING_RULES from site/src/lib/export.mjs. */

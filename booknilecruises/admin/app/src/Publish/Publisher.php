@@ -37,7 +37,7 @@ final class Publisher
         return $id;
     }
 
-    public static function status(array $d): void
+    public static function status(array $d, ?\Bnc\Seo\IndexNowClient $indexNow = null): void
     {
         if (!is_int($d['job_id'] ?? null) || $d['job_id'] < 1) Input::invalid('job_id');
         $status = Input::text($d, 'status', 20, true);
@@ -58,6 +58,7 @@ final class Publisher
             Audit::log('update', 'publish_job', $d['job_id'], 'تحديث حالة نشر الموقع', ['status' => $status], 'publish-workflow');
             return true;
         });
+        if ($changed && $status === 'succeeded') \Bnc\Seo\IndexNow::submit($d['job_id'], $indexNow);
         if ($changed && $status === 'succeeded') Delivery::fire('site.published', ['job_id' => $d['job_id'], 'run_url' => $url, 'message' => $message], 'publish-workflow');
     }
 }

@@ -71,6 +71,8 @@ final class App
         $r->post('/redirects/{id}/edit', [C\RedirectsController::class, 'update'], 'sitemap.edit');
         $r->post('/redirects/{id}/delete', [C\RedirectsController::class, 'delete'], 'sitemap.edit');
         $r->get('/posts/{id}/delete', [C\PostsController::class, 'confirmDelete'], 'posts.delete');
+        $r->get('/seo/report', [C\SeoReportController::class, 'index'], 'seo.edit');
+        $r->post('/seo/report', [C\SeoReportController::class, 'save'], 'seo.edit');
         $r->get('/seo', [C\SeoController::class, 'index'], 'seo.edit');
         $r->get('/seo/edit', [C\SeoController::class, 'edit'], 'seo.edit');
         $r->post('/seo/edit', [C\SeoController::class, 'save'], 'seo.edit');

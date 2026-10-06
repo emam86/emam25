@@ -16,3 +16,5 @@
   <?= \Bnc\View::partial('audit/table', ['rows' => $recent]) ?>
   <p><a href="<?= e(url('/audit')) ?>">كل السجل ←</a></p>
 <?php endif; ?>
+
+<?php if (can('seo.edit')): ?><p class="card"><a href="<?= e(url('/seo/report')) ?>">فحص SEO</a> · <?= $seoReport ? 'أخطاء: ' . (int) $seoReport['error_count'] . ' · تحذيرات: ' . (int) $seoReport['warning_count'] : 'لم يُجرَ فحص بعد.' ?></p><?php endif; ?>

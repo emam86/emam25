@@ -16,6 +16,7 @@ final class ApiApp
     public static function routes(): Router
     {
         $r = new Router();
+        $r->post('/seo/check', ['seoCheck'], 'workflow');
         $r->get('/export', ['export'], 'workflow');
         $r->post('/publish/status', ['status'], 'workflow');
         $r->post('/enquiries', ['enquiry'], 'public');
@@ -91,6 +92,7 @@ final class ApiApp
             return match ($handler[0]) {
                 'export' => new Json([], 200, Exporter::json()),
                 'status' => self::publishStatus($d),
+                'seoCheck' => self::seoCheck($d),
                 'enquiry' => self::enquiry($d),
                 'trips' => self::trips(),
                 'post' => new Json(Posts::save($d, $key, isset($params[0]) ? (int) $params[0] : 0), $method === 'POST' ? 201 : 200),
@@ -129,6 +131,14 @@ final class ApiApp
         $expected = (string) Config::get('export_token', '');
         $header = self::authorization();
         if (strlen($expected) < 32 || !preg_match('/^Bearer ([^\s]+)$/iD', $header, $m) || !hash_equals($expected, $m[1])) throw new ApiException(401, 'Invalid export token');
+    }
+
+    private static function seoCheck(array $d): Json
+    {
+        if (array_key_exists('email', $d) && !is_bool($d['email'])) Input::invalid('email');
+        $report = (new \Bnc\Seo\Checker())->run();
+        if ($d['email'] ?? false) \Bnc\Seo\ReportMailer::send($report);
+        return new Json(['errors' => (int) $report['error_count'], 'warnings' => (int) $report['warning_count'], 'report_id' => (int) $report['id']]);
     }
 
     private static function publishStatus(array $d): Json

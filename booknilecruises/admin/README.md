@@ -72,3 +72,30 @@ false in production; it exists only for the local webhook receiver tests.
 5. Remove `install_token` from the config file.
 
 After later updates, the owner sees an "apply database update" button on the dashboard when new migrations ship.
+
+## Phase 7: SEO reports and IndexNow
+
+Apply migration `003_phase7` from the owner dashboard. Users with `seo.edit` can
+run the database-only check at **فحص SEO** (`/admin/seo/report`), filter issues,
+review the last ten reports and set `seo_report_email`. The last 30 reports are kept.
+Email falls back to `enquiry_notify_email`, then `mail.notify`; it uses the same
+UTF-8 plain-text mail helper as enquiries and the configured `mail.from`.
+
+Hostinger hPanel → Advanced → Cron Jobs: schedule weekly with this command:
+
+```sh
+php /home/<user>/domains/booknilecruises.net/bnc-app/bin/seo-check.php --email
+```
+
+For automation, `POST /api/seo/check` with the same Bearer export token as
+`/api/export` and JSON `{}` (check only) or `{"email": true}` returns
+`{errors, warnings, report_id}`. The CLI also supports `BNC_CONFIG`.
+
+Generate an IndexNow key on the report page and publish to expose `/<key>.txt`
+on the public site (the site must support writing that exported setting).
+Successful publish callbacks submit changed trip/post/category URLs and newly
+created redirect sources since the preceding successful publish, in batches of
+at most 10,000. The first successful publish submits all known content URLs.
+HTTP outcomes are appended to publish history; a failed submission does not
+change publish success. IndexNow supports Bing, Yandex and other participating
+engines; Google does not use it.
