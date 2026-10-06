@@ -1,0 +1,22 @@
+# Admin panel. The site root forbids PHP everywhere; only this folder's
+# index.php may run, and every panel URL goes through it.
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "\.(php[0-9]?|phtml|phar)$">
+  Require all denied
+</FilesMatch>
+<Files "index.php">
+  Require all granted
+</Files>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Rewrite rules here replace the site root's, so https is enforced again.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
