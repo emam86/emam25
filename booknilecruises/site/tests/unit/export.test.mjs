@@ -103,6 +103,8 @@ test('validateExport rejects values that could break the build or the server rul
   assert.throws(bad((c) => { c.redirects = [{ from: '/a/', to: '/a/' }]; }), /redirect/);
   assert.throws(bad((c) => { c.trips[0].slug = '../etc'; }), /slug/);
   assert.throws(bad((c) => { c.settings = { ga4_id: 'G-1"><script>' }; }), /ga4_id/);
+  assert.throws(bad((c) => { c.settings = { indexnow_key: '../../etc/passwd' }; }), /indexnow_key/);
+  assert.doesNotThrow(bad((c) => { c.settings = { indexnow_key: 'a1b2c3d4e5f60718293a4b5c6d7e8f90' }; }));
   assert.throws(bad((c) => { c.settings = { google_site_verification: 'a" onload="x' }; }), /verification/);
   assert.throws(bad((c) => { c.trips[0].image_id = 999999999; }), /media/);
 });

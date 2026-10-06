@@ -6,7 +6,7 @@
 // goes the other way and produces the panel's first import from today's data.
 //
 // Shape (version 1), all keys required:
-//   settings       { google_site_verification, bing_site_verification, ga4_id,
+//   settings       { google_site_verification, bing_site_verification, ga4_id, indexnow_key,
 //                    email, whatsapp, phone_display, phone_alt, address } (each optional)
 //   media          [{ id, path: "/images/…", width, height, alt, mime, sizes: { key: { file, width, height, mime_type } } }]
 //   terms          [{ id, taxonomy: destination|activities|trip_types, slug, name, parent_id, url,
@@ -34,6 +34,7 @@ const SETTING_RULES = {
   google_site_verification: [/^[A-Za-z0-9_-]{0,100}$/, 'verification'],
   bing_site_verification: [/^[A-Za-z0-9_-]{0,100}$/, 'verification'],
   ga4_id: [/^(?:G-[A-Z0-9]{4,20})?$/, 'ga4_id'],
+  indexnow_key: [/^(?:[A-Za-z0-9-]{8,128})?$/, 'indexnow_key'],
   email: [/^(?:[^\s@<>"]+@[^\s@<>"]+\.[A-Za-z]{2,})?$/, 'email'],
   whatsapp: [/^[0-9]{0,20}$/, 'whatsapp'],
   phone_display: [/^[+0-9 ()-]{0,30}$/, 'phone'],
