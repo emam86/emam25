@@ -10,8 +10,8 @@
 #   3. Moves the WordPress files (only those) out of public_html into a folder
 #      next to it, not reachable from the web. Nothing is deleted. Anything else
 #      in public_html (subdomain folders, verification files) stays where it is.
-#   4. Moves the media from wp-content/uploads to public_html/images (private
-#      plugin folders such as logs stay with WordPress) and installs the site.
+#   4. Moves the photo year folders (2025/, 2026/) from wp-content/uploads to
+#      public_html/images (plugin folders stay with WordPress) and installs the site.
 #   5. Checks the live pages, photos and redirects.
 # If anything fails from step 3 on, WordPress is put back automatically.
 # rollback.sh undoes it later; purge-wordpress.sh deletes WordPress for good.
@@ -27,8 +27,6 @@ fetch() { curl -fsSL "$1" -o "$2" || die "download failed: $1"; }
 # WordPress's own top-level entries; everything else in public_html is left alone.
 WP_ENTRIES=(wp-admin wp-includes wp-content index.php xmlrpc.php license.txt readme.html
   .htaccess .user.ini .maintenance error_log)
-# Upload folders that hold private plugin data, not media; they stay with WordPress.
-PRIVATE_UPLOADS=(wc-logs woocommerce_uploads woocommerce_transient_files wpforms wp-travel-engine-logs)
 
 # --- locate the site (real path: ~/public_html can be a symlink) -------------
 if [ -z "${SITE_DIR:-}" ]; then
@@ -113,11 +111,10 @@ LEFT="$(cd "$SITE_DIR" && ls -A)"
 
 echo "== 4/5 Move media to /images and install the new site"
 mkdir "$SITE_DIR/images"
-for item in "$OLD/wp-content/uploads"/* "$OLD/wp-content/uploads"/.[!.]*; do
-  [ -e "$item" ] || continue
-  name="$(basename "$item")"
-  private=0; for p in "${PRIVATE_UPLOADS[@]}"; do [ "$name" = "$p" ] && private=1; done
-  [ "$private" = 1 ] || mv "$item" "$SITE_DIR/images/"
+# Only the year folders (2025/, 2026/, ...) hold the site's photos; plugin
+# folders such as redux, revslider, wpforms or woocommerce_uploads stay with WordPress.
+for year in "$OLD/wp-content/uploads"/[0-9][0-9][0-9][0-9]; do
+  [ -d "$year" ] && mv "$year" "$SITE_DIR/images/"
 done
 cp -a "$WORK/site/." "$SITE_DIR/"
 printf 'old=%s\nstamp=%s\nsite=%s\nentries=%s\n' "$OLD" "$STAMP" "$SITE_DIR" "$WORK/new-site-entries.txt" > "$HOME/deploy/LAST_CUTOVER"
