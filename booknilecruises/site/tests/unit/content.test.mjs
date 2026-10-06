@@ -263,3 +263,15 @@ test('the Apache rules block PHP, WordPress leftovers and archives', async () =>
   for (const p of ['/', '/images/2025/12/a.jpg', '/wp-content/uploads/2025/12/a.jpg', '/trip/old-cairo/', '/older/']) assert.ok(!rule.test(p), p);
   assert.match(ht, /readme\\\.html\|license\\\.txt\|wp-config/);
 });
+
+test('panel redirects are exact-path rules that come first and override built-ins', async () => {
+  const { htaccess: ht, exactRule } = await import('../../src/lib/redirects.mjs');
+  assert.equal(exactRule('/old.trip/', '/trip/new/'), 'RedirectMatch 301 ^/old\\.trip/?$ /trip/new/');
+  assert.equal(exactRule('/a', '/a/b/'), 'RedirectMatch 301 ^/a$ /a/b/');
+  const out = ht({ '/cart/': '/contact-us/' }, { exact: { '/cart/': '/trip/', '/x/': '/y/' } });
+  assert.ok(out.indexOf('^/cart/?$ /trip/') < out.indexOf('^/x/?$'));
+  assert.doesNotMatch(out, /Redirect 301 \/cart\/ /, 'built-in rule for the same path is replaced');
+  // An exact rule only matches its own path, so /a/ -> /a/b/ cannot loop.
+  const re = new RegExp(exactRule('/a/', '/a/b/').split(' ')[2]);
+  assert.ok(re.test('/a/') && re.test('/a') && !re.test('/a/b/'));
+});

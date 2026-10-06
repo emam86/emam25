@@ -11,10 +11,11 @@ const apacheRules = {
   name: 'apache-rules',
   hooks: {
     'astro:build:done': async ({ dir }) => {
-      // Redirects added in the admin panel (validated, so they can't inject server rules) override built-in ones.
+      // Redirects added in the admin panel (validated, so they can't inject server rules) are exact-path
+      // rules placed first, so they override the built-in ones.
       const exp = readExport();
       const panel = exp ? Object.fromEntries(validateExport(exp).redirects.map((r) => [r.from, r.to])) : {};
-      await writeFile(new URL('.htaccess', dir), htaccess({ ...REDIRECTS, ...panel }, { noindex: process.env.PUBLIC_NOINDEX === '1' }));
+      await writeFile(new URL('.htaccess', dir), htaccess(REDIRECTS, { noindex: process.env.PUBLIC_NOINDEX === '1', exact: panel }));
     },
   },
 };
