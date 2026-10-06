@@ -108,7 +108,7 @@ test('built text assets contain no WordPress content paths', () => {
   });
   // Our own WordPress paths only: root-relative or on booknilecruises.net.
   // Images hotlinked from other sites keep their own /wp-content/ URLs.
-  const ownWordPress = /(?:booknilecruises\.net|^|["'\s(,=])\/wp-content\//m;
+  const ownWordPress = /(?:booknilecruises\.net|^|["'\s(,=;>])\/wp-content\//m;
   const offending = files(DIST).filter((file) => ownWordPress.test(readFileSync(file, 'utf8')));
   assert.deepEqual(offending.map((file) => path.relative(DIST, file)), []);
 });

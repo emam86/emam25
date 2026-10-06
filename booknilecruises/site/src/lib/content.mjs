@@ -26,9 +26,11 @@ export function stripTags(html = '') {
 }
 
 // Keep image paths independent of the preview or production image base.
+// Only our own uploads move; an image hosted on another site keeps its URL.
 export function toImagePath(pathOrUrl) {
-  const pathname = new URL(pathOrUrl, SITE_ORIGIN).pathname;
-  return pathname.replace(/^\/wp-content\/uploads\//, '/images/');
+  const url = new URL(pathOrUrl, SITE_ORIGIN);
+  if (url.host !== new URL(SITE_ORIGIN).host) return url.href;
+  return url.pathname.replace(/^\/wp-content\/uploads\//, '/images/');
 }
 
 // Site links become root-relative; image URLs use the configured base.
@@ -38,7 +40,7 @@ export function rewriteHtml(html = '', imagesBase = envImagesBase()) {
     .replace(/https?:\/\/booknilecruises\.net(?=["']|\/)/g, '')
     // Our own uploads are root-relative by now; a path right after another
     // host name (e.g. https://other-site.com/wp-content/...) is left alone.
-    .replace(/(?<=^|["'\s(,=])\/wp-content\/uploads\/[^\s"'<>)]+/g,
+    .replace(/(?<=^|["'\s(,=;>])\/wp-content\/uploads\/[^\s"'<>)&]+/g,
       (url) => asset(toImagePath(url), imagesBase))
     .replace(/<sup><\/sup>/g, '')
     .trim();
@@ -144,7 +146,7 @@ function srcsetFrom(src, width, height, sizes = {}) {
       entries.set(size.width, { src: toImagePath(`${path.posix.dirname(src)}/${size.file}`), width: size.width });
     }
   }
-  if (width > 0) entries.set(width, { src: toImagePath(src), width });
+  if (width > 0) entries.set(width, { src, width });
   return [...entries.values()].sort((a, b) => a.width - b.width);
 }
 
@@ -163,7 +165,7 @@ function imageFromMedia(media) {
 
 function imageFromTripField(fi) {
   if (!fi?.file) return null;
-  const src = toImagePath(`/images/${fi.file}`);
+  const src = `/images/${fi.file}`;
   return { src, width: fi.width ?? null, height: fi.height ?? null, alt: '', srcset: srcsetFrom(src, fi.width, fi.height, fi.sizes), card: cardFrom(path.posix.dirname(src), fi.sizes) };
 }
 
@@ -244,7 +246,10 @@ function normalizePage(raw, imagesBase) {
 
 // Astro fills import.meta.env from .env files; plain Node (tests) only has process.env.
 function envImagesBase() {
-  return import.meta.env?.PUBLIC_IMAGES_BASE ?? process.env.PUBLIC_IMAGES_BASE ?? '/images';
+  if (import.meta.env?.PUBLIC_ASSET_ORIGIN || process.env.PUBLIC_ASSET_ORIGIN) {
+    throw new Error('PUBLIC_ASSET_ORIGIN was replaced by PUBLIC_IMAGES_BASE (e.g. https://booknilecruises.net/wp-content/uploads)');
+  }
+  return import.meta.env?.PUBLIC_IMAGES_BASE || process.env.PUBLIC_IMAGES_BASE || '/images';
 }
 
 let cache;
@@ -287,6 +292,7 @@ export function loadSite({ imagesBase = envImagesBase() } = {}) {
 }
 
 export function asset(src, base = envImagesBase()) {
+  base = base || '/images';
   if (!src) return src;
   return src.startsWith('/images/') ? `${base.replace(/\/+$/, '')}/${src.slice('/images/'.length)}` : src;
 }

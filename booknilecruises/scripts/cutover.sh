@@ -4,16 +4,18 @@
 #
 #   ssh -p 65002 USER@SERVER_IP "curl -fsSL https://raw.githubusercontent.com/emam86/emam25/claude/bold-wozniak-afuxs1/booknilecruises/scripts/cutover.sh | bash"
 #
-# What it does, in order (it stops at the first problem):
+# In order, stopping at the first problem:
 #   1. Takes a fresh backup (database + files) with backup-on-server.sh.
 #   2. Downloads the built site and checks its checksum.
-#   3. Moves everything WordPress out of public_html into a folder next to it
-#      (not reachable from the web, nothing is deleted yet).
-#   4. Moves the photos from wp-content/uploads to public_html/images.
-#   5. Installs the new site and checks the live pages, photos and redirects.
-#      If a check fails it puts WordPress back automatically.
+#   3. Moves the WordPress files (only those) out of public_html into a folder
+#      next to it, not reachable from the web. Nothing is deleted. Anything else
+#      in public_html (subdomain folders, verification files) stays where it is.
+#   4. Moves the media from wp-content/uploads to public_html/images (private
+#      plugin folders such as logs stay with WordPress) and installs the site.
+#   5. Checks the live pages, photos and redirects.
+# If anything fails from step 3 on, WordPress is put back automatically.
 # rollback.sh undoes it later; purge-wordpress.sh deletes WordPress for good.
-set -euo pipefail
+set -Eeuo pipefail
 
 ARTIFACT_BASE="${ARTIFACT_BASE:-https://raw.githubusercontent.com/emam86/emam25/claude/bold-wozniak-afuxs1/booknilecruises}"
 VERIFY_ORIGIN="${VERIFY_ORIGIN:-https://booknilecruises.net}"
@@ -22,13 +24,20 @@ VERIFY="${VERIFY:-1}"
 die() { echo "ERROR: $*" >&2; exit 1; }
 fetch() { curl -fsSL "$1" -o "$2" || die "download failed: $1"; }
 
-# --- locate the site -------------------------------------------------------
+# WordPress's own top-level entries; everything else in public_html is left alone.
+WP_ENTRIES=(wp-admin wp-includes wp-content index.php xmlrpc.php license.txt readme.html
+  .htaccess .user.ini .maintenance error_log)
+# Upload folders that hold private plugin data, not media; they stay with WordPress.
+PRIVATE_UPLOADS=(wc-logs woocommerce_uploads woocommerce_transient_files wpforms wp-travel-engine-logs)
+
+# --- locate the site (real path: ~/public_html can be a symlink) -------------
 if [ -z "${SITE_DIR:-}" ]; then
   for candidate in "$HOME/domains/booknilecruises.net/public_html" "$HOME/public_html"; do
-    if [ -d "$candidate" ]; then SITE_DIR="$candidate"; break; fi
+    if [ -f "$candidate/wp-config.php" ] || [ -f "$candidate/.bnc-static-site" ]; then SITE_DIR="$candidate"; break; fi
   done
 fi
 [ -n "${SITE_DIR:-}" ] && [ -d "$SITE_DIR" ] || die "site folder not found; re-run with SITE_DIR=/path/to/public_html"
+SITE_DIR="$(cd "$SITE_DIR" && pwd -P)"
 [ -f "$SITE_DIR/.bnc-static-site" ] && die "the new site is already installed in $SITE_DIR"
 [ -f "$SITE_DIR/wp-config.php" ] || die "no wp-config.php in $SITE_DIR; refusing to touch a folder that is not the WordPress site"
 [ -d "$SITE_DIR/wp-content/uploads" ] || die "no wp-content/uploads in $SITE_DIR"
@@ -37,7 +46,7 @@ STAMP="$(date +%Y%m%d-%H%M%S)"
 OLD="$PARENT/wordpress-old-$STAMP"
 WORK="$HOME/deploy/$STAMP"
 mkdir -p "$WORK"
-echo "Site folder:      $SITE_DIR"
+echo "Site folder:       $SITE_DIR"
 echo "WordPress kept in: $OLD"
 
 # --- 1. backup -------------------------------------------------------------
@@ -58,38 +67,66 @@ PAGES="$(find "$WORK/site" -name index.html | wc -l)"
 [ "$PAGES" -ge 150 ] || die "downloaded site has only $PAGES pages; nothing was changed"
 echo "New site: $PAGES pages"
 
-# --- 3+4. swap ---------------------------------------------------------------
-restore() {
-  echo "Restoring WordPress..." >&2
-  if [ -d "$SITE_DIR/images" ]; then
-    mkdir -p "$OLD/wp-content/uploads"
-    find "$SITE_DIR/images" -mindepth 1 -maxdepth 1 -exec mv -t "$OLD/wp-content/uploads/" {} +
+# Top-level names the new site installs (plus images/), saved for rollback.
+( cd "$WORK/site" && ls -A ) > "$WORK/new-site-entries.txt"
+echo images >> "$WORK/new-site-entries.txt"
+
+# Refuse if something that is not WordPress would be overwritten by the new site.
+is_wp_entry() { local e; for e in "${WP_ENTRIES[@]}"; do [ "$1" = "$e" ] && return 0; done; case "$1" in wp-*) return 0;; esac; return 1; }
+while IFS= read -r name; do
+  if [ -e "$SITE_DIR/$name" ] && ! is_wp_entry "$name"; then
+    die "$SITE_DIR/$name already exists and is not part of WordPress; move it away first. Nothing was changed."
   fi
-  mkdir -p "$PARENT/new-site-failed-$STAMP"
-  find "$SITE_DIR" -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec mv -t "$PARENT/new-site-failed-$STAMP/" {} +
+done < "$WORK/new-site-entries.txt"
+
+# --- 3+4. swap, with automatic restore on any error ---------------------------
+restore() {
+  trap - ERR
+  set +e
+  echo "Restoring WordPress..." >&2
+  mkdir -p "$OLD/wp-content/uploads" "$PARENT/new-site-failed-$STAMP"
+  if [ -d "$SITE_DIR/images" ]; then
+    find "$SITE_DIR/images" -mindepth 1 -maxdepth 1 -exec mv -t "$OLD/wp-content/uploads/" {} +
+    rmdir "$SITE_DIR/images"
+  fi
+  while IFS= read -r name; do
+    [ "$name" = images ] && continue
+    [ -e "$SITE_DIR/$name" ] && mv "$SITE_DIR/$name" "$PARENT/new-site-failed-$STAMP/"
+  done < "$WORK/new-site-entries.txt"
   find "$OLD" -mindepth 1 -maxdepth 1 -exec mv -t "$SITE_DIR/" {} +
-  rmdir "$OLD" 2>/dev/null || true
+  rmdir "$OLD"
   echo "WordPress is back in $SITE_DIR" >&2
 }
+trap 'restore; die "a step failed; WordPress was put back"' ERR
 
 echo "== 3/5 Move WordPress out of public_html"
 mkdir "$OLD"
-find "$SITE_DIR" -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec mv -t "$OLD/" {} +
+cp "$SITE_DIR/wp-config.php" "$WORK/wp-config.php.copy"  # extra safety copy
+moved=0
+for entry in "$SITE_DIR"/* "$SITE_DIR"/.[!.]*; do
+  [ -e "$entry" ] || continue
+  if is_wp_entry "$(basename "$entry")"; then mv "$entry" "$OLD/"; moved=$((moved + 1)); fi
+done
+echo "Moved $moved WordPress entries."
+LEFT="$(cd "$SITE_DIR" && ls -A)"
+[ -n "$LEFT" ] && echo "Left in place (not WordPress): $(echo "$LEFT" | tr '\n' ' ')"
 
-echo "== 4/5 Move photos to /images and install the new site"
-mkdir -p "$SITE_DIR/images"
-# Only the year folders hold media; plugin logs and caches stay with WordPress.
-for year in "$OLD/wp-content/uploads"/[0-9][0-9][0-9][0-9]; do
-  [ -d "$year" ] && mv "$year" "$SITE_DIR/images/"
+echo "== 4/5 Move media to /images and install the new site"
+mkdir "$SITE_DIR/images"
+for item in "$OLD/wp-content/uploads"/* "$OLD/wp-content/uploads"/.[!.]*; do
+  [ -e "$item" ] || continue
+  name="$(basename "$item")"
+  private=0; for p in "${PRIVATE_UPLOADS[@]}"; do [ "$name" = "$p" ] && private=1; done
+  [ "$private" = 1 ] || mv "$item" "$SITE_DIR/images/"
 done
 cp -a "$WORK/site/." "$SITE_DIR/"
-printf 'old=%s\nstamp=%s\nsite=%s\n' "$OLD" "$STAMP" "$SITE_DIR" > "$HOME/deploy/LAST_CUTOVER"
+printf 'old=%s\nstamp=%s\nsite=%s\nentries=%s\n' "$OLD" "$STAMP" "$SITE_DIR" "$WORK/new-site-entries.txt" > "$HOME/deploy/LAST_CUTOVER"
 
 # --- 5. verify ---------------------------------------------------------------
 echo "== 5/5 Check the live site"
 if [ "$VERIFY" = "1" ]; then
-  status() { curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$1"; }
-  location() { curl -s -o /dev/null -w '%{redirect_url}' --max-time 20 "$1"; }
+  status() { curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$1" || true; }
+  location() { curl -s -o /dev/null -w '%{redirect_url}' --max-time 20 "$1" || true; }
   sleep 2
   FAIL=""
   [ "$(status "$VERIFY_ORIGIN/")" = "200" ] || FAIL="$FAIL home"
@@ -103,15 +140,17 @@ if [ "$VERIFY" = "1" ]; then
   if [ -n "$FAIL" ]; then
     echo "Checks failed:$FAIL" >&2
     restore
+    rm -f "$HOME/deploy/LAST_CUTOVER"
     die "the new site was not kept; WordPress is live again"
   fi
   echo "All checks passed."
 else
   echo "Checks skipped (VERIFY=0)."
 fi
+trap - ERR
 
 echo
 echo "Done. The new site is live in $SITE_DIR"
 echo "WordPress is kept, not reachable from the web, in: $OLD"
-echo "To undo:            curl -fsSL $ARTIFACT_BASE/scripts/rollback.sh | bash"
-echo "To delete WordPress: see purge-wordpress.sh (after you have checked the site)"
+echo "To undo:             curl -fsSL $ARTIFACT_BASE/scripts/rollback.sh | bash"
+echo "To delete WordPress: purge-wordpress.sh with CONFIRM=DELETE-WORDPRESS, after checking the site"

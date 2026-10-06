@@ -92,7 +92,7 @@ Redirect 301 /feed/ /blog/
 # Photos moved from the WordPress uploads folder to /images
 RedirectMatch 301 ^/wp-content/uploads/(.*)$ /images/$1
 # WordPress sitemaps
-RedirectMatch 301 ^/(sitemap_index|wp-sitemap|[a-z_]+-sitemap)\\.xml$ /sitemap.xml
+RedirectMatch 301 ^/(sitemap_index|wp-sitemap[a-z0-9_-]*|[a-z0-9_-]+-sitemap[0-9]*)\\.xml$ /sitemap.xml
 Redirect 301 /sitemap.rss /sitemap.xml
 RedirectMatch 301 ^/author/.* /about-us/
 RedirectMatch 301 ^/wp-admin(/.*)?$ /

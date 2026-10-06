@@ -220,3 +220,36 @@ test('rewriteHtml leaves images hosted on other domains untouched', () => {
     '<img src="https://luxoraswancruises.com/wp-content/uploads/2023/12/a.jpg"><img src="/images/2025/12/b.jpg">',
   );
 });
+
+test('toImagePath maps only our own uploads and leaves other hosts alone', async () => {
+  const { toImagePath } = await import('../../src/lib/content.mjs');
+  assert.equal(toImagePath('https://booknilecruises.net/wp-content/uploads/2025/12/a.jpg'), '/images/2025/12/a.jpg');
+  assert.equal(toImagePath('/wp-content/uploads/2025/12/a.jpg'), '/images/2025/12/a.jpg');
+  assert.equal(
+    toImagePath('https://luxoraswancruises.com/wp-content/uploads/2023/12/a.jpg'),
+    'https://luxoraswancruises.com/wp-content/uploads/2023/12/a.jpg',
+  );
+});
+
+test('rewriteHtml converts uploads inside CSS url(&quot;...) and link text too', () => {
+  const html = '<div style="background:url(&quot;https://booknilecruises.net/wp-content/uploads/2025/12/a.jpg&quot;)"></div><a>https://booknilecruises.net/wp-content/uploads/2025/12/b.jpg</a>';
+  const out = rewriteHtml(html, '/images');
+  assert.ok(!out.includes('wp-content'), out);
+});
+
+test('asset treats an empty images base as the default', async () => {
+  const { asset } = await import('../../src/lib/content.mjs');
+  assert.equal(asset('/images/2025/12/a.jpg', ''), '/images/2025/12/a.jpg');
+});
+
+test('every old WordPress sitemap name redirects, the new sitemap does not', async () => {
+  const { htaccess } = await import('../../src/lib/redirects.mjs');
+  const rule = htaccess().match(/RedirectMatch 301 (\S+) \/sitemap\.xml/)[1];
+  const re = new RegExp(rule);
+  const { readFileSync } = await import('node:fs');
+  const names = [...new Set(JSON.parse(readFileSync('../data/wp-export/sitemap-urls.json', 'utf8')).map((u) => `/${u.sitemap}`))];
+  for (const n of [...names, '/sitemap_index.xml', '/wp-sitemap.xml', '/wp-sitemap-posts-page-1.xml', '/post-sitemap2.xml']) {
+    assert.ok(re.test(n), `${n} not redirected`);
+  }
+  assert.ok(!re.test('/sitemap.xml'));
+});
