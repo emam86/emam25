@@ -48,7 +48,7 @@ final class Posts
         $announce = false;
         try {
             $id = Db::tx(function () use (&$row, $id, $old, $actor, $imageAlt, &$announce): int {
-                // Serialize API slug allocation, including posts on different publication dates.
+                // Serialize URL allocation with panel post saves.
                 Db::run("INSERT IGNORE INTO api_locks (name) VALUES ('posts')");
                 Db::one("SELECT name FROM api_locks WHERE name = 'posts' FOR UPDATE");
                 if ($old) {
@@ -57,13 +57,18 @@ final class Posts
                     if ($current['updated_at'] !== $old['updated_at']) throw new ApiException(409, 'Post changed; retry with current values');
                 }
                 $base = $row['slug'];
-                for ($n = 2; Db::value('SELECT id FROM posts WHERE slug = ? AND id <> ?', [$row['slug'], $id]); $n++) $row['slug'] = rtrim(substr($base, 0, 180), '-') . '-' . $n;
-                $row['url'] = (new \DateTimeImmutable($row['published_at']))->format('/Y/m/d/') . $row['slug'] . '/';
+                $prefix = (new \DateTimeImmutable($row['published_at']))->format('/Y/m/d/');
+                $row['url'] = $prefix . $row['slug'] . '/';
+                for ($n = 2; Db::value('SELECT id FROM posts WHERE url = ? AND id <> ?', [$row['url'], $id]); $n++) {
+                    $row['slug'] = rtrim(substr($base, 0, 180), '-') . '-' . $n;
+                    $row['url'] = $prefix . $row['slug'] . '/';
+                }
                 $row['updated_at'] = date('Y-m-d H:i:s', $old ? max(time(), strtotime($old['updated_at']) + 1) : time());
                 if ($old) {
                     Db::update('posts', $row, 'id = ?', [$id]);
-                    if ($old['status'] === 'published' && $old['url'] !== $row['url']) Redirects::moved($old['url'], $row['url']);
+                    if ($old['status'] === 'published' && ($old['published_at'] === null || $old['published_at'] <= date('Y-m-d H:i:s')) && Announcement::publicAt($row, date('Y-m-d H:i:s')) && $old['url'] !== $row['url']) Redirects::moved($old['url'], $row['url']);
                 } else $id = Db::insert('posts', $row + ['source' => $actor]);
+                if (Announcement::publicAt($row, date('Y-m-d H:i:s'))) Redirects::claim($row['url']);
                 if ($imageAlt !== null && $row['image_id']) {
                     Db::update('media', ['alt' => strip_tags($imageAlt)], 'id = ?', [$row['image_id']]);
                     Audit::log('update', 'media', $row['image_id'], 'تعديل النص البديل', null, $actor);

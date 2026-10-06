@@ -39,9 +39,18 @@ final class Redirects
             $row = ['from_path' => $from, 'to_path' => $resolved];
             if ($old) Db::update('redirects', $row, 'id = ?', [$id]);
             else $id = Db::insert('redirects', $row + ['source' => 'manual']);
+            Db::run('UPDATE redirects SET to_path = ? WHERE to_path = ?', [$resolved, $from]);
+            if ($old && $old['from_path'] !== $from) {
+                Db::run('UPDATE redirects SET to_path = ? WHERE to_path = ?', [$resolved, $old['from_path']]);
+            }
             Audit::log($old ? 'update' : 'create', 'redirect', $id, 'حفظ التحويل', ['old' => $old, 'new' => $row]);
             return $resolved;
         });
+    }
+
+    public static function claim(string $path): void
+    {
+        Db::run('DELETE FROM redirects WHERE from_path = ?', [$path]);
     }
 
     public static function moved(string $oldPath, string $newPath): void

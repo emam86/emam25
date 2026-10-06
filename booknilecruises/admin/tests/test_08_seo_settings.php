@@ -157,3 +157,71 @@ test('saving the settings form leaves settings that are not on it alone', functi
     \Bnc\Settings::reset();
     assert_same('keep-this-key-123', \Bnc\Settings::get('indexnow_key'));
 });
+
+test('manual redirects flatten incoming links on create and changed-source edits and reject loops', function () {
+    \Bnc\Redirects::save('/review-a/', '/review-b/');
+    \Bnc\Redirects::save('/review-b/', '/review-c/');
+    assert_same('/review-c/', Db::value('SELECT to_path FROM redirects WHERE from_path = ?', ['/review-a/']));
+    $id = (int) Db::value('SELECT id FROM redirects WHERE from_path = ?', ['/review-b/']);
+    Db::insert('redirects', ['from_path' => '/review-old-incoming/', 'to_path' => '/review-b/']);
+    Db::insert('redirects', ['from_path' => '/review-new-incoming/', 'to_path' => '/review-new/']);
+    \Bnc\Redirects::save('/review-new/', '/blog/', $id);
+    foreach (['/review-old-incoming/', '/review-new-incoming/'] as $path) assert_same('/blog/', Db::value('SELECT to_path FROM redirects WHERE from_path = ?', [$path]));
+    try { \Bnc\Redirects::save('/blog/', '/review-new/'); throw new AssertionFailed('loop accepted'); } catch (\DomainException) {}
+});
+
+test('term creation and unchanged saves reclaim category URLs', function () use ($seoOwner) {
+    $path = '/destinations/review-category/';
+    Db::insert('redirects', ['from_path' => $path, 'to_path' => '/destinations/']);
+    $fields = ['taxonomy' => 'destination', 'slug' => 'review-category', 'name' => 'Review', 'parent_id' => '', 'description' => '', 'seo_title' => '', 'seo_description' => ''];
+    assert_same(303, $seoOwner->post('/admin/terms/new', $fields)['status']);
+    assert_same(null, Db::value('SELECT id FROM redirects WHERE from_path = ?', [$path]));
+    $id = (int) Db::value('SELECT id FROM terms WHERE url = ?', [$path]);
+    Db::insert('redirects', ['from_path' => $path, 'to_path' => '/destinations/']);
+    assert_same(303, $seoOwner->post("/admin/terms/$id/edit", $fields)['status']);
+    assert_same(null, Db::value('SELECT id FROM redirects WHERE from_path = ?', [$path]));
+});
+
+test('fixed pages are live and redirect list warns about hiding them', function () use ($seoOwner) {
+    foreach (SitePages::FIXED as $path) assert_true(SitePages::live($path), $path);
+    \Bnc\Redirects::save('/faq/', '/blog/');
+    assert_contains('هذه الصفحة موجودة', $seoOwner->get('/admin/redirects?q=%2Ffaq%2F')['body']);
+});
+
+test('redirect listing paginates 50 rows preserves search and uses batch live lookups', function () use ($seoOwner) {
+    $ids = [];
+    try {
+        for ($n = 1; $n <= 51; $n++) $ids[] = Db::insert('redirects', ['from_path' => '/review-paging-' . $n . '/', 'to_path' => '/blog/']);
+        $first = $seoOwner->get('/admin/redirects?q=review-paging');
+        assert_same(50, substr_count($first['body'], '<td dir="ltr">/review-paging-'));
+        assert_contains('q=review-paging&amp;page=2', $first['body']);
+        assert_same(1, substr_count($seoOwner->get('/admin/redirects?q=review-paging&page=2')['body'], '<td dir="ltr">/review-paging-'));
+        assert_same(0, substr_count($seoOwner->get('/admin/redirects?q=%25')['body'], '<td dir="ltr">/review-paging-'));
+        $session = $_SESSION ?? [];
+        $owner = Db::one("SELECT u.* FROM users u JOIN roles r ON r.id = u.role_id WHERE r.slug = 'owner' AND u.is_active = 1 LIMIT 1");
+        $_SESSION['uid'] = (int) $owner['id'];
+        $_SESSION['pwv'] = substr(hash('sha256', $owner['password_hash']), 0, 16);
+        \Bnc\Auth::reset();
+        try {
+            assert_true(\Bnc\Auth::user() !== null);
+            $queries = review_count_queries(fn () => (new \Bnc\Controller\RedirectsController())->index());
+        } finally { $_SESSION = $session; \Bnc\Auth::reset(); }
+        foreach (['trips', 'posts', 'terms'] as $table) {
+            $lookups = array_values(array_filter($queries, fn ($sql) => str_contains($sql, 'FROM ' . $table)));
+            assert_same(1, count($lookups), $table . ' must be queried once per page');
+            assert_contains(' IN (', $lookups[0]);
+        }
+        $live = SitePages::livePaths(['/faq/', '/not-a-page/']);
+        assert_true(isset($live['/faq/']));
+        assert_true(!isset($live['/not-a-page/']));
+    } finally { foreach ($ids as $id) Db::run('DELETE FROM redirects WHERE id = ?', [$id]); }
+});
+
+test('sitemap link uses configured site URL with trailing slash removed', function () {
+    $config = require __DIR__ . '/tmp/config.php';
+    try {
+        \Bnc\Config::load(array_replace($config, ['site_url' => 'https://alternate.example/base/']));
+        $html = \Bnc\View::partial('sitemap/index', ['groups' => [], 'excluded' => []]);
+        assert_contains('href="https://alternate.example/base/sitemap.xml"', $html);
+    } finally { \Bnc\Config::load($config); }
+});

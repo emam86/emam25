@@ -171,3 +171,40 @@ test('trip saves roll back row category and redirect changes if auditing fails',
     assert_same($terms, Db::all('SELECT * FROM trip_terms WHERE trip_id = ? ORDER BY position', [$id]));
     assert_same(null, Db::value('SELECT id FROM redirects WHERE from_path = ?', ['/trip/phase-two-nile-copy/']));
 });
+
+test('public trips reclaim their URLs on create publish and restore; unpublishing creates no redirect', function () use ($tripOwner) {
+    $path = '/trip/review-reclaim/';
+    Db::insert('redirects', ['from_path' => $path, 'to_path' => '/trip/']);
+    assert_same(303, $tripOwner->post('/admin/trips/new', trip_fields(['slug' => 'review-reclaim']))['status']);
+    $id = (int) Db::value("SELECT id FROM trips WHERE slug = 'review-reclaim'");
+    assert_same(null, Db::value('SELECT id FROM redirects WHERE from_path = ?', [$path]));
+    foreach (['draft', 'published', 'published'] as $status) {
+        Db::run('DELETE FROM redirects WHERE from_path = ?', [$path]);
+        Db::insert('redirects', ['from_path' => $path, 'to_path' => '/trip/']);
+        assert_same(303, $tripOwner->post("/admin/trips/$id/edit", trip_payload($id, ['status' => $status]))['status']);
+        assert_same($status === 'draft' ? '/trip/' : null, Db::value('SELECT to_path FROM redirects WHERE from_path = ?', [$path]));
+    }
+    assert_same(303, $tripOwner->post("/admin/trips/$id/edit", trip_payload($id, ['status' => 'draft', 'slug' => 'review-unpublished']))['status']);
+    assert_same(null, Db::value('SELECT id FROM redirects WHERE from_path = ?', [$path]));
+});
+
+test('draft trip deletion hides redirect input ignores invalid target and omits redirect audit detail', function () use ($tripOwner) {
+    assert_same(303, $tripOwner->post('/admin/trips/new', trip_fields(['slug' => 'review-delete-draft', 'status' => 'draft']))['status']);
+    $id = (int) Db::value("SELECT id FROM trips WHERE slug = 'review-delete-draft'");
+    assert_not_contains('name="redirect_to"', $tripOwner->get("/admin/trips/$id/delete")['body']);
+    assert_same(303, $tripOwner->post("/admin/trips/$id/delete", ['redirect_to' => 'invalid'])['status']);
+    $details = json_decode(Db::value("SELECT details FROM audit_log WHERE entity = 'trip' AND entity_id = ? AND action = 'delete'", [$id]) ?? 'null', true);
+    assert_true(!isset($details['redirect_to']));
+});
+
+test('published trips changed to drafts with new slugs do not redirect their public URL', function () use ($tripOwner) {
+    assert_same(303, $tripOwner->post('/admin/trips/new', trip_fields(['slug' => 'review-unpublish-alone']))['status']);
+    $id = (int) Db::value("SELECT id FROM trips WHERE slug = 'review-unpublish-alone'");
+    try {
+        assert_same(303, $tripOwner->post("/admin/trips/$id/edit", trip_payload($id, ['status' => 'draft', 'slug' => 'review-unpublish-alone-draft']))['status']);
+        assert_same(null, Db::value('SELECT id FROM redirects WHERE from_path = ?', ['/trip/review-unpublish-alone/']));
+    } finally {
+        Db::run('DELETE FROM trips WHERE id = ?', [$id]);
+        Db::run('DELETE FROM redirects WHERE from_path = ?', ['/trip/review-unpublish-alone/']);
+    }
+});

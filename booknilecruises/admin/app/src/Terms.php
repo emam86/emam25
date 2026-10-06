@@ -72,8 +72,10 @@ final class Terms
                     $url = self::indexPath($d['taxonomy']) . $d['slug'] . '/' . $child['slug'] . '/';
                     Db::update('terms', ['url' => $url], 'id = ?', [$child['id']]);
                     Redirects::moved($child['url'], $url);
+                    Redirects::claim($url);
                 }
             } else $id = Db::insert('terms', $row);
+            Redirects::claim($row['url']);
             Audit::log($old ? 'update' : 'create', 'term', $id, 'حفظ التصنيف');
             return $id;
         });

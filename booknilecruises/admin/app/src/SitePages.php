@@ -27,9 +27,20 @@ final class SitePages
 
     public static function live(string $path): bool
     {
-        if (preg_match('#^/trip/([^/]+)/$#D', $path, $m) && Db::value("SELECT id FROM trips WHERE slug = ? AND status = 'published'", [$m[1]])) return true;
-        if (Db::value("SELECT id FROM posts WHERE url = ? AND status = 'published' AND (published_at IS NULL OR published_at <= ?)", [$path, date('Y-m-d H:i:s')])) return true;
-        return (bool) Db::value('SELECT id FROM terms WHERE url = ?', [$path]);
+        return isset(self::livePaths([$path])[$path]);
+    }
+
+    /** Return a path-keyed set of public pages with a fixed number of queries. */
+    public static function livePaths(array $paths): array
+    {
+        $paths = array_values(array_unique($paths));
+        if (!$paths) return [];
+        $live = array_fill_keys(array_intersect($paths, self::FIXED), true);
+        $placeholders = implode(',', array_fill(0, count($paths), '?'));
+        foreach (Db::all("SELECT CONCAT('/trip/', slug, '/') AS path FROM trips WHERE status = 'published' AND CONCAT('/trip/', slug, '/') IN ($placeholders)", $paths) as $row) $live[$row['path']] = true;
+        foreach (Db::all("SELECT url AS path FROM posts WHERE status = 'published' AND (published_at IS NULL OR published_at <= ?) AND url IN ($placeholders)", [date('Y-m-d H:i:s'), ...$paths]) as $row) $live[$row['path']] = true;
+        foreach (Db::all("SELECT url AS path FROM terms WHERE url IN ($placeholders)", $paths) as $row) $live[$row['path']] = true;
+        return $live;
     }
 
     public static function sitemap(): array

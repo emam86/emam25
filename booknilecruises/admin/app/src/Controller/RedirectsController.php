@@ -11,8 +11,13 @@ final class RedirectsController extends Controller
     {
         $q = Request::str('q', '', true);
         $search = '%' . addcslashes($q, '%_\\') . '%';
-        $rows = Db::all('SELECT * FROM redirects WHERE from_path LIKE ? OR to_path LIKE ? ORDER BY created_at DESC, id DESC', [$search, $search]);
-        return $this->view('redirects/index', ['title' => 'التحويلات'] + compact('rows', 'q'));
+        $params = [$search, $search];
+        $total = (int) Db::value('SELECT COUNT(*) FROM redirects WHERE from_path LIKE ? OR to_path LIKE ?', $params);
+        $pages = max(1, (int) ceil($total / 50));
+        $page = min($pages, max(1, Request::int('page', 1, true)));
+        $rows = Db::all('SELECT * FROM redirects WHERE from_path LIKE ? OR to_path LIKE ? ORDER BY created_at DESC, id DESC LIMIT 50 OFFSET ' . (($page - 1) * 50), $params);
+        $live = SitePages::livePaths(array_column($rows, 'from_path'));
+        return $this->view('redirects/index', ['title' => 'التحويلات'] + compact('rows', 'q', 'total', 'pages', 'page', 'live'));
     }
     public function create(): string { return $this->form(['id' => null, 'from_path' => '', 'to_path' => '']); }
     public function edit(int $id): string { return $this->form($this->find($id)); }

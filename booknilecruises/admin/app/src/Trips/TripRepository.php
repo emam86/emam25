@@ -41,13 +41,14 @@ final class TripRepository
                 // DATETIME has second precision; advance even for two saves in one second.
                 $row['updated_at'] = date('Y-m-d H:i:s', max(time(), strtotime($old['updated_at']) + 1));
                 Db::update('trips', $row, 'id = ?', [$id]);
-                if ($old['status'] === 'published' && $old['slug'] !== $row['slug']) Redirects::moved('/trip/' . $old['slug'] . '/', '/trip/' . $row['slug'] . '/');
+                if ($old['status'] === 'published' && $row['status'] === 'published' && $old['slug'] !== $row['slug']) Redirects::moved('/trip/' . $old['slug'] . '/', '/trip/' . $row['slug'] . '/');
                 Audit::log('update', 'trip', $id, 'عدّل الرحلة', ['changed' => $changed]);
             } else {
                 $row['created_by'] = Auth::user()['id'];
                 $id = Db::insert('trips', $row);
                 Audit::log('create', 'trip', $id, 'أضاف الرحلة');
             }
+            if ($row['status'] === 'published') Redirects::claim('/trip/' . $row['slug'] . '/');
             self::terms($id, $d['term_ids']);
             return $id;
         });

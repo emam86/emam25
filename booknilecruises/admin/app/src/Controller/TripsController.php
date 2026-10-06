@@ -77,7 +77,7 @@ final class TripsController extends Controller
     public function confirmDelete(int $id): string
     {
         $trip = TripRepository::find($id);
-        return $this->view('trips/delete', ['title' => 'حذف الرحلة', 'trip' => $trip, 'targets' => $this->targets($trip), 'errors' => [], 'target' => '/trip/']);
+        return $this->view('trips/delete', ['title' => 'حذف الرحلة', 'trip' => $trip, 'targets' => $trip['status'] === 'published' ? $this->targets($trip) : [], 'errors' => [], 'target' => '/trip/']);
     }
 
     public function delete(int $id): string|Redirect
@@ -85,11 +85,15 @@ final class TripsController extends Controller
         $target = Request::str('redirect_to');
         $result = Db::tx(function () use ($id, $target): ?array {
             $trip = Db::one('SELECT * FROM trips WHERE id = ? FOR UPDATE', [$id]) ?? $this->notFound();
-            $targets = $this->targets($trip);
-            if (!isset($targets[$target])) return compact('trip', 'targets');
-            if ($trip['status'] === 'published') Redirects::moved('/trip/' . $trip['slug'] . '/', $target);
+            $details = null;
+            if ($trip['status'] === 'published') {
+                $targets = $this->targets($trip);
+                if (!isset($targets[$target])) return compact('trip', 'targets');
+                Redirects::moved('/trip/' . $trip['slug'] . '/', $target);
+                $details = ['redirect_to' => $target];
+            }
             Db::run('DELETE FROM trips WHERE id = ?', [$id]);
-            Audit::log('delete', 'trip', $id, 'حذف الرحلة', ['redirect_to' => $target]);
+            Audit::log('delete', 'trip', $id, 'حذف الرحلة', $details);
             return null;
         });
         if ($result) {
