@@ -8,7 +8,7 @@
 <div class="card stack">
   <form method="post" action="<?= e(url('/seo/report')) ?>" class="stack"><?= csrf_field() ?><label>بريد التقرير الأسبوعي <input type="email" name="seo_report_email" maxlength="190" value="<?= e(\Bnc\Settings::get('seo_report_email', '')) ?>"></label><button class="btn" name="action" value="email">حفظ البريد</button></form>
   <p>مفتاح IndexNow: <code><?= e(\Bnc\Settings::get('indexnow_key', '')) ?></code></p>
-  <p>يدعم Bing وYandex ومحركات أخرى؛ Google لا يستخدم IndexNow. انشر الموقع بعد توليد المفتاح لإتاحة ملف التحقق.</p>
+  <p>يدعم Bing وYandex ومحركات أخرى؛ Google لا يستخدم IndexNow. ملف التحقق متاح في الموقع فور توليد المفتاح.</p>
   <form method="post" action="<?= e(url('/seo/report')) ?>" data-confirm="توليد مفتاح جديد واستبدال المفتاح الحالي؟"><?= csrf_field() ?><button class="btn" name="action" value="generate">توليد مفتاح IndexNow</button></form>
 </div>
 <?php foreach ($groups as $level => $entities): ?>

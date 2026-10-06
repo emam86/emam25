@@ -18,7 +18,6 @@ final class Nav
             ['label' => 'فحص SEO', 'path' => '/seo/report', 'perm' => 'seo.edit'],
             ['label' => 'التحويلات', 'path' => '/redirects', 'perm' => 'sitemap.edit'],
             ['label' => 'السايت ماب', 'path' => '/sitemap', 'perm' => 'sitemap.edit'],
-            ['label' => 'النشر', 'path' => '/publish', 'perm' => 'publish'],
             ['label' => 'الاستفسارات', 'path' => '/enquiries', 'perm' => 'enquiries.view'],
             ['label' => 'مفاتيح API', 'path' => '/api-keys', 'perm' => 'api.manage'],
             ['label' => 'Webhooks', 'path' => '/webhooks', 'perm' => 'api.manage'],

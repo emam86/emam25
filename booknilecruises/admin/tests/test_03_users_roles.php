@@ -47,15 +47,15 @@ test('admin cannot create owners or touch owner accounts', function () use ($log
 });
 
 test('admin cannot grant permissions they do not hold', function () use ($owner, $login, $roleId) {
-    // Take publish away from the admin role, then let the admin try to build a role with it.
-    $perms = array_values(array_diff(Roles::bySlug('admin')['permissions'], ['publish']));
+    // Take posts.edit away from the admin role, then let the admin try to build a role with it.
+    $perms = array_values(array_diff(Roles::bySlug('admin')['permissions'], ['posts.edit']));
     $r = $owner->post('/admin/roles/' . $roleId('admin') . '/edit', ['name' => 'مدير', 'permissions' => $perms]);
     assert_same(303, $r['status']);
     $ad = $login('admin@example.com', 'password-admin-1');
-    $r = $ad->post('/admin/roles/new', ['name' => 'Publisher', 'permissions' => ['publish', 'trips.view']]);
+    $r = $ad->post('/admin/roles/new', ['name' => 'Publisher', 'permissions' => ['posts.edit', 'trips.view']]);
     assert_same(303, $r['status']);
-    assert_same(['trips.view'], Roles::all()[5]['permissions'] ?? null, 'publish was stripped');
-    // The editor role has publish, which the admin lacks, so the admin can't edit it or assign it.
+    assert_same(['trips.view'], Roles::all()[5]['permissions'] ?? null, 'posts.edit was stripped');
+    // The editor role has posts.edit, which the admin lacks, so the admin can't edit it or assign it.
     assert_same(403, $ad->get('/admin/roles/' . $roleId('editor') . '/edit')['status']);
     $r = $ad->post('/admin/users/new', ['name' => 'E2', 'email' => 'e2@example.com', 'password' => 'password-e2-123', 'role_id' => $roleId('editor'), 'is_active' => '1']);
     assert_same(422, $r['status']);

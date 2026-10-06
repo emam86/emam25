@@ -21,6 +21,10 @@ require BNC_APP . '/src/helpers.php';
             header('Content-Type: application/json; charset=utf-8');
             exit('{"error":"API configuration is missing"}');
         }
+        if (defined('BNC_SITE_ENTRY')) {
+            error_log('[bnc] Site configuration is missing');
+            exit('The site is temporarily unavailable.');
+        }
         exit("Missing configuration file. Copy config.sample.php to bnc-config.php next to the app folder.\n");
     }
     \Bnc\Config::load(require $path);
@@ -28,7 +32,7 @@ require BNC_APP . '/src/helpers.php';
 
 date_default_timezone_set(\Bnc\Config::get('timezone', 'Africa/Cairo'));
 error_reporting(E_ALL);
-ini_set('display_errors', !defined('BNC_API_ENTRY') && \Bnc\Config::get('debug') ? '1' : '0');
+ini_set('display_errors', !defined('BNC_API_ENTRY') && !defined('BNC_SITE_ENTRY') && \Bnc\Config::get('debug') ? '1' : '0');
 ini_set('log_errors', '1');
 
 set_exception_handler(static function (Throwable $e): void {
@@ -47,6 +51,10 @@ set_exception_handler(static function (Throwable $e): void {
         exit(1);
     }
     if (!headers_sent()) http_response_code(500);
+    if (defined('BNC_SITE_ENTRY')) {
+        echo 'The site is temporarily unavailable.';
+        return;
+    }
     echo \Bnc\Config::get('debug')
         ? '<pre>' . e((string) $e) . '</pre>'
         : 'حدث خطأ غير متوقع. حاول مرة أخرى.';

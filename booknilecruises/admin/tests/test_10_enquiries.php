@@ -87,7 +87,7 @@ test('sales can manage and export enquiries while editor receives 403; CSV cells
     foreach (['/admin/enquiries', '/admin/enquiries/' . $id, '/admin/enquiries.csv', '/admin/api-keys', '/admin/webhooks'] as $path) assert_same(403, $ed->get($path)['status']);
     assert_same(403, $ed->post('/admin/enquiries/' . $id, ['status' => 'booked'])['status']);
     assert_same(403, $ed->post('/admin/enquiries/' . $id . '/delete')['status']);
-    assert_same(403, $sales->get('/admin/publish')['status']);
+    assert_same(404, $sales->get('/admin/publish')['status'], 'manual publishing route was removed');
     assert_same(303, $sales->post('/admin/enquiries/' . $id . '/delete')['status']);
     assert_same(null, Db::value('SELECT id FROM enquiries WHERE id = ?', [$id]));
 });

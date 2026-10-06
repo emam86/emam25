@@ -82,8 +82,6 @@ final class App
         $r->get('/settings', [C\SettingsController::class, 'form'], 'settings.edit');
         $r->post('/settings', [C\SettingsController::class, 'save'], 'settings.edit');
 
-        $r->get('/publish', [C\PublishController::class, 'index'], 'publish');
-        $r->post('/publish', [C\PublishController::class, 'publish'], 'publish');
         $r->get('/enquiries', [C\EnquiriesController::class, 'index'], 'enquiries.view');
         $r->post('/enquiries/notify', [C\EnquiriesController::class, 'notify'], 'enquiries.manage');
         $r->get('/enquiries.csv', [C\EnquiriesController::class, 'csv'], 'enquiries.view');

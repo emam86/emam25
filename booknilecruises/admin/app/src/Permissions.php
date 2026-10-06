@@ -33,7 +33,6 @@ final class Permissions
         ],
         'النظام' => [
             'settings.edit' => 'الإعدادات (التواصل، Google verification، Analytics)',
-            'publish' => 'نشر الموقع',
             'api.manage' => 'مفاتيح الـ API والـ Webhooks (n8n / Make)',
             'users.manage' => 'المستخدمين والأدوار',
             'audit.view' => 'سجل العمليات',
@@ -47,14 +46,14 @@ final class Permissions
             'trips.view', 'trips.create', 'trips.edit', 'trips.delete',
             'posts.view', 'posts.create', 'posts.edit', 'posts.delete',
             'media.upload', 'media.delete', 'seo.edit', 'sitemap.edit',
-            'enquiries.view', 'enquiries.manage', 'settings.edit', 'publish',
+            'enquiries.view', 'enquiries.manage', 'settings.edit',
             'api.manage', 'users.manage', 'audit.view',
         ]],
         'editor' => ['محرر', [
             'trips.view', 'trips.create', 'trips.edit',
-            'posts.view', 'posts.create', 'posts.edit', 'media.upload', 'publish',
+            'posts.view', 'posts.create', 'posts.edit', 'media.upload',
         ]],
-        'seo' => ['SEO', ['trips.view', 'trips.edit', 'posts.view', 'posts.edit', 'seo.edit', 'sitemap.edit', 'publish']],
+        'seo' => ['SEO', ['trips.view', 'trips.edit', 'posts.view', 'posts.edit', 'seo.edit', 'sitemap.edit']],
         'sales' => ['مبيعات', ['trips.view', 'enquiries.view', 'enquiries.manage']],
     ];
 

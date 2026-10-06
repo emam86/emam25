@@ -9,6 +9,9 @@ require __DIR__ . '/lib.php';
 $dsn = getenv('BNC_TEST_DSN') ?: 'mysql:host=127.0.0.1;port=3306;dbname=bnc_test;charset=utf8mb4';
 $tmp = __DIR__ . '/tmp';
 @mkdir($tmp, 0700, true);
+$cache = $tmp . '/site-cache';
+if (is_dir($cache)) foreach (new DirectoryIterator($cache) as $entry) if ($entry->isFile() || $entry->isLink()) unlink($entry->getPathname());
+@mkdir($cache, 0700, true);
 $images = $tmp . '/images';
 if (is_link($images)) unlink($images);
 if (is_dir($images)) {
@@ -28,7 +31,9 @@ file_put_contents($config, '<?php return ' . var_export([
     'install_token' => $installToken,
     'images_dir' => $tmp . '/images',
     'images_url' => '/images',
+    'site_cache_dir' => $cache,
     'debug' => true,
+    'indexnow_enabled' => false, // tests must never call the real IndexNow service
 ], true) . ';');
 putenv("BNC_CONFIG=$config");
 require dirname(__DIR__) . '/app/bootstrap.php';

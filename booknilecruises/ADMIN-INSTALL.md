@@ -1,6 +1,6 @@
 # تركيب لوحة التحكم على Hostinger
 
-الخطوات دي بتتعمل مرة واحدة. محتاج: hPanel، وحساب GitHub بتاعك.
+الخطوات دي بتتعمل مرة واحدة. محتاج: hPanel وبيانات قاعدة MySQL.
 
 > ⚠️ متضغطش أبدًا على «Uninstall WordPress» في hPanel، ومتمسحش فولدر `images`.
 
@@ -20,7 +20,7 @@
 4. هتلاقي ظهر:
    - `bnc-app` (كود اللوحة، برا الموقع العام)
    - `bnc-config.php` (الإعدادات والأسرار)
-   - جوا `public_html`: فولدرين جداد `admin` و`api`
+   - جوا `public_html`: `admin` و`api`، وملفات الموقع `index.php` و`.htaccess` و`assets` و`img`
 5. امسح ملف `admin-bundle.zip` بعد الفك.
 
 ## 3) ملف الإعدادات
@@ -47,47 +47,37 @@
 
 ---
 
-## 6) تشغيل زرار «نشر الموقع»
+## 6) تشغيل الموقع المباشر
 
-الموقع العام صفحات ثابتة سريعة. لما تعدل في اللوحة وتضغط «نشر»، GitHub بيبني الموقع من بيانات اللوحة ويرفعه على السيرفر. ده بيتظبط مرة واحدة:
+انسخ الملفات بهذه المسارات؛ فعّل إظهار الملفات المخفية لرفع `.htaccess`:
 
-### أ. حساب FTP مخصص للنشر
-hPanel ← **Files** ← **FTP Accounts** ← اعمل حساب جديد:
-- اسم المستخدم: مثلًا `deploy`
-- الفولدر: `public_html` بتاع booknilecruises.net
-- باسورد قوي
-
-اكتب عندك: اسم المستخدم الكامل (زي `u857861630.deploy`)، والـ FTP host (بيظهر في نفس الصفحة، غالبًا `ftp.booknilecruises.net`).
-
-### ب. خلّي `main` الفرع الأساسي على GitHub (مرة واحدة)
-الفرع `main` اتعمل وفيه كل الشغل. GitHub Actions (زرار النشر والنشر كل ساعة) بيشتغل من الفرع الأساسي بس:
-GitHub ← المستودع `emam86/emam25` ← **Settings** ← **General** ← **Default branch** ← اضغط أيقونة التبديل ⇄ ← اختار `main` ← **Update** ← أكّد.
-
-### ج. أسرار GitHub
-GitHub ← المستودع `emam86/emam25` ← **Settings** ← **Secrets and variables** ← **Actions** ← **New repository secret**، وضيف 4:
-
-| الاسم | القيمة |
+| الملف في المشروع | مكانه على Hostinger |
 |---|---|
-| `BNC_EXPORT_TOKEN` | قيمة `export_token` من `bnc-config.php` |
-| `FTP_HOST` | الـ FTP host |
-| `FTP_USER` | اسم مستخدم FTP الكامل |
-| `FTP_PASS` | باسورد FTP |
+| `admin/app/` | `domains/booknilecruises.net/bnc-app/` |
+| `admin/public/admin/` | `domains/booknilecruises.net/public_html/admin/` |
+| `admin/public/api/` | `domains/booknilecruises.net/public_html/api/` |
+| `admin/public/site/index.php` | `domains/booknilecruises.net/public_html/index.php` |
+| `admin/public/site/.htaccess` | `domains/booknilecruises.net/public_html/.htaccess` |
+| `admin/public/site/assets/` | `domains/booknilecruises.net/public_html/assets/` |
+| `admin/public/site/img/` | `domains/booknilecruises.net/public_html/img/` |
 
-### د. رمز GitHub للوحة (عشان الزرار يشغّل النشر)
-1. GitHub ← صورتك ← **Settings** ← **Developer settings** ← **Personal access tokens** ← **Fine-grained tokens** ← **Generate new token**.
-2. Repository access: **Only select repositories** ← `emam86/emam25`.
-3. Permissions ← Repository ← **Actions: Read and write**.
-4. انسخ الرمز وحطه في `bnc-config.php`:
-   ```php
-   'github' => ['token' => 'الرمز هنا', 'repo' => 'emam86/emam25', 'workflow' => 'publish-site.yml', 'ref' => 'main'],
-   ```
+حافظ على `bnc-config.php` خارج `public_html` وعلى مجلد `public_html/images/` الموجود. احذف `public_html/index.html` القديم لكي تُفتح صفحة PHP الرئيسية. الموقع يقرأ نفس قاعدة MySQL الخاصة باللوحة، والتعديلات تظهر بعد الحفظ دون زر نشر.
 
-### هـ. جرّب
-من اللوحة ← **النشر** ← «نشر الموقع الآن». الحالة بتتحدث لوحدها، وفيه لينك لسجل التشغيل على GitHub.
+أنشئ `domains/booknilecruises.net/bnc-app/cache/site/` واجعله قابلًا للكتابة بواسطة مستخدم PHP. الإعداد `'site_cache_dir' => null` يستخدم هذا المسار تلقائيًا؛ أو ضع مسارًا مطلقًا خارج `public_html` في `site_cache_dir`. اترك `'site_noindex' => false` للإنتاج، واستخدم `true` في نسخة التجربة. المقالات المجدولة تظهر عند حلول موعدها حتى قبل تشغيل Cron.
 
-> كمان كل ساعة GitHub بيبص: لو فيه تغيير ما اتنشرش (مثلًا مقال مجدول جه معاده) بينشره لوحده.
+من hPanel ← Advanced ← Cron Jobs اختر **كل ١٥ دقيقة**: الدقائق `*/15` وباقي حقول الوقت `*`. ضع هذا الأمر في خانة الأمر مع استبدال `<user>` باسم مستخدم الاستضافة:
 
----
+```sh
+php /home/<user>/domains/booknilecruises.net/bnc-app/bin/cron.php
+```
+
+صيغة crontab الكاملة:
+
+```cron
+*/15 * * * * php /home/<user>/domains/booknilecruises.net/bnc-app/bin/cron.php
+```
+
+المهمة ترسل إشعار `post.published` مرة واحدة للمقالات المستحقة في أول تشغيل بعد موعدها. ولّد مفتاح IndexNow من فحص SEO؛ الموقع يعرض ملف المفتاح تلقائيًا، والإرسال يتم بعد نجاح الحفظ. راجع [دليل API](admin/API.md).
 
 ## 7) فحص SEO أسبوعي بالإيميل (اختياري)
 hPanel ← **Advanced** ← **Cron Jobs** ← أسبوعي ← الأمر:

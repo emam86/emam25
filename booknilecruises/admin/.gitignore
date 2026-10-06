@@ -1,2 +1,3 @@
 bnc-config.php
 tests/tmp/
+app/cache/

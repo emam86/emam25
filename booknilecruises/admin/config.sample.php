@@ -12,6 +12,9 @@ return [
     'site_url'   => 'https://booknilecruises.net',
     'admin_path' => '/admin',
     'api_path' => '/api',
+    // Optional absolute cache folder outside public_html (default: bnc-app/cache/site).
+    'site_cache_dir' => null,
+    'site_noindex' => false,
     // Test-only; keep false in production.
     'webhooks_allow_private' => false,
     // Absolute folder the uploaded photos go to, and its public URL path.
@@ -21,10 +24,8 @@ return [
     // One-time token for the web installer (/admin/install). Make it long and random,
     // and remove it after the first owner account exists.
     'install_token' => '',
-    // Token the publish workflow uses to download the content export (phase 5).
+    // Token for the retained content export and SEO-check API.
     'export_token' => '',
-    // Publishing through GitHub Actions (phase 5).
-    'github' => ['token' => '', 'repo' => 'emam86/emam25', 'workflow' => 'publish-site.yml', 'ref' => 'main'],
     'mail' => ['from' => 'info@booknilecruises.net', 'notify' => 'info@booknilecruises.net'],
     'timezone' => 'Africa/Cairo',
     // Cookies are Secure on HTTPS automatically; true forces it (behind a proxy).

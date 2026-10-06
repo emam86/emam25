@@ -107,7 +107,7 @@ test('SEO API requires export token validates email and returns stored counts', 
     $old = phase5_config(['export_token' => str_repeat('s', 40)]);
     try {
         assert_same(401, api_http('POST', '/api/seo/check', new stdClass())['status']);
-        assert_same(401, api_http('POST', '/api/seo/check', new stdClass(), api_headers(api_test_key(['publish'])))['status']);
+        assert_same(401, api_http('POST', '/api/seo/check', new stdClass(), api_headers(api_test_key(['trips.read'])))['status']);
         assert_same(422, api_http('POST', '/api/seo/check', ['email' => 'yes'], api_headers(str_repeat('s', 40)))['status']);
         $response = api_http('POST', '/api/seo/check', ['email' => false], api_headers(str_repeat('s', 40)));
         assert_same(200, $response['status']);
@@ -269,4 +269,57 @@ test('SEO checker loads post URL lookup once for many links', function () {
         assert_same(0, count(array_filter($queries, fn ($sql) => str_contains($sql, 'FROM posts WHERE url ='))));
         assert_same(1, count(array_filter($queries, fn ($sql) => $sql === 'SELECT url FROM posts')));
     } finally { Db::run('DELETE FROM trips WHERE id = ?', [$id]); }
+});
+
+test('content audit versions and deferred effects commit atomically and discard rollback callbacks', function () {
+    $oldKey = Settings::get('indexnow_key');
+    Settings::set('indexnow_key', '');
+    $version = (int) Settings::get('content_version', '0');
+    $calls = 0;
+    try {
+        Db::tx(function () use (&$calls): void {
+            \Bnc\Audit::log('update', 'settings', null, 'اختبار إبطال الذاكرة');
+            Db::afterCommit(function () use (&$calls): void { $calls++; });
+            throw new RuntimeException('rollback probe');
+        });
+    } catch (RuntimeException $e) { assert_same('rollback probe', $e->getMessage()); }
+    assert_same($version, (int) Settings::get('content_version', '0'));
+    assert_same(0, $calls);
+    Db::tx(function () use (&$calls): void {
+        \Bnc\Audit::log('update', 'settings', null, 'اختبار إبطال الذاكرة');
+        Db::afterCommit(function () use (&$calls): void { $calls++; });
+        assert_same(0, $calls);
+    });
+    assert_same($version + 1, (int) Settings::get('content_version', '0'));
+    assert_same(1, $calls);
+    Settings::set('indexnow_key', $oldKey);
+});
+
+test('direct IndexNow submits deduplicated paths without publish jobs', function () {
+    $old = Settings::get('indexnow_key');
+    $fake = new class implements IndexNowClient {
+        public array $bodies = [];
+        public function submit(array $body): int { $this->bodies[] = $body; return 503; }
+    };
+    try {
+        Settings::set('indexnow_key', str_repeat('d', 32));
+        IndexNow::submitPaths(['/trip/direct/', '/trip/direct/'], $fake);
+        assert_same(1, count($fake->bodies));
+        assert_same(['https://booknilecruises.net/trip/direct/'], $fake->bodies[0]['urlList']);
+        assert_same('https://booknilecruises.net/' . str_repeat('d', 32) . '.txt', $fake->bodies[0]['keyLocation']);
+    } finally { Settings::set('indexnow_key', $old); }
+});
+
+test('IndexNow capture limits redirects to relevant old and new paths', function () {
+    $unrelated = Db::insert('redirects', ['from_path' => '/indexnow-unrelated/', 'to_path' => '/trip/', 'source' => 'manual']);
+    $trip = Db::insert('trips', ['slug' => 'indexnow-relevant', 'title' => 'Relevant', 'status' => 'published']);
+    try {
+        assert_same(['/trip/indexnow-relevant/', '/trip/indexnow-old/'], IndexNow::contentPaths('trip', $trip, ['old_path' => '/trip/indexnow-old/']));
+        assert_same(['/indexnow-new/', '/indexnow-old/'], IndexNow::contentPaths('redirect', 0, ['new' => ['from_path' => '/indexnow-new/'], 'old' => ['from_path' => '/indexnow-old/']]));
+        assert_same(['/about-us/'], IndexNow::contentPaths('seo', null, ['path' => '/about-us/']));
+        assert_same(['/trip/removed/'], IndexNow::contentPaths('trip', 0, ['old_path' => '/trip/removed/']));
+    } finally {
+        Db::run('DELETE FROM trips WHERE id = ?', [$trip]);
+        Db::run('DELETE FROM redirects WHERE id = ?', [$unrelated]);
+    }
 });

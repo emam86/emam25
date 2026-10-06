@@ -28,7 +28,7 @@ final class PostRepository
                 $row['updated_at'] = date('Y-m-d H:i:s', max(time(), strtotime($old['updated_at']) + 1));
                 Db::update('posts', $row, 'id = ?', [$id]);
                 if ($old['status'] === 'published' && ($old['published_at'] === null || $old['published_at'] <= date('Y-m-d H:i:s')) && Announcement::publicAt($row, date('Y-m-d H:i:s')) && $old['url'] !== $row['url']) Redirects::moved($old['url'], $row['url']);
-                Audit::log('update', 'post', $id, 'عدّل المقال', ['changed' => $changed]);
+                Audit::log('update', 'post', $id, 'عدّل المقال', ['changed' => $changed, 'old_path' => Announcement::publicAt($old, date('Y-m-d H:i:s')) ? $old['url'] : null]);
             } else {
                 $row['created_by'] = Auth::user()['id'];
                 $id = Db::insert('posts', $row);
@@ -51,7 +51,7 @@ final class PostRepository
                 $existing = (int) (Db::value('SELECT id FROM redirects WHERE from_path = ?', [$old['url']]) ?? 0);
                 $target = Redirects::resolve($old['url'], $target, $existing);
                 Redirects::moved($old['url'], $target);
-                $details = ['redirect_to' => $target];
+                $details = ['redirect_to' => $target, 'old_path' => $old['url']];
             }
             Db::run('DELETE FROM posts WHERE id = ?', [$id]);
             Audit::log('delete', 'post', $id, 'حذف المقال', $details);

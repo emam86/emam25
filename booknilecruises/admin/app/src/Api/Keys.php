@@ -7,7 +7,7 @@ use Bnc\{Audit, Db};
 
 final class Keys
 {
-    public const SCOPES = ['posts.write', 'posts.publish', 'trips.read', 'enquiries.read', 'publish'];
+    public const SCOPES = ['posts.write', 'posts.publish', 'trips.read', 'enquiries.read'];
 
     /** Panel permissions a person needs before they may hand a scope to an automation. */
     public const SCOPE_PERMISSIONS = [
@@ -15,7 +15,6 @@ final class Keys
         'posts.publish' => ['posts.create', 'posts.edit'],
         'trips.read' => ['trips.view'],
         'enquiries.read' => ['enquiries.view'],
-        'publish' => ['publish'],
     ];
 
     /** Scopes the actor may grant: nobody gives a key more than they hold themselves. */

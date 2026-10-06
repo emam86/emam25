@@ -1,0 +1,2 @@
+<?php declare(strict_types=1); ?>
+<?= \Bnc\Site\View::component('Listing', ['title' => 'Trips - Book Nile cruises', 'heading' => 'All trips', 'intro' => ('All ' . count(($site['trips'] ?? null) ?? []) . ' Nile cruises, day tours and Egypt tour packages. Filter by destination or sort by price.'), 'description' => 'All Nile cruises, dahabiyas, day tours and Egypt tour packages from Book Nile Cruises, with itineraries and per-person prices.', 'canonical' => '/trip/', 'trips' => ($site['trips'] ?? null), 'crumbs' => [['label' => 'Trips']]]) ?>

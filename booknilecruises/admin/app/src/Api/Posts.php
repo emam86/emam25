@@ -73,7 +73,7 @@ final class Posts
                     Db::update('media', ['alt' => strip_tags($imageAlt)], 'id = ?', [$row['image_id']]);
                     Audit::log('update', 'media', $row['image_id'], 'تعديل النص البديل', null, $actor);
                 }
-                Audit::log($old ? 'update' : 'create', 'post', $id, 'حفظ مقال عبر API', null, $actor);
+                Audit::log($old ? 'update' : 'create', 'post', $id, 'حفظ مقال عبر API', ['old_path' => Announcement::publicAt($old, date('Y-m-d H:i:s')) ? $old['url'] : null], $actor);
                 if (!Announcement::publicAt($old, date('Y-m-d H:i:s'))) $announce = Announcement::claim($id);
                 return $id;
             });

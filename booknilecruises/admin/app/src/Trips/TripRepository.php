@@ -42,7 +42,7 @@ final class TripRepository
                 $row['updated_at'] = date('Y-m-d H:i:s', max(time(), strtotime($old['updated_at']) + 1));
                 Db::update('trips', $row, 'id = ?', [$id]);
                 if ($old['status'] === 'published' && $row['status'] === 'published' && $old['slug'] !== $row['slug']) Redirects::moved('/trip/' . $old['slug'] . '/', '/trip/' . $row['slug'] . '/');
-                Audit::log('update', 'trip', $id, 'عدّل الرحلة', ['changed' => $changed]);
+                Audit::log('update', 'trip', $id, 'عدّل الرحلة', ['changed' => $changed, 'old_path' => $old['status'] === 'published' ? '/trip/' . $old['slug'] . '/' : null]);
             } else {
                 $row['created_by'] = Auth::user()['id'];
                 $id = Db::insert('trips', $row);

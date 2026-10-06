@@ -69,10 +69,10 @@ test('API uses config base path and JSON validation without session or CSRF', fu
         $_SERVER['REQUEST_URI'] = '/automation-other/export'; assert_same('/__not_found__', ApiApp::path());
         $_SERVER['HTTP_AUTHORIZATION'] = 'Bearer ' . str_repeat('e', 40);
         $_SERVER['CONTENT_TYPE'] = 'application/json';
-        assert_same(400, ApiApp::dispatch('POST', '/publish/status', '{broken')->status);
-        assert_same(400, ApiApp::dispatch('POST', '/publish/status', '[]')->status);
-        assert_same(413, ApiApp::dispatch('POST', '/publish/status', str_repeat('a', 1048577))->status);
-        assert_same(422, ApiApp::dispatch('POST', '/publish/status', '{}')->status);
+        assert_same(400, ApiApp::dispatch('POST', '/seo/check', '{broken')->status);
+        assert_same(400, ApiApp::dispatch('POST', '/seo/check', '[]')->status);
+        assert_same(413, ApiApp::dispatch('POST', '/seo/check', str_repeat('a', 1048577))->status);
+        assert_same(200, ApiApp::dispatch('POST', '/seo/check', '{}')->status);
     } finally { $_SERVER = $server; phase5_restore($old); }
 });
 

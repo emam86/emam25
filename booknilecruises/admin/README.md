@@ -8,7 +8,12 @@ Plan and phases: [`../ADMIN-PLAN.md`](../ADMIN-PLAN.md).
 |---|---|---|
 | `app/` | `domains/booknilecruises.net/bnc-app/` | All code: `bootstrap.php`, `src/` (namespace `Bnc\`), `views/`, `migrations/`, `bin/` |
 | `public/admin/` | `public_html/admin/` | `index.php` entry point, `.htaccess`, `assets/` |
-| `public/api/` | `public_html/api/` | API entry point (phase 5) |
+| `public/api/` | `public_html/api/` | API entry point |
+| `public/site/index.php` | `public_html/index.php` | الموقع العام المباشر من MySQL |
+| `public/site/.htaccess` | `public_html/.htaccess` | توجيه الصفحات إلى PHP وحماية المسارات |
+| `public/site/assets/` | `public_html/assets/` | CSS وJavaScript للموقع |
+| `public/site/img/` | `public_html/img/` | شعار الموقع |
+| `app/cache/site/` | `bnc-app/cache/site/` خارج `public_html` | ذاكرة صفحات قابلة للكتابة بواسطة PHP |
 | `config.sample.php` | `domains/booknilecruises.net/bnc-config.php` | Secrets and settings, never committed |
 
 ## Running locally
@@ -50,26 +55,26 @@ php -S 127.0.0.1:8790 -t public tests/server.php
   `Browser`). Cover permissions (a role without the permission gets 403), validation (422), CSRF, and the
   happy path. `php tests/run.php` must stay green.
 
-## Phase 5: API and publishing
+## واجهة التكامل والموقع المباشر
 
-Arabic integration guide: [API.md](API.md). Upload `public/api/` to `public_html/api/`
-with the updated app, then apply migration `002_phase5` from the owner dashboard.
-Configure `api_path` (default `/api`), a random `export_token` of at least 32 characters,
-and the `github` and `mail` settings in the external `bnc-config.php` file.
+دليل التكامل بالعربية: [API.md](API.md). صفحات الموقع العام تُقرأ مباشرة من MySQL؛ يظهر الحفظ دون زر نشر أو GitHub Actions. يبقى `GET /api/export` للتصدير والتكامل مع رمز `export_token` طويل، ولا توجد واجهات بدء النشر أو رد حالة النشر.
 
-The API starts no sessions; automation keys are scoped and stored hashed. Publishing
-uses the existing workflow and callback contract. API keys and webhook secrets are
-shown once after creation (or webhook regeneration). Keep `webhooks_allow_private`
-false in production; it exists only for the local webhook receiver tests.
+يزيد `content_version` تلقائيًا داخل معاملة المحتوى لإبطال ذاكرة صفحات الموقع. تغييرات الرحلات والتصنيفات والمقالات والصور والتحويلات وSEO والإعدادات والاستيراد مشمولة. يُرسل IndexNow بعد نجاح الحفظ؛ فشل الاتصال لا يلغي الحفظ.
 
 ## Installing on Hostinger (once)
 
 1. hPanel → Databases → create a MySQL database and user.
-2. Upload `app/` as `domains/booknilecruises.net/bnc-app/` and `public/admin/` as `public_html/admin/`.
+2. Upload `app/` as `domains/booknilecruises.net/bnc-app/`, `public/admin/` as `public_html/admin/`,
+   and `public/api/` as `public_html/api/`. Copy the contents of `public/site/` into `public_html/`,
+   including its hidden `.htaccess`, `index.php`, `assets/` and `img/`. Keep the existing `images/`.
+   Remove the previous static `index.html` so the PHP homepage is selected.
 3. Create `domains/booknilecruises.net/bnc-config.php` from `config.sample.php` (database, a long random
    `install_token`, `images_dir`).
 4. Open `https://booknilecruises.net/admin/install`, enter the token, your name, email and password.
 5. Remove `install_token` from the config file.
+6. Give PHP write access to `domains/booknilecruises.net/bnc-app/cache/site/`. With `site_cache_dir => null`
+   this is the default; you can set an absolute `site_cache_dir` outside `public_html` instead.
+   Set `site_noindex => false` for production; use `true` for a staging site.
 
 After later updates, the owner sees an "apply database update" button on the dashboard when new migrations ship.
 
@@ -91,18 +96,12 @@ For automation, `POST /api/seo/check` with the same Bearer export token as
 `/api/export` and JSON `{}` (check only) or `{"email": true}` returns
 `{errors, warnings, report_id}`. The CLI also supports `BNC_CONFIG`.
 
-Generate an IndexNow key on the report page and publish to expose `/<key>.txt`
-on the public site (the site must support writing that exported setting).
-Successful publish callbacks submit changed trip/post/category URLs and newly
-created redirect sources since the preceding successful publish, in batches of
-at most 10,000. The first successful publish submits all known content URLs.
-HTTP outcomes are appended to publish history; a failed submission does not
-change publish success. IndexNow supports Bing, Yandex and other participating
-engines; Google does not use it.
+ولّد مفتاح IndexNow من صفحة تقرير SEO؛ يقدّم الموقع العام `/<key>.txt` مباشرة من الإعدادات. يُرسل IndexNow روابط المحتوى بعد نجاح المعاملة، وتُسجّل نتيجة HTTP في سجل PHP.
 
-Apply migration `004_post_announcements` from the owner dashboard for one-time
-`post.published` notifications. Existing public posts are marked as announced;
-scheduled posts are announced after a successful publish when they become due.
-Publish change windows begin at the preceding successful job’s `created_at` and
-end at the current job’s `finished_at`. Hourly callbacks with `job_id: null` create
-a scheduled publish job with an approximate export time fifteen minutes earlier.
+طبّق migration `004_post_announcements` ثم أضف مهمة Cron كل ١٥ دقيقة في hPanel لإشعارات المقالات المجدولة:
+
+```sh
+*/15 * * * * php /home/<user>/domains/booknilecruises.net/bnc-app/bin/cron.php
+```
+
+في hPanel اختر الدقائق `*/15` وباقي حقول الوقت `*`، وضع أمر `php …/bnc-app/bin/cron.php` وحده في خانة الأمر. ظهور المقال المجدول في الموقع مستقل عن Cron. المهمة ترسل `post.published` مرة واحدة فقط في أول تشغيل بعد حلول الموعد، وتدعم `BNC_CONFIG`.

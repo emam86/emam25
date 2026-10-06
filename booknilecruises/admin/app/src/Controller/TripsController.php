@@ -90,7 +90,7 @@ final class TripsController extends Controller
                 $targets = $this->targets($trip);
                 if (!isset($targets[$target])) return compact('trip', 'targets');
                 Redirects::moved('/trip/' . $trip['slug'] . '/', $target);
-                $details = ['redirect_to' => $target];
+                $details = ['redirect_to' => $target, 'old_path' => '/trip/' . $trip['slug'] . '/'];
             }
             Db::run('DELETE FROM trips WHERE id = ?', [$id]);
             Audit::log('delete', 'trip', $id, 'حذف الرحلة', $details);

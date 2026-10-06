@@ -9,6 +9,13 @@ use PDO;
 final class Db
 {
     private static ?PDO $pdo = null;
+    private static array $afterCommit = [];
+
+    public static function afterCommit(callable $callback): void
+    {
+        if (self::pdo()->inTransaction()) self::$afterCommit[] = $callback;
+        else $callback();
+    }
 
     public static function pdo(): PDO
     {
@@ -32,6 +39,7 @@ final class Db
     public static function reset(): void
     {
         self::$pdo = null;
+        self::$afterCommit = [];
     }
 
     public static function run(string $sql, array $params = []): \PDOStatement
@@ -83,12 +91,20 @@ final class Db
     {
         $pdo = self::pdo();
         $pdo->beginTransaction();
+        self::$afterCommit = [];
         try {
             $result = $fn();
             $pdo->commit();
+            $callbacks = self::$afterCommit;
+            self::$afterCommit = [];
+            foreach ($callbacks as $callback) {
+                try { $callback(); } catch (\Throwable $e) { error_log("[bnc] after commit: " . $e->getMessage()); }
+            }
             return $result;
         } catch (\Throwable $e) {
             if ($pdo->inTransaction()) $pdo->rollBack();
+            self::$afterCommit = [];
+            Settings::reset();
             throw $e;
         }
     }

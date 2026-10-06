@@ -76,7 +76,7 @@ final class Terms
                 }
             } else $id = Db::insert('terms', $row);
             Redirects::claim($row['url']);
-            Audit::log($old ? 'update' : 'create', 'term', $id, 'حفظ التصنيف');
+            Audit::log($old ? 'update' : 'create', 'term', $id, 'حفظ التصنيف', ['old_path' => $old['url'] ?? null, 'paths' => array_merge(array_column($children, 'url'), array_map(static fn ($child) => self::indexPath($d['taxonomy']) . $d['slug'] . '/' . $child['slug'] . '/', $children))]);
             return $id;
         });
     }
@@ -91,7 +91,7 @@ final class Terms
             $target = $term['parent_id'] ? self::find((int) $term['parent_id'])['url'] : self::indexPath($term['taxonomy']);
             Redirects::moved($term['url'], $target);
             Db::run('DELETE FROM terms WHERE id = ?', [$id]);
-            Audit::log('delete', 'term', $id, 'حذف التصنيف');
+            Audit::log('delete', 'term', $id, 'حذف التصنيف', ['old_path' => $term['url']]);
         });
     }
 }

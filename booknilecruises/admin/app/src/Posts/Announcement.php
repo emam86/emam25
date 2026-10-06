@@ -14,6 +14,24 @@ final class Announcement
     {
         return Db::run("UPDATE posts SET announced_at = ?, updated_at = updated_at WHERE id = ? AND announced_at IS NULL AND status = 'published' AND published_at <= ?", [date('Y-m-d H:i:s'), $id, date('Y-m-d H:i:s')])->rowCount() > 0;
     }
+    /** Safe to run repeatedly or concurrently: claim() atomically prevents duplicate events. */
+    public static function due(): int
+    {
+        $count = 0;
+        foreach (Db::all("SELECT id, url FROM posts WHERE status = 'published' AND announced_at IS NULL AND published_at <= ? ORDER BY id", [date('Y-m-d H:i:s')]) as $post) {
+            $claimed = Db::tx(static function () use ($post): bool {
+                if (!self::claim((int) $post['id'])) return false;
+                \Bnc\Audit::log('announce', 'post', (int) $post['id'], 'حل موعد نشر المقال المجدول', null, 'scheduled-posts');
+                return true;
+            });
+            if (!$claimed) continue;
+            $row = Db::one('SELECT * FROM posts WHERE id = ?', [$post['id']]);
+            if ($row) Delivery::fire('post.published', ['id' => (int) $row['id'], 'url' => rtrim((string) Config::get('site_url'), '/') . $row['url'], 'status' => 'published', 'published_at' => (new \DateTimeImmutable($row['published_at']))->format(DATE_ATOM)], 'scheduled-posts');
+            $count++;
+        }
+        return $count;
+    }
+
     public static function fire(int $id, string $actor, ?array $payload = null): void
     {
         $post = Db::one('SELECT * FROM posts WHERE id = ?', [$id]);

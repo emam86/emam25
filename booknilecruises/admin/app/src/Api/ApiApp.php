@@ -6,7 +6,6 @@ namespace Bnc\Api;
 use Bnc\{Config, Db, HttpException, Json, Request, Router};
 use Bnc\Content\Exporter;
 use Bnc\Enquiries\{EnquiryService, Notifier};
-use Bnc\Publish\Publisher;
 
 /** Token-only entry point: never starts or reads a panel session. */
 final class ApiApp
@@ -18,14 +17,12 @@ final class ApiApp
         $r = new Router();
         $r->post('/seo/check', ['seoCheck'], 'workflow');
         $r->get('/export', ['export'], 'workflow');
-        $r->post('/publish/status', ['status'], 'workflow');
         $r->post('/enquiries', ['enquiry'], 'public');
         $r->add('OPTIONS', '/enquiries', ['options'], 'public');
         $r->get('/v1/trips', ['trips'], 'trips.read');
         $r->post('/v1/posts', ['post'], 'posts.write');
         $r->add('PATCH', '/v1/posts/{id}', ['post'], 'posts.write');
         $r->get('/v1/enquiries', ['enquiries'], 'enquiries.read');
-        $r->post('/v1/publish', ['publish'], 'publish');
         return $r;
     }
 
@@ -82,7 +79,6 @@ final class ApiApp
                 $type = strtolower(trim(explode(';', $_SERVER['CONTENT_TYPE'] ?? 'application/json')[0]));
                 if ($handler[0] === 'enquiry' && $type === 'application/x-www-form-urlencoded') parse_str($body, $d);
                 else {
-                    if ($handler[0] === 'publish' && $body === '') $body = '{}';
                     try { $object = json_decode($body, false, 64, JSON_THROW_ON_ERROR); }
                     catch (\JsonException) { throw new ApiException(400, 'Bad JSON'); }
                     if (!$object instanceof \stdClass) throw new ApiException(400, 'Expected a JSON object');
@@ -91,13 +87,11 @@ final class ApiApp
             }
             return match ($handler[0]) {
                 'export' => new Json([], 200, Exporter::json()),
-                'status' => self::publishStatus($d),
                 'seoCheck' => self::seoCheck($d),
                 'enquiry' => self::enquiry($d),
                 'trips' => self::trips(),
                 'post' => new Json(Posts::save($d, $key, isset($params[0]) ? (int) $params[0] : 0), $method === 'POST' ? 201 : 200),
                 'enquiries' => self::enquiries(),
-                'publish' => new Json(['job_id' => Publisher::start('api:' . $key['name'])], 201),
             };
         } catch (ApiException $e) { return self::error($e); }
         catch (HttpException $e) { return new Json(['error' => $e->status === 405 ? 'Method not allowed' : 'Not found'], $e->status); }
@@ -139,12 +133,6 @@ final class ApiApp
         $report = (new \Bnc\Seo\Checker())->run();
         if ($d['email'] ?? false) \Bnc\Seo\ReportMailer::send($report);
         return new Json(['errors' => (int) $report['error_count'], 'warnings' => (int) $report['warning_count'], 'report_id' => (int) $report['id']]);
-    }
-
-    private static function publishStatus(array $d): Json
-    {
-        Publisher::status($d);
-        return new Json(['ok' => true]);
     }
 
     private static function enquiry(array $d): Json

@@ -22,7 +22,7 @@ final class Exporter
         foreach (Db::all('SELECT trip_id, term_id FROM trip_terms ORDER BY trip_id, position, term_id') as $row) {
             $termIds[(int) $row['trip_id']][] = (int) $row['term_id'];
         }
-        // Posts scheduled for later stay out until their time comes (the hourly publish run picks them up).
+        // Posts scheduled for later stay out until their time comes (the public site reads them when their deadline arrives).
         $posts = Db::all("SELECT * FROM posts WHERE status = 'published' AND (published_at IS NULL OR published_at <= ?) ORDER BY published_at, id", [date('Y-m-d H:i:s')]);
 
         return [

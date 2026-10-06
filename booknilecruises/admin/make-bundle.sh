@@ -3,6 +3,10 @@
 #   domains/booknilecruises.net/
 #     bnc-app/                 ← app code (+ seed/export.json for the first import)
 #     bnc-config.sample.php    ← copy to bnc-config.php and fill in
+#     public_html/index.php    ← database-rendered visitor site
+#     public_html/.htaccess    ← public routing and security
+#     public_html/assets/      ← visitor CSS and JavaScript
+#     public_html/img/         ← original logo URL
 #     public_html/admin/       ← panel entry point
 #     public_html/api/         ← API entry point
 # Usage: admin/make-bundle.sh [--first-install] [output.zip]   (default: ../deploy/admin-bundle.zip)
@@ -21,6 +25,9 @@ trap 'rm -rf "$STAGE"' EXIT
 
 mkdir -p "$STAGE/bnc-app/seed" "$STAGE/public_html"
 cp -a "$HERE/app/." "$STAGE/bnc-app/"
+# Request caches are local state, never part of a deployment artifact.
+rm -rf "$STAGE/bnc-app/cache"
+cp -a "$HERE/public/site/." "$STAGE/public_html/"
 cp -a "$HERE/public/admin" "$STAGE/public_html/admin"
 [ -d "$HERE/public/api" ] && [ -f "$HERE/public/api/index.php" ] && cp -a "$HERE/public/api" "$STAGE/public_html/api"
 cp "$HERE/config.sample.php" "$STAGE/bnc-config.sample.php"

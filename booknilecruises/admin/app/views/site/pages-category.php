@@ -1,0 +1,4 @@
+<?php declare(strict_types=1); ?>
+<?php ob_start(); ?>
+  <?php if ((count((($term['trips'] ?? null) ?? []) ?? []) === 0)): ?><p><a class="btn btn-wa"<?= bnc_attr('href', bnc_whatsapp(('Hello, I would like options for ' . ($cfg['heading'] ?? null) . '.'))) ?>>Ask on WhatsApp</a></p><?php endif; ?>
+<?php $childSlot = (string) ob_get_clean(); ?><?= \Bnc\Site\View::component('Listing', ['title' => ((($page['seo'] ?? null)['title'] ?? null) ?: ('' . ($cfg['heading'] ?? null) . ' - Book Nile cruises')), 'heading' => ($cfg['heading'] ?? null), 'intro' => ($cfg['intro'] ?? null), 'description' => ($cfg['description'] ?? null), 'canonical' => ('/' . (($Astro['params'] ?? null)['category'] ?? null) . '/'), 'trips' => (($term['trips'] ?? null) ?? []), 'crumbs' => $crumbs, 'emptyText' => 'These cruises are booked on request. Send us your dates on WhatsApp and we will reply with the ships and cabins available.', 'slot' => $childSlot]) ?>

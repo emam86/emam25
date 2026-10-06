@@ -12,7 +12,7 @@ test('migration splitter skips comments and keeps statements', function () {
 
 test('permission list is cleaned and ordered', function () {
     assert_same(['trips.view', 'users.manage'], Permissions::clean(['users.manage', 'bogus', 'trips.view']));
-    assert_true(Permissions::exists('publish'));
+    assert_true(!Permissions::exists('publish'));
 });
 
 test('router matches ids and rejects wrong methods', function () {
