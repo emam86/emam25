@@ -144,3 +144,16 @@ test('complete panel export passes the public site Node validator', function () 
         assert_same('ok', implode("\n", $output));
     } finally { unlink($file); }
 });
+
+test('saving the settings form leaves settings that are not on it alone', function () {
+    \Bnc\Settings::set('indexnow_key', 'keep-this-key-123');
+    $owner = $GLOBALS['ownerBrowser'];
+    $page = $owner->get('/admin/settings');
+    preg_match_all('/name="([a-z_0-9]+)" value="([^"]*)"/', $page['body'], $m, PREG_SET_ORDER);
+    $fields = [];
+    foreach ($m as [, $name, $value]) if ($name !== '_csrf') $fields[$name] = html_entity_decode($value);
+    $r = $owner->post('/admin/settings', $fields);
+    assert_same(303, $r['status']);
+    \Bnc\Settings::reset();
+    assert_same('keep-this-key-123', \Bnc\Settings::get('indexnow_key'));
+});

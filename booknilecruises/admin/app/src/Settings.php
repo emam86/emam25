@@ -33,7 +33,8 @@ final class Settings
     public static function input(): array
     {
         $d = [];
-        foreach (self::SITE as $key => $default) $d[$key] = Request::str($key);
+        // Only the fields on the settings form; other site settings (e.g. the IndexNow key) are managed elsewhere.
+        foreach (array_keys(self::RULES) as $key) $d[$key] = Request::str($key);
         foreach (['google_site_verification' => 'google-site-verification', 'bing_site_verification' => 'msvalidate.01'] as $key => $name) {
             if (!str_starts_with($d[$key], '<')) continue;
             $doc = new \DOMDocument();
@@ -54,7 +55,7 @@ final class Settings
         Db::tx(function () use ($d): void {
             self::reset();
             $old = self::site();
-            foreach (self::SITE as $key => $default) self::set($key, $d[$key]);
+            foreach (array_keys(self::RULES) as $key) self::set($key, $d[$key]);
             Audit::log('update', 'settings', null, 'عدّل إعدادات الموقع', ['old' => $old, 'new' => $d]);
         });
         self::reset();
