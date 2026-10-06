@@ -72,11 +72,11 @@ final class Importer
                     'min_pax' => $t['min_pax'],
                     'max_pax' => $t['max_pax'],
                     'overview_html' => Html::clean($t['overview_html']),
-                    'highlights' => self::json($t['highlights']),
-                    'itinerary' => self::json(array_map(fn ($d) => ['title' => $d['title'], 'html' => Html::clean($d['html'])], $t['itinerary'])),
-                    'includes' => self::json($t['includes']),
-                    'excludes' => self::json($t['excludes']),
-                    'faqs' => self::json(array_map(fn ($f) => ['q' => $f['q'], 'a' => Html::clean($f['a'])], $t['faqs'])),
+                    'highlights' => self::json(self::lines($t['highlights'])),
+                    'itinerary' => self::json(self::rows(array_map(fn ($d) => ['title' => trim($d['title']), 'html' => Html::clean($d['html'])], $t['itinerary']))),
+                    'includes' => self::json(self::lines($t['includes'])),
+                    'excludes' => self::json(self::lines($t['excludes'])),
+                    'faqs' => self::json(self::rows(array_map(fn ($f) => ['q' => trim($f['q']), 'a' => Html::clean($f['a'])], $t['faqs']))),
                     'image_id' => $t['image_id'],
                     'gallery' => self::json($t['gallery']),
                     'featured' => $t['featured'] ? 1 : 0,
@@ -133,6 +133,18 @@ final class Importer
     private static function json(array $v): string
     {
         return json_encode(array_values($v), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
+    }
+
+    /** Plain-text list items as the trip form stores them: trimmed, no empty ones. */
+    private static function lines(array $items): array
+    {
+        return array_values(array_filter(array_map(fn ($v) => trim((string) $v), $items), fn ($v) => $v !== ''));
+    }
+
+    /** Drop rows WordPress left completely empty. */
+    private static function rows(array $rows): array
+    {
+        return array_values(array_filter($rows, fn ($r) => implode('', $r) !== ''));
     }
 
     private static function str(string $v, int $max): string

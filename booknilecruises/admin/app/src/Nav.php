@@ -11,6 +11,8 @@ final class Nav
     {
         return [
             ['label' => 'الرئيسية', 'path' => '/', 'perm' => null],
+            ['label' => 'الرحلات', 'path' => '/trips', 'perm' => 'trips.view'],
+            ['label' => 'التصنيفات', 'path' => '/terms', 'perm' => 'trips.edit'],
             ['label' => 'الصور', 'path' => '/media', 'perm' => 'media.upload'],
             ['label' => 'المستخدمين', 'path' => '/users', 'perm' => 'users.manage'],
             ['label' => 'الأدوار والصلاحيات', 'path' => '/roles', 'perm' => 'users.manage'],

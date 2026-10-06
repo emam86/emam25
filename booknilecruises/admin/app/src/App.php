@@ -43,6 +43,21 @@ final class App
         $r->post('/media/{id}/edit', [C\MediaController::class, 'edit'], 'media.upload');
         $r->post('/media/{id}/delete', [C\MediaController::class, 'delete'], 'media.delete');
 
+        $r->get('/trips', [C\TripsController::class, 'index'], 'trips.view');
+        $r->get('/trips/new', [C\TripsController::class, 'create'], 'trips.create');
+        $r->post('/trips/new', [C\TripsController::class, 'store'], 'trips.create');
+        $r->get('/trips/{id}/edit', [C\TripsController::class, 'edit'], 'trips.edit');
+        $r->post('/trips/{id}/edit', [C\TripsController::class, 'update'], 'trips.edit');
+        $r->post('/trips/{id}/duplicate', [C\TripsController::class, 'duplicate'], 'trips.create');
+        $r->get('/trips/{id}/delete', [C\TripsController::class, 'confirmDelete'], 'trips.delete');
+        $r->post('/trips/{id}/delete', [C\TripsController::class, 'delete'], 'trips.delete');
+        $r->get('/terms', [C\TermsController::class, 'index'], 'trips.edit');
+        $r->get('/terms/new', [C\TermsController::class, 'create'], 'trips.edit');
+        $r->post('/terms/new', [C\TermsController::class, 'store'], 'trips.edit');
+        $r->get('/terms/{id}/edit', [C\TermsController::class, 'edit'], 'trips.edit');
+        $r->post('/terms/{id}/edit', [C\TermsController::class, 'update'], 'trips.edit');
+        $r->post('/terms/{id}/delete', [C\TermsController::class, 'delete'], 'trips.edit');
+
         $r->get('/audit', [C\AuditController::class, 'index'], 'audit.view');
         return $r;
     }

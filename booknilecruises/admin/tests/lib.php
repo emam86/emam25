@@ -87,6 +87,12 @@ final class Browser
     }
 
     /** CSRF token for this session: from the last page seen, else from the first page that has a form. */
+    /** POST an already-encoded form body (repeated keys kept as a browser sends them). */
+    public function postRaw(string $path, string $body): array
+    {
+        return $this->request('POST', $path, [], false, $body);
+    }
+
     public function csrf(): string
     {
         foreach ([null, '/admin/account', '/admin/login', '/admin/install'] as $path) {
@@ -96,7 +102,7 @@ final class Browser
         return '';
     }
 
-    private function request(string $method, string $path, array $fields = [], bool $multipart = false): array
+    private function request(string $method, string $path, array $fields = [], bool $multipart = false, ?string $rawBody = null): array
     {
         $ch = curl_init($this->base . $path);
         curl_setopt_array($ch, [
@@ -110,7 +116,7 @@ final class Browser
         ]);
         if ($method === 'POST') {
             curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $multipart ? $fields : http_build_query($fields));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $rawBody ?? ($multipart ? $fields : http_build_query($fields)));
         }
         $raw = (string) curl_exec($ch);
         $status = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);

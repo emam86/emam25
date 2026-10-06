@@ -98,3 +98,22 @@ td pre { white-space: pre-wrap; max-width: 420px; font-size: 12px; }
 .media-meta dd { margin: 0; overflow-wrap: anywhere; }
 .btn.danger { background: var(--err); color: #fff; }
 .btn.danger:hover { background: #8c1d17; }
+
+.trip-form { max-width: 960px; }
+.trip-thumb { width: 90px; height: 65px; object-fit: contain; background: var(--sand); }
+.term-child { margin-inline-start: 24px; }
+.repeat-row { border: 1px solid var(--line); padding: 12px; }
+.rich-toolbar { display: flex; flex-wrap: wrap; gap: 5px; padding: 6px; background: var(--sand); }
+.rich-toolbar button { font: inherit; cursor: pointer; }
+.rich-area { min-height: 140px; border: 1px solid var(--line); padding: 12px; font-weight: 400; overflow-wrap: anywhere; }
+.rich-area:focus { outline: 2px solid var(--gold); }
+.rich-area img { max-width: 100%; }
+.seo-preview { background: #fff; border: 1px solid var(--line); padding: 14px; overflow-wrap: anywhere; }
+.seo-preview strong { color: #1a0dab; font-size: 20px; }
+.seo-preview div { color: #246b35; }
+.seo-preview p { color: #555; margin-bottom: 0; }
+.media-picker { width: min(900px, 90vw); max-height: 85vh; overflow: auto; border: 1px solid var(--line); }
+.media-picker::backdrop { background: #0008; }
+.media-picker .media-grid { margin: 16px 0; }
+[hidden] { display: none !important; }
+input[dir="auto"], textarea[dir="auto"], [contenteditable][dir="auto"] { text-align: start; }
