@@ -59,8 +59,9 @@ hPanel ← **Files** ← **FTP Accounts** ← اعمل حساب جديد:
 
 اكتب عندك: اسم المستخدم الكامل (زي `u857861630.deploy`)، والـ FTP host (بيظهر في نفس الصفحة، غالبًا `ftp.booknilecruises.net`).
 
-### ب. دمج الشغل في الفرع الأساسي على GitHub
-قولّي «اعمل PR» وأنا أجهزه، وانت تضغط **Merge**. GitHub Actions بيشتغل من الفرع الأساسي `main` بس.
+### ب. خلّي `main` الفرع الأساسي على GitHub (مرة واحدة)
+الفرع `main` اتعمل وفيه كل الشغل. GitHub Actions (زرار النشر والنشر كل ساعة) بيشتغل من الفرع الأساسي بس:
+GitHub ← المستودع `emam86/emam25` ← **Settings** ← **General** ← **Default branch** ← اضغط أيقونة التبديل ⇄ ← اختار `main` ← **Update** ← أكّد.
 
 ### ج. أسرار GitHub
 GitHub ← المستودع `emam86/emam25` ← **Settings** ← **Secrets and variables** ← **Actions** ← **New repository secret**، وضيف 4:
