@@ -17,8 +17,8 @@ final class ApiKeysController extends Controller
 
     public function create(): string|Redirect
     {
-        try { $token = Keys::create(Request::str('name'), Request::list('scopes'), (int) $this->user()['id']); }
-        catch (ApiException) { http_response_code(422); return $this->index(['اكتب اسمًا حتى ١٠٠ حرف واختر صلاحية واحدة على الأقل.']); }
+        try { $token = Keys::create(Request::str('name'), Request::list('scopes'), (int) $this->user()['id'], Keys::grantable(can(...))); }
+        catch (ApiException) { http_response_code(422); return $this->index(['اكتب اسمًا حتى ١٠٠ حرف واختر صلاحية واحدة على الأقل من الصلاحيات المتاحة لك.']); }
         $_SESSION['new_api_key'] = $token;
         return $this->redirect('/api-keys', 'تم إنشاء المفتاح. انسخه الآن؛ سيظهر مرة واحدة فقط.');
     }

@@ -257,3 +257,18 @@ test('API post failed save removes downloaded media row and every file', functio
         $after = glob($dir . '/*'); sort($after); assert_same($files, $after);
     } finally { Db::run('DROP TRIGGER review_fail_post'); }
 });
+
+test('a user cannot give an API key or webhook more access than they have', function () use ($base) {
+    $roleId = \Bnc\Db::insert('roles', ['slug' => 'role-automation-test', 'name' => 'Automation only', 'permissions' => json_encode(['api.manage', 'trips.view'])]);
+    \Bnc\Db::insert('users', ['name' => 'Auto', 'email' => 'auto-only@example.com', 'password_hash' => password_hash('password-auto-1', PASSWORD_DEFAULT), 'role_id' => $roleId]);
+    $b = new Browser($base);
+    $b->post('/admin/login', ['email' => 'auto-only@example.com', 'password' => 'password-auto-1']);
+    $before = (int) \Bnc\Db::value('SELECT COUNT(*) FROM api_keys');
+    assert_same(422, $b->post('/admin/api-keys', ['name' => 'x', 'scopes' => ['enquiries.read']])['status'], 'enquiries.read refused');
+    assert_same(422, $b->post('/admin/api-keys', ['name' => 'x', 'scopes' => ['publish']])['status'], 'publish refused');
+    assert_same($before, (int) \Bnc\Db::value('SELECT COUNT(*) FROM api_keys'));
+    assert_same(303, $b->post('/admin/api-keys', ['name' => 'trips', 'scopes' => ['trips.read']])['status'], 'held scope allowed');
+    assert_not_contains('value="enquiries.read"', $b->get('/admin/api-keys')['body']);
+    $r = $b->post('/admin/webhooks/new', ['name' => 'leak', 'url' => 'https://example.com/hook', 'events' => ['enquiry.created'], 'is_active' => '1']);
+    assert_same(422, $r['status'], 'enquiry webhook refused');
+});

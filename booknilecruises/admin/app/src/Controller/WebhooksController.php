@@ -24,6 +24,10 @@ final class WebhooksController extends Controller
         if ($d['name'] === '' || mb_strlen($d['name']) > 100 || strlen($d['url']) > 500 || ($p['scheme'] ?? '') !== 'https' || !isset($p['host']) || isset($p['user']) || isset($p['pass']) || preg_match('/[\x00-\x20\\\\]/', $d['url']) || !$d['events'] || array_diff($d['events'], Delivery::EVENTS)) {
             http_response_code(422); return $this->form($d, ['اكتب اسمًا ورابط HTTPS صحيحين واختر الأحداث.']);
         }
+        // Enquiries carry customer details: only someone who may read them can forward them.
+        if (in_array('enquiry.created', $d['events'], true) && !can('enquiries.view')) {
+            http_response_code(422); return $this->form($d, ['حدث الاستفسارات يحتاج صلاحية عرض الاستفسارات.']);
+        }
         $secret = !$id ? bin2hex(random_bytes(32)) : null;
         $id = Db::tx(function () use ($id, $d, $secret): int {
             $row = ['name' => $d['name'], 'url' => $d['url'], 'events' => json_encode(array_values(array_unique($d['events']))), 'is_active' => $d['is_active']];

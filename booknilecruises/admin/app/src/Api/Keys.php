@@ -9,10 +9,25 @@ final class Keys
 {
     public const SCOPES = ['posts.write', 'posts.publish', 'trips.read', 'enquiries.read', 'publish'];
 
-    public static function create(string $name, array $scopes, int $user): string
+    /** Panel permissions a person needs before they may hand a scope to an automation. */
+    public const SCOPE_PERMISSIONS = [
+        'posts.write' => ['posts.create', 'posts.edit'],
+        'posts.publish' => ['posts.create', 'posts.edit'],
+        'trips.read' => ['trips.view'],
+        'enquiries.read' => ['enquiries.view'],
+        'publish' => ['publish'],
+    ];
+
+    /** Scopes the actor may grant: nobody gives a key more than they hold themselves. */
+    public static function grantable(callable $can): array
+    {
+        return array_values(array_filter(self::SCOPES, fn ($s) => !array_filter(self::SCOPE_PERMISSIONS[$s], fn ($p) => !$can($p))));
+    }
+
+    public static function create(string $name, array $scopes, int $user, ?array $allowed = null): string
     {
         if ($name === '' || mb_strlen($name) > 100) Input::invalid('name');
-        if (!$scopes || array_diff($scopes, self::SCOPES)) Input::invalid('scopes');
+        if (!$scopes || array_diff($scopes, $allowed ?? self::SCOPES)) Input::invalid('scopes');
         $token = 'bnc_' . bin2hex(random_bytes(20));
         Db::tx(function () use ($name, $scopes, $user, $token): void {
             $id = Db::insert('api_keys', ['name' => $name, 'scopes' => json_encode(array_values(array_unique($scopes))), 'key_hash' => hash('sha256', $token), 'key_prefix' => substr($token, 0, 8), 'created_by' => $user]);
