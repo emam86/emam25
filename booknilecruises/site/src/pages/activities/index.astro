@@ -9,7 +9,7 @@ const page = site.pages.find((p) => p.url === '/activities/');
 const terms = site.terms.activities.filter((t) => t.trips.length > 0);
 ---
 <Base title={page?.seo.title || 'Activities - Book Nile cruises'} description="Browse Egypt trips by activity: Nile cruises by class, day tours by city and multi-day tour packages." canonical="/activities/">
-  <PageHero title="Activities" intro="Nile cruises, day tours and tour packages, grouped by type." crumbs={[{ label: 'Activities' }]} image={asset('/wp-content/uploads/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg')} />
+  <PageHero title="Activities" intro="Nile cruises, day tours and tour packages, grouped by type." crumbs={[{ label: 'Activities' }]} image={asset('/images/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg')} />
   <section class="block"><div class="wrap"><TermGrid terms={terms} /></div></section>
   <CtaBand />
 </Base>

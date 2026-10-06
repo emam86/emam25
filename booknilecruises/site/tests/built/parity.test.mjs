@@ -76,7 +76,7 @@ test('internal links point at built pages, redirects or uploads', () => {
   for (const f of htmlFiles(DIST)) {
     const html = readFileSync(f, 'utf8');
     for (const [, href] of html.matchAll(/href="(\/[^"#?]*)/g)) {
-      if (href.startsWith('/wp-content/') || href.startsWith('/_astro/') || href.startsWith('/img/')) continue;
+      if (href.startsWith('/images/') || href.startsWith('/_astro/') || href.startsWith('/img/')) continue;
       if (/\.(xml|txt|webp|jpg|png)$/.test(href)) continue;
       if (!built(href) && !redirected(href)) broken.add(`${path.relative(DIST, f)} -> ${href}`);
     }
@@ -99,4 +99,16 @@ test('every trip page carries its highlights, itinerary days and inclusions', as
   }
   assert.ok(checked > 1500, `only ${checked} strings checked`);
   assert.deepEqual(missing, []);
+});
+
+test('built text assets contain no WordPress content paths', () => {
+  const files = (dir) => readdirSync(dir).flatMap((name) => {
+    const full = path.join(dir, name);
+    return statSync(full).isDirectory() ? files(full) : /\.(html|xml|txt|css|js)$/.test(name) ? [full] : [];
+  });
+  // Our own WordPress paths only: root-relative or on booknilecruises.net.
+  // Images hotlinked from other sites keep their own /wp-content/ URLs.
+  const ownWordPress = /(?:booknilecruises\.net|^|["'\s(,=])\/wp-content\//m;
+  const offending = files(DIST).filter((file) => ownWordPress.test(readFileSync(file, 'utf8')));
+  assert.deepEqual(offending.map((file) => path.relative(DIST, file)), []);
 });

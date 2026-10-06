@@ -25,13 +25,21 @@ export function stripTags(html = '') {
   return decodeEntities(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 }
 
-// Site links become root-relative; uploads point at `assetOrigin`, which is ''
-// in production (the files stay on the server) and the live site in previews.
-export function rewriteHtml(html = '', assetOrigin = '') {
+// Keep image paths independent of the preview or production image base.
+export function toImagePath(pathOrUrl) {
+  const pathname = new URL(pathOrUrl, SITE_ORIGIN).pathname;
+  return pathname.replace(/^\/wp-content\/uploads\//, '/images/');
+}
+
+// Site links become root-relative; image URLs use the configured base.
+export function rewriteHtml(html = '', imagesBase = envImagesBase()) {
   return html
     .replace(/<!--\s*\/?wp:[\s\S]*?-->\n?/g, '')
-    .replace(/https?:\/\/booknilecruises\.net(?=["']|\/(?!wp-content\/))/g, '')
-    .replace(/https?:\/\/booknilecruises\.net\/wp-content\//g, `${assetOrigin}/wp-content/`)
+    .replace(/https?:\/\/booknilecruises\.net(?=["']|\/)/g, '')
+    // Our own uploads are root-relative by now; a path right after another
+    // host name (e.g. https://other-site.com/wp-content/...) is left alone.
+    .replace(/(?<=^|["'\s(,=])\/wp-content\/uploads\/[^\s"'<>)]+/g,
+      (url) => asset(toImagePath(url), imagesBase))
     .replace(/<sup><\/sup>/g, '')
     .trim();
 }
@@ -59,7 +67,7 @@ export function extractGallery(html = '') {
   const out = [];
   const re = /data-full-image="([^"]+)"[^>]*>\s*<img[^>]*?width="(\d+)" height="(\d+)"/g;
   for (const m of block.matchAll(re)) {
-    const src = new URL(m[1]).pathname;
+    const src = toImagePath(m[1]);
     if (seen.has(src)) continue;
     seen.add(src);
     out.push({ src, width: Number(m[2]), height: Number(m[3]) });
@@ -104,7 +112,7 @@ export function seoFromHtml(html = '') {
     title: title ? decodeEntities(title) : null,
     description: meta('name', 'description') ? decodeEntities(meta('name', 'description')) : null,
     canonical: canonical ? pathOf(canonical) : null,
-    ogImage: og ? pathOf(og) : null,
+    ogImage: og ? toImagePath(og) : null,
   };
 }
 
@@ -115,7 +123,7 @@ function seoOf(item, snapshot = '') {
     title: live.title ?? decodeEntities(h.title || ''),
     description: live.description ?? decodeEntities(h.description || ''),
     canonical: live.canonical ?? (h.canonical_url ? pathOf(h.canonical_url) : null),
-    ogImage: live.ogImage ?? (h.og?.['og:image'] ? pathOf(h.og['og:image']) : null),
+    ogImage: live.ogImage ?? (h.og?.['og:image'] ? toImagePath(h.og['og:image']) : null),
   };
 }
 
@@ -124,7 +132,7 @@ const CARD_SIZES = ['medium_large', 'large', 'tourm_424X498', 'trip-thumb-size']
 
 function cardFrom(dir, sizes = {}) {
   const key = CARD_SIZES.find((k) => sizes[k]?.file);
-  return key ? { src: `${dir}/${sizes[key].file}`, width: sizes[key].width, height: sizes[key].height } : null;
+  return key ? { src: toImagePath(`${dir}/${sizes[key].file}`), width: sizes[key].width, height: sizes[key].height } : null;
 }
 
 function srcsetFrom(src, width, height, sizes = {}) {
@@ -133,16 +141,16 @@ function srcsetFrom(src, width, height, sizes = {}) {
   for (const size of Object.values(sizes)) {
     if (size.file && size.width >= 600 && size.height > 0 &&
         Math.abs((size.width / size.height) / ratio - 1) <= 0.02) {
-      entries.set(size.width, { src: `${path.posix.dirname(src)}/${size.file}`, width: size.width });
+      entries.set(size.width, { src: toImagePath(`${path.posix.dirname(src)}/${size.file}`), width: size.width });
     }
   }
-  if (width > 0) entries.set(width, { src, width });
+  if (width > 0) entries.set(width, { src: toImagePath(src), width });
   return [...entries.values()].sort((a, b) => a.width - b.width);
 }
 
 function imageFromMedia(media) {
   if (!media) return null;
-  const src = pathOf(media.source_url);
+  const src = toImagePath(media.source_url);
   return {
     src,
     width: media.media_details?.width ?? null,
@@ -155,7 +163,7 @@ function imageFromMedia(media) {
 
 function imageFromTripField(fi) {
   if (!fi?.file) return null;
-  const src = `/wp-content/uploads/${fi.file}`;
+  const src = toImagePath(`/images/${fi.file}`);
   return { src, width: fi.width ?? null, height: fi.height ?? null, alt: '', srcset: srcsetFrom(src, fi.width, fi.height, fi.sizes), card: cardFrom(path.posix.dirname(src), fi.sizes) };
 }
 
@@ -196,17 +204,17 @@ export function normalizeTrip(raw, ctx) {
     duration: { days: Number(raw.duration?.days) || null, nights: Number(raw.duration?.nights) || null },
     minPax: priceOf(raw.min_pax),
     maxPax: priceOf(raw.max_pax),
-    overviewHtml: rewriteHtml(overview, ctx.assetOrigin),
+    overviewHtml: rewriteHtml(overview, ctx.imagesBase),
     highlights: extractHighlights(snapshot),
     itinerary: (raw.itineraries || []).map((d) => ({
       title: decodeEntities(d.title || ''),
-      html: rewriteHtml(d.content || '', ctx.assetOrigin),
+      html: rewriteHtml(d.content || '', ctx.imagesBase),
     })),
     includes: splitLines(raw.cost_includes),
     excludes: splitLines(raw.cost_excludes),
     faqs: (raw.faqs || []).map((f) => ({
       q: decodeEntities(f.question ?? f.title ?? ''),
-      a: rewriteHtml(f.answer ?? f.content ?? '', ctx.assetOrigin),
+      a: rewriteHtml(f.answer ?? f.content ?? '', ctx.imagesBase),
     })),
     image,
     gallery: gallery.length ? gallery : image ? [image] : [],
@@ -219,13 +227,13 @@ export function normalizeTrip(raw, ctx) {
   };
 }
 
-function normalizePage(raw, assetOrigin) {
+function normalizePage(raw, imagesBase) {
   return {
     id: raw.id,
     slug: raw.slug,
     url: pathOf(raw.link),
     title: decodeEntities(raw.title.rendered),
-    html: rewriteHtml(raw.content.rendered, assetOrigin),
+    html: rewriteHtml(raw.content.rendered, imagesBase),
     text: stripTags(raw.content.rendered),
     featuredMedia: raw.featured_media || null,
     date: raw.date,
@@ -235,14 +243,14 @@ function normalizePage(raw, assetOrigin) {
 }
 
 // Astro fills import.meta.env from .env files; plain Node (tests) only has process.env.
-function envAssetOrigin() {
-  return import.meta.env?.PUBLIC_ASSET_ORIGIN ?? process.env.PUBLIC_ASSET_ORIGIN ?? '';
+function envImagesBase() {
+  return import.meta.env?.PUBLIC_IMAGES_BASE ?? process.env.PUBLIC_IMAGES_BASE ?? '/images';
 }
 
 let cache;
 
-export function loadSite({ assetOrigin = envAssetOrigin() } = {}) {
-  if (cache && cache.assetOrigin === assetOrigin) return cache;
+export function loadSite({ imagesBase = envImagesBase() } = {}) {
+  if (cache && cache.imagesBase === imagesBase) return cache;
   const mediaList = readJson('media.json');
   const media = new Map(mediaList.map((m) => [m.id, m]));
   const terms = {
@@ -252,7 +260,7 @@ export function loadSite({ assetOrigin = envAssetOrigin() } = {}) {
   };
   const overrides = readOverrides();
   const trips = readJson('trips.json')
-    .map((raw) => normalizeTrip(raw, { media, terms, assetOrigin, snapshot: readSnapshot(raw.link) }))
+    .map((raw) => normalizeTrip(raw, { media, terms, imagesBase, snapshot: readSnapshot(raw.link) }))
     .map((trip) => applyTripOverrides(trip, overrides.trips?.[trip.slug]))
     .sort((a, b) => a.title.localeCompare(b.title));
 
@@ -268,23 +276,23 @@ export function loadSite({ assetOrigin = envAssetOrigin() } = {}) {
   }
 
   cache = {
-    assetOrigin,
+    imagesBase,
     trips,
     terms,
     media,
-    pages: readJson('pages.json').map((p) => normalizePage(p, assetOrigin)),
-    posts: readJson('posts.json').map((p) => ({ ...normalizePage(p, assetOrigin), image: imageFromMedia(media.get(p.featured_media)) })),
+    pages: readJson('pages.json').map((p) => normalizePage(p, imagesBase)),
+    posts: readJson('posts.json').map((p) => ({ ...normalizePage(p, imagesBase), image: imageFromMedia(media.get(p.featured_media)) })),
   };
   return cache;
 }
 
-export function asset(src, origin = envAssetOrigin()) {
+export function asset(src, base = envImagesBase()) {
   if (!src) return src;
-  return src.startsWith('/wp-content/') ? `${origin}${src}` : src;
+  return src.startsWith('/images/') ? `${base.replace(/\/+$/, '')}/${src.slice('/images/'.length)}` : src;
 }
 
-export function srcsetAttr(img, origin = envAssetOrigin()) {
+export function srcsetAttr(img, base = envImagesBase()) {
   return img?.srcset?.length
-    ? img.srcset.map(({ src, width }) => `${asset(src, origin)} ${width}w`).join(', ')
+    ? img.srcset.map(({ src, width }) => `${asset(src, base)} ${width}w`).join(', ')
     : undefined;
 }

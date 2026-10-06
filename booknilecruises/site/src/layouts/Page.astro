@@ -2,7 +2,7 @@
 import { asset } from '@lib/content.mjs';
 import Base from './Base.astro';
 import PageHero from '../components/PageHero.astro';
-const { title, heading, intro, description, canonical, image = '/wp-content/uploads/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg', crumbs, jsonLd, noindex = false } = Astro.props;
+const { title, heading, intro, description, canonical, image = '/images/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg', crumbs, jsonLd, noindex = false } = Astro.props;
 ---
 <Base title={title} description={description} canonical={canonical} ogImage={image} jsonLd={jsonLd} noindex={noindex}>
   <PageHero title={heading} intro={intro} crumbs={crumbs ?? [{ label: heading }]} image={asset(image)} />

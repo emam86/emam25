@@ -16,10 +16,10 @@ const minPrice = (trips) => {
 
 // Cruise classes, with counts and "from" prices computed from the trips.
 const classes = [
-  ['standard-5-star-nile-cruises', 'Standard 5-Star', '/wp-content/uploads/2025/12/Felucca-from-Aswan.jpg'],
+  ['standard-5-star-nile-cruises', 'Standard 5-Star', '/images/2025/12/Felucca-from-Aswan.jpg'],
   ['deluxe-nile-cruises', 'Deluxe', null],
-  ['luxury-dahabiya-nile-cruise-packages', 'Dahabiya', '/wp-content/uploads/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg'],
-  ['lake-nasser-nile-cruises', 'Lake Nasser', '/wp-content/uploads/2025/12/Movenpick-Prince-Abbas-Lake-Cruise1.jpg'],
+  ['luxury-dahabiya-nile-cruise-packages', 'Dahabiya', '/images/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg'],
+  ['lake-nasser-nile-cruises', 'Lake Nasser', '/images/2025/12/Movenpick-Prince-Abbas-Lake-Cruise1.jpg'],
 ].map(([page, label, img]) => {
   const term = termOf(CATEGORY_PAGES[page].term);
   const trips = term?.trips ?? [];
@@ -60,11 +60,11 @@ const jsonLd = {
   title="Book Nile cruises - Book the Best Nile Cruises in Egypt"
   description={`Book Nile cruises between Luxor and Aswan, dahabiyas, Lake Nasser cruises, day tours and Egypt tour packages directly with our team in Luxor. ${totalCruises} cruises with itineraries and prices.`}
   canonical="/"
-  ogImage="/wp-content/uploads/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg"
+  ogImage="/images/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg"
   jsonLd={jsonLd}
 >
   <section class="hero">
-    <img class="bg" src={asset('/wp-content/uploads/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg')} alt="" fetchpriority="high" />
+    <img class="bg" src={asset('/images/2025/12/Merit-Dahabiya-Nile-Cruise1.jpg')} alt="" fetchpriority="high" />
     <div class="wrap">
       <span class="rule eyebrow">Luxor · Aswan · Lake Nasser</span>
       <h1>Explore Luxor &amp; Aswan <em>by cruise</em></h1>
@@ -128,7 +128,7 @@ const jsonLd = {
 
   <section class="block">
     <div class="wrap exp">
-      <div class="pic"><img src={asset('/wp-content/uploads/2025/12/Felucca-from-Aswan.jpg')} alt="Feluccas sailing on the Nile at Aswan" loading="lazy" width="1200" height="800" /></div>
+      <div class="pic"><img src={asset('/images/2025/12/Felucca-from-Aswan.jpg')} alt="Feluccas sailing on the Nile at Aswan" loading="lazy" width="1200" height="800" /></div>
       <div>
         <span class="eyebrow">Signature experiences</span>
         <h2>Why travel Egypt on a Nile cruise</h2>

@@ -9,7 +9,7 @@ const page = site.pages.find((p) => p.url === '/destinations/');
 const terms = site.terms.destination.filter((t) => t.trips.length > 0);
 ---
 <Base title={page?.seo.title || 'Destinations - Book Nile cruises'} description="Egypt destinations with Book Nile Cruises: Luxor, Aswan, Cairo, Alexandria, Hurghada, Sharm El Sheikh and Siwa." canonical="/destinations/">
-  <PageHero title="Destinations" intro="Where our trips go. Pick a city to see its Nile cruises, day tours and packages." crumbs={[{ label: 'Destinations' }]} image={asset('/wp-content/uploads/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg')} />
+  <PageHero title="Destinations" intro="Where our trips go. Pick a city to see its Nile cruises, day tours and packages." crumbs={[{ label: 'Destinations' }]} image={asset('/images/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg')} />
   <section class="block"><div class="wrap"><TermGrid terms={terms} /></div></section>
   <CtaBand />
 </Base>

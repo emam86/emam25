@@ -20,12 +20,12 @@ NODE_USE_ENV_PROXY=1 node scripts/export-wp.mjs   # NODE_USE_ENV_PROXY مطلو�
 cd site
 npm install
 npm test                                                     # اختبارات البيانات
-PUBLIC_ASSET_ORIGIN=https://booknilecruises.net npx astro build
+PUBLIC_IMAGES_BASE=https://booknilecruises.net/wp-content/uploads npx astro build
 node --test "tests/built/*.test.mjs"                         # تطابق الروابط والعناوين والمحتوى
 ```
 
-- الصور لا تُنسخ للمشروع: الصفحات تستخدم `/wp-content/uploads/...` بنفس المسار، والملفات موجودة أصلًا على السيرفر.
-  للمعاينة على دومين آخر نضع `PUBLIC_ASSET_ORIGIN=https://booknilecruises.net`.
+- الصور لا تُنسخ للمشروع: الصفحات تستخدم `/images/...`، ويُنقل مجلد `public_html/wp-content/uploads/` إلى `public_html/images/` عند إطلاق الموقع مع الحفاظ على مجلدات السنة والشهر وأسماء الملفات.
+  للمعاينة على دومين آخر نضع `PUBLIC_IMAGES_BASE=https://booknilecruises.net/wp-content/uploads`.
 - نسخة تجريبية (staging): `PUBLIC_NOINDEX=1` تضيف noindex في الصفحات و`robots.txt` و`.htaccess`.
 - تصحيحات المحتوى تُكتب في `data/overrides.json` ولا يُعدَّل التصدير الخام أبدًا.
 
@@ -38,3 +38,19 @@ ssh -p 65002 USER@SERVER_IP "curl -fsSL https://raw.githubusercontent.com/emam86
 ```
 
 تُحفَظ قاعدة البيانات والملفات في `~/backups/booknilecruises-<التاريخ>/` خارج `public_html`.
+
+## نقل الموقع الجديد على booknilecruises.net
+
+`deploy/site.tar.gz` هو الموقع جاهز للرفع (يتبني بـ `npx astro build` من `site/`، ومعاه `site.tar.gz.sha256`).
+
+| الأمر | ماذا يفعل |
+|---|---|
+| `scripts/cutover.sh` | Backup جديد ← تنزيل الموقع والتحقق من الـ checksum ← نقل WordPress خارج `public_html` ← نقل الصور إلى `/images` ← تركيب الموقع ← فحص الصفحات والصور والتحويلات، **ويرجّع WordPress تلقائيًا لو أي فحص فشل** |
+| `scripts/rollback.sh` | يرجّع WordPress زي ما كان (الموقع الجديد يتنقل جنب، ما يتمسحش) |
+| `scripts/purge-wordpress.sh` | يمسح ملفات WordPress نهائيًا، فقط مع `CONFIRM=DELETE-WORDPRESS` وبعد ما يتأكد من وجود Backup سليم |
+
+كلها تتشغّل على السيرفر بنفس الطريقة:
+
+```
+ssh -p 65002 USER@SERVER_IP "curl -fsSL https://raw.githubusercontent.com/emam86/emam25/claude/bold-wozniak-afuxs1/booknilecruises/scripts/cutover.sh | bash"
+```

@@ -9,7 +9,7 @@ const page = site.pages.find((p) => p.url === '/trip-types/');
 const terms = site.terms.trip_types.filter((t) => t.trips.length > 0);
 ---
 <Base title={page?.seo.title || 'Trip types - Book Nile cruises'} description="Browse Egypt trips by type: Nile cruises and day tours in Luxor, Aswan, Cairo and Hurghada." canonical="/trip-types/">
-  <PageHero title="Trip types" intro="Our trips grouped by type." crumbs={[{ label: 'Trip types' }]} image={asset('/wp-content/uploads/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg')} />
+  <PageHero title="Trip types" intro="Our trips grouped by type." crumbs={[{ label: 'Trip types' }]} image={asset('/images/2025/12/A-wonderful-picture-of-a-visitor-to-the-Karnak-Temple-in-Luxor.jpg')} />
   <section class="block"><div class="wrap"><TermGrid terms={terms} /></div></section>
   <CtaBand />
 </Base>

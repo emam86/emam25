@@ -16,15 +16,15 @@ test('decodeEntities turns WordPress title entities into text', () => {
   assert.equal(decodeEntities('Jeep 4&#215;4 &#8211; trip'), 'Jeep 4×4 – trip');
 });
 
-test('rewriteHtml makes site links relative and points uploads at the asset origin', () => {
+test('rewriteHtml makes site links relative and points uploads at the images base', () => {
   const html =
     '<a href="https://booknilecruises.net/trip/x/">x</a><img src="https://booknilecruises.net/wp-content/uploads/a.jpg">';
   assert.equal(
-    rewriteHtml(html, ''),
-    '<a href="/trip/x/">x</a><img src="/wp-content/uploads/a.jpg">',
+    rewriteHtml(html),
+    '<a href="/trip/x/">x</a><img src="/images/a.jpg">',
   );
   assert.equal(
-    rewriteHtml(html, 'https://booknilecruises.net'),
+    rewriteHtml(html, 'https://booknilecruises.net/wp-content/uploads'),
     '<a href="/trip/x/">x</a><img src="https://booknilecruises.net/wp-content/uploads/a.jpg">',
   );
 });
@@ -54,8 +54,8 @@ test('extractGallery reads the main carousel images once each, in order', () => 
     `<div class="splide__slide wte-gallery-image-clickable" data-full-image="https://booknilecruises.net/wp-content/uploads/${f}"><img src="https://booknilecruises.net/wp-content/uploads/${f}" width="${w}" height="${h}"></div>`;
   const html = `<div class="splide single-trip-main-carousel">${slide('a.jpg', 900, 600)}${slide('b.jpg', 700, 500)}${slide('a.jpg', 900, 600)}</div><div class="splide__slide wte-gallery-image-clickable" data-full-image="https://booknilecruises.net/wp-content/uploads/thumb.jpg"></div>`;
   assert.deepEqual(extractGallery(html), [
-    { src: '/wp-content/uploads/a.jpg', width: 900, height: 600 },
-    { src: '/wp-content/uploads/b.jpg', width: 700, height: 500 },
+    { src: '/images/a.jpg', width: 900, height: 600 },
+    { src: '/images/b.jpg', width: 700, height: 500 },
   ]);
 });
 
@@ -101,7 +101,7 @@ test('seoFromHtml reads the live title, description and canonical', async () => 
     title: 'Luxor & Aswan - Book Nile cruises',
     description: 'Five days & four nights',
     canonical: '/trip/x/',
-    ogImage: '/wp-content/uploads/a.jpg',
+    ogImage: '/images/a.jpg',
   });
 });
 
@@ -114,8 +114,8 @@ test('page SEO comes from the live page, not the broken REST value', () => {
 test('trip images carry a card-size rendition in the same uploads folder', () => {
   const site = loadSite();
   const t = site.trips.find((x) => x.slug === 'semiramis-ii-nile-cruise');
-  assert.match(t.image.src, /^\/wp-content\/uploads\/2025\/12\//);
-  assert.ok(t.image.card.src.startsWith('/wp-content/uploads/2025/12/'));
+  assert.match(t.image.src, /^\/images\/2025\/12\//);
+  assert.ok(t.image.card.src.startsWith('/images/2025/12/'));
   assert.ok(t.image.card.width <= 1024);
 });
 
@@ -131,19 +131,19 @@ test('content overrides correct a trip FAQ answer without touching the raw expor
 test('trip srcsets retain the original and only large matching-aspect renditions in width order', () => {
   const image = loadSite().trips.find((t) => t.slug === 'semiramis-ii-nile-cruise').image;
   assert.deepEqual(image.srcset, [
-    { src: '/wp-content/uploads/2025/12/MS-Semramis-II-nile-cruice2-600x400.jpg', width: 600 },
-    { src: '/wp-content/uploads/2025/12/MS-Semramis-II-nile-cruice2-768x512.jpg', width: 768 },
-    { src: '/wp-content/uploads/2025/12/MS-Semramis-II-nile-cruice2-1024x682.jpg', width: 1024 },
+    { src: '/images/2025/12/MS-Semramis-II-nile-cruice2-600x400.jpg', width: 600 },
+    { src: '/images/2025/12/MS-Semramis-II-nile-cruice2-768x512.jpg', width: 768 },
+    { src: '/images/2025/12/MS-Semramis-II-nile-cruice2-1024x682.jpg', width: 1024 },
     { src: image.src, width: 1280 },
   ]);
 });
 
-test('srcsetAttr applies the asset origin and comma-separated width descriptors', async () => {
+test('srcsetAttr applies the images base and comma-separated width descriptors', async () => {
   const { srcsetAttr } = await import('../../src/lib/content.mjs');
   assert.equal(typeof srcsetAttr, 'function');
-  const image = { srcset: [{ src: '/wp-content/uploads/a-600.jpg', width: 600 }, { src: '/wp-content/uploads/a.jpg', width: 1200 }] };
-  assert.equal(srcsetAttr(image, 'https://booknilecruises.net'), 'https://booknilecruises.net/wp-content/uploads/a-600.jpg 600w, https://booknilecruises.net/wp-content/uploads/a.jpg 1200w');
-  assert.equal(srcsetAttr(image, ''), '/wp-content/uploads/a-600.jpg 600w, /wp-content/uploads/a.jpg 1200w');
+  const image = { srcset: [{ src: '/images/a-600.jpg', width: 600 }, { src: '/images/a.jpg', width: 1200 }] };
+  assert.equal(srcsetAttr(image, 'https://booknilecruises.net/wp-content/uploads'), 'https://booknilecruises.net/wp-content/uploads/a-600.jpg 600w, https://booknilecruises.net/wp-content/uploads/a.jpg 1200w');
+  assert.equal(srcsetAttr(image), '/images/a-600.jpg 600w, /images/a.jpg 1200w');
   assert.equal(srcsetAttr({}), undefined);
   assert.equal(srcsetAttr({ srcset: [] }), undefined);
 });
@@ -165,8 +165,58 @@ test('both image sources filter near-aspect sizes and deduplicate widths with th
   for (const records of [new Map(), new Map([[1, media]])]) {
     const trip = normalizeTrip(raw, { media: records, terms: { destination: [], activities: [], trip_types: [] } });
     assert.deepEqual(trip.image.srcset, [
-      { src: '/wp-content/uploads/2025/12/duplicate.jpg', width: 600 },
-      { src: '/wp-content/uploads/2025/12/original.jpg', width: 1200 },
+      { src: '/images/2025/12/duplicate.jpg', width: 600 },
+      { src: '/images/2025/12/original.jpg', width: 1200 },
     ]);
   }
+});
+
+test('asset maps only image paths using the default or explicit base', async () => {
+  const { asset, toImagePath } = await import('../../src/lib/content.mjs');
+  assert.equal(asset('/images/a.jpg'), '/images/a.jpg');
+  assert.equal(asset('/images/a.jpg', 'https://booknilecruises.net/wp-content/uploads/'), 'https://booknilecruises.net/wp-content/uploads/a.jpg');
+  assert.equal(asset('/trip/x/'), '/trip/x/');
+  assert.equal(asset(undefined), undefined);
+  assert.equal(toImagePath('/wp-content/uploads/2025/12/a.jpg'), '/images/2025/12/a.jpg');
+  assert.equal(toImagePath('/images/a.jpg'), '/images/a.jpg');
+});
+
+test('rewriteHtml maps http and relative uploads including srcsets and CSS', () => {
+  const html = `<img src="http://booknilecruises.net/wp-content/uploads/a.jpg" srcset="/wp-content/uploads/b.jpg 600w, /wp-content/uploads/c.jpg 1200w"><div style="background:url('/wp-content/uploads/a.jpg')"></div>`;
+  const expected = `<img src="/images/a.jpg" srcset="/images/b.jpg 600w, /images/c.jpg 1200w"><div style="background:url('/images/a.jpg')"></div>`;
+  assert.equal(rewriteHtml(html), expected);
+});
+
+test('the content layer returns images paths for all public images', () => {
+  const site = loadSite();
+  const check = (image) => {
+    if (!image) return;
+    assert.ok(image.src.startsWith('/images/'), image.src);
+    if (image.card) check(image.card);
+    for (const entry of image.srcset ?? []) check(entry);
+  };
+  for (const item of [...site.trips, ...site.pages, ...site.posts, ...Object.values(site.terms).flat()]) {
+    check(item.image);
+    for (const image of item.gallery ?? []) check(image);
+    if (item.seo.ogImage) assert.ok(item.seo.ogImage.startsWith('/images/'), item.seo.ogImage);
+  }
+});
+
+test('the Apache rules redirect old photo URLs, WordPress sitemaps and www/http', async () => {
+  const { htaccess } = await import('../../src/lib/redirects.mjs');
+  const ht = htaccess();
+  assert.match(ht, /RedirectMatch 301 \^\/wp-content\/uploads\/\(\.\*\)\$ \/images\/\$1/);
+  assert.match(ht, /sitemap_index\|wp-sitemap/);
+  assert.match(ht, /RewriteCond %\{HTTP_HOST\} \^www\\\.\(\.\+\)\$ \[NC\]/);
+  assert.match(ht, /X-Forwarded-Proto/);
+  assert.doesNotMatch(htaccess(undefined, { noindex: false }), /noindex/);
+  assert.match(htaccess(undefined, { noindex: true }), /X-Robots-Tag "noindex, nofollow"/);
+});
+
+test('rewriteHtml leaves images hosted on other domains untouched', () => {
+  const html = '<img src="https://luxoraswancruises.com/wp-content/uploads/2023/12/a.jpg"><img src="/wp-content/uploads/2025/12/b.jpg">';
+  assert.equal(
+    rewriteHtml(html, '/images'),
+    '<img src="https://luxoraswancruises.com/wp-content/uploads/2023/12/a.jpg"><img src="/images/2025/12/b.jpg">',
+  );
 });

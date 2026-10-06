@@ -14,7 +14,7 @@ interface Props {
 const { title, description = '', canonical, ogImage, jsonLd, noindex = false } = Astro.props;
 const path = canonical ?? Astro.url.pathname;
 const canonicalUrl = new URL(path, SITE.origin).href;
-const ogUrl = ogImage ? new URL(ogImage, SITE.origin).href : new URL('/wp-content/uploads/2025/12/Felucca-from-Aswan.jpg', SITE.origin).href;
+const ogUrl = ogImage ? new URL(ogImage, SITE.origin).href : new URL('/images/2025/12/Felucca-from-Aswan.jpg', SITE.origin).href;
 const robots = noindex || import.meta.env.PUBLIC_NOINDEX === '1' ? 'noindex, nofollow' : 'max-image-preview:large';
 const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const current = Astro.url.pathname;
@@ -39,9 +39,9 @@ const isActive = (href: string, children?: { href: string }[]) =>
   <meta property="og:image" content={ogUrl} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="google-site-verification" content="SsaoNo-o-vaVrxWj1PFiSWLm9JcNNGWC_Bs663QgEbs" />
-  <link rel="icon" href={asset('/wp-content/uploads/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-32x32.png')} sizes="32x32" />
-  <link rel="icon" href={asset('/wp-content/uploads/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-192x192.png')} sizes="192x192" />
-  <link rel="apple-touch-icon" href={asset('/wp-content/uploads/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-180x180.png')} />
+  <link rel="icon" href={asset('/images/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-32x32.png')} sizes="32x32" />
+  <link rel="icon" href={asset('/images/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-192x192.png')} sizes="192x192" />
+  <link rel="apple-touch-icon" href={asset('/images/2026/07/cropped-ChatGPT-Image-Jul-16-2026-11_04_46-PM-1-180x180.png')} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" />
