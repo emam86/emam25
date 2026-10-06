@@ -9,7 +9,7 @@ use Bnc\Settings;
 /**
  * Builds the content export the site is built from. The format is defined in
  * booknilecruises/site/src/lib/export.mjs; keep the two in step (version 1).
- * Only published trips and posts are included.
+ * Only published trips and posts are included, and posts only once their publish time has come.
  */
 final class Exporter
 {
@@ -22,7 +22,8 @@ final class Exporter
         foreach (Db::all('SELECT trip_id, term_id FROM trip_terms ORDER BY trip_id, position, term_id') as $row) {
             $termIds[(int) $row['trip_id']][] = (int) $row['term_id'];
         }
-        $posts = Db::all("SELECT * FROM posts WHERE status = 'published' ORDER BY published_at, id");
+        // Posts scheduled for later stay out until their time comes (the hourly publish run picks them up).
+        $posts = Db::all("SELECT * FROM posts WHERE status = 'published' AND (published_at IS NULL OR published_at <= ?) ORDER BY published_at, id", [date('Y-m-d H:i:s')]);
 
         return [
             'version' => self::VERSION,
