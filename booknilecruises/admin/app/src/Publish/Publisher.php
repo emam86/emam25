@@ -39,13 +39,23 @@ final class Publisher
 
     public static function status(array $d, ?\Bnc\Seo\IndexNowClient $indexNow = null): void
     {
-        if (!is_int($d['job_id'] ?? null) || $d['job_id'] < 1) Input::invalid('job_id');
+        if (!array_key_exists('job_id', $d) || ($d['job_id'] !== null && (!is_int($d['job_id']) || $d['job_id'] < 1))) Input::invalid('job_id');
         $status = Input::text($d, 'status', 20, true);
         if (!in_array($status, ['running', 'succeeded', 'failed'], true)) Input::invalid('status');
         $url = Input::text($d, 'run_url', 500, true);
         $p = parse_url($url);
         if (($p['scheme'] ?? '') !== 'https' || ($p['host'] ?? '') !== 'github.com' || isset($p['user']) || isset($p['pass']) || isset($p['port']) || preg_match('/[\x00-\x20\\\\]/', $url)) Input::invalid('run_url');
         $message = Input::text($d, 'message', 255);
+        if ($d['job_id'] === null) {
+            if ($status !== 'succeeded') Input::invalid('status');
+            $existing = Db::value("SELECT id FROM publish_jobs WHERE triggered_by = 'schedule' AND run_url = ? AND status = 'succeeded'", [$url]);
+            if ($existing) return;
+            $d['job_id'] = Db::tx(function () use ($url): int {
+                $id = Db::insert('publish_jobs', ['triggered_by' => 'schedule', 'status' => 'queued', 'run_url' => $url, 'created_at' => date('Y-m-d H:i:s', time() - 900)]);
+                Audit::log('create', 'publish_job', $id, 'نشر مجدول للموقع', null, 'publish-workflow');
+                return $id;
+            });
+        }
         $changed = Db::tx(function () use ($d, $status, $url, $message): bool {
             $old = Db::one('SELECT * FROM publish_jobs WHERE id = ? FOR UPDATE', [$d['job_id']]);
             if (!$old) throw new ApiException(404, 'Publish job not found');
@@ -59,6 +69,12 @@ final class Publisher
             return true;
         });
         if ($changed && $status === 'succeeded') \Bnc\Seo\IndexNow::submit($d['job_id'], $indexNow);
+        if ($changed && $status === 'succeeded') {
+            [$from, $to] = Changes::window($d['job_id']);
+            foreach (Changes::since($from, $to)['posts'] as $post) {
+                if (($from === null || $post['published_at'] >= $from) && $post['published_at'] <= $to) \Bnc\Posts\Announcement::fire((int) $post['id'], 'publish-workflow');
+            }
+        }
         if ($changed && $status === 'succeeded') Delivery::fire('site.published', ['job_id' => $d['job_id'], 'run_url' => $url, 'message' => $message], 'publish-workflow');
     }
 }

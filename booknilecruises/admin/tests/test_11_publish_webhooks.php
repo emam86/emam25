@@ -105,6 +105,15 @@ test('local webhook receiver verifies raw signatures ping and all three event de
         assert_same(['ping', 'enquiry.created', 'post.published', 'site.published'], array_column($records, 'event'));
         foreach ($records as $record) { assert_same('sha256=' . hash_hmac('sha256', $record['body'], $secret), $record['signature']); assert_same($record['event'], json_decode($record['body'], true)['event']); }
         $before = count($records);
+        $publishedId = (int) Db::value("SELECT id FROM posts WHERE slug = 'webhook-article' ORDER BY id DESC LIMIT 1");
+        assert_same(200, api_http('PATCH', '/api/v1/posts/' . $publishedId, ['title' => 'Later webhook edit'], api_headers($token))['status']);
+        assert_same($before, count(array_filter(explode("\n", file_get_contents($log)))));
+        assert_same(303, $owner->post('/admin/posts/new', post_fields(['slug' => 'panel-webhook-review', 'title' => 'Panel publication']))['status']);
+        $panelId = (int) Db::value("SELECT id FROM posts WHERE slug = 'panel-webhook-review'");
+        assert_same($before + 1, count(array_filter(explode("\n", file_get_contents($log)))));
+        assert_same(303, $owner->post('/admin/posts/' . $panelId . '/edit', post_payload($panelId, ['title' => 'Panel later edit']))['status']);
+        assert_same($before + 1, count(array_filter(explode("\n", file_get_contents($log)))));
+        $before++;
         assert_same(201, api_http('POST', '/api/v1/posts', ['title' => 'Scheduled no event', 'content_html' => '<p>Later</p>', 'status' => 'published', 'published_at' => (new DateTimeImmutable('+1 day'))->format(DATE_ATOM)], api_headers($token))['status']);
         assert_same($before, count(array_filter(explode("\n", file_get_contents($log)))));
         file_put_contents($receiver, '<?php declare(strict_types=1); header("Location: http://127.0.0.1:1/", true, 302);');
@@ -123,4 +132,35 @@ test('failed workflow callback finishes the job and publish history is limited t
         $page = $GLOBALS['ownerBrowser']->get('/admin/publish');
         assert_contains('history-marker-20', $page['body']); assert_contains('history-marker-1<', $page['body']); assert_not_contains('history-marker-0<', $page['body']);
     } finally { phase5_restore($old); }
+});
+
+test('post announcements happen once on save and scheduled success including hourly callback', function () {
+    $key = ['name' => 'review', 'scopes' => ['posts.publish']];
+    $post = \Bnc\Api\Posts::save(['title' => 'Review announcement', 'content_html' => 'Body', 'status' => 'published'], $key);
+    $announced = Db::value('SELECT announced_at FROM posts WHERE id = ?', [$post['id']]);
+    assert_true($announced !== null);
+    \Bnc\Api\Posts::save(['title' => 'Later edit'], $key, $post['id']);
+    assert_same($announced, Db::value('SELECT announced_at FROM posts WHERE id = ?', [$post['id']]));
+    $scheduled = \Bnc\Api\Posts::save(['title' => 'Review scheduled', 'content_html' => 'Body', 'status' => 'published', 'published_at' => (new DateTimeImmutable('+1 hour'))->format(DATE_ATOM)], $key);
+    assert_same(null, Db::value('SELECT announced_at FROM posts WHERE id = ?', [$scheduled['id']]));
+    Db::update('posts', ['published_at' => date('Y-m-d H:i:s', time() - 30), 'updated_at' => '2000-01-01 00:00:00'], 'id = ?', [$scheduled['id']]);
+    $previous = Db::insert('publish_jobs', ['status' => 'succeeded', 'triggered_by' => 'review', 'created_at' => date('Y-m-d H:i:s', time() - 120), 'finished_at' => date('Y-m-d H:i:s')]);
+    $fake = new class implements \Bnc\Seo\IndexNowClient { public array $bodies = []; public function submit(array $body): int { $this->bodies[] = $body; return 200; } };
+    $oldKey = \Bnc\Settings::get('indexnow_key');
+    try {
+        \Bnc\Settings::set('indexnow_key', str_repeat('c', 32));
+        $callback = ['job_id' => null, 'status' => 'succeeded', 'run_url' => 'https://github.com/example/nile/actions/runs/hourly-review', 'message' => 'scheduled publish'];
+        Publisher::status($callback, $fake);
+        $job = Db::one("SELECT * FROM publish_jobs WHERE run_url = ?", [$callback['run_url']]);
+        assert_same('schedule', $job['triggered_by']); assert_same('succeeded', $job['status']);
+        assert_true(abs(strtotime($job['finished_at']) - strtotime($job['created_at']) - 900) < 5);
+        assert_true(Db::value('SELECT announced_at FROM posts WHERE id = ?', [$scheduled['id']]) !== null);
+        assert_true(in_array($scheduled['url'], array_merge(...array_column($fake->bodies, 'urlList')), true));
+        Publisher::status($callback, $fake);
+        assert_same(1, (int) Db::value('SELECT COUNT(*) FROM publish_jobs WHERE run_url = ?', [$callback['run_url']]));
+    } finally {
+        \Bnc\Settings::set('indexnow_key', $oldKey);
+        foreach ([$post['id'], $scheduled['id']] as $id) Db::run('DELETE FROM posts WHERE id = ?', [$id]);
+        Db::run('DELETE FROM publish_jobs WHERE id = ? OR run_url = ?', [$previous, $callback['run_url']]);
+    }
 });

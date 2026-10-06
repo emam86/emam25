@@ -1,4 +1,4 @@
-<?php $labels = ['trips' => 'رحلة', 'terms' => 'تصنيف', 'media' => 'صورة', 'posts' => 'مقال']; $empty = !array_filter($existing); ?>
+<?php $labels = ['trips' => 'رحلة', 'terms' => 'تصنيف', 'media' => 'صورة', 'posts' => 'مقال', 'redirects' => 'تحويل', 'seo_overrides' => 'تخصيص SEO']; $empty = !array_filter($existing); ?>
 <div class="card stack">
   <p>الخطوة دي بتنقل محتوى الموقع الحالي (الرحلات، التصنيفات، بيانات الصور، المقالات) للوحة مرة واحدة، عشان تقدر تعدله من هنا. الصور نفسها موجودة بالفعل في مجلد <code dir="ltr">/images</code> ومش بتتنقل.</p>
   <?php if ($seed === null): ?>

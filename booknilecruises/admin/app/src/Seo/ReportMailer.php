@@ -11,7 +11,8 @@ final class ReportMailer
     public static function send(array $report): void
     {
         $to = trim((string) Settings::get('seo_report_email', '')) ?: (trim((string) Settings::get('enquiry_notify_email', '')) ?: (string) Config::get('mail.notify', ''));
-        $base = rtrim((string) Config::get('site_url', 'https://booknilecruises.net'), '/') . rtrim((string) Config::get('admin_path', '/admin'), '/');
+        if (trim($to) === '') return;
+        $base = rtrim((string) Config::get('site_url'), '/') . rtrim((string) Config::get('admin_path', '/admin'), '/');
         $body = 'أخطاء: ' . $report['error_count'] . '، تحذيرات: ' . $report['warning_count'] . "\n" . $base . "/seo/report\n\n";
         $issues = json_decode($report['issues'], true, 512, JSON_THROW_ON_ERROR);
         $rank = ['error' => 0, 'warning' => 1, 'info' => 2];

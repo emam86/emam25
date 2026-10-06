@@ -32,12 +32,12 @@ final class Notifier
     public static function send(array $enquiry): void
     {
         try {
-            $to = self::header((string) Settings::get('enquiry_notify_email', (string) Config::get('mail.notify', '')));
+            $to = self::header(trim((string) Settings::get('enquiry_notify_email', '')) ?: (string) Config::get('mail.notify', ''));
             $subject = self::header('استفسار جديد: ' . $enquiry['name']);
             $body = '';
             foreach ($enquiry as $key => $value) $body .= "$key: $value\n";
             $body .= 'Panel: ' . rtrim((string) Config::get('site_url'), '/') . rtrim((string) Config::get('admin_path', '/admin'), '/') . '/enquiries/' . $enquiry['id'];
-            $ok = self::mail($to, $subject, $body);
+            $ok = $to === '' || self::mail($to, $subject, $body);
             if (!$ok) Audit::log('notification_failed', 'enquiry', $enquiry['id'], 'تعذر إرسال بريد الاستفسار', null, 'api:website');
         } catch (\Throwable) { error_log('[bnc] Enquiry email notification failed'); }
         Delivery::fire('enquiry.created', $enquiry, 'api:website');

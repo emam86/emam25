@@ -16,15 +16,21 @@ use RuntimeException;
  */
 final class Importer
 {
+    public static function blockers(): array
+    {
+        $out = [];
+        foreach (['media', 'terms', 'trips', 'posts', 'redirects', 'seo_overrides'] as $table) {
+            $count = (int) Db::value("SELECT COUNT(*) FROM $table");
+            if ($count) $out[$table] = $count;
+        }
+        return $out;
+    }
+
     /** @return array<string,int> counts per table */
     public static function run(array $export, string $actor = 'import'): array
     {
         if (($export['version'] ?? null) !== Exporter::VERSION) throw new RuntimeException('ملف الاستيراد بإصدار غير معروف.');
-        foreach (['media', 'terms', 'trips', 'posts'] as $table) {
-            if ((int) Db::value("SELECT COUNT(*) FROM $table") > 0) {
-                throw new RuntimeException("الاستيراد يعمل على لوحة فارغة فقط، وجدول $table فيه بيانات.");
-            }
-        }
+        foreach (self::blockers() as $table => $count) throw new RuntimeException("الاستيراد يعمل على لوحة فارغة فقط، وجدول $table فيه بيانات.");
         return Db::tx(function () use ($export, $actor): array {
             foreach ($export['media'] as $m) {
                 Db::insert('media', [

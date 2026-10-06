@@ -209,3 +209,51 @@ test('export token is read when the server only passes REDIRECT_HTTP_AUTHORIZATI
         phase5_restore($old);
     }
 });
+
+class ReviewCountingPdo extends PDO
+{
+    public array $queries = [];
+    public function prepare(string $query, array $options = []): PDOStatement|false
+    {
+        $this->queries[] = $query;
+        return parent::prepare($query, $options);
+    }
+}
+function review_count_queries(callable $fn): array
+{
+    $property = new ReflectionProperty(Db::class, 'pdo');
+    $original = $property->getValue();
+    $pdo = new ReviewCountingPdo((string) \Bnc\Config::get('db.dsn'), (string) \Bnc\Config::get('db.user'), (string) \Bnc\Config::get('db.pass'), [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::ATTR_EMULATE_PREPARES => false]);
+    $property->setValue(null, $pdo);
+    try { $fn(); return $pdo->queries; }
+    finally { $property->setValue(null, $original); }
+}
+
+test('trip categories use one batch query regardless of trip count', function () {
+    $ids = [];
+    try {
+        for ($i = 0; $i < 3; $i++) $ids[] = Db::insert('trips', ['slug' => 'batch-query-' . $i, 'title' => 'Batch', 'status' => 'published']);
+        $queries = review_count_queries(fn () => (new ReflectionMethod(\Bnc\Api\ApiApp::class, 'trips'))->invoke(null));
+        $categoryQueries = array_values(array_filter($queries, fn ($sql) => str_contains($sql, 'trip_terms')));
+        assert_same(1, count($categoryQueries)); assert_contains(' IN (', $categoryQueries[0]);
+    } finally { foreach ($ids as $id) Db::run('DELETE FROM trips WHERE id = ?', [$id]); }
+});
+
+test('API post failed save removes downloaded media row and every file', function () {
+    $before = (int) Db::value('SELECT COUNT(*) FROM media');
+    $dir = (string) \Bnc\Config::get('images_dir');
+    $files = glob($dir . '/*'); sort($files);
+    Db::run("CREATE TRIGGER review_fail_post BEFORE INSERT ON posts FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'test post failure'");
+    try {
+        $download = static function (string $url): string {
+            $file = tempnam(__DIR__ . '/tmp', 'download-');
+            $im = imagecreatetruecolor(1400, 900); imagejpeg($im, $file); imagedestroy($im); return $file;
+        };
+        try {
+            \Bnc\Api\Posts::save(['title' => 'Failed image post', 'content_html' => 'Body', 'image_url' => 'https://example.com/review.jpg'], ['name' => 'review', 'scopes' => []], 0, $download);
+            throw new AssertionFailed('save succeeded');
+        } catch (PDOException $e) { assert_contains('test post failure', $e->getMessage()); }
+        assert_same($before, (int) Db::value('SELECT COUNT(*) FROM media'));
+        $after = glob($dir . '/*'); sort($after); assert_same($files, $after);
+    } finally { Db::run('DROP TRIGGER review_fail_post'); }
+});

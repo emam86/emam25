@@ -32,7 +32,7 @@ test('enquiry honeypot stores nothing and form contacts dates paths and counts v
     assert_same($count, (int) Db::value('SELECT COUNT(*) FROM enquiries'));
     foreach ([['email' => '', 'phone' => ''], ['email' => 'bad@'], ['phone' => 'abc'], ['travel_date' => '2026-02-30'], ['travel_date' => date('Y-m-d', time() - 86400)], ['page_url' => 'https://example.org/'], ['page_url' => '//example.org/'], ['adults' => 100], ['children' => -1], ['name' => '']] as $change) {
         enquiry_reset_rates(); $r = api_http('POST', '/api/enquiries', enquiry_input($change));
-        assert_same(422, $r['status']); assert_true(isset($r['json']['fields']));
+        assert_same($change === ['email' => '', 'phone' => ''] ? 422 : 201, $r['status']);
     }
     assert_same('ab', Notifier::header("a\r\nb"));
 });
@@ -105,4 +105,38 @@ test('inbox filters paginates and scoped enquiries API reads at most 200 oldest 
     assert_same(422, api_http('GET', '/api/v1/enquiries?since=broken', null, api_headers($token))['status']);
     assert_same(422, api_http('GET', '/api/v1/enquiries?status=broken', null, api_headers($token))['status']);
     assert_same(401, api_http('GET', '/api/v1/enquiries')['status']);
+});
+
+
+test('enquiry repairs preserve raw fields and Cairo yesterday while dropping excess message', function () {
+    enquiry_reset_rates();
+    $r = EnquiryService::create(enquiry_input(['name' => '', 'channel' => 'unknown', 'email' => 'broken', 'travel_date' => '2000-01-01', 'adults' => 'two', 'children' => 100, 'message' => str_repeat('m', 5000) . 'DROP_THIS']));
+    assert_same('(no name)', $r['name']); assert_same('form', $r['channel']);
+    foreach (['email', 'travel_date', 'adults', 'children'] as $f) assert_same(null, $r[$f]);
+    foreach (['[email: broken]', '[travel_date: 2000-01-01]', '[adults: two]', '[children: 100]', '[channel: unknown]', '[name: ]'] as $note) assert_contains($note, $r['message']);
+    assert_not_contains('DROP_THIS', $r['message']);
+    $yesterday = (new DateTimeImmutable('today', new DateTimeZone('Africa/Cairo')))->modify('-1 day')->format('Y-m-d');
+    assert_same($yesterday, EnquiryService::create(enquiry_input(['travel_date' => $yesterday]))['travel_date']);
+});
+
+test('enquiries cursor drains identical timestamps and legacy since includes boundary', function () {
+    $start = (int) Db::value('SELECT MAX(id) FROM enquiries');
+    for ($i = 0; $i < 205; $i++) Db::insert('enquiries', ['name' => 'Cursor', 'created_at' => '2026-01-01 00:00:00']);
+    $headers = api_headers(api_test_key(['enquiries.read']));
+    $first = api_http('GET', '/api/v1/enquiries?since_id=' . $start . '&since=2026-01-01T00:00:00', null, $headers)['json'];
+    assert_same(200, count($first['enquiries']));
+    $second = api_http('GET', '/api/v1/enquiries?since_id=' . $first['next_since_id'], null, $headers)['json'];
+    assert_same(5, count($second['enquiries']));
+    $empty = api_http('GET', '/api/v1/enquiries?since_id=' . $second['next_since_id'], null, $headers)['json'];
+    assert_same([], $empty['enquiries']); assert_same($second['next_since_id'], $empty['next_since_id']);
+});
+
+test('empty enquiry recipient skips mail without failure audit', function () {
+    $old = phase5_config(['mail' => ['notify' => '']]); $setting = Settings::get('enquiry_notify_email');
+    try {
+        Settings::set('enquiry_notify_email', '');
+        $before = (int) Db::value("SELECT COUNT(*) FROM audit_log WHERE action = 'notification_failed'");
+        Notifier::send(['id' => 1, 'name' => 'No email']);
+        assert_same($before, (int) Db::value("SELECT COUNT(*) FROM audit_log WHERE action = 'notification_failed'"));
+    } finally { Settings::set('enquiry_notify_email', $setting); phase5_restore($old); }
 });

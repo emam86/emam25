@@ -20,39 +20,39 @@ final class EnquiryService
     {
         if (($d['website'] ?? '') !== '') return null;
         RateLimit::take('enquiries', [['enquiry:ip:' . Request::ip(), 600, 5], ['enquiry:all', 86400, 200]]);
-        $row = ['name' => Input::text($d, 'name', 190, true), 'channel' => Input::text($d, 'channel', 20) ?: 'form', 'message' => Input::text($d, 'message', 5000), 'page_url' => Input::text($d, 'page_url', 255), 'ip' => Request::ip()];
-        if (!in_array($row['channel'], ['whatsapp', 'email', 'form'], true)) Input::invalid('channel');
-        if ($row['page_url'] !== '' && (!preg_match('#^/(?!/)[A-Za-z0-9._~%/-]*(?:\?[A-Za-z0-9._~%=&/-]*)?$#D', $row['page_url']) || str_contains(rawurldecode($row['page_url']), '..'))) Input::invalid('page_url');
+        $raw = static fn (mixed $v): string => is_string($v) ? $v : (json_encode($v, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE) ?: '');
+        $notes = [];
+        $repair = static function (string $field) use (&$notes, $d, $raw): void { $notes[] = '[' . $field . ': ' . $raw($d[$field] ?? '') . ']'; };
+        $text = static fn (string $field): string => is_string($d[$field] ?? null) ? trim($d[$field]) : '';
+        $row = ['name' => $text('name'), 'channel' => $text('channel') ?: 'form', 'message' => mb_substr($text('message'), 0, 5000), 'page_url' => $text('page_url'), 'ip' => Request::ip()];
+        foreach (['message', 'page_url'] as $field) if (isset($d[$field]) && !is_string($d[$field])) $repair($field);
+        if ($row['name'] === '' || mb_strlen($row['name']) > 190) { $repair('name'); $row['name'] = $row['name'] === '' ? '(no name)' : mb_substr($row['name'], 0, 190); }
+        if ((array_key_exists('channel', $d) && !is_string($d['channel'])) || !in_array($row['channel'], ['whatsapp', 'email', 'form'], true)) { $repair('channel'); $row['channel'] = 'form'; }
+        if (mb_strlen($row['page_url']) > 255 || ($row['page_url'] !== '' && (!preg_match('#^/(?!/)[A-Za-z0-9._~%/-]*(?:\?[A-Za-z0-9._~%=&/-]*)?$#D', $row['page_url']) || str_contains(rawurldecode($row['page_url']), '..')))) { $repair('page_url'); $row['page_url'] = ''; }
         foreach (['email' => 190, 'phone' => 60] as $field => $max) {
-            $v = $d[$field] ?? '';
-            if (!is_string($v)) Input::invalid($field);
-            $v = trim($v);
-            $valid = mb_strlen($v) <= $max && ($v === '' || ($field === 'email' ? filter_var($v, FILTER_VALIDATE_EMAIL) !== false : preg_match('/^[+0-9 ()-]+$/D', $v)));
-            if (!$valid) {
-                if ($row['channel'] === 'form') Input::invalid($field);
-                $row['message'] .= "\n$field: " . $v;
-                $v = '';
-            }
+            $v = $text($field);
+            $valid = is_string($d[$field] ?? '') && mb_strlen($v) <= $max && ($v === '' || ($field === 'email' ? filter_var($v, FILTER_VALIDATE_EMAIL) !== false : preg_match('/^[+0-9 ()-]+$/D', $v)));
+            if (!$valid) { $repair($field); $v = ''; }
             $row[$field] = $v === '' ? null : $v;
         }
         if ($row['channel'] === 'form' && !$row['email'] && !$row['phone']) Input::invalid('contact', 'Email or phone is required');
-        $date = Input::text($d, 'travel_date', 10);
-        if ($date !== '') {
-            $parsed = \DateTimeImmutable::createFromFormat('!Y-m-d', $date);
-            if (!$parsed || $parsed->format('Y-m-d') !== $date || $date < date('Y-m-d')) Input::invalid('travel_date');
-        }
+        $date = $text('travel_date');
+        $parsed = \DateTimeImmutable::createFromFormat('!Y-m-d', $date);
+        $earliest = (new \DateTimeImmutable('today', new \DateTimeZone('Africa/Cairo')))->modify('-1 day')->format('Y-m-d');
+        if (($d['travel_date'] ?? '') !== '' && (!$parsed || $parsed->format('Y-m-d') !== $date || $date < $earliest)) { $repair('travel_date'); $date = ''; }
         $row['travel_date'] = $date ?: null;
         foreach (['adults', 'children'] as $field) {
             $v = $d[$field] ?? null;
-            if ($v === '' || $v === null) { $row[$field] = null; continue; }
-            if ((!is_int($v) && !(is_string($v) && ctype_digit($v))) || (int) $v < 0 || (int) $v > 99) Input::invalid($field);
+            $row[$field] = null;
+            if ($v === '' || $v === null) continue;
+            if ((!is_int($v) && !(is_string($v) && ctype_digit($v))) || (int) $v < 0 || (int) $v > 99) { $repair($field); continue; }
             $row[$field] = (int) $v;
         }
-        $slug = Input::text($d, 'trip', 190);
-        if ($slug !== '' && !preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/D', $slug)) Input::invalid('trip');
+        $slug = $text('trip');
         $trip = $slug !== '' ? Db::one('SELECT id, title FROM trips WHERE slug = ?', [$slug]) : null;
+        if (($d['trip'] ?? '') !== '' && !$trip) $repair('trip');
         $row['trip_id'] = $trip['id'] ?? null; $row['trip_title'] = $trip['title'] ?? null;
-        // A malformed optional contact is preserved, even when it exceeds the normal message limit.
+        if ($notes) $row['message'] .= "\n" . implode("\n", $notes);
         $row['id'] = Db::tx(function () use ($row): int {
             $id = Db::insert('enquiries', $row);
             Audit::log('create', 'enquiry', $id, 'استفسار جديد من الموقع', null, 'api:website');

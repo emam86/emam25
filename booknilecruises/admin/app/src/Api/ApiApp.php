@@ -157,12 +157,19 @@ final class ApiApp
     {
         $site = rtrim((string) Config::get('site_url'), '/');
         $rows = Db::all("SELECT t.*, m.path AS cover FROM trips t LEFT JOIN media m ON m.id = t.image_id WHERE t.status = 'published' ORDER BY t.sort_order, t.id");
+        $categories = [];
+        if ($rows) {
+            $ids = array_column($rows, 'id');
+            foreach (Db::all('SELECT tt.trip_id, terms.id, terms.slug, terms.name, terms.taxonomy FROM terms JOIN trip_terms tt ON tt.term_id = terms.id WHERE tt.trip_id IN (' . implode(',', array_fill(0, count($ids), '?')) . ') ORDER BY tt.position, terms.id', $ids) as $category) {
+                $tripId = $category['trip_id']; unset($category['trip_id']); $categories[$tripId][] = $category;
+            }
+        }
         $trips = [];
         foreach ($rows as $r) $trips[] = [
             'id' => (int) $r['id'], 'slug' => $r['slug'], 'title' => $r['title'], 'url' => $site . '/trip/' . $r['slug'] . '/',
             'price' => $r['price'] === null ? null : (float) $r['price'], 'currency' => $r['currency'],
             'duration_days' => $r['duration_days'] === null ? null : (int) $r['duration_days'], 'duration_nights' => $r['duration_nights'] === null ? null : (int) $r['duration_nights'],
-            'categories' => Db::all('SELECT terms.id, terms.slug, terms.name, terms.taxonomy FROM terms JOIN trip_terms ON trip_terms.term_id = terms.id WHERE trip_terms.trip_id = ? ORDER BY trip_terms.position, terms.id', [$r['id']]),
+            'categories' => $categories[$r['id']] ?? [],
             'cover_image_url' => $r['cover'] ? $site . $r['cover'] : null,
         ];
         return new Json(['trips' => $trips]);
@@ -171,12 +178,16 @@ final class ApiApp
     private static function enquiries(): Json
     {
         $where = ['1=1']; $params = [];
+        $cursor = Request::str('since_id', '0', true);
+        if (!ctype_digit($cursor) || strlen($cursor) > 18) Input::invalid('since_id');
+        $where[] = 'id > ?'; $params[] = (int) $cursor;
         $since = Request::str('since', '', true); $status = Request::str('status', '', true);
-        if ($since !== '') { $where[] = 'created_at > ?'; $params[] = Input::datetime($since, 'since')->format('Y-m-d H:i:s'); }
+        if ($since !== '') { $where[] = 'created_at >= ?'; $params[] = Input::datetime($since, 'since')->format('Y-m-d H:i:s'); }
         if ($status !== '') {
             if (!isset(EnquiryService::STATUSES[$status])) Input::invalid('status');
             $where[] = 'status = ?'; $params[] = $status;
         }
-        return new Json(['enquiries' => Db::all('SELECT * FROM enquiries WHERE ' . implode(' AND ', $where) . ' ORDER BY created_at, id LIMIT 200', $params)]);
+        $rows = Db::all('SELECT * FROM enquiries WHERE ' . implode(' AND ', $where) . ' ORDER BY id LIMIT 200', $params);
+        return new Json(['enquiries' => $rows, 'next_since_id' => $rows ? (int) end($rows)['id'] : (int) $cursor]);
     }
 }

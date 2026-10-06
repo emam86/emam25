@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Bnc\Seo;
 
-use Bnc\{Db, Settings};
+use Bnc\{Config, Db, Settings};
 
 /** Database-only checks of the content eligible for publication. */
 final class Checker
@@ -16,6 +16,7 @@ final class Checker
         };
         $trips = Db::all("SELECT * FROM trips WHERE status = 'published' ORDER BY id");
         $posts = Db::all("SELECT * FROM posts WHERE status = 'published' AND (published_at IS NULL OR published_at <= ?) ORDER BY id", [date('Y-m-d H:i:s')]);
+        $postUrls = array_fill_keys(array_column(Db::all('SELECT url FROM posts'), 'url'), true);
         $terms = Db::all('SELECT * FROM terms ORDER BY id');
         $media = array_column(Db::all('SELECT id, alt FROM media'), 'alt', 'id');
         $relations = Db::all('SELECT tt.* FROM trip_terms tt JOIN trips t ON t.id = tt.trip_id WHERE t.status = ?', ['published']);
@@ -95,7 +96,7 @@ final class Checker
             }
             foreach (array_keys($links) as $path) {
                 if (isset($redirectMap[$path])) $add('warning', 'link_redirected', $r, 'الرابط ' . $path . ' يؤدي إلى تحويل؛ حدّثه إلى ' . $redirectMap[$path]);
-                elseif (preg_match('#^/(?:trip|activities|destinations|trip-types)/.+|^/\d{4}/\d{2}/\d{2}/.+#', $path) || Db::value('SELECT id FROM posts WHERE url = ?', [$path])) {
+                elseif (preg_match('#^/(?:trip|activities|destinations|trip-types)/.+|^/\d{4}/\d{2}/\d{2}/.+#', $path) || isset($postUrls[$path])) {
                     if (!isset($live[$path])) $add('error', 'broken_link', $r, 'رابط معطّل: ' . $path . '؛ صحّح الرابط أو انشر الصفحة المقصودة.');
                 }
             }
@@ -127,7 +128,7 @@ final class Checker
     public static function path(string $url): ?string
     {
         $parts = parse_url($url);
-        if ($parts === false || (isset($parts['host']) && !in_array(strtolower($parts['host']), ['booknilecruises.net', 'www.booknilecruises.net'], true))) return null;
+        if ($parts === false || (isset($parts['host']) && strtolower($parts['host']) !== strtolower((string) parse_url((string) Config::get('site_url'), PHP_URL_HOST)))) return null;
         $path = $parts['path'] ?? '';
         if (!str_starts_with($path, '/')) return null;
         $path = trim(rawurldecode($path), '/');

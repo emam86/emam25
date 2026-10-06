@@ -99,3 +99,10 @@ at most 10,000. The first successful publish submits all known content URLs.
 HTTP outcomes are appended to publish history; a failed submission does not
 change publish success. IndexNow supports Bing, Yandex and other participating
 engines; Google does not use it.
+
+Apply migration `004_post_announcements` from the owner dashboard for one-time
+`post.published` notifications. Existing public posts are marked as announced;
+scheduled posts are announced after a successful publish when they become due.
+Publish change windows begin at the preceding successful job’s `created_at` and
+end at the current job’s `finished_at`. Hourly callbacks with `job_id: null` create
+a scheduled publish job with an approximate export time fifteen minutes earlier.

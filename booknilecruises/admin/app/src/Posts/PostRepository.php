@@ -14,7 +14,7 @@ final class PostRepository
 
     public static function save(array $d, int $id = 0): ?int
     {
-        return Db::tx(function () use ($d, $id): ?int {
+        $saved = Db::tx(function () use ($d, $id, &$announce): ?int {
             $old = $id ? Db::one('SELECT * FROM posts WHERE id = ? FOR UPDATE', [$id]) : null;
             if ($id && !$old) throw new HttpException(404);
             if ($old && $old['updated_at'] !== $d['updated_at']) return null;
@@ -32,8 +32,11 @@ final class PostRepository
                 $id = Db::insert('posts', $row);
                 Audit::log('create', 'post', $id, 'أضاف المقال');
             }
+            if (Announcement::publicAt($row, date('Y-m-d H:i:s')) && !Announcement::publicAt($old, date('Y-m-d H:i:s'))) $announce = true;
             return $id;
         });
+        if ($saved && !empty($announce)) Announcement::fire($saved, 'panel');
+        return $saved;
     }
 
     public static function delete(int $id, string $target): void

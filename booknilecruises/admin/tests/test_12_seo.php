@@ -119,13 +119,14 @@ test('SEO API requires export token validates email and returns stored counts', 
 test('IndexNow selects only changes after previous success and callback submits exact body once through fake', function () {
     $key = Settings::get('indexnow_key');
     $before = '2090-01-01 00:00:00'; $after = '2090-01-02 00:00:00';
-    $previous = Db::insert('publish_jobs', ['triggered_by' => 'seo-test', 'status' => 'succeeded', 'finished_at' => $before]);
+    $previous = Db::insert('publish_jobs', ['triggered_by' => 'seo-test', 'status' => 'succeeded', 'finished_at' => $before, 'created_at' => '2090-01-01 00:00:01']);
     $failed = Db::insert('publish_jobs', ['triggered_by' => 'seo-test', 'status' => 'failed', 'finished_at' => $after]);
     $job = Db::insert('publish_jobs', ['triggered_by' => 'seo-test']);
     $unchanged = Db::insert('trips', ['slug' => 'indexnow-old', 'title' => 'Old', 'updated_at' => $before]);
-    $trip = Db::insert('trips', ['slug' => 'indexnow-new', 'title' => 'New', 'updated_at' => $after]);
-    $post = Db::insert('posts', ['slug' => 'indexnow-post', 'url' => '/2020/01/01/indexnow-post/', 'title' => 'New post', 'content_html' => '', 'updated_at' => $after]);
+    $trip = Db::insert('trips', ['slug' => 'indexnow-new', 'title' => 'New', 'status' => 'published', 'updated_at' => $after]);
+    $post = Db::insert('posts', ['slug' => 'indexnow-post', 'url' => '/2020/01/01/indexnow-post/', 'title' => 'New post', 'status' => 'published', 'published_at' => '2020-01-01 00:00:00', 'content_html' => '', 'updated_at' => $after]);
     $term = Db::insert('terms', ['slug' => 'indexnow-term', 'taxonomy' => 'activities', 'url' => '/activities/indexnow-term/', 'name' => 'Term', 'updated_at' => $after]);
+    Db::insert('trip_terms', ['trip_id' => $trip, 'term_id' => $term]);
     $redirect = Db::insert('redirects', ['from_path' => '/indexnow-source/', 'to_path' => '/blog/', 'created_at' => $after]);
     $oldRedirect = Db::insert('redirects', ['from_path' => '/indexnow-old-source/', 'to_path' => '/blog/', 'created_at' => $before]);
     $fake = new class implements IndexNowClient {
@@ -135,13 +136,13 @@ test('IndexNow selects only changes after previous success and callback submits 
     try {
         Settings::set('indexnow_key', str_repeat('a', 32));
         // Use a prior date so callback's current finished_at follows the previous success.
-        Db::update('publish_jobs', ['finished_at' => '2000-01-01 00:00:00'], 'id = ?', [$previous]);
+        Db::update('publish_jobs', ['finished_at' => '2000-01-01 00:00:00', 'created_at' => '2000-01-01 00:00:00'], 'id = ?', [$previous]);
         Publisher::status(['job_id' => $job, 'status' => 'succeeded', 'run_url' => 'https://github.com/example/nile/actions/runs/seo', 'message' => 'Done'], $fake);
         assert_same(1, count($fake->bodies));
         assert_contains('IndexNow:', Db::value('SELECT message FROM publish_jobs WHERE id = ?', [$job]));
         Publisher::status(['job_id' => $job, 'status' => 'succeeded', 'run_url' => 'https://github.com/example/nile/actions/runs/seo', 'message' => 'Done'], $fake);
         assert_same(1, count($fake->bodies));
-        Db::update('publish_jobs', ['finished_at' => $before], 'id = ?', [$previous]);
+        Db::update('publish_jobs', ['finished_at' => $before, 'created_at' => '2090-01-01 00:00:01'], 'id = ?', [$previous]);
         Db::update('publish_jobs', ['finished_at' => '2090-01-03 00:00:00'], 'id = ?', [$job]);
         $fake->bodies = []; IndexNow::submit($job, $fake);
         $expected = ['https://booknilecruises.net/trip/indexnow-new/', 'https://booknilecruises.net/2020/01/01/indexnow-post/', 'https://booknilecruises.net/activities/indexnow-term/', 'https://booknilecruises.net/indexnow-source/'];
@@ -149,7 +150,7 @@ test('IndexNow selects only changes after previous success and callback submits 
         assert_contains('IndexNow: 4 URLs, HTTP 200', Db::value('SELECT message FROM publish_jobs WHERE id = ?', [$job]));
         Settings::set('indexnow_key', ''); IndexNow::submit($job, $fake); assert_same(1, count($fake->bodies));
         Settings::set('indexnow_key', str_repeat('a', 32));
-        Db::update('publish_jobs', ['finished_at' => '2099-01-01 00:00:00'], 'id = ?', [$previous]);
+        Db::update('publish_jobs', ['finished_at' => '2099-01-01 00:00:00', 'created_at' => '2099-01-01 00:00:00'], 'id = ?', [$previous]);
         Db::update('publish_jobs', ['finished_at' => '2099-01-02 00:00:00'], 'id = ?', [$job]);
         IndexNow::submit($job, $fake); assert_same(1, count($fake->bodies));
     } finally {
@@ -198,7 +199,7 @@ test('IndexNow first publish selects content and batches ten thousand with faile
         $job = Db::insert('publish_jobs', ['status' => 'succeeded', 'finished_at' => '2099-01-02 00:00:00', 'triggered_by' => 'first-publish']);
         $trip = Db::one('SELECT slug FROM trips LIMIT 1');
         assert_true(in_array('https://booknilecruises.net/trip/' . $trip['slug'] . '/', IndexNow::urls($job), true));
-        Db::insert('publish_jobs', ['status' => 'succeeded', 'finished_at' => '2099-01-01 00:00:00', 'triggered_by' => 'previous-publish']);
+        Db::insert('publish_jobs', ['status' => 'succeeded', 'finished_at' => '2099-01-01 00:00:00', 'triggered_by' => 'previous-publish', 'created_at' => '2099-01-01 00:00:00']);
         for ($offset = 0; $offset < 10001; $offset += 1000) {
             $values = []; $params = [];
             for ($i = $offset; $i < min($offset + 1000, 10001); $i++) {
@@ -214,4 +215,58 @@ test('IndexNow first publish selects content and batches ten thousand with faile
         assert_contains('IndexNow: 1 URLs, HTTP 503', Db::value('SELECT message FROM publish_jobs WHERE id = ?', [$job]));
         assert_same('succeeded', Db::value('SELECT status FROM publish_jobs WHERE id = ?', [$job]));
     } finally { Db::pdo()->rollBack(); Settings::reset(); assert_same($oldKey, Settings::get('indexnow_key')); }
+});
+
+
+test('SEO paths follow configured host and empty report recipient skips audit', function () {
+    $old = phase5_config(['site_url' => 'https://cruises.example', 'mail' => ['notify' => '']]);
+    $seo = Settings::get('seo_report_email'); $enquiry = Settings::get('enquiry_notify_email');
+    try {
+        assert_same('/blog/', Checker::path('https://cruises.example/blog/'));
+        assert_same(null, Checker::path('https://booknilecruises.net/blog/'));
+        Settings::set('seo_report_email', ''); Settings::set('enquiry_notify_email', '');
+        $before = (int) Db::value("SELECT COUNT(*) FROM audit_log WHERE action = 'notification_failed'");
+        \Bnc\Seo\ReportMailer::send(['id' => 1, 'error_count' => 0, 'warning_count' => 0, 'issues' => '[]']);
+        assert_same($before, (int) Db::value("SELECT COUNT(*) FROM audit_log WHERE action = 'notification_failed'"));
+    } finally { Settings::set('seo_report_email', $seo); Settings::set('enquiry_notify_email', $enquiry); phase5_restore($old); }
+});
+
+test('publish window includes edits during previous build scheduled posts public categories and bounded redirects', function () {
+    $old = phase5_config(['site_url' => 'https://cruises.example']);
+    $oldKey = Settings::get('indexnow_key');
+    $ids = []; $posts = []; $terms = []; $redirects = [];
+    try {
+        $from = '2020-01-01 00:00:00'; $to = '2020-01-03 00:00:00';
+        foreach (['published', 'draft'] as $status) $ids[] = Db::insert('trips', ['slug' => 'review-window-' . $status, 'title' => 'Window', 'status' => $status, 'updated_at' => '2020-01-01 12:00:00']);
+        foreach (['published', 'draft'] as $status) $posts[] = Db::insert('posts', ['slug' => 'review-window-' . $status, 'url' => '/review-post-' . $status . '/', 'title' => 'Window', 'content_html' => '', 'status' => $status, 'updated_at' => '2019-01-01 00:00:00', 'published_at' => '2020-01-02 00:00:00']);
+        $posts[] = Db::insert('posts', ['slug' => 'review-future', 'url' => '/review-future/', 'title' => 'Future', 'content_html' => '', 'status' => 'published', 'updated_at' => $from, 'published_at' => '2020-01-04 00:00:00']);
+        foreach (['used', 'empty'] as $slug) $terms[] = Db::insert('terms', ['slug' => 'review-' . $slug, 'name' => $slug, 'taxonomy' => 'activities', 'url' => '/review-' . $slug . '/', 'updated_at' => $from]);
+        Db::insert('trip_terms', ['trip_id' => $ids[0], 'term_id' => $terms[0]]);
+        foreach (['2020-01-02 00:00:00', '2020-01-04 00:00:00'] as $i => $at) $redirects[] = Db::insert('redirects', ['from_path' => '/review-redirect-' . $i . '/', 'to_path' => '/blog/', 'created_at' => $at]);
+        $result = \Bnc\Publish\Changes::since($from, $to);
+        assert_same(['https://cruises.example/trip/review-window-published/', 'https://cruises.example/review-post-published/', 'https://cruises.example/review-used/', 'https://cruises.example/review-redirect-0/'], $result['urls']);
+        $previous = Db::insert('publish_jobs', ['status' => 'succeeded', 'triggered_by' => 'review-window', 'created_at' => $from, 'finished_at' => '2020-01-02 00:00:00']);
+        $job = Db::insert('publish_jobs', ['status' => 'succeeded', 'triggered_by' => 'review-window', 'created_at' => $to, 'finished_at' => $to]);
+        assert_same([$from, $to], \Bnc\Publish\Changes::window($job));
+        Settings::set('indexnow_key', str_repeat('d', 32));
+        $fake = new class implements IndexNowClient { public array $bodies = []; public function submit(array $body): int { $this->bodies[] = $body; return 200; } };
+        IndexNow::submit($job, $fake);
+        assert_same('cruises.example', $fake->bodies[0]['host']);
+        assert_same('https://cruises.example/' . str_repeat('d', 32) . '.txt', $fake->bodies[0]['keyLocation']);
+    } finally {
+        foreach ($ids as $id) Db::run('DELETE FROM trips WHERE id = ?', [$id]);
+        foreach ($posts as $id) Db::run('DELETE FROM posts WHERE id = ?', [$id]);
+        foreach ($terms as $id) Db::run('DELETE FROM terms WHERE id = ?', [$id]);
+        foreach ($redirects as $id) Db::run('DELETE FROM redirects WHERE id = ?', [$id]);
+        Db::run("DELETE FROM publish_jobs WHERE triggered_by = 'review-window'"); Settings::set('indexnow_key', $oldKey); phase5_restore($old);
+    }
+});
+
+test('SEO checker loads post URL lookup once for many links', function () {
+    $id = Db::insert('trips', ['slug' => 'review-link-batch', 'title' => 'Batch links', 'status' => 'published', 'overview_html' => str_repeat('<a href="/custom-post/">Link</a>', 5)]);
+    try {
+        $queries = review_count_queries(fn () => (new Checker())->run());
+        assert_same(0, count(array_filter($queries, fn ($sql) => str_contains($sql, 'FROM posts WHERE url ='))));
+        assert_same(1, count(array_filter($queries, fn ($sql) => $sql === 'SELECT url FROM posts')));
+    } finally { Db::run('DELETE FROM trips WHERE id = ?', [$id]); }
 });
