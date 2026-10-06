@@ -132,9 +132,9 @@ jobs:
           key: published-${{ steps.content.outputs.hash }}
 
       - name: Report the result to the panel
-        if: always() && env.JOB_ID != ''
+        if: always() && (env.JOB_ID != '' || steps.go.outputs.deploy == 'true')
         env:
           TOKEN: ${{ secrets.BNC_EXPORT_TOKEN }}
           OUTCOME: ${{ job.status }}
         run: |
-          if [ "$OUTCOME" = success ]; then ../scripts/publish-status.sh succeeded "Published"; else ../scripts/publish-status.sh failed "Build or upload failed, see the run log"; fi
+          if [ "$OUTCOME" = success ]; then if [ -n "$JOB_ID" ]; then msg=Published; else msg="scheduled publish"; fi; ../scripts/publish-status.sh succeeded "$msg"; else ../scripts/publish-status.sh failed "Build or upload failed, see the run log"; fi
