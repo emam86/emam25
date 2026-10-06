@@ -1,31 +1,30 @@
-# تركيب لوحة التحكم على Hostinger
+# تركيب لوحة التحكم والموقع الجديد على Hostinger
 
-الخطوات دي بتتعمل مرة واحدة. محتاج: hPanel وبيانات قاعدة MySQL.
+الخطوات دي بتتعمل مرة واحدة، وكلها من hPanel. محتاج ملفين هبعتهملك:
+- `bnc-1-panel.zip`: لوحة التحكم (رفعه ما بيغيّرش حاجة في الموقع اللي شغال دلوقتي).
+- `bnc-2-site.zip`: صفحات الموقع الجديدة بـ PHP (بترفعه في الآخر، بعد ما المحتوى يتنقل للوحة).
 
-> ⚠️ متضغطش أبدًا على «Uninstall WordPress» في hPanel، ومتمسحش فولدر `images`.
+> ⚠️ متضغطش أبدًا على «Uninstall WordPress» في hPanel، ومتمسحش فولدر `public_html/images`.
 
 ---
 
 ## 1) قاعدة البيانات
 
 1. hPanel ← **Websites** ← booknilecruises.net ← **Databases** ← **Management**.
-2. اعمل قاعدة جديدة: اكتب اسم (مثلًا `bnc`) واسم مستخدم (مثلًا `bnc`) وباسورد قوي.
-3. اكتب عندك الأسماء الكاملة زي ما هتظهر (بتبدأ بـ `u857861630_`) والباسورد.
+2. اعمل قاعدة جديدة: اسم (مثلًا `bnc`)، واسم مستخدم (مثلًا `bnc`)، وباسورد قوي.
+3. اكتب عندك الأسماء الكاملة زي ما بتظهر (بتبدأ بـ `u857861630_`) والباسورد.
 
-## 2) رفع ملفات اللوحة
+## 2) رفع اللوحة
 
 1. hPanel ← **File Manager**.
 2. افتح فولدر `domains/booknilecruises.net` (الفولدر اللي **فيه** `public_html`، مش جواه).
-3. ارفع ملف `admin-bundle.zip` اللي هبعتهولك، وبعدين كليك يمين عليه ← **Extract** في نفس المكان.
-4. هتلاقي ظهر:
-   - `bnc-app` (كود اللوحة، برا الموقع العام)
-   - `bnc-config.php` (الإعدادات والأسرار)
-   - جوا `public_html`: `admin` و`api`، وملفات الموقع `index.php` و`.htaccess` و`assets` و`img`
-5. امسح ملف `admin-bundle.zip` بعد الفك.
+3. ارفع `bnc-1-panel.zip` هناك، وبعدين كليك يمين عليه ← **Extract** في نفس المكان.
+4. هيظهر: فولدر `bnc-app`، وملف `bnc-config.php`، وجوا `public_html` فولدرين `admin` و`api`.
+5. امسح `bnc-1-panel.zip`.
 
 ## 3) ملف الإعدادات
 
-افتح `domains/booknilecruises.net/bnc-config.php` بـ **Edit** وغيّر الجزء ده بس:
+افتح `domains/booknilecruises.net/bnc-config.php` بـ **Edit** وغيّر 3 سطور بس، بأسماء قاعدة البيانات اللي عملتها:
 
 ```php
 'dsn'  => 'mysql:host=127.0.0.1;port=3306;dbname=u857861630_bnc;charset=utf8mb4',
@@ -33,64 +32,66 @@
 'pass' => 'باسورد قاعدة البيانات',
 ```
 
-باقي الملف جاهز: الرموز السرية (`install_token` و`export_token`) اتولدت عشوائي، ومسار الصور مظبوط.
+باقي الملف جاهز (الرموز السرية اتعملت عشوائي، ومسار الصور مظبوط). احفظ.
 
-## 4) التثبيت وإنشاء حسابك
+## 4) التثبيت وحسابك
 
 1. افتح `https://booknilecruises.net/admin/install`
 2. انسخ قيمة `install_token` من `bnc-config.php` في خانة «رمز التثبيت»، واكتب اسمك وإيميلك وباسورد (10 حروف على الأقل).
 3. بعد ما تدخل: ارجع لـ `bnc-config.php` وخلّي `install_token` فاضي `''` واحفظ.
 
-## 5) نقل محتوى الموقع الحالي للوحة
+## 5) نقل المحتوى للوحة
 
-من اللوحة افتح **استيراد محتوى الموقع الحالي** (`/admin/import`) واضغط «ابدأ الاستيراد». هيتنقل 102 رحلة و27 تصنيف و618 صورة والمقال. الصور نفسها مش بتتنقل، هي موجودة بالفعل في `images`.
+من اللوحة هتلاقي رسالة «اللوحة لسه فاضية» ← اضغط «انقل محتوى الموقع الحالي» ← «ابدأ الاستيراد».
+هيتنقل 102 رحلة و27 تصنيف و618 صورة والمقال. الصور نفسها موجودة بالفعل في `images` ومش بتتنقل.
+
+افتح **الرحلات** واتأكد إن الرحلات ظاهرة.
 
 ---
 
-## 6) تشغيل الموقع المباشر
+## 6) تشغيل الموقع الجديد بـ PHP
 
-انسخ الملفات بهذه المسارات؛ فعّل إظهار الملفات المخفية لرفع `.htaccess`:
+من هنا الموقع هيقرا من اللوحة مباشرة، وأي تعديل تحفظه يظهر فورًا.
 
-| الملف في المشروع | مكانه على Hostinger |
-|---|---|
-| `admin/app/` | `domains/booknilecruises.net/bnc-app/` |
-| `admin/public/admin/` | `domains/booknilecruises.net/public_html/admin/` |
-| `admin/public/api/` | `domains/booknilecruises.net/public_html/api/` |
-| `admin/public/site/index.php` | `domains/booknilecruises.net/public_html/index.php` |
-| `admin/public/site/.htaccess` | `domains/booknilecruises.net/public_html/.htaccess` |
-| `admin/public/site/assets/` | `domains/booknilecruises.net/public_html/assets/` |
-| `admin/public/site/img/` | `domains/booknilecruises.net/public_html/img/` |
+1. File Manager ← افتح `public_html` ← فعّل إظهار الملفات المخفية (**Show hidden files**).
+2. **نسخة احتياطية:** غيّر اسم ملف `.htaccess` الحالي لـ `.htaccess-static-backup`.
+3. ارجع لـ `domains/booknilecruises.net`، ارفع `bnc-2-site.zip`، و**Extract** في نفس المكان (لو سألك عن استبدال ملفات وافق).
+4. امسح `bnc-2-site.zip`.
+5. افتح الموقع واتأكد: الصفحة الرئيسية، صفحة رحلة، `/nile-cruise/`، `/contact-us/`.
+6. جرّب: عدّل سعر رحلة من اللوحة واحفظ، وافتح صفحتها: هتلاقي السعر الجديد على طول.
 
-حافظ على `bnc-config.php` خارج `public_html` وعلى مجلد `public_html/images/` الموجود. احذف `public_html/index.html` القديم لكي تُفتح صفحة PHP الرئيسية. الموقع يقرأ نفس قاعدة MySQL الخاصة باللوحة، والتعديلات تظهر بعد الحفظ دون زر نشر.
+**لو حصلت أي مشكلة ترجع في دقيقة:** في `public_html` امسح `index.php` و`.htaccess` الجديد، وغيّر اسم `.htaccess-static-backup` لـ `.htaccess`. الموقع يرجع زي ما كان.
 
-أنشئ `domains/booknilecruises.net/bnc-app/cache/site/` واجعله قابلًا للكتابة بواسطة مستخدم PHP. الإعداد `'site_cache_dir' => null` يستخدم هذا المسار تلقائيًا؛ أو ضع مسارًا مطلقًا خارج `public_html` في `site_cache_dir`. اترك `'site_noindex' => false` للإنتاج، واستخدم `true` في نسخة التجربة. المقالات المجدولة تظهر عند حلول موعدها حتى قبل تشغيل Cron.
+بعد أسبوع من غير مشاكل، تقدر تمسح الفولدرات القديمة للموقع الثابت من `public_html` (زي `_astro` و`trip` و`destinations`). وجودها مش بيأثر، لأن كل الطلبات بتروح لصفحات PHP.
 
-من hPanel ← Advanced ← Cron Jobs اختر **كل ١٥ دقيقة**: الدقائق `*/15` وباقي حقول الوقت `*`. ضع هذا الأمر في خانة الأمر مع استبدال `<user>` باسم مستخدم الاستضافة:
+---
 
-```sh
-php /home/<user>/domains/booknilecruises.net/bnc-app/bin/cron.php
+## 7) المهمة المجدولة (كل ربع ساعة)
+
+hPanel ← **Advanced** ← **Cron Jobs** ← اختار **Every 15 minutes** (أو: الدقائق `*/15` وباقي الخانات `*`)، والأمر:
+
+```
+php /home/u857861630/domains/booknilecruises.net/bnc-app/bin/cron.php
 ```
 
-صيغة crontab الكاملة:
+دي بتبعت إشعار المقالات المجدولة لما يجي معادها، وتبلّغ محركات البحث (IndexNow). المقالات المجدولة نفسها بتظهر على الموقع في معادها حتى من غيرها.
 
-```cron
-*/15 * * * * php /home/<user>/domains/booknilecruises.net/bnc-app/bin/cron.php
-```
+## 8) حاجات تظبطها من اللوحة
 
-المهمة ترسل إشعار `post.published` مرة واحدة للمقالات المستحقة في أول تشغيل بعد موعدها. ولّد مفتاح IndexNow من فحص SEO؛ الموقع يعرض ملف المفتاح تلقائيًا، والإرسال يتم بعد نجاح الحفظ. راجع [دليل API](admin/API.md).
+- **الإعدادات:** بيانات التواصل، كود Google verification وBing، ومعرّف Google Analytics.
+- **الاستفسارات:** الإيميل اللي توصله إشعارات الاستفسارات الجديدة.
+- **فحص SEO:** اضغط «توليد مفتاح IndexNow»، وشوف تقرير المشاكل.
+- **المستخدمين والأدوار:** ضيف فريقك بالصلاحيات المناسبة.
+- فحص SEO أسبوعي بالإيميل (اختياري): Cron Job أسبوعي بالأمر
+  `php /home/u857861630/domains/booknilecruises.net/bnc-app/bin/seo-check.php --email`
 
-## 7) فحص SEO أسبوعي بالإيميل (اختياري)
-hPanel ← **Advanced** ← **Cron Jobs** ← أسبوعي ← الأمر:
-```
-php /home/u857861630/domains/booknilecruises.net/bnc-app/bin/seo-check.php --email
-```
+## 9) ربط n8n أو Make
 
-## 8) ربط n8n أو Make
 التفاصيل في `admin/API.md`: إزاي تعمل مفتاح API من اللوحة، وتنشر مقالات تلقائي، وتستقبل الاستفسارات الجديدة.
 
 ---
 
 ## الأمان
-- `bnc-config.php` فيه أسرار: متشاركهوش ومترفعهوش على GitHub.
+- `bnc-config.php` و`bnc-app` برا `public_html`، يعني محدش يقدر يفتحهم من النت. متشاركش `bnc-config.php` مع حد.
 - غيّر باسورد SSH اللي اتبعت في المحادثة قبل كده.
 - كل عملية في اللوحة متسجلة في **سجل العمليات**.
