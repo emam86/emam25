@@ -28,6 +28,14 @@ DirectoryIndex index.php
   RewriteRule ^index\.php$ - [L]
   RewriteRule ^ index.php [L]
 </IfModule>
+# mod_alias rules are inherited by every subfolder, even one whose own .htaccess turns on
+# RewriteEngine (any old WordPress copy does, which cancels the rewrite rules above there).
+# They back up those rules: WordPress leftovers stay 404 and no PHP file runs except the
+# three entry points, wherever it sits.
+<IfModule mod_alias.c>
+  RedirectMatch 404 ^/(?:(?:old|wordpress-old[^/]*|wp-includes|wp-admin/.+)(?:/.*)?|wp-content/(?!uploads/).*)$
+  RedirectMatch 403 (?i)^/(?!(?:admin/|api/)?index\.php$).*\.(?:php[0-9]?|phtml|phar)(?:/.*)?$
+</IfModule>
 <FilesMatch "\.(php[0-9]?|phtml|phar)$">
   Require all denied
 </FilesMatch>
